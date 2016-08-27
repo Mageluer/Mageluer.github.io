@@ -1,0 +1,24 @@
+<!-- ==== BEGIN head ==== -->
+<head>
+
+    <!-- ==== Metas ==== -->  
+        <meta charset='utf-8'>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="{{ page.description }} | {{ site.description }}">
+	<meta name="keywords" content="{{ page.keyword }}, {{ site.keyword }}">
+	<meta name="author" content="{{ site.author }}, {{ site.email }}">
+	<meta name="robots" contents="index, follow">
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<meta http-equiv="Cache-Control" content="no-siteapp">
+	
+    <!-- ==== Title & Favicon ==== -->
+        <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>						    
+	<link rel="shortcut icon" href="{{ site.baseurl }}/assets/images/32bit.ico">
+
+    <!-- ==== Stylesheets ==== -->
+        <link rel="stylesheet" type="text/css" href="{{ "/assets/stylesheets/style.css" | prepend: site.baseurl }}">
+	<link rel="stylesheet" type="text/css" href="{{ "/assets/stylesheets/custom.css" | prepend: site.baseurl }}">
+								    
+</head>
+<!-- END head -->

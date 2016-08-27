@@ -192,7 +192,9 @@ div.sep {
 .icon-stackoverflow:before {
   content: "\ead0";
 }
-
+.icon-dribbble:before {
+  content: "\eaa7";
+}
 .social {
   font-size: 18px;
   line-height: 21px;
@@ -1065,7 +1067,7 @@ video,
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-/*--------------------------------------------------------------------------
+/*------------------------------------------------------------------------*/
   8.  Media Queries & Responsiveness
 /*------------------------------------------------------------------------*/
 @media screen and (max-width: 720px) {

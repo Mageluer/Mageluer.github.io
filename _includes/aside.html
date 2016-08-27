@@ -1,0 +1,59 @@
+<!-- ==== BEGIN aside ==== -->
+<aside>
+
+
+    <!-- ==== Profile ==== -->
+    <section class="profile">
+        <p><a href="{{ '/about/' | prepend: site.baseurl }}">ABOUT ME</a><p>
+
+	<!-- ==== Avatar ==== -->
+	<figure class="avatar">
+	    {% if site.avatar %}
+	        <img src="{{ site.avatar }}">
+            {% endif %}
+	    {% if site.blog-description %}
+	        <figcaption>
+		    {{ site.blog-desciption }}
+		</figcaption>
+	    {% endif %}
+	</figure>
+
+	<!-- ==== SNS ==== --> 
+	<p class="c social">
+		<a href="https://plus.google.com/u/0/104643883202022740598"><span class="icon-google-plus2"></span></a><a href="https://www.facebook.com/fengfeng.song.5"><span class="icon-facebook2"></span></a><a href="https://github.com/mageluer"><span class="icon-github"></span></a><a href="http://stackoverflow.com/users/6761532/mageluer"><span class="icon-stackoverflow"></span></a><a href="https://dribbble.com/Mageluer"><span class="icon-dribbble"></span></a>
+	</p>
+    </section>
+
+
+
+
+    
+    <!-- ==== Tag cloud ==== -->
+    <section class="tag-cloud">
+        <p><a href="{{ '/tags/' | prepend: site.baseurl }}">TAG CLOUD</a></p>
+        
+	<div>
+	    {% for tag in site.tags %}
+	        <a href="{{ site.baseurl }}/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>
+	    {% endfor %}
+	</div>
+    </section>
+
+
+
+
+
+    <!-- ==== Blogroll ==== -->
+    <section class="blogroll">
+        <p>FRIENDS</p>
+	<ul>
+	    {% for friend in site.data/friends %}
+            <li><a href="">friend1</a></li>
+	    {% endfor %}
+	</ul>
+    </section>
+
+
+
+</aside>
+<!-- END aside -->

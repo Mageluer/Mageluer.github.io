@@ -1,0 +1,26 @@
+# Site settings
+title: Mageluer still can not swim :(
+author: Mageluer
+email: kissongg@gmail.com
+description: "how to waste your time | Mageluer, pineapple eater, the rejecter | love somrting & somebody far away | enjoy flying in the sky or dream | the worship of nature"
+keyword: "Mageluer, 马格鲁尔, Mageluer's Blog, swim, fly, run, computer science, physics, nodickhead"
+url: "https://mageluer.github.io"
+baseurl: ""
+
+
+
+# SNS settings
+github_username: Mageluer
+zhihu_username: 空肠得酒
+
+
+
+# Build settings
+highlighter: rouge
+permalink: pretty
+paginate: 10
+paginate_path: "/blog/page:num"
+
+
+# Gems
+gems: [jekyll-paginate]

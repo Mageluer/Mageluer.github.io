@@ -1,0 +1,61 @@
+---
+layout: page
+title: Mageluer's Blog
+---
+
+<!-- ==== Blog title ==== -->
+<h1>{{ page.title }}</h1>
+
+<!-- ==== Main content ==== -->
+<main>
+    
+    <!-- ==== Post list ==== -->
+    {% for post in paginator.posts %}
+    <div class="post-preview">
+        <a href="{{ post.url | prepend: site.baseurl }}">
+
+	    <!-- ==== Post title ==== -->
+	    <h2 class="post-title">
+	        {{ post.title }}
+            </h2>
+	    {% if post.subtitle %}
+	    <h3 class="post-subtitle">
+	        {{ post.subtitle }}
+	    </h3>
+	    {% endif %}
+
+	    <!-- ==== Post preview ==== -->
+	    <p class="post-content-preview">
+	        {{ post.content | strip_html | truncate:200 }}
+	    </p>
+	</a>
+
+	<!-- ==== Post info ==== -->
+	<p class="post-meta">
+	    {% if post.author %}{{ post.author }}{% else %}{{ site.author }}{% endif %} | {{ post.date | date: "%B %-d, %Y" }}
+	</p>
+    </div>
+    {% endfor %}
+
+    <!-- ==== Pagination links ==== -->
+    <div class="pagination">
+        {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="previous">&laquo; Prev</a>
+	{% else %}
+	<span class="previous">&laquo; Prev</span>
+        {% endif %}
+        <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+        {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="next">Next &raquo;</a>
+        {% else %}
+	<span class="next ">Next &raquo;</span>
+        {% endif %}
+    </div>
+
+</main>
+
+
+
+{{ include aside.html }}
+
+
