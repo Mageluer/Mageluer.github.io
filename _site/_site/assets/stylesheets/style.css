@@ -188,13 +188,11 @@ div.sep {
 }
 .icon-github:before {
   content: "\eab0";
- }
+}
 .icon-stackoverflow:before {
   content: "\ead0";
 }
-.icon-dribbble:before {
-  content: "\eaa7";
-}
+
 .social {
   font-size: 18px;
   line-height: 21px;
@@ -1098,21 +1096,12 @@ video,
     padding: 5px 0.63em 2px;
   }
 }
-
 #menu-list-mobile {
   display: none;
   margin: 21px 0;
   min-width: 90%;
 }
-
 @media screen and (max-width: 480px) {
-  .thumbs .col {
-    width: 100%;
-    float: none;
-  }
-  .thumbs .col + .col {
-    margin-top: 22px;
-  }
   .post h1 {
     font-size: 48px;
   }
@@ -1123,7 +1112,6 @@ video,
     font-size: 16px;
   }
 }
-
 @media screen and (max-width: 320px) {
   .thumbs .col {
     width: 100%;
