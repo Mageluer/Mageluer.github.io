@@ -310,7 +310,7 @@ h4 {
   margin-bottom: 42px;
 }
 .post p {
-  font-size: 12px;
+  font-size: 14px;
 }
 blockquote {
   font-style: italic;
@@ -1070,7 +1070,38 @@ video,
 /*------------------------------------------------------------------------*/
   8.  Media Queries & Responsiveness
 /*------------------------------------------------------------------------*/
-@media screen and (max-width: 720px) {
+
+@media screen and (max-width: 770px) {
+    .one-half,
+    .one-third,
+    .two-third,
+    .three-fourth,
+    .one-fourth,
+    .one-fifth,
+    .two-fifth,
+    .three-fifth,
+    .four-fifth,
+    .one-sixth,
+    .five-sixth {
+	    margin-right: 0;
+	    width: 100%;
+    }
+    body {
+	    padding: 0 21px;
+    }
+    h1.intro {
+	    font-size: 54px;
+    }
+    .post h1 {
+	    max-width: 100%;
+    }
+    .tabs li a {
+	    padding: 5px 0.63em 2px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
   .one-half,
   .one-third,
   .two-third,
@@ -1089,7 +1120,7 @@ video,
     padding: 0 21px;
   }
   h1.intro {
-    font-size: 48px;
+    font-size: 54px;
   }
   .post h1 {
     max-width: 100%;
@@ -1105,14 +1136,7 @@ video,
   min-width: 90%;
 }
 
-@media screen and (max-width: 480px) {
-  .thumbs .col {
-    width: 100%;
-    float: none;
-  }
-  .thumbs .col + .col {
-    margin-top: 22px;
-  }
+@media screen and (max-width: 544px) {
   .post h1 {
     font-size: 48px;
   }
@@ -1124,7 +1148,7 @@ video,
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 450px) {
   .thumbs .col {
     width: 100%;
     float: none;
