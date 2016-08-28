@@ -1,4 +1,4 @@
-<!-- BEGIN header -->
+<!-- ==== BEGIN header ==== -->
 <header class="masthead" role="banner">
 
     <div class="open sep"></div>
@@ -19,10 +19,33 @@
 	</nav>
 
 	<!-- ==== Menu-list-mobile ==== -->
+	<select id="menu-list-mobile" onchange="menu_click(this)">
+	    <option value="#">NAVGATE...</option>
+	    <option value="{{ "/" | prepend: site.baseurl }}">Home</option>
+	    <option value="{{ "/blog" | prepend: site.baseurl }}">Blog</option>
+	    <option value="http://music.163.com/#/user/home?id=74939826">Music</option>
+	    <option value="{{ "/about" | prepend: site.baseurl }}">About</option>
+	    <option value="{{ "/contact" | prepend: site.baseurl }}">Contact</option>
+        </select>
 
 	<div class="light sep"><div>
 																					
 	<!-- ==== Need Script for mobile menu ==== -->
+	<script>
+	    function menu_click(obj){
+                var num=0;
+		for(var i = 1; i < obj.options.length; i++){
+		    if(obj.options[i].selected == true){
+		        num++;
+		    }
+		}
+		if(num == 1){
+		    var url = obj.options[obj.selectedIndex].value;
+		    window.location.href=url;
+		}
+            }
+	</script>
+
 
 
 </header>

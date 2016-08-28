@@ -4,16 +4,16 @@
 
     <!-- ==== Profile ==== -->
     <section class="profile">
-        <p><a href="{{ '/about/' | prepend: site.baseurl }}">ABOUT ME</a><p>
+        <p><a href="{{ '/about/' | prepend: site.baseurl }}">ABOUT ME</a></p>
 
 	<!-- ==== Avatar ==== -->
 	<figure class="avatar">
-	    {% if site.avatar %}
-	        <img src="{{ site.avatar }}">
+	    {% if site.blog-avatar %}
+	        <img src="{{ site.blog-avatar | prepend: site.baseurl }}" alt="avatar">
             {% endif %}
 	    {% if site.blog-description %}
 	        <figcaption>
-		    {{ site.blog-desciption }}
+		    {{ site.blog-description }}
 		</figcaption>
 	    {% endif %}
 	</figure>
@@ -47,8 +47,13 @@
     <section class="blogroll">
         <p>FRIENDS</p>
 	<ul>
-	    {% for friend in site.data/friends %}
-            <li><a href="">friend1</a></li>
+	    {% for friend_hash in site.data.friends %}
+	    {% assign friend = friend_hash[1] %}
+            <li>
+	        <a href="{{ friend.site }}">
+		    {{ friend.name }}
+		</a>
+            </li>
 	    {% endfor %}
 	</ul>
     </section>
