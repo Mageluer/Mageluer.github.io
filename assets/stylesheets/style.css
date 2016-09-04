@@ -1106,6 +1106,11 @@ aside section {
 .post aside section p {
   margin: 0 auto 8px;
 }
+aside .tag-cloud .tag {
+  display: inline-block;
+  text-decoration: none;
+  margin-right: .5em;
+}
 
 /*------------------------------------------------------------------------*-
   9. Post
@@ -1117,9 +1122,12 @@ aside section {
   display: block;
   margin: 0 auto;
 }
-
-
-
+.post-recent a {
+  display: inline-block;
+  margin: 1em 4em;
+  text-decoration: none;
+  font-size: 1.2em;
+}
 
 
 
@@ -1196,7 +1204,9 @@ aside section {
   margin: 21px 0;
   min-width: 90%;
 }
-
+main aside div.light.sep {
+  display: none;
+}
 @media screen and (max-width: 544px) {
   .post h1 {
     font-size: 48px;
@@ -1209,12 +1219,18 @@ aside section {
   }
   main aside,
   main nav {
-    float:none;
-    width:100%;
+    float: none;
+    width: 100%;
   }
   main main {
     float: none;
     width: 100%;
+    }
+  main aside {
+    text-align: center;
+    }
+  main aside div.sep.light {
+    display: inline-block;
     }
 }
 
