@@ -1129,6 +1129,61 @@ aside .tag-cloud .tag {
   font-size: 1.2em;
 }
 
+/*------------------------------------------------------------------------*-
+  10.  Tags
+/*------------------------------------------------------------------------*/
+.tag-page {
+  float: none;
+  max-width: 760px;
+  margin: 21px auto;
+  padding: 0 21%;
+  text-align: center;
+}
+.tag-group {
+  line-height: 180%;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+.tag-group h3 {
+  margin: 21px auto 10px auto;
+  text-align: center;
+  font-size: 28px;
+  text-align: center;
+}
+.tag-group ul {
+  margin: 0 auto 21px;
+  text-align: center;
+  font-size: 18px;
+  list-style: none none inside;
+}
+/*------------------------------------------------------------------------*-
+  11.  Archives
+/*------------------------------------------------------------------------*/
+.archive-page {
+  float: none;
+  max-width: 760px;
+  margin: 21px auto;
+  padding: 0 auto;
+  text-align: center;
+}
+.archive-page ul {
+  margin: 0 auto;
+}
+.archive-page h2 {
+  margin: 10px auto 3px;
+}
+.archive-page h3.month {
+  margin: 0px auto 5px;
+}
+.archive-page li {
+  text-align: left;
+  padding-left: 38%;
+  list-style: inside disc;
+}
+
+
 
 
 
@@ -1137,7 +1192,7 @@ aside .tag-cloud .tag {
 
 
 /*------------------------------------------------------------------------*-
-  10.  Media Queries & Responsiveness
+  12.  Media Queries & Responsiveness
 /*------------------------------------------------------------------------*/
 
 @media screen and (max-width: 770px) {
@@ -1197,6 +1252,12 @@ aside .tag-cloud .tag {
   .tabs li a {
     padding: 5px 0.63em 2px;
   }
+  .tag-group h3 {
+    font-size: 24px;
+  }
+  .tag-group ul {
+    font-size: 16px;
+  }
 }
 
 #menu-list-mobile {
@@ -1225,13 +1286,22 @@ main aside div.light.sep {
   main main {
     float: none;
     width: 100%;
-    }
+  }
   main aside {
     text-align: center;
-    }
+  }
   main aside div.sep.light {
     display: inline-block;
-    }
+  }
+    .tag-group h3 {
+      font-size: 20px;
+  }
+  .tag-group ul {
+    font-size: 14px;
+  }
+  .archive-page li {
+    padding-left: 30%;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -1262,5 +1332,14 @@ main aside div.light.sep {
     text-align: center;
     width: auto;
     float: none;
+  }
+  .tag-group h3 {
+    font-size: 18px;
+  }
+  .tag-group ul {
+    font-size: 12px;
+  }
+  .archive-page li {
+    padding-left: 25%;
   }
 }

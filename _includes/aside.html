@@ -32,7 +32,7 @@
     
     <!-- ==== Tag cloud ==== -->
     <section class="tag-cloud">
-        <p><a href="{{ '/tags/' | prepend: site.baseurl }}">TAG CLOUD</a></p>
+        <p><a href="{{ '/blog/tags/' | prepend: site.baseurl }}">TAG CLOUD</a></p>
         
 	<div>
 	    {% assign first = site.tags %}
@@ -63,10 +63,19 @@
 		{% else %}
 		    {% assign color = 8 | minus base %}
 		{% endif %}
-		<a class="tag" href="{{ site.JB.tags_path }}#{{ tag[0] }}-ref" style="font-size: {{ size }}px; color: #{{ color }}{{ color }}{{ color }};">{{ tag[0] }}</a>
+		<a class="tag" href="{{ '/blog/tags/' | prepend: site.baseurl }}#{{ tag[0] }}" style="font-size: {{ size }}px; color: #{{ color }}{{ color }}{{ color }};">{{ tag[0] }}</a>
 	    {% endfor %}
 	</div>
     </section>
+
+
+    <!-- ==== Archive ==== -->
+    <section class="archive">
+        <p><a href="{{ '/blog/archives/' | prepend: site.baseurl }}">ARCHIVE</a></p>
+
+	<div>
+	    <p><a href="{{ '/blog/archives/' | prepend: site.baseurl }}">visit archives</a></p>
+	</div>
 
 
 
