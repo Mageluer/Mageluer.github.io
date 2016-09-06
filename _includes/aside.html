@@ -74,14 +74,20 @@
         <p><a href="{{ '/blog/archives/' | prepend: site.baseurl }}">ARCHIVE</a></p>
 
 	<div>
-	    <p><a href="{{ '/blog/archives/' | prepend: site.baseurl }}">visit archives</a></p>
+	    <ul>
+	        {% for post in site.posts limit: 7 %}
+	        <li>{{ post.date | date: "%Y%m%d" }}  <a href="{{ post.url }}">{{ post.title }}</a></li>
+		{% endfor %}
+            </ul>
+	    <p><a href="{{ "/blog/archives/" | prepend: site.baseurl }}">Read more about archives...</a></p>
 	</div>
+    </section>
 
 
 
     <!-- ==== Blogroll ==== -->
     <section class="blogroll">
-        <p>FRIENDS</p>
+        <p><a href="">FRIENDS</a></p>
 	<ul>
 	    {% for friend_hash in site.data.friends %}
 	    {% assign friend = friend_hash[1] %}

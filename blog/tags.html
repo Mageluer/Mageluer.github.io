@@ -11,7 +11,7 @@ permanlink: /blog/tags/
    {% for tag in site.tags %}
    <div class="tag-group">
        {% capture tag_name %}{{ tag | first }}{% endcapture %}
-       <h3 id="{{ tag_name }}">{{ tag_name }}</h3>
+       <h2 id="{{ tag_name }}">{{ tag_name }}</h3>
        <ul>
            {% for post in site.tags[tag_name] %}
 	   <li>

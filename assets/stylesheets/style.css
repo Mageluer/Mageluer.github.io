@@ -1136,7 +1136,7 @@ aside .tag-cloud .tag {
   float: none;
   max-width: 760px;
   margin: 21px auto;
-  padding: 0 21%;
+  padding: 0 auto;
   text-align: center;
 }
 .tag-group {
@@ -1146,17 +1146,18 @@ aside .tag-cloud .tag {
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
 }
-.tag-group h3 {
-  margin: 21px auto 10px auto;
-  text-align: center;
-  font-size: 28px;
-  text-align: center;
+.tag-group h2 {
+  margin: 10px auto 3px;
+  text-align: left;
+  padding-left: 38%;
 }
 .tag-group ul {
-  margin: 0 auto 21px;
-  text-align: center;
-  font-size: 18px;
-  list-style: none none inside;
+  margin: 0 auto;
+}
+.tag-group li {
+  text-align: left;
+  padding-left: 38%;
+  list-style: circle inside;
 }
 /*------------------------------------------------------------------------*-
   11.  Archives
@@ -1292,6 +1293,11 @@ main aside div.light.sep {
   }
   main aside div.sep.light {
     display: inline-block;
+  }
+  main aside section li {
+    text-align: left;
+    padding-left: 25%;
+    list-style: inside;
   }
     .tag-group h3 {
       font-size: 20px;
