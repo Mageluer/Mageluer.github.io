@@ -1159,8 +1159,41 @@ aside .tag-cloud .tag {
   padding-left: 38%;
   list-style: circle inside;
 }
+
 /*------------------------------------------------------------------------*-
-  11.  Archives
+  11.  Categories
+/*------------------------------------------------------------------------*/
+.cat-page {
+  float: none;
+  max-width: 760px;
+  margin: 21px auto;
+  padding: 0 auto;
+  text-align: center;
+}
+.cat-group {
+  line-height: 180%;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+.cat-group h2 {
+  margin: 10px auto 3px;
+  text-align: left;
+  padding-left: 38%;
+}
+.cat-group ul {
+  margin: 0 auto;
+}
+.cat-group li {
+  text-align: left;
+  padding-left: 38%;
+  list-style: square inside;
+}
+
+
+/*------------------------------------------------------------------------*-
+  12.  Archives
 /*------------------------------------------------------------------------*/
 .archive-page {
   float: none;
@@ -1193,7 +1226,7 @@ aside .tag-cloud .tag {
 
 
 /*------------------------------------------------------------------------*-
-  12.  Media Queries & Responsiveness
+  13.  Media Queries & Responsiveness
 /*------------------------------------------------------------------------*/
 
 @media screen and (max-width: 770px) {
@@ -1253,10 +1286,12 @@ aside .tag-cloud .tag {
   .tabs li a {
     padding: 5px 0.63em 2px;
   }
-  .tag-group h3 {
+  .tag-group h3,
+  .cat-group h3 {
     font-size: 24px;
   }
-  .tag-group ul {
+  .tag-group ul,
+  .cat-group ul {
     font-size: 16px;
   }
 }
@@ -1299,10 +1334,12 @@ main aside div.light.sep {
     padding-left: 25%;
     list-style: inside;
   }
-    .tag-group h3 {
+    .tag-group h3,
+    .cat-group h3 {
       font-size: 20px;
   }
-  .tag-group ul {
+  .tag-group ul,
+  .cat-group ul{
     font-size: 14px;
   }
   .archive-page li {
@@ -1339,10 +1376,12 @@ main aside div.light.sep {
     width: auto;
     float: none;
   }
-  .tag-group h3 {
+  .tag-group h3,
+  .cat-group h3 {
     font-size: 18px;
   }
-  .tag-group ul {
+  .tag-group ul 
+  .cat-group ul {
     font-size: 12px;
   }
   .archive-page li {

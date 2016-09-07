@@ -69,6 +69,23 @@
     </section>
 
 
+
+    <!-- ==== Categories ==== -->
+    <section class="categories">
+        <p><a href="{{ '/blog/categories/' | prepend: site.baseurl }}">CATEGORIES</a></p>
+
+	<div>
+	    <ul>
+	        {% for cat in site.categories %}
+	        <li><a href="{{ '/blog/categories/' | prepend: site.baseurl }}#{{ cat[0] }}">{{ cat[0] }}({{ cat | last | size }})</a></li>
+		{% endfor %}
+            </ul>
+	</div>
+    </section>
+
+
+
+
     <!-- ==== Archive ==== -->
     <section class="archive">
         <p><a href="{{ '/blog/archives/' | prepend: site.baseurl }}">ARCHIVE</a></p>
