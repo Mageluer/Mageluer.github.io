@@ -379,7 +379,7 @@ textarea {
   font-size: 12px;
   font-style: italic;
   line-height: 20px;
-  text-align: center;
+  text-align: left;
 }
 input[type="submit"] {
   text-decoration: underline;
@@ -1627,6 +1627,10 @@ aside .tag-cloud .tag {
 .markdown-body ol ul {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.markdown-body li {
+  margin-left: 0;
 }
 
 .markdown-body li>p {
