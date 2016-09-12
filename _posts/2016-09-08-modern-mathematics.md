@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 近代数学(1)
-categories: 数学
-tags: [数学,集合论,拓扑]
+title: Lecture Notes on Modern Mathematics
+categories: Mathematics
+tags: [Set theory ,Topology]
 ---
 
 薛江维：数院303，email: xue\_j@whu.edu.cn

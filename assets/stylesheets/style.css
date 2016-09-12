@@ -1119,6 +1119,9 @@ aside .tag-cloud .tag {
   max-width: 760px;
   margin: 0 auto;
 }
+.post-content.markdown-body h3 {
+  margin-left: 0;
+}
 .post-recent {
   text-align: center;
 }
