@@ -18,7 +18,7 @@ zhihu_username: 空肠得酒
 
 
 # Build settings
-highlighter: rouge
+highlighter: pygments
 permalink: /blog/:title
 paginate: 10
 paginate_path: "/blog/page:num"

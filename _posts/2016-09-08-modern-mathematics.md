@@ -25,20 +25,23 @@ tags: [Set theory ,Topology]
 	1. $$\vert A \vert = \vert b \vert$$，当且仅当存在双射$$f: A \leftrightarrow B$$
 	2. 称$$\vert A \vert \leqslant \vert B \vert$$，若存在单射$$f: A \rightarrow B$$
 	3. 若$$\vert A \vert \leqslant \vert B \vert$$且$$\vert B \vert \leqslant \vert A \vert$$，则$$\vert A \vert = \vert B \vert$$
+
 4. 定义：满足如下条件之一的集合称为可数集
-	1. 如果$$\vert A \vert < \infty$$
-	2. 存在$$f: \mathbb{N} \leftrightarrow A$$（无穷可数）
+    1. 如果$$\vert A \vert < \infty$$
+    2. 存在$$f: \mathbb{N} \leftrightarrow A$$（无穷可数）
 
-	基本性质：
-	1. 可数集的子集一定可数
-	2. 可数个可数集的并集一定可数
-	3. 有限个可数集的直积可数
+    基本性质：
 
-        若$$\underset{ 1 \leqslant i \leqslant n }{S_i}$$可数，则$$S_1\times S_2 \times S_3 \times \dots \times S_n$$可数
+    1. 可数集的子集一定可数
+    2. 可数个可数集的并集一定可数
+    3. 有限个可数集的直积可数
+
+    若 $$\underset{ 1 \leqslant i \leqslant n }{S_i}$$ 可数，则 $$S_1\times S_2 \times S_3 \times \dots \times S_n$$ 可数
         
-        证明：只要证明$$n=2$$（$$n>2$$归纳）
+    证明：只要证明$$n=2$$（$$n>2$$归纳）
 
-	e.g. $$Q=\frac{a}{b}.a,b\in \mathbb{Z},b>0,gcd(a,b)=1$$,$$Q$$为可数集
+    e.g. $$Q=\frac{a}{b}.a,b\in \mathbb{Z},b>0,gcd(a,b)=1$$,$$Q$$为可数集
+
 5. 定理：设X={0，1}为两个元素的集合，则。。。
 	证明：反证法
 6. 定理：设A为一个集合，则 ，即不存在由A到 的满射

@@ -1132,6 +1132,24 @@ aside .tag-cloud .tag {
   font-size: 1.2em;
 }
 
+.markdown-body .attention {
+  padding: 0 1em;
+  color: #777;
+  border-left: 0.25em solid #e6e61a;
+}
+
+.markdown-body .thanks {
+  padding: 0 1em;
+  color: #777;
+  border-left: 0.25em solid #22dddd;
+}
+
+.markdown-body .error {
+  padding: 0 1em;
+  color: #777;
+  border-left: 0.25em solid #ee1111;
+}
+
 
 
 .markdown-body {
@@ -1523,6 +1541,7 @@ aside .tag-cloud .tag {
 .markdown-body blockquote {
   padding: 0 1em;
   color: #777;
+  background-color: #f9f9f9;
   border-left: 0.25em solid #ddd;
 }
 
@@ -1739,7 +1758,7 @@ aside .tag-cloud .tag {
   overflow: auto;
   font-size: 85%;
   line-height: 1.45;
-  background-color: #f7f7f7;
+  background-color: #f5f5f5;
   border-radius: 3px;
 }
 
@@ -2064,10 +2083,10 @@ main aside div.light.sep {
     font-size: 36px;
   }
   .post h2 {
-    font-size: 18px;
+    font-size: 1.5em;
   }
   .post h3 {
-    font-size: 14px;
+    font-size: 1.25em;
   }
   #menu {
     display: none;
