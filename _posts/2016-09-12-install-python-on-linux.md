@@ -8,6 +8,8 @@ tags: Python
 ## Check the version
 Python runs on many operating systems such as MS-Windows, Mac OS, Mac OS X, Linux, FreeBSD, OpenBSD, Solaris, AIX, and many varieties of free UNIX like systems. The latest version of CentOS, Fedora, RHEL and Ubuntu come with **Python 2.7** out of the box. 
 
+![](https://cdn.fedoramagazine.org/wp-content/uploads/2015/11/Python_logo.png)
+
 To see which version of Python you have install, open a command terminal and run:
 
 {% highlight bash %}

@@ -7,6 +7,8 @@ tags: Linux
 
 Linux这个如雷贯耳,与 Windows,Mac OS 三足鼎立的操作系统,在很多人的心中是程序员才用的东西,但是现代绝大多数的科学计算任务,都是在 Linux 平台上进行的,比如在计算化学中,经典的 Gaussian 程序只在 Linux 上支持多线程,在计算物理中其作用更是不言而喻。
 
+![Linux distributions](http://linuxmentors.com/wp-content/uploads/2015/10/linux_distros.png)
+
 ## 跨出认识 Linux 的第一步
 认识一个东西,不必急于搞清其本质,首要的是先接触,熟悉其外貌。那么认识 Linux 的第一步就是学会安装 Linux 。
 
@@ -26,9 +28,11 @@ Linux这个如雷贯耳,与 Windows,Mac OS 三足鼎立的操作系统,在很多
 
 选择了 U 盘引导之后,就会出现一个安装还是试用的选项(`Install` 和 `Try`),我们选`Install`,然后做最最重要的一步就是把系统安装到您之前腾出来的那个新卷里面,如果腾地方的时候用的是最后一个分区,那么新卷就在这个分区之后,也就是整个区中的最后一个区!可以选择让 Fedora 自动配置这个新卷,相信安装界面中的英文对大家而言都不在话下,之后按照提示填写一些必要的信息,等待再等待,就等着迎接 triumph 啦~
 
+![](https://fossbytes.com/wp-content/uploads/2016/05/fedora-24-beta-download.jpg)
+
 > 再提醒一次!**必须把 Linux 装在新分出的卷上**,不然,惨痛的后果一定会让你难忘终身!这里给出一个判断方法,如果压缩时用的是 `D` 盘,那么新卷就是`/dev/hda6`,压缩时用的是 `E` 盘,那么新卷就是`/dev/hda7`,以此类推!
 {: .attention}
 
-### Thanks
+### Acknowledgement
 > 感谢 [Mulliken](https://mulliken.github.io) 的帮助,完成文章大部分内容。
 {: .thanks}

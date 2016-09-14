@@ -95,8 +95,8 @@
 	        {% for post in site.posts limit: 7 %}
 	        <li>{{ post.date | date: "%Y%m%d" }}  <a href="{{ post.url }}">{{ post.title }}</a></li>
 		{% endfor %}
+	        <li><a href="{{ "/blog/archives/" | prepend: site.baseurl }}">View the full archive...</a></li>
             </ul>
-	    <p><a href="{{ "/blog/archives/" | prepend: site.baseurl }}">Read more about archives...</a></p>
 	</div>
     </section>
 
