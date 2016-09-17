@@ -109,8 +109,8 @@
 	    {% for friend_hash in site.data.friends %}
 	    {% assign friend = friend_hash[1] %}
             <li class="friend">
-	        <a href="{{ friend.site }}">
-		    {{ friend.name }}
+	        <a href="{{ friend.site }}" title="{{ friend.title }}">
+                    <img class="friend-avatar" src="{{ friend.avatar }}" alt="avatar" title="{{ friend.title }}"><span class="friend-name">{{ friend.name }}</span>
 		</a>
             </li>
 	    {% endfor %}

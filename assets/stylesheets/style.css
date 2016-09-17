@@ -1111,6 +1111,40 @@ aside .tag-cloud .tag {
   text-decoration: none;
   margin-right: .5em;
 }
+aside .blogroll .friend {
+  vertical-align: top;
+  margin-bottom: .5em;
+}
+aside .blogroll .friend-avatar {
+  display: inline-block;
+  overflow: hidden;
+  line-height: 1;
+  vertical-align: middle;
+  margin: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 3px;
+  filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: gray;
+  -webkit-filter: grayscale(1);
+}
+aside .blogroll .friend-avatar:hover {
+  -moz-filter: none;
+  -ms-filter: none;
+  -o-filter: none;
+  filter: none;
+  -webkit-filter: none;
+}
+aside .blogroll .friend-name {
+  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  display: inline-block;
+  margin-left: .5em;
+  padding-bottom: 0;
+}
 
 /*------------------------------------------------------------------------*-
   9. Post
