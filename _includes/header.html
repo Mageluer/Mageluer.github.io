@@ -9,7 +9,7 @@
 	</div>
 
 	<!-- ==== Menu ==== -->
-	<nav role="navigation">
+	<nav role="navigation" id="menu-list-desktop">
 	    <ol id="menu">
 		<li class="menu-item"><a href="{{ "/" | prepend: site.baseurl }}">Home</a></li>
 		<li class="menu-item"><a href="{{ "/blog" | prepend: site.baseurl }}">Blog</a></li>
@@ -19,33 +19,56 @@
 	</nav>
 
 	<!-- ==== Menu-list-mobile ==== -->
-	<select id="menu-list-mobile" onchange="menu_click(this)">
-	    <option value="#">NAVIGATE...</option>
-	    <option value="{{ "/" | prepend: site.baseurl }}">Home</option>
-	    <option value="{{ "/blog" | prepend: site.baseurl }}">Blog</option>
-	    <option value="http://music.163.com/#/user/home?id=74939826">Music</option>
-	    <option value="{{ "/about" | prepend: site.baseurl }}">About</option>
-	    <option value="{{ "/contact" | prepend: site.baseurl }}">Contact</option>
-        </select>
+	<nav role="navigation" id="menu-list-mobile">
+            {% if page.layout == 'post' %}
+            <ul class="blog-left-menu">
+                <li>
+                    <a href="#0"><span class="icon-play3"></span></a>
+                </li>
+            </ul>
+            {% endif %}
+            <a href="{{ "/" | prepend: site.baseurl }}" class="home-menu"><span class="icon-home3"></span></a>
+            <ul class="navigator-menu">
+                <li>
+                    <a href="#0">
+                        <div class="hamburger hamburger--emphatic">
+                            <div class="hamburger-box">
+                                <div class="hamburger-inner"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="dropdown-navbar">
+	                <ul class="dropdown-nav">
+                            <li><a href="{{ "/blog" | prepend: site.baseurl }}">Blog</a></li>
+                            <li><a href="http://music.163.com/#/user/home?id=74939826">Music</a></li>
+                            <li><a href="{{ "/about" | prepend: site.baseurl }}">About Me</a></li>
+                            <li><a href="{{ "/contact" | prepend: site.baseurl }}">Contact Me</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+    
+        </nav>
 
 	<div class="light sep"></div>
 																					
 	<!-- ==== Script for mobile menu ==== -->
-	<script>
-	    function menu_click(obj){
-                var num=0;
-		for(var i = 1; i < obj.options.length; i++){
-		    if(obj.options[i].selected == true){
-		        num++;
-		    }
-		}
-		if(num == 1){
-		    var url = obj.options[obj.selectedIndex].value;
-		    window.location.href=url;
-		}
-            }
-	</script>
+        <script>
+        var forEach=function(t,o,r){if("[object Object]"===Object.prototype.toString.call(t))for(var c in t)Object.prototype.hasOwnProperty.call(t,c)&&o.call(r,t[c],c,t);else for(var e=0,l=t.length;l>e;e++)o.call(r,t[e],e,t)};
 
+        var hamburgers = document.querySelectorAll(".hamburger");
+        if (hamburgers.length > 0) {
+            forEach(hamburgers, function(hamburger) {
+                hamburger.addEventListener("click", function() {
+                    var dropdown = document.querySelector(".dropdown-navbar");
+                    var display = dropdown.style.getPropertyValue("display");
+                    this.classList.toggle("is-active");
+                    display = display == "block" ? "none" : "block";
+                    dropdown.style.display = display;
+                }, false);
+            });
+        }
+        </script>
 
 
 </header>
