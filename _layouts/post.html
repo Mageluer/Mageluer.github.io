@@ -26,8 +26,33 @@ layout: default
 
             {% include share.html %}
 	    {% include comment.html %}
-
-
+            
+            <div class="go-to-top">
+                <span class="icon-arrow-up2"></span>
+            </div>
+            
+            <!-- ==== Javasript for go-to-top icon ==== -->
+            <script>
+            var gotop = document.querySelector(".go-to-top");
+            gotop.addEventListener("click", function(){
+                window.scrollTo(0,0);
+            }, false );
+            window.onscroll = function(){
+		var display = gotop.style.display;
+                var top = document.documentElement.scrollTop||document.body.scrollTop;
+                var height = document.documentElement.clientHeight;
+		if(top > height*1.5 ){
+		    if(display !== "block"){
+			gotop.style.display = "block";
+		    }
+		    }else{
+		        if(display !== "none"){
+			    gotop.style.display = "none";
+			}
+		    }
+	    };
+            </script>
+   
 	</main>
         
        
