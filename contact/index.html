@@ -1,7 +1,41 @@
 ---
 layout: page
+title: Contact Me
 ---
 
-<h1>CONTACT ME</h1>
+<h1>{{ page.title }}</h1>
 
-<p>if you call me first, i will be crazy.</p>
+<h2>...if you want</h2>
+
+<br>
+
+<div class="contact-info">
+
+    <h4 class="sep under"><strong>Contact Form</strong></h4>
+
+    <!-- ==== BEGIN contact form ==== -->
+    <form action="http://mageluer.github.io/contact/" method="post" id="contact">
+        
+        <fieldset>
+          
+           <p class="name">
+               <input type="text" name="title" value="Your Name">
+           </p>
+           <p class="mail">
+               <input type="text" name="mail" value="Your e-mail">
+           </p>
+           <p class="msg">
+               <label class="textarea">
+               <textarea name="msg" rows="5" cols="40">Message</textarea>
+               </label>
+           </p>
+           <br>
+           <p class="send">
+               <input type="submit" name="send" value="Send">
+           </p>
+        </fieldset>
+    
+    </form>     
+    <!-- END contact form -->
+</div>
+  
