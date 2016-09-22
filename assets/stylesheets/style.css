@@ -2018,13 +2018,39 @@ aside .blogroll .friend-name {
 
 
 
-
-
-
+/*------------------------------------------------------------------------*-
+  13.  Music
+/*------------------------------------------------------------------------*/
+.cloud-music p {
+  max-width: 760px;
+  font-size: 12px;
+}
+.cloud-music img.avatar {
+  max-width: 879px;
+  max-height: 313px;
+  max-width: 100%;
+}
+.cloud-music a {
+  font-size: 12px;
+  font-style: normal;
+  text-decoration: none;
+}
+.cloud-music .song-list {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.cloud-music-logo {
+  opacity: 0.7;
+  width: 18px;
+  display: inline-block;
+}
+.cloud-music-logo:hover {
+  opacity: 1;
+}
 
 
 /*------------------------------------------------------------------------*-
-  13.  Media Queries & Responsiveness
+  14.  Media Queries & Responsiveness
 /*------------------------------------------------------------------------*/
 
 @media screen and (max-width: 770px) {
