@@ -10,6 +10,13 @@ title: music
 <div class="cloud-music">
     <p>
         <img class="avatar aligncenter size-full wp-image-54" src="http://www.floydianslip.com/images/slideshow/photo3.jpg" alt="avatar">
+        <!-- ==== Javasript for music cover ==== -->
+        <script>
+            var num = Math.ceil(Math.random() * 6).toString();
+            var coversrc = "/assets/images/music_cover" + num + ".jpg";
+            var coverimg = document.querySelector(".cloud-music img.avatar");
+            coverimg.setAttribute("src", coversrc);
+        </script>
     </p>
         <a href="http://music.163.com/#/user/home?id=74939826">
             Let's enjoy Cloud Music together
