@@ -53,18 +53,20 @@ You can indicate emphasis with bold, italic, or strikethrough text.
 
 #### Quoting text
 You can quote text with a `>`.
+
 ```
 In the words of Abraham Lincoln:
-
 > Pardon my French
 ```
 ![Rendered quoted text](https://help.github.com/assets/images/help/writing/quoted-text-rendered.png)
 
 #### Quoting code
 You can call out code or a command within a sentence with single backticks. The text within the backticks will not be formatted.
+
 ```
 Use `git status` to list all new or modified files that haven't yet been committed.
 ```
+
 ![Rendered inline code block](https://help.github.com/assets/images/help/writing/inline-code-rendered.png)
 
 To format code or text into its own distinct block, use triple backticks.
@@ -83,29 +85,36 @@ For more information, see "[Creating and highlighting code blocks](https://help.
 
 #### Links
 You can create an inline link by wrapping link text in brackets `[ ]`, and then wrapping the URL in parentheses `( )`. You can also use the keyboard shortcut `command + k` to create a link.
+
 ```
 This site was built using [GitHub Pages](https://pages.github.com/).
 ```
+
 ![Rendered link](https://help.github.com/assets/images/help/writing/link-rendered.png)
 
 #### Lists
 You can make a list by preceding one or more lines of text with `-` or `*`.
+
 ```
 - George Washington
 - John Adams
 - Thomas Jefferson
 ```
+
 ![Rendered unordered list](https://help.github.com/assets/images/help/writing/unordered-list-rendered.png)
 
 To order your list, precede each line with a number.
+
 ```
 1. James Madison
 2. James Monroe
 3. John Quincy Adams
 ```
+
 [Rendered ordered list](https://help.github.com/assets/images/help/writing/ordered-list-rendered.png)
 
 You can create nested lists by indenting lines by two spaces.
+
 ```
 1. Make my changes
   1. Fix bug
@@ -117,27 +126,33 @@ You can create nested lists by indenting lines by two spaces.
   * Mention all the members of my team
     * Ask for feedback
 ```
+
 ![Rendered nested list](https://help.github.com/assets/images/help/writing/nested-list-rendered.png)
 
 #### Task lists
 You can create [task lists](https://github.com/blog/1375%0A-task-lists-in-gfm-issues-pulls-comments) by prefacing list items with `[ ]`. To mark a task as complete, use `[x]`.
 
 Task lists render with checkboxes in all comments and Markdown files. Select or unselect the checkboxes to mark them as complete or incomplete.
+
 ```
 - [x] Finish my changes
 - [ ] Push my commits to GitHub
 - [ ] Open a pull request
 ```
+
 ![Rendered task list](https://help.github.com/assets/images/help/writing/task-list-rendered.png)
 
 You can reorder task lists by clicking to the left of a task's checkbox, dragging it to a new location, and dropping it. If you have multiple lists within a comment, you can reorder tasks across them. You can't add or reorder tasks in other comments.
+
 ![Reordered task list](https://help.github.com/assets/images/help/writing/task-list-reordered.gif)
 
 #### Mentioning users and teams
 You can mention a user or [team](https://help.github.com/articles/setting-up-teams/) on GitHub by typing `@` plus their username or team name to bring their attention to an issue or pull request.
+
 ```
 @github/support What do you think about these updates?
 ```
+
 ![Rendered @mention](https://help.github.com/assets/images/help/writing/mention-rendered.png)
 
 Typing an `@` symbol will bring up a list of people or teams on a project. The list filters as you type, so once you find the name of the person or team you are looking for, you can use the arrow keys to select it and hit either tab or enter to complete the name. For teams, just enter the @organization/team-name and all members of that team will get subscribed to the issue.
@@ -151,9 +166,11 @@ For more information, see "[Autolinked references and URLs](https://help.github.
 
 #### Using emoji
 You can add emoji to your writing by typing `:EMOJICODE:`.
+
 ```
 @octocat :+1: This PR looks great - it's ready to merge! :shipit:
 ```
+
 ![Rendered emoji](https://help.github.com/assets/images/help/writing/emoji-rendered.png)
 
 Typing `:` will bring up a list of suggested emoji. The list will filter as you type, so once you find the emoji you're looking for, press **Tab** or **Enter** to complete the highlighted result.
@@ -165,9 +182,11 @@ You can create a new paragraph by leaving a blank line between lines of text.
 
 #### Ignoring Markdown formatting
 You can tell GitHub to ignore (or escape) Markdown formatting by using `\` before the Markdown character.
+
 ```
 Let's rename \*our-new-project\* to \*our-old-project\*.
 ```
+
 ![Rendered escaped character](https://help.github.com/assets/images/help/writing/escaped-character-rendered.png)
 
 #### Further reading
@@ -184,12 +203,14 @@ You can build tables to organize information in comments, issues, pull requests,
 
 #### Creating a table
 You can create tables with pipes `|` and hyphens `-`. Hyphens are used to create each column's header, while pipes separate each column.
+
 ```
 | First Header  | Second Header |
 | ------------- | ------------- |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
 ```
+
 ![Rendered table](https://help.github.com/assets/images/help/writing/table-basic-rendered.png)
 
 The pipes on either end of the table are optional.
@@ -202,34 +223,41 @@ Cells can vary in width and do not need to be perfectly aligned within columns. 
 | git status | List all new or modified files |
 | git diff | Show file differences that haven't been staged |
 ```
+
 ![Rendered table with varied cell width](https://help.github.com/assets/images/help/writing/table-varied-columns-rendered.png)
 
 #### Formatting content within your table
 You can use [formatting](https://help.github.com/articles/basic-writing-and-formatting-syntax) such as links, inline code blocks, and text styling within your table:
+
 ```
 | Command | Description |
 | --- | --- |
 | `git status` | List all *new or modified* files |
 | `git diff` | Show file differences that **haven't been** staged |
 ```
+
 ![Rendered table with formatted text](https://help.github.com/assets/images/help/writing/table-inline-formatting-rendered.png)
 
 You can align text to the left, right, or center of a column by including colons : to the left, right, or on both sides of the hyphens within the header row.
+
 ```
 | Left-aligned | Center-aligned | Right-aligned |
 | :---         |     :---:      |          ---: |
 | git status   | git status     | git status    |
 | git diff     | git diff       | git diff      |
 ```
+
 ![Rendered table with left, center, and right text alignment](https://help.github.com/assets/images/help/writing/table-aligned-text-rendered.png)
 
 To include a pipe `|` as content within your cell, use a `\` before the pipe:
+
 ```
 | Name     | Character |
 | ---      | ---       |
 | Backtick | `         |
 | Pipe     | \|        |
 ```
+
 ![Rendered table with an escaped pipe](https://help.github.com/assets/images/help/writing/table-escaped-character-rendered.png)
 
 #### Further reading
@@ -240,6 +268,7 @@ Share samples of code with fenced code blocks and enabling syntax highlighting.
 
 #### Fenced code blocks
 You can create fenced code blocks by placing triple backticks ```` before and after the code block. We recommend placing a blank line before and after code blocks to make the raw formatting easier to read.
+
 ```
 	```
 	function test() {
@@ -247,12 +276,14 @@ You can create fenced code blocks by placing triple backticks ```` before and af
 	}
 	```
 ```
+
 ![Rendered fenced code block](https://help.github.com/assets/images/help/writing/fenced-code-block-rendered.png)
 
 #### Syntax highlighting
 You can add an optional language identifier to enable syntax highlighting in your fenced code block.
 
 For example, to syntax highlight Ruby code:
+
 ```
 	```ruby
 	require 'redcarpet'
@@ -260,6 +291,7 @@ For example, to syntax highlight Ruby code:
 	puts markdown.to_html
 	```
 ```
+
 ```
 ![Rendered code block with Ruby syntax highlighting](https://help.github.com/assets/images/help/writing/code-block-syntax-highlighting-rendered.png)
 
@@ -273,9 +305,11 @@ References to URLs, issues, pull requests, and commits are automatically shorten
 
 #### URLs
 GitHub automatically creates links from standard URLs.
+
 ```
 Visit https://github.com
 ```
+
 For more information on creating links, see "[Basic writing and formatting syntax](https://help.github.com/articles/basic-writing-and-formatting-syntax/#links)."
 
 #### Issues and pull requests
