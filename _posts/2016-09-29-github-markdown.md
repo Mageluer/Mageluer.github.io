@@ -329,6 +329,7 @@ References to a commit's SHA hash are automatically converted into shortened lin
 To save time and make sure you're delivering a consistent message, you can add saved replies to issue and pull request comments.
 
 Once you've [added a saved reply](https://help.github.com/articles/creating-a-saved-reply), it can be [used in both issues and pull requests](https://help.github.com/articles/creating-a-saved-reply). Saved replies are tied to your user account. Once they're created, you'll be able to use them across repositories and organizations.
+
 ### Creating a saved reply
 If you frequently add the same comment over and over, you can create a saved reply.
 
