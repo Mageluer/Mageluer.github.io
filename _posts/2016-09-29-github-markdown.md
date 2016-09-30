@@ -292,7 +292,6 @@ For example, to syntax highlight Ruby code:
 	```
 ```
 
-```
 ![Rendered code block with Ruby syntax highlighting](https://help.github.com/assets/images/help/writing/code-block-syntax-highlighting-rendered.png)
 
 We use [Linguist](https://github.com/github/linguist) to perform language detection and syntax highlighting. You can find out which keywords are valid in [the languages YAML file](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml).
@@ -335,8 +334,10 @@ If you frequently add the same comment over and over, you can create a saved rep
 
 ### Changing a saved reply
 If you have a saved reply that has an error or isn't saying exactly what you'd like, you can make it more useful by changing it.
+
 ### Deleting a saved reply
 If you find that you're no longer using a saved reply, you can delete it.
+
 ### Using saved replies
 When commenting on an issue or pull request, you can add a saved reply that you've already set up. The saved reply can be the entire comment or if you want to customize it, you can add or delete content.
 
