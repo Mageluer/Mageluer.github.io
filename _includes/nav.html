@@ -21,17 +21,20 @@ var toc = document.querySelector(".TOC");
 var mdr = document.querySelector(".markdown-body");
 var content = mdr.children;
 var blogl = document.querySelector(".blog-left-menu");
+var winwidth = window.innerWidth;
 
-if(window.innerWidth > 770){
+if(winwidth > 770){
     mdr.style.marginLeft = "325px";
 }
 window.addEventListener("resize", function() {
-    if(window.innerWidth > 770){
+    if(window.innerWidth > 770 && winwidth < 770){
         mdr.style.marginLeft = "325px";
         navl.style.display = "block";
-    }else{
+    }else if(window.innerWidth < 770 && winwidth >770){
         mdr.style.marginLeft = "0";
+        navl.style.display = "none";
     }
+    winwidth = window.innerWidth;
 }, false);
 blogl.addEventListener("click", function() {
     this.classList.toggle("is-active");
