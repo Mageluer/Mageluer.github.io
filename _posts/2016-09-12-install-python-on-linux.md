@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Install python on Linux
+nav: true
 categories: computer
 tags: Python
 ---

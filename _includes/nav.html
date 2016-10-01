@@ -1,6 +1,57 @@
 <!-- ====BEGIN nav ==== -->
-<nav>
-    
+<nav class="left-nav">
+    <div class="TOC">
+        <p class="TOC-title">table of content</p>
+    </div>
 
+    <!-- ====
+    <div class="related">
+        {% for post in site.related_posts %}
+	<a class="related-post" href="{{ post.url }}">{{ post.title }}</a>
+	{% endfor %}
+    </div>   
+    ==== --> 
 </nav>
 <!-- END nav -->
+
+<!-- ==== Javascript to generate TOC ==== -->
+<script>
+var navl = document.querySelector(".left-nav");
+var toc = document.querySelector(".TOC");
+var mdr = document.querySelector(".markdown-body");
+var content = mdr.children;
+var blogl = document.querySelector(".blog-left-menu");
+
+if(window.innerWidth > 770){
+    mdr.style.marginLeft = "325px";
+}
+window.addEventListener("resize", function() {
+    if(window.innerWidth > 770){
+        mdr.style.marginLeft = "325px";
+        navl.style.display = "block";
+    }else{
+        mdr.style.marginLeft = "0";
+        navl.style.display = "none";
+    }
+}, false);
+blogl.addEventListener("click", function() {
+    navl.style.display = navl.style.display == "block" ? "none" : "block";
+}, false);
+
+
+blogl.addEventListener("focusout", function() {
+    navl.style.display = "none";
+}, false);
+
+for (var i = 0; i < content.length; i++){
+    child = content[i];
+    if( /h[1-6]/.test( (child.tagName || "aa").toLowerCase() ) ){
+        tocchild = document.createElement("a");
+        tocchild.className = "toc-" + child.tagName.toLowerCase();
+        tocchild.href = "#" + child.id;
+	tocchild.textContent = child.textContent;
+        toc.appendChild(tocchild); 
+    }
+}
+
+</script>

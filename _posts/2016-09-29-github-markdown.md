@@ -1,5 +1,6 @@
 ---
 layout: post
+nav: true
 title: Github Markdown
 category: computer
 tags: [github, markdown]
