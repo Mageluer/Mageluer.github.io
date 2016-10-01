@@ -1933,7 +1933,7 @@ nav.left-nav {
   position: absolute;
   top: 150px;
   left: 0px;
-  background-color: #fff;
+  background-color: rgba(255,255,255,0.8);
   padding-right: 15px;
   border-right: 1px solid rgba(0,0,0,0.2);
   width: 316px;
@@ -1949,7 +1949,7 @@ p.TOC-title {
   text-decoration: none;
 }
 .TOC a:hover {
-  background-color: rgba(0,0,0,0.05);
+  background-color: rgba(0,0,0,0.1);
 }
 .TOC a.toc-h2 {
   font-size: 1.2em;
