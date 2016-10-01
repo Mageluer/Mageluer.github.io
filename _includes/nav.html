@@ -39,8 +39,10 @@ blogl.addEventListener("click", function() {
 }, false);
 
 
-blogl.addEventListener("focusout", function() {
-    navl.style.display = "none";
+navl.addEventListener("focusout", function() {
+    if(window.innerWidth < 770){
+        navl.style.display = "none";
+    }
 }, false);
 
 for (var i = 0; i < content.length; i++){
