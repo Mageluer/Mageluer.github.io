@@ -38,13 +38,6 @@ blogl.addEventListener("click", function() {
     navl.style.display = navl.style.display == "block" ? "none" : "block";
 }, false);
 
-
-navl.addEventListener("focusout", function() {
-    if(window.innerWidth < 770){
-        navl.style.display = "none";
-    }
-}, false);
-
 for (var i = 0; i < content.length; i++){
     child = content[i];
     if( /h[1-6]/.test( (child.tagName || "aa").toLowerCase() ) ){
