@@ -40,6 +40,11 @@ blogl.addEventListener("click", function() {
     this.classList.toggle("is-active");
     navl.style.display = navl.style.display == "block" ? "none" : "block";
 }, false);
+navl.addEventListener("click", function() {
+    if(winwidth < 770){
+    navl.style.display = "none";
+    }
+}, false);
 
 for (var i = 0; i < content.length; i++){
     child = content[i];
