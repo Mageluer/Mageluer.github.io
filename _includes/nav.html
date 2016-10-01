@@ -35,6 +35,7 @@ window.addEventListener("resize", function() {
     }
 }, false);
 blogl.addEventListener("click", function() {
+    this.classList.toggle("is-active");
     navl.style.display = navl.style.display == "block" ? "none" : "block";
 }, false);
 
