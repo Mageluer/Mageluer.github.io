@@ -1,5 +1,14 @@
 <!-- ====BEGIN nav ==== -->
 <nav class="left-nav">
+    <div class="blog-left-bar-wrapper">
+	<div class="blog-left-bar">
+            <div class="slim-line"></div>
+            <div class="slim-line"></div>
+            <div class="slim-line"></div>
+            <div class="slim-line"></div>
+            <div class="slim-line"></div>
+        </div>
+    </div>
     <div class="TOC">
         <p class="TOC-title">table of content</p>
     </div>
@@ -16,36 +25,13 @@
 
 <!-- ==== Javascript to generate TOC ==== -->
 <script>
-var navl = document.querySelector(".left-nav");
+var nav = document.querySelector("nav.left-nav");
 var toc = document.querySelector(".TOC");
 var mdr = document.querySelector(".markdown-body");
 var content = mdr.children;
-var blogl = document.querySelector(".blog-left-menu");
-var winwidth = window.innerWidth;
+var leftbar = document.querySelector(".blog-left-bar");
 
-if(winwidth > 770){
-    mdr.style.marginLeft = "325px";
-}
-window.addEventListener("resize", function() {
-    if(window.innerWidth > 770 && winwidth < 770){
-        mdr.style.marginLeft = "325px";
-        navl.style.display = "block";
-    }else if(window.innerWidth < 770 && winwidth >770){
-        mdr.style.marginLeft = "0";
-        navl.style.display = "none";
-    }
-    winwidth = window.innerWidth;
-}, false);
-blogl.addEventListener("click", function() {
-    this.classList.toggle("is-active");
-    navl.style.display = navl.style.display == "block" ? "none" : "block";
-}, false);
-navl.addEventListener("click", function() {
-    if(winwidth < 770){
-    navl.style.display = "none";
-    }
-}, false);
-
+toc.style.height = (new Number(document.documentElement.clientHeight * 0.7)).toString() + "px";
 for (var i = 0; i < content.length; i++){
     child = content[i];
     if( /h[1-6]/.test( (child.tagName || "aa").toLowerCase() ) ){
@@ -56,5 +42,7 @@ for (var i = 0; i < content.length; i++){
         toc.appendChild(tocchild); 
     }
 }
-
+leftbar.addEventListener("click", function(){
+    nav.style.left = nav.style.left == "-316px" ? "0" : "-316px";
+}, false);
 </script>

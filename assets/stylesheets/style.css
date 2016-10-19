@@ -1930,16 +1930,48 @@ article.post{
   display: inline-block;
 }
 nav.left-nav {
-  position: absolute;
-  top: 150px;
-  left: 0px;
+  position: fixed;
+  top: 100px;
+  left: -316px;
   background-color: rgba(255,255,255,0.8);
-  padding-right: 15px;
-  border-right: 1px solid rgba(0,0,0,0.2);
+  border: 1px solid rgba(0,0,0,0.2);
+  border-left: 0;
+  width: 316px;
+  height: 700px;
+  box-sizing: border-box;
+}
+nav.left-nav:hover {
+  left: 0px;
+}
+.blog-left-bar-wrapper {
+  position: relative;
   width: 316px;
   box-sizing: border-box;
 }
+.blog-left-bar {
+  cursor: pointer;
+  position: absolute;
+  left: 316px;
+  top: 0;
+  padding: 2px;
+  width: 24px;
+  border: 1px rgba(0,0,0,0.2) solid;
+}
+.slim-line {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #343e32;
+  border-radius: 1px;
+  margin: 4px auto 4px auto;
+}
+.TOC {
+  height: 700px;
+  overflow: auto;
+}
 p.TOC-title {
+  margin-top: 1em;
   font-size: 1.4em;
   text-decoration: underline;
 }
@@ -1949,7 +1981,7 @@ p.TOC-title {
   text-decoration: none;
 }
 .TOC a:hover {
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0,0,0,0.1)!important;
 }
 .TOC a.toc-h2 {
   font-size: 1.2em;
@@ -1979,332 +2011,307 @@ p.TOC-title {
 
 
 /*------------------------------------------------------------------------*-
-  10.  Tags
+10.  Tags
 /*------------------------------------------------------------------------*/
 .tag-page {
-  float: none;
-  max-width: 760px;
-  margin: 21px auto;
-  padding: 0 auto;
-  text-align: center;
+float: none;
+max-width: 760px;
+margin: 21px auto;
+padding: 0 auto;
+text-align: center;
 }
 .tag-group {
-  line-height: 180%;
-  -webkit-margin-before: 1em;
-  -webkit-margin-after: 1em;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
+line-height: 180%;
+-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
 }
 .tag-group h2 {
-  margin: 10px auto 3px;
-  text-align: left;
-  padding-left: 38%;
+margin: 10px auto 3px;
+text-align: left;
+padding-left: 38%;
 }
 .tag-group ul {
-  margin: 0 auto;
+margin: 0 auto;
 }
 .tag-group li {
-  text-align: left;
-  padding-left: 38%;
-  list-style: circle inside;
+text-align: left;
+padding-left: 38%;
+list-style: circle inside;
 }
 
 /*------------------------------------------------------------------------*-
-  11.  Categories
+11.  Categories
 /*------------------------------------------------------------------------*/
 .cat-page {
-  float: none;
-  max-width: 760px;
-  margin: 21px auto;
-  padding: 0 auto;
-  text-align: center;
+float: none;
+max-width: 760px;
+margin: 21px auto;
+padding: 0 auto;
+text-align: center;
 }
 .cat-group {
-  line-height: 180%;
-  -webkit-margin-before: 1em;
-  -webkit-margin-after: 1em;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
+line-height: 180%;
+-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
 }
 .cat-group h2 {
-  margin: 10px auto 3px;
-  text-align: left;
-  padding-left: 38%;
+margin: 10px auto 3px;
+text-align: left;
+padding-left: 38%;
 }
 .cat-group ul {
-  margin: 0 auto;
+margin: 0 auto;
 }
 .cat-group li {
-  text-align: left;
-  padding-left: 38%;
-  list-style: square inside;
+text-align: left;
+padding-left: 38%;
+list-style: square inside;
 }
 
 
 /*------------------------------------------------------------------------*-
-  12.  Archives
+12.  Archives
 /*------------------------------------------------------------------------*/
 .archive-page {
-  float: none;
-  max-width: 760px;
-  margin: 21px auto;
-  padding: 0 auto;
-  text-align: center;
+float: none;
+max-width: 760px;
+margin: 21px auto;
+padding: 0 auto;
+text-align: center;
 }
 .archive-page ul {
-  margin: 0 auto;
+margin: 0 auto;
 }
 .archive-page h2 {
-  margin: 10px auto 3px;
+margin: 10px auto 3px;
 }
 .archive-page h3.month {
-  margin: 0px auto 5px;
+margin: 0px auto 5px;
 }
 .archive-page li {
-  text-align: left;
-  padding-left: 38%;
-  list-style: inside disc;
+text-align: left;
+padding-left: 38%;
+list-style: inside disc;
 }
 
 
 
 
 /*------------------------------------------------------------------------*-
-  13.  Music
+13.  Music
 /*------------------------------------------------------------------------*/
 .cloud-music p {
-  max-width: 760px;
-  font-size: 12px;
+max-width: 760px;
+font-size: 12px;
 }
 .cloud-music img.avatar {
-  max-width: 879px;
-  max-height: 313px;
-  max-width: 100%;
+max-width: 879px;
+max-height: 313px;
+max-width: 100%;
 }
 .cloud-music a {
-  font-size: 12px;
-  font-style: normal;
-  text-decoration: none;
+font-size: 12px;
+font-style: normal;
+text-decoration: none;
 }
 .cloud-music .song-list {
-  font-weight: bold;
-  text-decoration: underline;
+font-weight: bold;
+text-decoration: underline;
 }
 .cloud-music-logo {
-  opacity: 0.7;
-  width: 18px;
-  display: inline-block;
+opacity: 0.7;
+width: 18px;
+display: inline-block;
 }
 .cloud-music-logo:hover {
-  opacity: 1;
+opacity: 1;
 }
 
 
 /*------------------------------------------------------------------------*-
-  14.  Media Queries & Responsiveness
+14.  Media Queries & Responsiveness
 /*------------------------------------------------------------------------*/
 
 #menu-list-mobile {
-  position: relative;
-  max-width: 1600px;
-  width: 100%;
-  margin: -30px auto -21px auto;
-  padding: 0px;
-  text-decoration: none;
-  display: none;
+position: relative;
+max-width: 1600px;
+width: 100%;
+margin: -30px auto -21px auto;
+padding: 0px;
+text-decoration: none;
+display: none;
 }
 @media screen and (max-width: 770px) {
-    .one-half,
-    .one-third,
-    .two-third,
-    .three-fourth,
-    .one-fourth,
-    .one-fifth,
-    .two-fifth,
-    .three-fifth,
-    .four-fifth,
-    .one-sixth,
-    .five-sixth {
-	    margin-right: 0;
-	    width: 100%;
-    }
-    body {
-	    padding: 0 21px;
-    }
-    h1.intro {
-	    font-size: 54px;
-    }
-    .post h1 {
-	    max-width: 100%;
-    }
-    .tabs li a {
-	    padding: 5px 0.63em 2px;
-    }
-
-}
-
-@media screen and (max-width: 770px) {
-  .one-half,
-  .one-third,
-  .two-third,
-  .three-fourth,
-  .one-fourth,
-  .one-fifth,
-  .two-fifth,
-  .three-fifth,
-  .four-fifth,
-  .one-sixth,
-  .five-sixth {
+.one-half,
+.one-third,
+.two-third,
+.three-fourth,
+.one-fourth,
+.one-fifth,
+.two-fifth,
+.three-fifth,
+.four-fifth,
+.one-sixth,
+.five-sixth {
     margin-right: 0;
     width: 100%;
-  }
-  body {
+}
+body {
     padding: 0 21px;
-  }
-  h1.intro {
+}
+h1.intro {
     font-size: 54px;
-  }
-  .post h1 {
+}
+.post h1 {
     max-width: 100%;
-  }
-  .tabs li a {
+}
+.tabs li a {
     padding: 5px 0.63em 2px;
-  }
-  .tag-group h3,
-  .cat-group h3 {
-    font-size: 24px;
-  }
-  .tag-group ul,
-  .cat-group ul {
-    font-size: 16px;
-  }
-   #menu {
-    display: none;
-  }
-  #menu-list-mobile {
-    display: inline-block;
-  }
-  nav.left-nav {
-    display: none;
-  }
+}
+
+}
+
+@media screen and (max-width: 770px) {
+.one-half,
+.one-third,
+.two-third,
+.three-fourth,
+.one-fourth,
+.one-fifth,
+.two-fifth,
+.three-fifth,
+.four-fifth,
+.one-sixth,
+.five-sixth {
+margin-right: 0;
+width: 100%;
+}
+body {
+padding: 0 21px;
+}
+h1.intro {
+font-size: 54px;
+}
+.post h1 {
+max-width: 100%;
+}
+.tabs li a {
+padding: 5px 0.63em 2px;
+}
+.tag-group h3,
+.cat-group h3 {
+font-size: 24px;
+}
+.tag-group ul,
+.cat-group ul {
+font-size: 16px;
+}
+#menu {
+display: none;
+}
+#menu-list-mobile {
+display: inline-block;
+}
 }
 
 #menu-list-mobile a {
-  text-decoration: none;
+text-decoration: none;
 }
 main aside div.light.sep {
-  display: none;
-}
-.blog-left-menu {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  float: left;
-}
-.blog-left-menu > li {
-  float: left;
-  position: relative;
-}
-.blog-left-menu > li > a {
-  display: block;
-  -moz-box-sizing: border-box;
-  height: 28px;
-  padding: 0 15px;
-  font-size: 22px;
-  margin-top: -1px;
-  border: 1px solid transparent;
-  border-bottom-width: 0;
-  text-shadow: none;
+display: none;
 }
 .home-menu {
-  font-size: 24px;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: block;
-  height: 28px;
-  padding: 0 15px;
-  float: left;
-  margin-top: -1px;
+font-size: 24px;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+display: block;
+height: 28px;
+padding: 0 15px;
+float: left;
+margin-top: -1px;
 }
 .navigator-menu {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  float: right;
+position: relative;
+margin: 0;
+padding: 0;
+list-style: none;
+float: right;
 }
 .navigator-memu > li {
-  position: relative;
-  float: left;
+position: relative;
+float: left;
 }
 .navigator-menu > li > a {
-  display: block;
-  -moz-box-sizing: border-box;
-  height: 28px;
-  padding: 0 15px;
-  font-size: 24px;
-  margin-top: -1px;
-  margin-left: -1px;
-  border: 1px solid transparent;
-  border-bottom-width: 0;
-  text-shadow: none;
-  position: relative;
+display: block;
+-moz-box-sizing: border-box;
+height: 28px;
+padding: 0 15px;
+font-size: 24px;
+margin-top: -1px;
+border: 1px solid transparent;
+border-bottom-width: 0;
+text-shadow: none;
+position: relative;
 }
 .hamburger {
-  padding: 0;
-  display: inline-block;
-  cursor: pointer;
-  vertical-align: middle;
-  transition-property: opacity, -webkit-filter;
-  transition-property: opacity, filter;
-  transition-property: opacity, filter, -webkit-filter;
-  transition-duration: 0.15s;
-  transition-timing-function: linear;
-  font: inherit;
-  color: inherit;
-  text-transform: none;
-  background-color: transparent;
-  border: 0;
-  margin: 0;
-  overflow: visible; }
-  .hamburger:hover {
-    opacity: 0.7; }
+padding: 0;
+display: inline-block;
+cursor: pointer;
+vertical-align: middle;
+transition-property: opacity, -webkit-filter;
+transition-property: opacity, filter;
+transition-property: opacity, filter, -webkit-filter;
+transition-duration: 0.15s;
+transition-timing-function: linear;
+font: inherit;
+color: inherit;
+text-transform: none;
+background-color: transparent;
+border: 0;
+margin: 0;
+overflow: visible; }
+.hamburger:hover {
+opacity: 0.7; }
 
 .hamburger-box {
-  width: 25px;
-  height: 24px;
-  display: inline-block;
-  position: relative; }
+width: 25px;
+height: 24px;
+display: inline-block;
+position: relative; }
 
 .hamburger-inner {
-  display: block;
-  top: 50%;
-  margin-top: -2px;
+display: block;
+top: 50%;
+margin-top: -2px;
 }
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-  width: 24px;
-  height: 3px;
-  background-color: #3e3432;
-  border-radius: 2px;
-  position: absolute;
-  transition-property: -webkit-transform;
-  transition-property: transform;
-  transition-property: transform, -webkit-transform;
-  transition-duration: 0.15s;
-  transition-timing-function: ease; 
+width: 24px;
+height: 3px;
+background-color: #3e3432;
+border-radius: 2px;
+position: absolute;
+transition-property: -webkit-transform;
+transition-property: transform;
+transition-property: transform, -webkit-transform;
+transition-duration: 0.15s;
+transition-timing-function: ease; 
 }
 .hamburger-inner::before, .hamburger-inner::after {
-  content: "";
-  display: block; 
+content: "";
+display: block; 
 }
 .hamburger-inner::before {
-  top: -10px; 
+top: -10px; 
 }
 .hamburger-inner::after {
-    bottom: -10px; 
+bottom: -10px; 
 }
 .hamburger--emphatic {
-  overflow: hidden; }
+overflow: hidden; }
   .hamburger--emphatic .hamburger-inner {
     transition: background-color 0.2s 0.25s ease-in; }
     .hamburger--emphatic .hamburger-inner::before {
