@@ -1990,6 +1990,9 @@ p.TOC-title {
 .TOC a:hover {
   background-color: rgba(0,0,0,0.1)!important;
 }
+.TOC a.currtoc {
+  background-color: rgba(0,0,0,0.2)!important;
+}
 .TOC a.toc-h2 {
   font-size: 1.2em;
   padding-left: 0.5em;

@@ -33,7 +33,7 @@ var leftbar = document.querySelector(".blog-left-bar");
 
 toc.style.height = (new Number(document.documentElement.clientHeight - 120)).toString() + "px";
 for (var i = 0; i < content.length; i++){
-    child = content[i];
+    var child = content[i];
     if( /h[1-6]/.test( (child.tagName || "aa").toLowerCase() ) ){
         tocchild = document.createElement("a");
         tocchild.className = "toc-" + child.tagName.toLowerCase();
@@ -58,5 +58,27 @@ document.addEventListener("click", function(e){
 	elem = elem.parentNode;
     }
     nav.style.left = "-316px";
-},false);
+}, false);
+window.addEventListener("scroll", function(){
+    var toTop = document.documentElement.scrollTop||document.body.scrollTop;
+    var currentChild = null;
+    for (i = 1, len = toc.children.length; i < len; i++){
+        if( !currentChild && (getElementTop(document.querySelector('#' + toc.children[i].href.split('#')[1])) > toTop - 7 || (toc.children[i].classList.contains("currtoc") && getElementTop(document.querySelector('#' + toc.children[i+1].href.split('#')[1])) > toTop + document.documentElement.clientHeight))){
+            currentChild = toc.children[i];
+        }
+        if(toc.children[i].classList.contains("currtoc")){
+            toc.children[i].classList.remove("currtoc");
+        }
+    }
+    currentChild.classList.add("currtoc");
+});
+function getElementTop(element){
+    var actualTop = element.offsetTop;
+    var current = element.offsetParent;
+    while (current !== null){
+        actualTop += current.offsetTop;
+        current = current.offsetParent;
+    }
+    return actualTop;
+}
 </script>
