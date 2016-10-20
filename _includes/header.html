@@ -55,8 +55,12 @@
                 hamburger.addEventListener("click", function() {
                     var dropdown = document.querySelector(".dropdown-navbar");
                     var display = dropdown.style.getPropertyValue("display");
+		    dropdown.style.width = (new Number(document.documentElement.clientWidth)).toString + 'px';
+		    dropdown.style.height = (new Number(document.documentElement.clientHeight)).toString + 'px';
                     this.classList.toggle("is-active");
                     display = display == "block" ? "none" : "block";
+		    dropdown.style.width = (new Number(document.documentElement.clientWidth - 42)).toString() + 'px';
+		    dropdown.style.height = (new Number(document.documentElement.clientHeight)).toString() + 'px';
                     dropdown.style.display = display;
                 }, false);
             });

@@ -31,7 +31,7 @@ var mdr = document.querySelector(".markdown-body");
 var content = mdr.children;
 var leftbar = document.querySelector(".blog-left-bar");
 
-toc.style.height = (new Number(document.documentElement.clientHeight * 0.7)).toString() + "px";
+toc.style.height = (new Number(document.documentElement.clientHeight - 120)).toString() + "px";
 for (var i = 0; i < content.length; i++){
     child = content[i];
     if( /h[1-6]/.test( (child.tagName || "aa").toLowerCase() ) ){
@@ -45,4 +45,18 @@ for (var i = 0; i < content.length; i++){
 leftbar.addEventListener("click", function(){
     nav.style.left = nav.style.left == "-316px" ? "0" : "-316px";
 }, false);
+toc.addEventListener("click", function(){
+    nav.style.left = "-316px";
+}, false);
+document.addEventListener("click", function(e){
+    var e = e || window.event;
+    var elem = e.target || e.srcElement;
+    while (elem) {
+        if (elem.className && elem.className == nav.className){
+            return;
+        }
+	elem = elem.parentNode;
+    }
+    nav.style.left = "-316px";
+},false);
 </script>
