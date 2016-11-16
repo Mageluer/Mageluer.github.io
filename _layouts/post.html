@@ -34,14 +34,21 @@ layout: default
             <!-- ==== Javasript for go-to-top icon ==== -->
             <script>
             var gotop = document.querySelector(".go-to-top");
-            gotop.addEventListener("click", function(){
-                window.scrollTo(0,0);
+            gotop.addEventListener("click", function(e){
+		timer = setInterval(function(){
+		    var toTop = document.documentElement.scrollTop||document.body.scrollTop;
+		    var speed = Math.ceil(toTop/5);
+		    document.documentElement.scrollTop = document.body.scrollTop = toTop - speed;
+    		    if(toTop == 0) {
+		        clearInterval(timer);
+		    }
+		}, 50)
             }, false );
             window.onscroll = function(){
 		var display = gotop.style.display;
                 var top = document.documentElement.scrollTop||document.body.scrollTop;
                 var height = document.documentElement.clientHeight;
-		if(top > height*1.5 ){
+		if(top > height*1.2 ){
 		    if(display !== "block"){
 			gotop.style.display = "block";
 		    }

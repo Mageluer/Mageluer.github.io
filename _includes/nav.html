@@ -1,5 +1,14 @@
 <!-- ====BEGIN nav ==== -->
 <nav class="left-nav">
+    <div class="blog-left-bar-wrapper">
+	<div class="blog-left-bar">
+            <div class="slim-line"></div>
+            <div class="slim-line"></div>
+            <div class="slim-line"></div>
+            <div class="slim-line"></div>
+            <div class="slim-line"></div>
+        </div>
+    </div>
     <div class="TOC">
         <p class="TOC-title">table of content</p>
     </div>
@@ -16,38 +25,15 @@
 
 <!-- ==== Javascript to generate TOC ==== -->
 <script>
-var navl = document.querySelector(".left-nav");
+var nav = document.querySelector("nav.left-nav");
 var toc = document.querySelector(".TOC");
 var mdr = document.querySelector(".markdown-body");
 var content = mdr.children;
-var blogl = document.querySelector(".blog-left-menu");
-var winwidth = window.innerWidth;
+var leftbar = document.querySelector(".blog-left-bar");
 
-if(winwidth > 770){
-    mdr.style.marginLeft = "325px";
-}
-window.addEventListener("resize", function() {
-    if(window.innerWidth > 770 && winwidth < 770){
-        mdr.style.marginLeft = "325px";
-        navl.style.display = "block";
-    }else if(window.innerWidth < 770 && winwidth >770){
-        mdr.style.marginLeft = "0";
-        navl.style.display = "none";
-    }
-    winwidth = window.innerWidth;
-}, false);
-blogl.addEventListener("click", function() {
-    this.classList.toggle("is-active");
-    navl.style.display = navl.style.display == "block" ? "none" : "block";
-}, false);
-navl.addEventListener("click", function() {
-    if(winwidth < 770){
-    navl.style.display = "none";
-    }
-}, false);
-
+toc.style.height = (new Number(document.documentElement.clientHeight - 120)).toString() + "px";
 for (var i = 0; i < content.length; i++){
-    child = content[i];
+    var child = content[i];
     if( /h[1-6]/.test( (child.tagName || "aa").toLowerCase() ) ){
         tocchild = document.createElement("a");
         tocchild.className = "toc-" + child.tagName.toLowerCase();
@@ -56,5 +42,43 @@ for (var i = 0; i < content.length; i++){
         toc.appendChild(tocchild); 
     }
 }
-
+leftbar.addEventListener("click", function(){
+    nav.style.left = nav.style.left == "-316px" ? "0" : "-316px";
+}, false);
+toc.addEventListener("click", function(){
+    nav.style.left = "-316px";
+}, false);
+document.addEventListener("click", function(e){
+    var e = e || window.event;
+    var elem = e.target || e.srcElement;
+    while (elem) {
+        if (elem.className && elem.className == nav.className){
+            return;
+        }
+	elem = elem.parentNode;
+    }
+    nav.style.left = "-316px";
+}, false);
+window.addEventListener("scroll", function(){
+    var toTop = document.documentElement.scrollTop||document.body.scrollTop;
+    var currentChild = null;
+    for (i = 1, len = toc.children.length; i < len; i++){
+        if( !currentChild && (getElementTop(document.querySelector('#' + toc.children[i].href.split('#')[1])) > toTop - 7 || (toc.children[i].classList.contains("currtoc") && getElementTop(document.querySelector('#' + toc.children[i+1].href.split('#')[1])) > toTop + document.documentElement.clientHeight))){
+            currentChild = toc.children[i];
+        }
+        if(toc.children[i].classList.contains("currtoc")){
+            toc.children[i].classList.remove("currtoc");
+        }
+    }
+    currentChild.classList.add("currtoc");
+});
+function getElementTop(element){
+    var actualTop = element.offsetTop;
+    var current = element.offsetParent;
+    while (current !== null){
+        actualTop += current.offsetTop;
+        current = current.offsetParent;
+    }
+    return actualTop;
+}
 </script>
