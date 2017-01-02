@@ -1041,9 +1041,9 @@ $$logit(p)=\log(\frac{p}{1-p})$$
 
 The logit function takes input values in the range 0 to 1 and transforms them to values over the entire real number range, which we can use to express a linear relationship between feature values and the log-odds:
 
-$$logit ( p ( y = 1| x ) ) = w_0 x_0 + w_1 x_1 + \cdots+w_m x_m = \sum w_mx_m = w^Tx$$
+$$logit ( p ( y = 1\vert x ) ) = w_0 x_0 + w_1 x_1 + \cdots+w_m x_m = \sum w_mx_m = w^Tx$$
 
-Here, $$p ( y = 1| x )$$ is the conditional probability that a particular sample belongs to class 1 given its features $$x$$.
+Here, $$p(y=1\vert x)$$ is the conditional probability that a particular sample belongs to class 1 given its features $$x$$.
 
 Now what we are actually interested in is predicting the probability that a certain sample belongs to a particular class, which is the inverse form of the *logit* function. It is also called the logistic function, sometimes simply abbreviated as *sigmoid* function due to its characteristic S-shape.
 
@@ -1082,8 +1082,8 @@ To build some intuition for the logistic regression model, we can relate it to o
 
 ![logit_activation_function](https://i.imgur.com/5lIkYAz.png)
 
-The output of the sigmoid function is then interpreted as the probability of particular sample belonging to class 1 $$\phi(z)=P(y=1|x;w)$$ , given its features $$x$$ parameterized by the weights $$w$$. For example, if we compute $$\phi(z)=0.8$$ for a particular flower sample, it means that the chance that this sample is an Iris-Versicolor flower is 80 percent. Similarly, the probability that this flower is an Iris-Setosa flower can be calculated as
-$$P ( y = 0 | x ; w ) = 1 − P ( y = 0 | x ; w ) = 0.2$$ or 20 percent. The predicted probability can then
+The output of the sigmoid function is then interpreted as the probability of particular sample belonging to class 1 $$\phi(z)=P(y=1\vert x;w)$$ , given its features $$x$$ parameterized by the weights $$w$$. For example, if we compute $$\phi(z)=0.8$$ for a particular flower sample, it means that the chance that this sample is an Iris-Versicolor flower is 80 percent. Similarly, the probability that this flower is an Iris-Setosa flower can be calculated as
+$$P ( y = 0 \vert  x ; w ) = 1 − P ( y = 0 \vert  x ; w ) = 0.2$$ or 20 percent. The predicted probability can then
 simply be converted into a binary outcome via a quantizer (unit step function):
 
 $$\hat{y}=\left\{\begin{aligned}1&\quad if\quad\phi(z)\ge0.5\\-1&\quad otherwise\end{aligned}\right.$$
@@ -1099,7 +1099,7 @@ $$J(w)=\frac{1}{2}\sum_i\left(y^{(i)}-\phi(z^{(i)})\right)^2$$
 
 We minimized this in order to learn the weights w for our Adaline classification model. To explain how we can derive the cost function for logistic regression, let's first define the likelihood $$L$$ that we want to maximize when we build a logistic regression model, assuming that the individual samples in our dataset are independent of one another. The formula is as follows:
 
-$$L(w)=P(y|x;w)=\Pi_{i=0}^n P(y^{(i)}|x^{(i)};w)=\Pi_{i=0}^n\left(\phi(z^{(i)})\right)^{y^{(i)}}\left(1-\phi(z^{(i)})\right)^{1-y^{(i)}}$$
+$$L(w)=P(y\vert x;w)=\Pi_{i=0}^n P(y^{(i)}\vert x^{(i)};w)=\Pi_{i=0}^n\left(\phi(z^{(i)})\right)^{y^{(i)}}\left(1-\phi(z^{(i)})\right)^{1-y^{(i)}}$$
 
 In practice, it is easier to maximize the (natural) log of this equation, which is called
 the log-likelihood function:
@@ -1255,7 +1255,7 @@ measure of the systematic error that is not due to randomness.
 
 One way of finding a good bias-variance tradeoff is to tune the complexity of the model via regularization. Regularization is a very useful method to handle collinearity (high correlation among features), filter out noise from data, and eventually prevent overfitting. The concept behind regularization is to introduce additional information (bias) to penalize extreme parameter weights. The most common form of regularization is the so-called **L2 regularization** (sometimes also called **L2** shrinkage or weight decay), which can be written as follows:
 
-$$\frac{\lambda}{2}||w||^2=\frac{\lambda}{2}\sum_{j=0}^m w_j^2$$
+$$\frac{\lambda}{2}\vert \vert w\vert \vert ^2=\frac{\lambda}{2}\sum_{j=0}^m w_j^2$$
 
 > Regularization is another reason why feature scaling such as
 standardization is important. For regularization to work properly,
@@ -1263,7 +1263,7 @@ we need to ensure that all our features are on comparable scales.
 
 In order to apply regularization, we just need to add the regularization term to the cost function that we defined for logistic regression to shrink the weights:
 
-$$J ( w ) = \left[\sum_{i=0}^n -y^{(i)}\log\phi(z^{(i)})-(1-y^{(i)})\log(1-\phi(z^{(i)})\right]+\frac{\lambda}{2}||w||^2$$
+$$J ( w ) = \left[\sum_{i=0}^n -y^{(i)}\log\phi(z^{(i)})-(1-y^{(i)})\log(1-\phi(z^{(i)})\right]+\frac{\lambda}{2}\vert \vert w\vert \vert ^2$$
 
 Via the regularization parameter $$\lambda$$, we can then control how well we fit the training data while keeping the weights small. By increasing the value of $$\lambda$$ , we increase the regularization strength.
 
@@ -1273,7 +1273,7 @@ $$C=\frac{1}{\lambda}$$
 
 So we can rewrite the regularized cost function of logistic regression as follows:
 
-$$J ( w ) = C\left[\sum_{i=0}^n -y^{(i)}\log\phi(z^{(i)})-(1-y^{(i)})\log(1-\phi(z^{(i)})\right]+\frac{1}{2}||w||^2$$
+$$J ( w ) = C\left[\sum_{i=0}^n -y^{(i)}\log\phi(z^{(i)})-(1-y^{(i)})\log(1-\phi(z^{(i)})\right]+\frac{1}{2}\vert \vert w\vert \vert ^2$$
 
 Consequently, decreasing the value of the inverse regularization parameter C means that we are increasing the regularization strength, which we can visualize by plotting the L2 regularization path for the two weight coefficients:
 
@@ -1331,15 +1331,15 @@ $$w^T ( x_{pos}− x_{neg} ) = 2$$
 
 We can normalize this by the length of the vector w, which is defined as follows:
 
-$$||w||=\sqrt{\sum_{j=1}^m w_j^2}$$
+$$\vert \vert w\vert \vert =\sqrt{\sum_{j=1}^m w_j^2}$$
 
 So we arrive at the following equation:
 
-$$\frac{w^T ( x_{pos}− x_{neg} )}{||w||}=\frac{2}{||w||}$$
+$$\frac{w^T ( x_{pos}− x_{neg} )}{\vert \vert w\vert \vert }=\frac{2}{\vert \vert w\vert \vert }$$
 
 The left side of the preceding equation can then be interpreted as the distance between the positive and negative hyperplane, which is the so-called margin that we want to maximize.
 
-Now the objective function of the SVM becomes the maximization of this margin by maximizing $$\frac{2}{||w||}$$ under the constraint that the samples are classified correctly, which can be written as follows:
+Now the objective function of the SVM becomes the maximization of this margin by maximizing $$\frac{2}{\vert\vert w\vert\vert}$$ under the constraint that the samples are classified correctly, which can be written as follows:
 
 $$\begin{aligned}w_0 + w_T x^{( i )}\ge1\quad &if\quad y ( i ) = 1\\w_0 + w_T x^{( i )} <- 1\quad &if\quad y ( i ) = -1\end{aligned}$$
 
@@ -1358,7 +1358,7 @@ $$\begin{aligned}w^Tx^{(i)}\ge1\quad &if\quad y^{(i)}=1-\xi^{(i)}\\w^Tx^{(i)}<1\
 
 So the new objective to be minimized (subject to the preceding constraints) becomes:
 
-$$\frac{1}{2}||w||^2+C\left(\sum_i\xi^{(i)}\right)$$
+$$\frac{1}{2}\vert \vert w\vert \vert ^2+C\left(\sum_i\xi^{(i)}\right)$$
 
 Using the variable $$C$$ , we can then control the penalty for misclassification. Large values of $$C$$ correspond to large error penalties whereas we are less strict about misclassification errors if we choose smaller values for $$C$$ . We can then we use the parameter $$C$$ to control the width of the margin and therefore tune the bias-variance trade-off as illustrated in the following figure:
 
@@ -1499,11 +1499,11 @@ $$k(x ^{( i ) },  x ^{( j )})=\phi ( x ^{( i )} )^T \phi ( x ^{( j )} )$$
 One of the most widely used kernels is the **Radial Basis Function** kernel
 (**RBF** kernel) or Gaussian kernel:
 
-$$k(x ^{( i ) },  x ^{( j )})=\exp\left(-\frac{||x ^{( i ) },  x ^{( j )}||^2}{2\sigma^2}\right)$$
+$$k(x ^{( i ) },  x ^{( j )})=\exp\left(-\frac{\vert \vert x ^{( i ) },  x ^{( j )}\vert \vert ^2}{2\sigma^2}\right)$$
 
 This is often simplified to:
 
-$$k(x ^{( i ) },  x ^{( j )})=\exp\left(-\gamma||x ^{( i ) },  x ^{( j )}||^2\right)$$
+$$k(x ^{( i ) },  x ^{( j )})=\exp\left(-\gamma\vert \vert x ^{( i ) },  x ^{( j )}\vert \vert ^2\right)$$
 
 Here, $$\gamma=\frac{1}{2\sigma^2}$$  is a free parameter that is to be optimized.
 
@@ -1664,15 +1664,15 @@ Here, $$f$$ is the feature to perform the split, $$D_p$$ and $$D_j$$ are the dat
 
 $$IG ( D_p , a ) = I ( D_p ) − \frac{N_{left}}{N_p}I ( D_{left} ) −\frac{N_{right}}{N_p}I ( D_{right} )$$
 
-Now, the three impurity measures or splitting criteria that are commonly used in binary decision trees are **Gini index ( $$I_G$$ )**, **entropy ( $$I_H$$ )**, and the **classification error  ($$I_E$$ )**. Let's start with the definition of entropy for all non-empty classes $$( p ( i | t ) \ne 0 )$$:
+Now, the three impurity measures or splitting criteria that are commonly used in binary decision trees are **Gini index ( $$I_G$$ )**, **entropy ( $$I_H$$ )**, and the **classification error  ($$I_E$$ )**. Let's start with the definition of entropy for all non-empty classes $$( p ( i \vert t ) \ne 0 )$$:
 
-$$I_H ( t ) = − \sum_{i=1}^c p ( i | t ) \log_2 p ( i | t )$$
+$$I_H ( t ) = − \sum_{i=1}^c p ( i \vert t ) \log_2 p ( i \vert t )$$
 
-Here, $$p ( i | t )$$ is the proportion of the samples that belongs to class c for a particular node $$t$$. The entropy is therefore 0 if all samples at a node belong to the same class, and the entropy is maximal if we have a uniform class distribution. For example, in a binary class setting, the entropy is 0 if $$p ( i = 1| t ) = 1$$ or $$p ( i = 0 | t ) = 0$$ . If the classes are distributed uniformly with $$p ( i = 1| t ) = 0.5$$ and $$p ( i = 0 | t ) = 0.5$$ , the entropy is 1. Therefore, we can say that the entropy criterion attempts to maximize the mutual information in the tree.
+Here, $$p ( i \vert t )$$ is the proportion of the samples that belongs to class c for a particular node $$t$$. The entropy is therefore 0 if all samples at a node belong to the same class, and the entropy is maximal if we have a uniform class distribution. For example, in a binary class setting, the entropy is 0 if $$p ( i = 1\vert t ) = 1$$ or $$p ( i = 0 \vert t ) = 0$$ . If the classes are distributed uniformly with $$p ( i = 1\vert t ) = 0.5$$ and $$p ( i = 0 \vert t ) = 0.5$$ , the entropy is 1. Therefore, we can say that the entropy criterion attempts to maximize the mutual information in the tree.
 
 Intuitively, the Gini index can be understood as a criterion to minimize the probability of misclassification:
 
-$$I_G ( t ) = \sum_{i=1}^c p ( i | t ) ( − p ( i | t ) ) = 1 − \sum_{i=1}^c p ( i | t )^2$$
+$$I_G ( t ) = \sum_{i=1}^c p ( i \vert t ) ( − p ( i \vert  t ) ) = 1 − \sum_{i=1}^c p ( i \vert  t )^2$$
 
 Similar to entropy, the Gini index is maximal if the classes are perfectly mixed, for example, in a binary class setting ( $$c = 2$$ ):
 
@@ -1682,7 +1682,7 @@ However, in practice both the Gini index and entropy typically yield very simila
 
 Another impurity measure is the classification error:
 
-$$I_E = 1 − \max \{ p ( i | t ) \}$$
+$$I_E = 1 − \max \{ p ( i \vert  t ) \}$$
 
 This is a useful criterion for pruning but not recommended for growing a decision tree, since it is less sensitive to changes in the class probabilities of the nodes.
 
@@ -1979,7 +1979,7 @@ By specifying five neighbors in the KNN model for this dataset, we obtain a rela
 
 The *right* choice of $$k$$ is crucial to find a good balance between over- and underfitting. We also have to make sure that we choose a distance metric that is appropriate for the features in the dataset. Often, a simple Euclidean distance measure is used for real-valued samples, for example, the flowers in our Iris dataset, which have features measured in centimeters. However, if we are using a Euclidean distance measure, it is also important to standardize the data so that each feature contributes equally to the distance. The '*minkowski*' distance that we used in the previous code is just a generalization of the Euclidean and Manhattan distance that can be written as follows:
 
-$$d(x^{(i)},x^{(i)})=\sqrt[p]{\sum_k\left|x^{(k)}x^{(k)}\right|^p}$$
+$$d(x^{(i)},x^{(i)})=\sqrt[p]{\sum_k\left\vert x^{(k)}x^{(k)}\right\vert ^p}$$
 
 It becomes the Euclidean distance if we set the parameter $$p=2$$ or the Manhatten distance at $$p=1$$ , respectively. Many other distance metrics are available in scikit-learn and can be provided to the metric parameter. They are listed at <http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html> .
 
