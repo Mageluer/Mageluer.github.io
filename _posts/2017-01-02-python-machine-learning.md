@@ -1,4 +1,10 @@
-# Python Machine Learning
+---
+layout: post
+nav: true
+title: Python Machine Learning
+category: computer
+tags: [Python, Machine learning]
+---
 
 ## Preface
 We live in the midst of a data deluge. According to recent estimates, 2.5 Quintilian ($10^{18}$ ) bytes of data are generated on a daily basis. This is so much data that over 90 percent of the information that we store nowadays was generated in the past decade alone. Unfortunately, most of this information cannot be used by humans. Either the data is beyond the means of standard analytical methods, or it is simply too vast for our limited minds to even comprehend.
