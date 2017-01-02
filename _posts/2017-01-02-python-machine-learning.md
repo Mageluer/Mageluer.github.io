@@ -1996,4 +1996,6 @@ We learned about many different machine algorithms that are used to tackle linea
 
 However, even more important than the choice of an appropriate learning algorithm is the available data in our training dataset. No algorithm will be able to make good predictions without informative and discriminatory features.
 
+## Reference
+1. <https://www.gitbook.com/book/ljalphabeta/python-/details>
 
