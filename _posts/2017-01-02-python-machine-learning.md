@@ -56,12 +56,14 @@ For example, let's assume that we are interested in predicting the Math SAT scor
 > The term regression was devised by Francis Galton in his article Regression Towards Mediocrity in Hereditary Stature in 1886. Galton described the biological phenomenon that the variance of height in a population does not increase over time. He observed that the height of parents is not passed on to their children but the children's height is regressing towards the population mean.
 
 The following figure illustrates the concept of *linear regression*. Given a predictor variable $$x$$ and a response variable $$y$$, we fit a straight line to this data that minimizes the distance—most commonly the average squared distance—between the sample points and the fitted line. We can now use the intercept and slope learned from this data to predict the outcome variable of new data:
+
 ![linear regression](https://i.imgur.com/IRL6zs5.png)
 
 #### 1.2.2 Solving interactive problems with reinforcement learning
 Another type of machine learning is reinforcement learning. In reinforcement learning, the goal is to develop a system (*agent*) that improves its performance based on interactions with the *environment*. Since the information about the current state of the environment typically also includes a so-called *reward* signal, we can think of reinforcement learning as a field related to *supervised* learning. However, in reinforcement learning this feedback is not the correct ground truth label or value, but a measure of how well the action was measured by a *reward* function. Through the interaction with the environment, an agent can then use reinforcement learning to learn a series of actions that maximizes this reward via an exploratory trial-and-error approach or deliberative planning.
 
 A popular example of reinforcement learning is a chess engine. Here, the agent decides upon a series of moves depending on the state of the board (the environment), and the reward can be defined as *win* or *lose* at the end of the game:
+
 ![reinforcement learning](https://i.imgur.com/enYEZeK.png)
 
 #### 1.2.3 Discovering hidden structures with unsupervised learning
@@ -71,25 +73,30 @@ In supervised learning, we know the *right answer* beforehand when we train our 
 *Clustering* is an exploratory data analysis technique that allows us to organize a pile of information into meaningful subgroups (*clusters*) without having any prior knowledge of their group memberships. Each cluster that may arise during the analysis defines a group of objects that share a certain degree of similarity but are more dissimilar to objects in other clusters, which is why clustering is also sometimes called "unsupervised classification." Clustering is a great technique for structuring information and deriving meaningful relationships among data, For example, it allows marketers to discover customer groups based on their interests in order to develop distinct marketing programs.
 
 The figure below illustrates how clustering can be applied to organizing unlabeled data into three distinct groups based on the similarity of their features $$x_1$$ and $$x_2$$ :
+
 ![clustering](https://i.imgur.com/k0NpMSA.png)
 
 ##### 1.2.3.2 Dimensionality reduction for data compression
 Another subfield of unsupervised learning is *dimensionality reduction*. Often we are working with data of high dimensionality—each observation comes with a high number of measurements—that can present a challenge for limited storage space and the computational performance of machine learning algorithms. Unsupervised dimensionality reduction is a commonly used approach in feature preprocessing to remove noise from data, which can also degrade the predictive performance of certain algorithms, and compress the data onto a smaller dimensional subspace while retaining most of the relevant information.
 
 Sometimes, dimensionality reduction can also be useful for visualizing data—for example, a high-dimensional feature set can be projected onto one-, two-, or three-dimensional feature spaces in order to visualize it via 3D- or 2D-scatterplots or histograms. The figure below shows an example where non-linear dimensionality reduction was applied to compress a 3D *Swiss Roll* onto a new 2D feature subspace:
+
 ![dimensionality reduction](https://i.imgur.com/syqztQM.png)
 
 ### 1.3 An introduction to the basic terminology and notations
 Now that we have discussed the three broad categories of machine learning—supervised, unsupervised, and reinforcement learning—let us have a look at the basic terminology that we will be using in the next sections. The following table depicts an excerpt of the *Iris* dataset, which is a classic example in the field of machine learning. The Iris dataset contains the measurements of 150 iris flowers from three different species: *Setosa*, *Versicolor*, and *Viriginica*. Here, each flower sample represents one row in our data set, and the flower measurements in centimeters are stored as columns, which we also call the features of the data-set:
+
 ![Iris](https://i.imgur.com/F9e1303.png)
 
 To keep the notation and implementation simple yet efficient, we will make use of some of the basics of *linear algebra*. In the following sections, we will use a *matrix* and *vector* notation to refer to our data. We will follow the common convention to represent each sample as separate row in a feature matrix $$X$$ , where each feature is stored as a separate column.
 
 The Iris dataset, consisting of 150 samples and 4 features, can then be written as a 150 × 4 matrix $$X\in\mathbb{R}^{150\times4}$$ :
+
 ![Iris dataset](https://i.imgur.com/a7oGhle.png)
 
 ### 1.4 A road map for building machine learning systems
 In the previous sections, we discussed the basic concepts of machine learning and the three different types of learning. In this section, we will discuss other important parts of a machine learning system accompanying the learning algorithm. The diagram below shows a typical workflow diagram for using machine learning in *predictive modeling*, which we will discuss in the following subsections:
+
 ![roadmap](https://i.imgur.com/OZr05RK.png)
 
 #### 1.4.1 Preprocessing – getting data into shape
@@ -124,6 +131,7 @@ The topics that we will cover in this section are as follows:
 
 ### 2.1 Artificial neurons – a brief glimpse into the early history of machine learning
 Before we discuss the perceptron and related algorithms in more detail, let us take a brief tour through the early beginnings of machine learning. Trying to understand how the biological brain works to design artificial intelligence, Warren McCullock and Walter Pitts published the first concept of a simplified brain cell, the so-called *McCullock-Pitts (MCP) neuron*, in 1943 (W. S. McCulloch and W. Pitts. *A Logical Calculus of the Ideas Immanent in Nervous Activity.* The bulletin of mathematical biophysics, 5(4):115–133, 1943). Neurons are interconnected nerve cells in the brain that are involved in the processing and transmitting of chemical and electrical signals, which is illustrated in the following figure:
+
 ![enter image description here](https://i.imgur.com/L6RDQ4s.png)
 
 McCullock and Pitts described such a nerve cell as a simple logic gate with binary outputs; multiple signals arrive at the dendrites, are then integrated into the cell body, and, if the accumulated signal exceeds a certain threshold, an output signal is generated that will be passed on by the axon.
@@ -131,9 +139,11 @@ McCullock and Pitts described such a nerve cell as a simple logic gate with bina
 Only a few years later, Frank Rosenblatt published the first concept of the perceptron learning rule based on the MCP neuron model (F. Rosenblatt, *The Perceptron, a *Perceiving and Recognizing Automaton*. Cornell Aeronautical Laboratory, 1957). With his perceptron rule, Rosenblatt proposed an algorithm that would automatically learn the optimal weight coefficients that are then multiplied with the input features in order to make the decision of whether a neuron fires or not. In the context of supervised learning and classification, such an algorithm could then be used to predict if a sample belonged to one class or the other.
 
 More formally, we can pose this problem as a binary classification task where we refer to our two classes as $$1$$ (positive class) and $$-1$$ (negative class) for simplicity. We can then define an *activation function* $$\phi(z)$$ that takes a linear combination of certain input values x and a corresponding weight vector $$w$$ , where $$z$$ is the so-called net input ($$z = w_1x_1 + \cdots + w_mx_m$$):
-$$$$w=\begin{bmatrix}w_1\\ \vdots\\ w_m\end{bmatrix},\qquad x=\begin{bmatrix}x_1\\ \vdots\\ x_m\end{bmatrix}$$$$
+
+$$w=\begin{bmatrix}w_1\\ \vdots\\ w_m\end{bmatrix},\qquad x=\begin{bmatrix}x_1\\ \vdots\\ x_m\end{bmatrix}$$
+
 Now, if the activation of a particular sample $$x$$ , that is, the output of $$\phi(z)$$, is greater than a defined threshold $$\theta$$ , we predict class $$1$$ and class $$-1$$, otherwise, in the perceptron algorithm, the activation function $$\phi(\cdot)$$ is a simple *unit step function*, which is sometimes also called the *Heaviside step function*:
-$$$$\phi(z)=\left\{\begin{aligned}1&\quad if \quad z\ge0\\-1&\quad otherwise\end{aligned}\right.$$$$
+$$\phi(z)=\left\{\begin{aligned}1&\quad if \quad z\ge0\\-1&\quad otherwise\end{aligned}\right.$$
 
 For simplicity, we can bring the threshold $$\theta$$ to the left side of the equation and define a weight-zero as $$w_0 = − \theta$$ and $$x_0 = 1$$, so that we write $$z$$ in a more compact form $$z =  w_0x_0 + w_1x_1 + \cdots + w_mx_m = w^Tx$$ and $$\phi(z)=\left\{\begin{aligned}1&\quad if\quad z\ge\theta\\-1&\quad otherwise\end{aligned}\right.$$.
 
@@ -148,31 +158,31 @@ The whole idea behind the MCP neuron and Rosenblatt's *thresholded* perceptron m
 
 Here, the output value is the class label predicted by the unit step function that we defined earlier, and the simultaneous update of each weight $$w_j$$in the weight vector
 $$w$$ can be more formally written as:
-$$$$w_j : = w_j + \Delta w_j$$$$
+$$w_j : = w_j + \Delta w_j$$
 The value of $$\Delta w_j$$ , which is used to update the weight $$w_j$$ , is calculated by the perceptron learning rule:
-$$$$\Delta w_j = \eta( y ^{(i)} − \hat{y}^{(i)})x_j^{(i)}$$$$
+$$\Delta w_j = \eta( y ^{(i)} − \hat{y}^{(i)})x_j^{(i)}$$
 Where $$\eta$$ is the learning rate (a constant between 0.0 and 1.0), $$y ^{(i)}$$ is the true class label of the $$i$$th training sample, and $$\hat{y}^{(i)}$$ is the predicted class label. It is important to note that all weights in the weight vector are being updated simultaneously, which means that we don't recompute the $$\hat{y}^{(i)}$$ before all of the weights $$\Delta w_j$$∆ w j were updated. Concretely, for a 2D dataset, we would write the update as follows:
-$$$$\begin{aligned}
+$$\begin{aligned}
 \Delta w_0 &= \eta( y ^{(i)} − output^{(i)}\\
 \Delta w_1 &= \eta( y ^{(i)} − output^{(i)})x_1^{(i)}\\
 \Delta w_2 &= \eta( y ^{(i)} − output^{(i)})x_2^{(i)}
-\end{aligned}$$$$
+\end{aligned}$$
 Before we implement the perceptron rule in Python, let us make a simple thought experiment to illustrate how beautifully simple this learning rule really is. In the two scenarios where the perceptron predicts the class label correctly, the weights remain unchanged:
-$$$$\begin{aligned}
+$$\begin{aligned}
 \Delta w_j &= \eta( 1^{(i)} − 1^{(i)})x_j^{(i)}=0\\
 \Delta w_j &= \eta( -1^{(i)} − -1^{(i)})x_j^{(i)}=0
-\end{aligned}$$$$
+\end{aligned}$$
 However, in the case of a wrong prediction, the weights are being pushed towards the direction of the positive or negative target class, respectively:
-$$$$\begin{aligned}
+$$\begin{aligned}
 \Delta w_j &= \eta( 1^{(i)} − -1^{(i)})x_j^{(i)}=2\eta x_j^{(i)}\\
 \Delta w_j &= \eta( -1^{(i)} − 1^{(i)})x_j^{(i)}=-2\eta x_j^{(i)}
-\end{aligned}$$$$
+\end{aligned}$$
 To get a better intuition for the multiplicative factor $$x_j$$ , let us go through another simple example, where:
-$$$$\hat{y}_j = + 1, y^{( i )} = − 1, \eta = 1$$$$
+$$\hat{y}_j = + 1, y^{( i )} = − 1, \eta = 1$$
 Let's assume that $$x_ j^{(i)} = 0.5$$, and we misclassify this sample as -1. In this case, we would increase the corresponding weight by 1 so that the activation $$x_j^{(i)} = w_j^{(i)}$$ will be more positive the next time we encounter this sample and thus will be more likely to be above the threshold of the unit step function to classify the sample as +1:
-$$$$\Delta w_j = \eta( 1^{(i)} − -1^{(i)})0.5^{(i)}=(2)0.5^{(i)}=1$$$$ 
+$$\Delta w_j = \eta( 1^{(i)} − -1^{(i)})0.5^{(i)}=(2)0.5^{(i)}=1$$ 
 The weight update is proportional to the value of $$x_j^{(i)}$$ . For example, if we have another sample $$x_ j^{(i)} = 2$$ that is incorrectly classified as -1, we'd push the decision boundary by an even larger extend to classify this sample correctly the next time:
-$$$$\Delta w_j = \eta( 1^{(i)} − -1^{(i)})2^{(i)}=(2)2^{(i)}=4$$$$
+$$\Delta w_j = \eta( 1^{(i)} − -1^{(i)})2^{(i)}=(2)2^{(i)}=4$$
 It is important to note that the convergence of the perceptron is only guaranteed if the two classes are linearly separable and the learning rate is sufficiently small. If the two classes can't be separated by a linear decision boundary, we can set a maximum  number of passes over the training dataset (*epochs*) and/or a threshold for the number of tolerated misclassifications—the perceptron would never stop updating the weights otherwise:
 ![linearly separable](https://i.imgur.com/glnwFfv.png)
 
@@ -379,21 +389,21 @@ If we compare the preceding figure to the illustration of the perceptron algorit
 #### 2.3.1 Minimizing cost functions with gradient descent
 One of the key ingredients of supervised machine learning algorithms is to define an objective function that is to be optimized during the learning process. This objective function is often a cost function that we want to minimize. In the case of Adaline, we can define the cost function J to learn the weights as the Sum of
 **Squared Errors (SSE)** between the calculated outcome and the true class label
-$$$$J(w)=\frac{1}{2}\sum_i\left(y^{(i)}-\phi(z^{(i)})\right)^2$$$$
+$$J(w)=\frac{1}{2}\sum_i\left(y^{(i)}-\phi(z^{(i)})\right)^2$$
 The term $$1/2$$ is just added for our convenience; it will make it easier to derive the gradient, as we will see in the following paragraphs. The main advantage of this continuous linear activation function is—in contrast to the unit step function—that the cost function becomes differentiable. Another nice property of this cost function is that it is convex; thus, we can use a simple, yet powerful, optimization algorithm called *gradient descent* to find the weights that minimize our cost function to classify the samples in the Iris dataset.
 
 As illustrated in the following figure, we can describe the principle behind gradient descent as *climbing down a hill* until a local or global cost minimum is reached. In each iteration, we take a step away from the gradient where the step size is determined by the value of the learning rate as well as the slope of the gradient:
 ![gradient descent](https://i.imgur.com/Rsa8I8P.png)
 
 Using gradient descent, we can now update the weights by taking a step away from the gradient $$\Delta J ( w )$$ of our cost function $$J ( w )$$ :
-$$$$w := w + \Delta w$$$$
+$$w := w + \Delta w$$
 Here, the weight change $$\Delta w$$ is defined as the negative gradient multiplied by the
 learning rate $$\eta$$ :
-$$$$\Delta w = − \eta \Delta J ( w )$$$$
+$$\Delta w = − \eta \Delta J ( w )$$
 To compute the gradient of the cost function, we need to compute the partial derivative of the cost function with respect to each weight $$w_j$$:
-$$$$\frac{\partial J}{\partial w_j}=-\sum_i\left(y^{(i)}-\phi(z^{(i)})\right)x_j^{(i)}$$$$
+$$\frac{\partial J}{\partial w_j}=-\sum_i\left(y^{(i)}-\phi(z^{(i)})\right)x_j^{(i)}$$
 so that we can write the update of weight $$w_j$$ as:
-$$$$\Delta w_j=-\eta\frac{\partial J}{\partial w_j}=\eta\sum_i\left(y^{(i)}-\phi(z^{(i)})\right)x_j^{(i)}$$$$
+$$\Delta w_j=-\eta\frac{\partial J}{\partial w_j}=\eta\sum_i\left(y^{(i)}-\phi(z^{(i)})\right)x_j^{(i)}$$
 Since we update all weights simultaneously, our Adaline learning rule becomes $$w := w + \Delta w$$.
 
 Although the Adaline learning rule looks identical to the perceptron rule, the $$\phi(z^{(i)})$$ with $$Z^{(i)}=w^Tx_i$$ is a real number and not an integer class label. Furthermore, the weight update is calculated based on all samples in the training set (instead of updating the weights incrementally after each sample), which is why this approach is also referred to as "batch" gradient descent.
@@ -509,7 +519,7 @@ Although we can see that the cost decreases when we look at the right plot, the 
 ![overshoot](https://i.imgur.com/QRtrFc0.png)
 
 Many machine learning algorithms that we will encounter throughout this book require some sort of feature scaling for optimal performance.  Gradient descent is one of the many algorithms that benefit from feature scaling. Here, we will use a feature scaling method called *standardization,* which gives our data the property of a standard normal distribution. The mean of each feature is centered at value 0 and the feature column has a standard deviation of 1. For example, to standardize the $$j$$ th feature, we simply need to subtract the sample mean $$\mu_j$$ from every training sample and divide it by its standard deviation $$\sigma_j$$ :
-$$$$x_j'=\frac{x_j-\mu_j}{\sigma_j}$$$$
+$$x_j'=\frac{x_j-\mu_j}{\sigma_j}$$
 Here $$x_j$$ is a vector consisting of the $$j$$ th feature values of all training samples $$n$$ . Standardization can easily be achieved using the NumPy methods `mean` and `std` :
 ```py
 def standardize(X):
@@ -583,9 +593,9 @@ As we can see in the preceding plots, the Adaline now converges after training o
 In the previous section, we learned how to minimize a cost function by taking a step into the opposite direction of a gradient that is calculated from the whole training set; this is why this approach is sometimes also referred to as batch gradient descent. Now imagine we have a very large dataset with millions of data points, which is not uncommon in many machine learning applications. Running batch gradient descent can be computationally quite costly in such scenarios since we need to reevaluate the whole training dataset each time we take one step towards the global minimum.
 
 A popular alternative to the batch gradient descent algorithm is stochastic gradient descent, sometimes also called iterative or on-line gradient descent. Instead of updating the weights based on the sum of the accumulated errors over all samples $$x^{(i)}$$ :
-$$$$\Delta w_j=\eta\sum_i\left(y^{(i)}-\phi(z^{(i)})\right)x_j^{(i)}$$$$
+$$\Delta w_j=\eta\sum_i\left(y^{(i)}-\phi(z^{(i)})\right)x_j^{(i)}$$
 We update the weights incrementally for each training sample:
-$$$$\eta\left(y^{(i)}-\phi(z^{(i)})\right)x_j^{(i)}$$$$
+$$\eta\left(y^{(i)}-\phi(z^{(i)})\right)x_j^{(i)}$$
 Although stochastic gradient descent can be considered as an approximation of gradient descent, it typically reaches convergence much faster because of the more frequent weight updates. Since each gradient is calculated based on a single training example, the error surface is noisier than in gradient descent, which can also have the advantage that stochastic gradient descent can escape shallow local minima more readily. To obtain accurate results via stochastic gradient descent, it is important to present it with data in a random order, which is why we want to shuffle the training set for every epoch to prevent cycles.
 
 > In stochastic gradient descent implementations, the fixed learning rate $$\eta$$ is often replaced by an adaptive learning rate that decreases over time, for example, $$\frac{c_1}{[number of iterations]+c_2}$$ where $$c_1$$ and $$c_2$$ are constants. Note that stochastic gradient descent does not reach the global minimum but an area very close to it. By using an adaptive learning rate, we can achieve further annealing to a better global minimum
@@ -945,9 +955,9 @@ Although the perceptron rule offers a nice and easygoing introduction to machine
 Logistic regression is a classification model that is very easy to implement but performs very well on linearly separable classes. It is one of the most widely used algorithms for classification in industry. Similar to the perceptron and Adaline, the logistic regression model in this section is also a linear model for binary classification that can be extended to multiclass classification via the OvR technique.
 
 To explain the idea behind logistic regression as a probabilistic model, let's first introduce the **odds ratio**, which is the odds in favor of a particular event. The odds ratio can be written as $$\frac{p}{1-p}$$ , where $$p$$ stands for the probability of the positive event. The term positive event does not necessarily mean good, but refers to the event that we want to predict, for example, the probability that a patient has a certain disease; we can think of the positive event as class label $$y = 1$$ . We can then further define the **logit** function, which is simply the logarithm of the odds ratio (log-odds):
-$$$$logit(p)=\log(\frac{p}{1-p})$$$$
+$$logit(p)=\log(\frac{p}{1-p})$$
 The logit function takes input values in the range 0 to 1 and transforms them to values over the entire real number range, which we can use to express a linear relationship between feature values and the log-odds:
-$$$$logit ( p ( y = 1| x ) ) = w_0 x_0 + w_1 x_1 + \cdots+w_m x_m = \sum w_mx_m = w^Tx$$$$
+$$logit ( p ( y = 1| x ) ) = w_0 x_0 + w_1 x_1 + \cdots+w_m x_m = \sum w_mx_m = w^Tx$$
 Here, $$p ( y = 1| x )$$ is the conditional probability that a particular sample belongs to class 1 given its features $$x$$.
 
 Now what we are actually interested in is predicting the probability that a certain sample belongs to a particular class, which is the inverse form of the *logit* function. It is also called the logistic function, sometimes simply abbreviated as *sigmoid* function due to its characteristic S-shape.
@@ -986,28 +996,28 @@ To build some intuition for the logistic regression model, we can relate it to o
 The output of the sigmoid function is then interpreted as the probability of particular sample belonging to class 1 $$\phi(z)=P(y=1|x;w)$$ , given its features $$x$$ parameterized by the weights $$w$$. For example, if we compute $$\phi(z)=0.8$$ for a particular flower sample, it means that the chance that this sample is an Iris-Versicolor flower is 80 percent. Similarly, the probability that this flower is an Iris-Setosa flower can be calculated as
 $$P ( y = 0 | x ; w ) = 1 − P ( y = 0 | x ; w ) = 0.2$$ or 20 percent. The predicted probability can then
 simply be converted into a binary outcome via a quantizer (unit step function):
-$$$$\hat{y}=\left\{\begin{aligned}1&\quad if\quad\phi(z)\ge0.5\\-1&\quad otherwise\end{aligned}\right.$$$$
+$$\hat{y}=\left\{\begin{aligned}1&\quad if\quad\phi(z)\ge0.5\\-1&\quad otherwise\end{aligned}\right.$$
 If we look at the preceding sigmoid plot, this is equivalent to the following:
-$$$$\hat{y}=\left\{\begin{aligned}1&\quad if \quad z\ge0\\-1&\quad otherwise\end{aligned}\right.$$$$
+$$\hat{y}=\left\{\begin{aligned}1&\quad if \quad z\ge0\\-1&\quad otherwise\end{aligned}\right.$$
 In fact, there are many applications where we are not only interested in the predicted class labels, but where estimating the class-membership probability is particularly useful. Logistic regression is used in weather forecasting, for example, to not only predict if it will rain on a particular day but also to report the chance of rain. Similarly, logistic regression can be used to predict the chance that a patient has a particular disease given certain symptoms, which is why logistic regression enjoys wide popularity in the field of medicine.
 
 #### 3.4.2 Learning the weights of the logistic cost function
 You learned how we could use the logistic regression model to predict probabilities and class labels. Now let's briefly talk about the parameters of the model, for example, weights w. In the previous chapter, we defined the sum-squared-error cost function:
-$$$$J(w)=\frac{1}{2}\sum_i\left(y^{(i)}-\phi(z^{(i)})\right)^2$$$$
+$$J(w)=\frac{1}{2}\sum_i\left(y^{(i)}-\phi(z^{(i)})\right)^2$$
 We minimized this in order to learn the weights w for our Adaline classification model. To explain how we can derive the cost function for logistic regression, let's first define the likelihood $$L$$ that we want to maximize when we build a logistic regression model, assuming that the individual samples in our dataset are independent of one another. The formula is as follows:
-$$$$L(w)=P(y|x;w)=\Pi_{i=0}^n P(y^{(i)}|x^{(i)};w)=\Pi_{i=0}^n\left(\phi(z^{(i)})\right)^{y^{(i)}}\left(1-\phi(z^{(i)})\right)^{1-y^{(i)}}$$$$
+$$L(w)=P(y|x;w)=\Pi_{i=0}^n P(y^{(i)}|x^{(i)};w)=\Pi_{i=0}^n\left(\phi(z^{(i)})\right)^{y^{(i)}}\left(1-\phi(z^{(i)})\right)^{1-y^{(i)}}$$
 In practice, it is easier to maximize the (natural) log of this equation, which is called
 the log-likelihood function:
-$$$$l ( w ) = \log L ( w ) = \sum_{i=0}^n y^{(i)}\log\phi(z^{(i)})+(1-y^{(i)})\log(1-\phi(z^{(i)})$$$$
+$$l ( w ) = \log L ( w ) = \sum_{i=0}^n y^{(i)}\log\phi(z^{(i)})+(1-y^{(i)})\log(1-\phi(z^{(i)})$$
 Firstly, applying the log function reduces the potential for numerical underflow, which can occur if the likelihoods are very small. Secondly, we can convert the product of factors into a summation of factors, which makes it easier to obtain the derivative of this function via the addition trick, as you may remember from calculus.
 
 Now we could use an optimization algorithm such as gradient ascent to maximize this log-likelihood function. Alternatively, let's rewrite the log-likelihood as a cost function $$J$$ that can be minimized using gradient descent as in *Section 2, Training Machine Learning Algorithms for Classification*:
-$$$$J ( w ) = \sum_{i=0}^n -y^{(i)}\log\phi(z^{(i)})-(1-y^{(i)})\log(1-\phi(z^{(i)})$$$$
+$$J ( w ) = \sum_{i=0}^n -y^{(i)}\log\phi(z^{(i)})-(1-y^{(i)})\log(1-\phi(z^{(i)})$$
 To get a better grasp on this cost function, let's take a look at the cost that we calculate for one single-sample instance:
-$$$$J ( \phi ( z ) , y; w ) = − y \log ( \phi ( z ) ) − ( 1 − y ) \log ( 1 − \phi ( z ) )$$$$
+$$J ( \phi ( z ) , y; w ) = − y \log ( \phi ( z ) ) − ( 1 − y ) \log ( 1 − \phi ( z ) )$$
 Looking at the preceding equation, we can see that the first term becomes zero if
 $$y = 0 $$, and the second term becomes zero if $$y = 1$$ , respectively:
-$$$$J ( \phi ( z ) , y; w ) = \left\{\begin{aligned}−  \log ( \phi ( z ) )\quad&if\quad y=1\\-\log ( 1 − \phi ( z ) )\quad&if\quad y=0\end{aligned}\right.$$$$
+$$J ( \phi ( z ) , y; w ) = \left\{\begin{aligned}−  \log ( \phi ( z ) )\quad&if\quad y=1\\-\log ( 1 − \phi ( z ) )\quad&if\quad y=0\end{aligned}\right.$$
 The following plot illustrates the cost for the classification of a single-sample instance
 for different values of $$\phi ( z )$$:
 ![likelihood phi](https://i.imgur.com/xpkYsFL.png)
@@ -1015,7 +1025,7 @@ We can see that the cost approaches 0 (plain blue line) if we correctly predict 
 
 #### 3.4.3 Training a logistic regression model with scikit-learn
 If we were to implement logistic regression ourselves, we could simply substitute the cost function $$J$$ in our Adaline implementation from *Section 2, Training Machine Learning Algorithms for Classification*, by the new cost function:
-$$$$J ( w ) = -\sum_{i=0}^n y^{(i)}\log\phi(z^{(i)})+(1-y^{(i)})\log(1-\phi(z^{(i)})$$$$
+$$J ( w ) = -\sum_{i=0}^n y^{(i)}\log\phi(z^{(i)})+(1-y^{(i)})\log(1-\phi(z^{(i)})$$
 This would compute the cost of classifying all training samples per epoch and we would end up with a working logistic regression model. However, since scikit-learn implements a highly optimized version of logistic regression that also supports multiclass settings off-the-shelf, we will skip the implementation and use the `sklearn.linear_model.LogisticRegression` class as well as the familiar `fit` method to train the model on the standardized flower training dataset:
 ```py
 import numpy as np
@@ -1088,18 +1098,18 @@ array([[0.000, 0.063, 0.937]])
 The preceding array tells us that the model predicts a chance of 93.7 percent that the sample belongs to the Iris-Virginica class, and a 6.3 percent chance that the sample is a Iris-Versicolor flower.
 
 We can show that the weight update in logistic regression via gradient descent is indeed equal to the equation that we used in Adaline in *Section 2, Training Machine Learning Algorithms for Classification*. Let's start by calculating the partial derivative of the log-likelihood function with respect to the $$j$$th weight:
-$$$$\frac{\partial}{\partial w_j}\phi(z)=\frac{\partial}{\partial z}\frac{1}{1+e^{-z}}=\frac{1}{(1+e^{-z})^2}e^{-z}\\=\frac{1}{1+e^{-z}}\left(1-\frac{1}{1+e^{-z}}\right)=\phi(z)(1-\phi(z))$$$$
+$$\frac{\partial}{\partial w_j}\phi(z)=\frac{\partial}{\partial z}\frac{1}{1+e^{-z}}=\frac{1}{(1+e^{-z})^2}e^{-z}\\=\frac{1}{1+e^{-z}}\left(1-\frac{1}{1+e^{-z}}\right)=\phi(z)(1-\phi(z))$$
 Now we can resubstitute $$\frac{\partial}{\partial w_j}\phi(z)=\phi(z)(1-\phi(z))$$ in our first equation to obtain the following:
-$$$$\begin{aligned}&\left(y\frac{1}{\phi(z)}-(1-y)\frac{1}{1-\phi(z)}\right)\frac{\partial}{\partial w_j}\\=&\left(y\frac{1}{\phi(z)}-(1-y)\frac{1}{1-\phi(z)}\right)\phi(z)(1-\phi(z))\frac{\partial}{\partial w_j}z\\=&\left(y(1-\phi(z))-(1-y)\phi(z)\right)x_j\\=&(y-\phi(z))x_j\end{aligned}$$$$
+$$\begin{aligned}&\left(y\frac{1}{\phi(z)}-(1-y)\frac{1}{1-\phi(z)}\right)\frac{\partial}{\partial w_j}\\=&\left(y\frac{1}{\phi(z)}-(1-y)\frac{1}{1-\phi(z)}\right)\phi(z)(1-\phi(z))\frac{\partial}{\partial w_j}z\\=&\left(y(1-\phi(z))-(1-y)\phi(z)\right)x_j\\=&(y-\phi(z))x_j\end{aligned}$$
 Remember that the goal is to find the weights that maximize the log-likelihood so that we would perform the update for each weight as follows:
-$$$$w:=w_j+\eta\sum_{i=0}^n\left(y^{(i)}-\phi(z^{(i)})\right)x^{(i)}$$$$
+$$w:=w_j+\eta\sum_{i=0}^n\left(y^{(i)}-\phi(z^{(i)})\right)x^{(i)}$$
 Since we update all weights simultaneously, we can write the general update rule as follows:
-$$$$w=w+\Delta w$$$$
+$$w=w+\Delta w$$
 We define $$\Delta w$$ as follows:
-$$$$\Delta w=\eta\nabla l(w)$$$$
+$$\Delta w=\eta\nabla l(w)$$
 Since maximizing the log-likelihood is equal to minimizing the cost function $$J$$ that we defined earlier, we can write the gradient descent update rule as follows:
-$$$$\Delta w_j=-\eta\frac{\partial J}{\partial w_j}=\eta\sum_{i=0}^n\left(y^{(i)}-\phi(z^{(i)})\right)x^{(i)}$$$$
-$$$$w:=w+\Delta w,\quad \Delta w=-\eta J(w)$$$$
+$$\Delta w_j=-\eta\frac{\partial J}{\partial w_j}=\eta\sum_{i=0}^n\left(y^{(i)}-\phi(z^{(i)})\right)x^{(i)}$$
+$$w:=w+\Delta w,\quad \Delta w=-\eta J(w)$$
 This is equal to the gradient descent rule in Adaline in *Section 2, Training Machine
 Learning Algorithms for Classification*.
 
@@ -1119,19 +1129,19 @@ the model multiple times on different training datasets; bias is the
 measure of the systematic error that is not due to randomness.
 
 One way of finding a good bias-variance tradeoff is to tune the complexity of the model via regularization. Regularization is a very useful method to handle collinearity (high correlation among features), filter out noise from data, and eventually prevent overfitting. The concept behind regularization is to introduce additional information (bias) to penalize extreme parameter weights. The most common form of regularization is the so-called **L2 regularization** (sometimes also called **L2** shrinkage or weight decay), which can be written as follows:
-$$$$\frac{\lambda}{2}||w||^2=\frac{\lambda}{2}\sum_{j=0}^m w_j^2$$$$
+$$\frac{\lambda}{2}||w||^2=\frac{\lambda}{2}\sum_{j=0}^m w_j^2$$
 > Regularization is another reason why feature scaling such as
 standardization is important. For regularization to work properly,
 we need to ensure that all our features are on comparable scales.
 
 In order to apply regularization, we just need to add the regularization term to the cost function that we defined for logistic regression to shrink the weights:
-$$$$J ( w ) = \left[\sum_{i=0}^n -y^{(i)}\log\phi(z^{(i)})-(1-y^{(i)})\log(1-\phi(z^{(i)})\right]+\frac{\lambda}{2}||w||^2$$$$
+$$J ( w ) = \left[\sum_{i=0}^n -y^{(i)}\log\phi(z^{(i)})-(1-y^{(i)})\log(1-\phi(z^{(i)})\right]+\frac{\lambda}{2}||w||^2$$
 Via the regularization parameter $$\lambda$$, we can then control how well we fit the training data while keeping the weights small. By increasing the value of $$\lambda$$ , we increase the regularization strength.
 
 The parameter C that is implemented for the LogisticRegression class in scikit-learn comes from a convention in support vector machines, which will be the topic of the next section. $$C$$ is directly related to the regularization parameter $$\lambda$$ , which is its inverse:
-$$$$C=\frac{1}{\lambda}$$$$
+$$C=\frac{1}{\lambda}$$
 So we can rewrite the regularized cost function of logistic regression as follows:
-$$$$J ( w ) = C\left[\sum_{i=0}^n -y^{(i)}\log\phi(z^{(i)})-(1-y^{(i)})\log(1-\phi(z^{(i)})\right]+\frac{1}{2}||w||^2$$$$
+$$J ( w ) = C\left[\sum_{i=0}^n -y^{(i)}\log\phi(z^{(i)})-(1-y^{(i)})\log(1-\phi(z^{(i)})\right]+\frac{1}{2}||w||^2$$
 Consequently, decreasing the value of the inverse regularization parameter C means that we are increasing the regularization strength, which we can visualize by plotting the L2 regularization path for the two weight coefficients:
 ```py
 import numpy as np
@@ -1175,19 +1185,19 @@ Another powerful and widely used learning algorithm is the **support vector mach
 
 #### 3.5.1 Maximum margin intuition
 The rationale behind having decision boundaries with large margins is that they tend to have a lower generalization error whereas models with small margins are more prone to overfitting. To get an intuition for the margin maximization, let's take a closer look at those *positive and negative* hyperplanes that are parallel to the decision boundary, which can be expressed as follows:
-$$$$\begin{aligned}w_0+w^Tx_{pos}=1\quad(1)\\w_0+w^Tx_{neg}=-1\quad(2)\end{aligned}$$$$
+$$\begin{aligned}w_0+w^Tx_{pos}=1\quad(1)\\w_0+w^Tx_{neg}=-1\quad(2)\end{aligned}$$
 If we subtract those two linear equations (1) and (2) from each other, we get:
-$$$$w^T ( x_{pos}− x_{neg} ) = 2$$$$
+$$w^T ( x_{pos}− x_{neg} ) = 2$$
 We can normalize this by the length of the vector w, which is defined as follows:
-$$$$||w||=\sqrt{\sum_{j=1}^m w_j^2}$$$$
+$$||w||=\sqrt{\sum_{j=1}^m w_j^2}$$
 So we arrive at the following equation:
-$$$$\frac{w^T ( x_{pos}− x_{neg} )}{||w||}=\frac{2}{||w||}$$$$
+$$\frac{w^T ( x_{pos}− x_{neg} )}{||w||}=\frac{2}{||w||}$$
 The left side of the preceding equation can then be interpreted as the distance between the positive and negative hyperplane, which is the so-called margin that we want to maximize.
 
 Now the objective function of the SVM becomes the maximization of this margin by maximizing $$\frac{2}{||w||}$$ under the constraint that the samples are classified correctly, which can be written as follows:
-$$$$\begin{aligned}w_0 + w_T x^{( i )}\ge1\quad &if\quad y ( i ) = 1\\w_0 + w_T x^{( i )} <- 1\quad &if\quad y ( i ) = -1\end{aligned}$$$$
+$$\begin{aligned}w_0 + w_T x^{( i )}\ge1\quad &if\quad y ( i ) = 1\\w_0 + w_T x^{( i )} <- 1\quad &if\quad y ( i ) = -1\end{aligned}$$
 These two equations basically say that all negative samples should fall on one side of the negative hyperplane, whereas all the positive samples should fall behind the positive hyperplane. This can also be written more compactly as follows:
-$$$$y^{( i )}( w_0 + w^T x ^{( i ) }\ge 1 \forall \quad i$$$$
+$$y^{( i )}( w_0 + w^T x ^{( i ) }\ge 1 \forall \quad i$$
 In practice, though, it is easier to minimize the reciprocal term $$\frac{1}{2}||w||^2$$, which can be
 In practice, though, it is easier to minimize the reciprocal term solved by quadratic programming. However, a detailed discussion about quadratic programming is beyond the scope of this book, but if you are interested, you can learn more about **Support Vector Machines (SVM)** in Vladimir Vapnik's *The Nature of Statistical Learning Theory,* Springer Science & Business Media, or Chris J.C. Burges' excellent explanation in *A Tutorial on Support Vector Machines for Pattern Recognition* (Data mining and knowledge discovery, 2(2):121–167, 1998).
 
@@ -1195,9 +1205,9 @@ In practice, though, it is easier to minimize the reciprocal term solved by quad
 Although we don't want to dive much deeper into the more involved mathematical concepts behind the margin classification, let's briefly mention the slack variable $$\xi$$ . It was introduced by Vladimir Vapnik in 1995 and led to the so-called soft-margin classification. The motivation for introducing the slack variable $$\xi$$ was that the linear constraints need to be relaxed for nonlinearly separable data to allow convergence of the optimization in the presence of misclassifications under the appropriate cost penalization.
 
 The positive-values slack variable is simply added to the linear constraints:
-$$$$\begin{aligned}w^Tx^{(i)}\ge1\quad &if\quad y^{(i)}=1-\xi^{(i)}\\w^Tx^{(i)}<1\quad &if \quad y^{(i)}=1+\xi^{(i)}\end{aligned}$$$$
+$$\begin{aligned}w^Tx^{(i)}\ge1\quad &if\quad y^{(i)}=1-\xi^{(i)}\\w^Tx^{(i)}<1\quad &if \quad y^{(i)}=1+\xi^{(i)}\end{aligned}$$
 So the new objective to be minimized (subject to the preceding constraints) becomes:
-$$$$\frac{1}{2}||w||^2+C\left(\sum_i\xi^{(i)}\right)$$$$
+$$\frac{1}{2}||w||^2+C\left(\sum_i\xi^{(i)}\right)$$
 Using the variable $$C$$ , we can then control the penalty for misclassification. Large values of $$C$$ correspond to large error penalties whereas we are less strict about misclassification errors if we choose smaller values for $$C$$ . We can then we use the parameter $$C$$ to control the width of the margin and therefore tune the bias-variance trade-off as illustrated in the following figure:
 ![slack_variable](https://i.imgur.com/Nl4z2le.png)
 
@@ -1312,7 +1322,7 @@ After executing the code, we will have an XOR dataset with random noise, as show
 Obviously, we would not be able to separate samples from the positive and negative class very well using a linear hyperplane as the decision boundary via the linear logistic regression or linear SVM model that we discussed in earlier sections.
 
 The basic idea behind kernel methods to deal with such linearly inseparable data is to create nonlinear combinations of the original features to project them onto a higher dimensional space via a mapping function $$\phi ( \cdot)$$ where it becomes linearly separable. As shown in the next figure, we can transform a two-dimensional dataset onto a new three-dimensional feature space where the classes become separable via the following projection:
-$$$$\phi ( x_1 , x_2 ) = ( z_1 , z_2 , z_3 ) = ( x _1 , x_2 , x_1^2 + x_2^2 )$$$$
+$$\phi ( x_1 , x_2 ) = ( z_1 , z_2 , z_3 ) = ( x _1 , x_2 , x_1^2 + x_2^2 )$$
 This allows us to separate the two classes shown in the plot via a linear hyperplane that becomes a nonlinear decision boundary if we project it back onto the original feature space:
 ![hyperplane](https://i.imgur.com/FDnNVUQ.png)
 
@@ -1320,12 +1330,12 @@ This allows us to separate the two classes shown in the plot via a linear hyperp
 To solve a nonlinear problem using an SVM, we transform the training data onto a higher dimensional feature space via a mapping function $$\phi ( \cdot)$$ and train a linear SVM model to classify the data in this new feature space. Then we can use the same mapping function $$\phi ( \cdot)$$ to transform new, unseen data to classify it using the linear SVM model.
 
 However, one problem with this mapping approach is that the construction of the new features is computationally very expensive, especially if we are dealing with high dimensional data. This is where the so-called kernel trick comes into play. Although we didn't go into much detail about how to solve the quadratic programming task to train an SVM, in practice all we need is to replace the dot product $$x ^{( i ) T} x ^{( j )}$$ by $$\phi ( x ^{( i )} )^T \phi ( x ^{( j )} )$$ . In order to save the expensive step of calculating this dot product between two points explicitly, we define a so-called kernel function:
-$$$$k(x ^{( i ) },  x ^{( j )})=\phi ( x ^{( i )} )^T \phi ( x ^{( j )} )$$$$
+$$k(x ^{( i ) },  x ^{( j )})=\phi ( x ^{( i )} )^T \phi ( x ^{( j )} )$$
 One of the most widely used kernels is the **Radial Basis Function** kernel
 (**RBF** kernel) or Gaussian kernel:
-$$$$k(x ^{( i ) },  x ^{( j )})=\exp\left(-\frac{||x ^{( i ) },  x ^{( j )}||^2}{2\sigma^2}\right)$$$$
+$$k(x ^{( i ) },  x ^{( j )})=\exp\left(-\frac{||x ^{( i ) },  x ^{( j )}||^2}{2\sigma^2}\right)$$
 This is often simplified to:
-$$$$k(x ^{( i ) },  x ^{( j )})=\exp\left(-\gamma||x ^{( i ) },  x ^{( j )}||^2\right)$$$$
+$$k(x ^{( i ) },  x ^{( j )})=\exp\left(-\gamma||x ^{( i ) },  x ^{( j )}||^2\right)$$
 Here, $$\gamma=\frac{1}{2\sigma^2}$$  is a free parameter that is to be optimized.
 
 Roughly speaking, the term *kernel* can be interpreted as a *similarity function* between a pair of samples. The minus sign inverts the distance measure into a similarity score and, due to the exponential term, the resulting similarity score will fall into a range between 1 (for exactly similar samples) and 0 (for very dissimilar samples).
@@ -1468,23 +1478,23 @@ Using the decision algorithm, we start at the tree root and split the data on th
 
 #### 3.7.1 Maximizing information gain – getting the most bang for the buck
 In order to split the nodes at the most informative features, we need to define an objective function that we want to optimize via the tree learning algorithm. Here, our objective function is to maximize the information gain at each split, which we define as follows:
-$$$$IG ( D_p , f ) = I ( D_p ) − \sum_{j=1}^m\frac{N_j}{N_p} I ( D_j )$$$$
+$$IG ( D_p , f ) = I ( D_p ) − \sum_{j=1}^m\frac{N_j}{N_p} I ( D_j )$$
 Here, $$f$$ is the feature to perform the split, $$D_p$$ and $$D_j$$ are the dataset of the parent and $$j$$th child node, $$I$$ is our impurity measure, $$N_p$$ is the total number of samples at the parent node, and $$N_j$$ is the number of samples in the jth child node. As we can see, the information gain is simply the difference between the impurity of the parent node and the sum of the child node impurities—the lower the impurity of the child nodes, the larger the information gain. However, for simplicity and to reduce the combinatorial search space, most libraries (including scikit-learn) implement binary decision trees. This means that each parent node is split into two child nodes, $$D_{left}$$ and $$D_{right}$$ :
-$$$$IG ( D_p , a ) = I ( D_p ) − \frac{N_{left}}{N_p}I ( D_{left} ) −\frac{N_{right}}{N_p}I ( D_{right} )$$$$
+$$IG ( D_p , a ) = I ( D_p ) − \frac{N_{left}}{N_p}I ( D_{left} ) −\frac{N_{right}}{N_p}I ( D_{right} )$$
 Now, the three impurity measures or splitting criteria that are commonly used in binary decision trees are **Gini index ( $$I_G$$ )**, **entropy ( $$I_H$$ )**, and the **classification error  ($$I_E$$ )**. Let's start with the definition of entropy for all non-empty classes $$( p ( i | t ) \ne 0 )$$:
-$$$$I_H ( t ) = − \sum_{i=1}^c p ( i | t ) \log_2 p ( i | t )$$$$
+$$I_H ( t ) = − \sum_{i=1}^c p ( i | t ) \log_2 p ( i | t )$$
 
 Here, $$p ( i | t )$$ is the proportion of the samples that belongs to class c for a particular node $$t$$. The entropy is therefore 0 if all samples at a node belong to the same class, and the entropy is maximal if we have a uniform class distribution. For example, in a binary class setting, the entropy is 0 if $$p ( i = 1| t ) = 1$$ or $$p ( i = 0 | t ) = 0$$ . If the classes are distributed uniformly with $$p ( i = 1| t ) = 0.5$$ and $$p ( i = 0 | t ) = 0.5$$ , the entropy is 1. Therefore, we can say that the entropy criterion attempts to maximize the mutual information in the tree.
 
 Intuitively, the Gini index can be understood as a criterion to minimize the probability of misclassification:
-$$$$I_G ( t ) = \sum_{i=1}^c p ( i | t ) ( − p ( i | t ) ) = 1 − \sum_{i=1}^c p ( i | t )^2$$$$
+$$I_G ( t ) = \sum_{i=1}^c p ( i | t ) ( − p ( i | t ) ) = 1 − \sum_{i=1}^c p ( i | t )^2$$
 
 Similar to entropy, the Gini index is maximal if the classes are perfectly mixed, for example, in a binary class setting ( $$c = 2$$ ):
-$$$$1-\sum_{i=1}^c 0.5^2=0.5$$$$
+$$1-\sum_{i=1}^c 0.5^2=0.5$$
 However, in practice both the Gini index and entropy typically yield very similar results and it is often not worth spending much time on evaluating trees using different impurity criteria rather than experimenting with different pruning cut-offs.
 
 Another impurity measure is the classification error:
-$$$$I_E = 1 − \max \{ p ( i | t ) \}$$$$
+$$I_E = 1 − \max \{ p ( i | t ) \}$$
 This is a useful criterion for pruning but not recommended for growing a decision tree, since it is less sensitive to changes in the class probabilities of the nodes.
 
 For a more visual comparison of the three different impurity criteria that we discussed previously, let's plot the impurity indices for the probability range $$[0, 1]$$ for class 1. Note that we will also add in a scaled version of the entropy (entropy/2) to observe that the Gini index is an intermediate measure between entropy and the classification error. The code is as follows:
@@ -1765,7 +1775,7 @@ By specifying five neighbors in the KNN model for this dataset, we obtain a rela
 ![knn](https://i.imgur.com/AZzlers.png)
 
 The *right* choice of $$k$$ is crucial to find a good balance between over- and underfitting. We also have to make sure that we choose a distance metric that is appropriate for the features in the dataset. Often, a simple Euclidean distance measure is used for real-valued samples, for example, the flowers in our Iris dataset, which have features measured in centimeters. However, if we are using a Euclidean distance measure, it is also important to standardize the data so that each feature contributes equally to the distance. The '*minkowski*' distance that we used in the previous code is just a generalization of the Euclidean and Manhattan distance that can be written as follows:
-$$$$d(x^{(i)},x^{(i)})=\sqrt[p]{\sum_k\left|x^{(k)}x^{(k)}\right|^p}$$$$
+$$d(x^{(i)},x^{(i)})=\sqrt[p]{\sum_k\left|x^{(k)}x^{(k)}\right|^p}$$
 It becomes the Euclidean distance if we set the parameter $$p=2$$ or the Manhatten distance at $$p=1$$ , respectively. Many other distance metrics are available in scikit-learn and can be provided to the metric parameter. They are listed at <http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html> .
 
 > It is important to mention that KNN is very susceptible to
