@@ -1814,7 +1814,7 @@ article.post{
   overflow: auto;
   font-size: 85%;
   line-height: 1.45;
-  background-color: #f5f5f5;
+  background-color: black; /*#f5f5f5;*/
   border-radius: 3px;
 }
 
