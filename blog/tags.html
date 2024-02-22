@@ -1,0 +1,110 @@
+---
+layout: page
+title:  Tags
+---
+<!--Tags-->
+<div class="row">
+   
+    <!--Main listing-->
+    <div class="col-lg-8 mt-1">
+        
+        <!--Section: Classic blog listing-->
+        <section class="section classic-blog-listing">
+               
+            <!--First row-->
+            <div class="row mb-2 wow fadeIn" data-wow-delay="0.4s">
+                <!--First column-->
+                <div class="col-md-12">
+                    <div class="divider-new mt-1">
+                        <h2 id="tag-cloud">Tag Cloud</h2>
+                    </div>
+                    {% capture site_tag_names %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+                    {% assign tag_name_list = site_tag_names | split:',' | sort %}
+                    {% capture site_tag_ids %}{% for tag_name in tag_name_list %}{{ tag_name | uri_escape }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+                    {% assign tag_id_list = site_tag_ids | split:',' %}
+
+                    <ul class="list-inline tag-list">
+                        {% for item in (0..site.tags.size) %}{% unless forloop.last %}{% assign tag_name = tag_name_list[item] %}
+                        <li class="list-inline-item wow {{ site.data.configs['tag'].animations | sample }}" data-wow-delay="0.4s"><a href="{{ tag_id_list[item] | prepend:'#' }}" class="btn btn-{{ site.data.configs['tag'].colors | sample }} btn-rounded"><span class="term">{{ tag_name }}</span> <span class="badge red">{{ site.tags[tag_name].size }}</span></a></li>
+                        {% endunless %}{% endfor %}
+                    </ul>
+
+                    <hr>
+                </div>
+                <!--First column-->
+            </div>
+            <!--/First row-->
+
+            <!--Second row-->
+            <div class="row mb-2 wow fadeIn" data-wow-delay="0.4s">
+                <!--First column-->
+                <div class="col-md-12">
+                    {% for item in (0..site.tags.size) %}{% unless forloop.last %}{% assign tag_name = tag_name_list[item] %}
+                    <!--Tag list-->
+                    <div class="row">
+                        <h2 id="{{ tag_id_list[item] }}" class="main-heading wow fadeIn" data-wow-delay="0.4s">
+                            <strong>{{ tag_name }}</strong>
+                            <span class="small">
+                                <a class="indigo-text" href="{{ tag_id_list[item] | prepend:'#' }}" aria-hidden="true"><i class="fa fa-paragraph" aria-hidden="true"></i></a>
+                                <a class="ml-2 lime-text" href="#tag-cloud" aria-hidden="true"><i class="fa fa-long-arrow-up" aria-hidden="true"></i></a>
+                            </span>
+                        </h2>
+
+                        {% for post in site.tags[tag_name] %}{% if post.title != null %}
+                        <div class="post-border wow fadeInLeft" data-wow-delay="0.05s">
+                        
+                            <!--First row-->
+                            <div class="row">
+
+                                <!--First column-->
+                                <div class="col-4 col-md-3 col-lg-2">
+
+                                    <!--Image-->
+                                    <div class="view overlay hm-white-slight mb-1-half">
+                                        <img src="{% if post.img %}{{ post.img | prepend:'/assets/img/posts/' | relative_url }}{% else %}{{ site.data.configs['post'].alt_post_img | relative_url }}{% endif %}" class="img-fluid" alt="post img">
+                                        <a href="{{ post.url | relative_url }}">
+                                            <div class="mask waves-effect waves-light"></div>
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <!--/First column-->
+
+                                <!--Second column-->
+                                <div class="col-8 col-md-9 col-lg-10 mb-1">
+
+                                    <!--Post data-->
+                                    <div class="mb-2-half font-thin">
+                                        <p class="text-muted float-left" ><i class="fa fa-clock-o"></i>{{ post.date | date: "%B %-d, %Y" }}</p>
+                                        <a href="{{ post.category | downcase | prepend:'/blog/category/' | relative_url }}" class="text-muted float-right" data-toggle="tooltip" data-placement="left" title="category: {{ post.category }}"><i class="fa fa-{{ site.data.configs['category'][post.category].icon }}"></i>{{ post.category }}</a>
+                                    </div>
+
+                                    <h4 class="font-thin h4-responsive cyan-text"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h4>
+
+                                </div>
+                                <!--/Second column-->
+
+                            </div>
+                            <!--/First row-->
+                        
+                        </div>
+                        {% endif %}{% endfor %}
+                    </div>
+                    <!--/Tag list-->
+                    {% endunless %}{% endfor %}
+
+                </div>
+                <!--/First column-->
+            </div>
+            <!--/Second row-->
+                           
+        </section>
+        <!--/Section: Classic blog listing-->
+        
+    </div> 
+    <!--/Main listing-->
+    
+    {% include sidebar.html %}
+
+</div>
+<!--/Tags-->

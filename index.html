@@ -1,0 +1,113 @@
+---
+layout: default
+---
+<style>
+
+    .wow {
+      visibility: hidden;
+    }
+    
+    /* TEMPLATE STYLES */
+    
+    html,
+    body,
+    header,
+    .view {
+        height: 100%;
+    }
+    /* Navigation*/
+    
+    .navbar {
+        background-color: transparent;
+    }
+    
+    .top-nav-collapse {
+        background-color: #2E2E2E;
+    }
+    
+    @media only screen and (max-width: 768px) {
+        .navbar {
+            background-color: #2E2E2E;
+        }
+    }
+    
+    .full-bg-img {
+        color: #fff;
+    }
+    
+    .view {
+        background: url("{{ site.background | relative_url }}")no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+</style>
+
+<!--Navigation & Intro-->
+<header>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-toggleable-md navbar-dark fixed-top scrolling-navbar">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand waves-effect waves-light" href="{{ '/' | relative_url }}">Mageluer</a>
+            <div class="collapse navbar-collapse" id="navbarNav1">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ '/blog' | relative_url }}">Blog <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown btn-group">
+                        <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</a>
+                        <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
+                            {% for cat in site.data.configs['category'] %}
+                            <a href="{{ cat | first | downcase | prepend:'/blog/category/' | relative_url }}" class="dropdown-item">{{ cat | first }}</a>
+                            {% endfor %}
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ '/music' | relative_url }}">Music</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ '/about' | relative_url }}">About</a>
+                    </li>
+                </ul>
+                <!--Navbar icons-->
+
+                <ul class="nav navbar-nav nav-flex-icons ml-auto">
+                    {% for s in site.social %}
+                    <li class="nav-item">
+                        <a href="{{ s.url }}" class="nav-link"><i class="fa fa-{{ s.site }}"></i></a>
+                    </li>
+                    {% endfor %} 
+                    <li class="nav-item">
+                        <a href="{{ site.rss | relative_url }}" class="nav-link" data-toggle="tooltip" data-placement="left" title="subscribe to Feed"><i class="fa fa-rss"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--/.Navbar-->
+
+    <!--Mask-->
+    <div class="view hm-black-strong">
+        <div class="full-bg-img flex-center">
+            <ul>
+                <li>
+                    <h1 class="h1-responsive wow fadeInUp">{{ site.title }}</h1></li>
+                <li>
+                    <p class="wow fadeInUp" data-wow-delay="0.2s">{{ site.description }}</p>
+                </li>
+                <li class="wow fadeInUp" data-wow-delay="0.4s">
+                    <a href="{{ '/blog' | relative_url }}" class="btn btn-outline-white btn-lg"><i class="fa fa-rocket left"></i>Learn more</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--/.Mask-->
+
+</header>
+<!--/Navigation & Intro-->
+

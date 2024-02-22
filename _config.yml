@@ -1,0 +1,73 @@
+# Site settings
+title:              Mageluer is learning breaststroke :|
+author:             Mageluer
+email:              kissongg@gmail.com
+address:            Moranbong-guyok, Pyong Yang, North Korea
+description:        "Mageluer, a pineapple eater"
+keywords:           "Mageluer, 马格鲁尔, Mageluer's Blog"
+blog-description:   かいぞくおうになる仆が决まる<br>世代传承的意志，时代的变迁，人们的梦，只要人们继续追求自由的答案，这一切的一切都将永不停止。
+logo:               "/assets/img/public/logo.png"
+avatar:             "/assets/img/public/avatar.jpg"
+img-404:            "/assets/img/public/404.png"
+background:         "/assets/img/public/bg-winter.jpg"
+rss:                "/feed.xml"
+url:                "https://www.mageluer.com"
+baseurl:            "" # e.i. /example
+
+# Jekyll
+permalink:          /blog/:title/
+paginate:           10
+paginate_path:      "/blog/page:num"
+excerpt_separator:  <!--more-->
+markdown:           kramdown
+highlighter:        rouge
+kramdown:
+  auto_ids:         true
+  footnote_nr:      1
+  entity_output:    as_char
+  toc_levels:       1..6
+  enable_coderay:   false
+mathjax:            true
+
+# Social
+social:
+  - site:           facebook
+    url:            "https://www.facebook.com/fengfeng.song.5"
+  - site:           github
+    url:            "https://github.com/mageluer"
+  - site:           twitter
+    url:            "https://twitter.com/kissongg"
+  - site:           google-plus 
+    url:            "https://plus.google.com/u/0/104643883202022740598"
+  - site:           pinterest
+    url:            "https://www.pinterest.com/mageluer"
+  - site:           dribbble
+    url:            "https://dribbble.com/Mageluer"
+
+# Statistic
+baidu_analyze:      true
+google_analyze:     true
+leancloud_counter:  true
+# Comment
+leancloud_comment:  true
+# Contact
+leancloud_contact:  true
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-mentions
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jemoji
+  - jekyll-sass-converter
+
+jekyll-mentions:
+    base_url: https://github.com
+sass:
+    sass_dir: assets/css/_sass
+    style: compressed
+
+# Exclude list
+exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile]

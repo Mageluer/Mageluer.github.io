@@ -1,0 +1,110 @@
+# post
+post:
+  alt_post_img:  /assets/img/blog/post/alt-img.png
+  comment_avatar: /assets/img/blog/post/comment-avatar.jpg
+  alt_strip_pre: /assets/img/blog/post/alt-strip-pre.jpg
+  alt_strip_nxt: /assets/img/blog/post/alt-strip-nxt.jpg
+
+# blog
+blog:
+  slides:
+    - img:   /assets/img/blog/slide-1.jpg
+      title: My favourite photos from last trip to Europe
+    - img:   /assets/img/blog/slide-2.jpg
+      title: My weekend in the nature
+    - img:   /assets/img/blog/slide-3.jpg
+      title: Tatras - the best choice for holiday
+  featured_posts:
+    - 记汤生一梦
+    - 熊
+    - 叶静能
+
+# archive
+archive:
+  img: /assets/img/blog/archive/archive.jpg
+
+# tag
+tag:
+  colors:     [primary, default, secondary, success, info, warning, danger, lime, yellow, amber, orange, deep-orange, brown, blue-grey, mdb, dark-green]
+  animations: [fadeIn, fadeInDown, fadeInLeft,fadeInLeftBig, fadeInRight, fadeInRightBig, fadeInUp, fadeInUpBig]
+
+# category
+category:
+# order to be applied in nav
+  Literature:
+    icon: book
+    slides:
+      - img: /assets/img/blog/category/literature-slide-1.jpg
+        href: '#!'
+        title: 'slide-1'
+      - img: /assets/img/blog/category/literature-slide-2.jpg
+        href: '#!'
+        title: 'slide-2'
+      - img: /assets/img/blog/category/literature-slide-3.jpg
+        href: '#!'
+        title: 'slide-3'
+  Informatik:
+    icon: code
+    slides:
+      - img: /assets/img/blog/category/literature-slide-1.jpg
+        href: '#!'
+        title: 'slide-4'
+      - img: /assets/img/blog/category/literature-slide-2.jpg
+        href: '#!'
+        title: 'slide-5'
+      - img: /assets/img/blog/category/literature-slide-3.jpg
+        href: '#!'
+        title: 'slide-6'
+  Mathematics:
+    icon: pencil
+    slides:
+      - img: /assets/img/blog/category/literature-slide-1.jpg
+        href: '#!'
+        title: 'slide-7'
+      - img: /assets/img/blog/category/literature-slide-2.jpg
+        href: '#!'
+        title: 'slide-8'
+      - img: /assets/img/blog/category/literature-slide-3.jpg
+        href: '#!'
+        title: 'slide-9'
+  Science:
+    icon: flask
+    slides:
+      - img: /assets/img/blog/category/literature-slide-1.jpg
+        href: '#!'
+        title: 'slide-10'
+      - img: /assets/img/blog/category/literature-slide-2.jpg
+        href: '#!'
+        title: 'slide-11'
+      - img: /assets/img/blog/category/literature-slide-3.jpg
+        href: '#!'
+        title: 'slide-12'
+  Life:
+    icon: bicycle
+    slides:
+      - img: /assets/img/blog/category/literature-slide-1.jpg
+        href: '#!'
+        title: 'slide-13'
+      - img: /assets/img/blog/category/literature-slide-2.jpg
+        href: '#!'
+        title: 'slide-14'
+      - img: /assets/img/blog/category/literature-slide-3.jpg
+        href: '#!'
+        title: 'slide-15'
+  Other:
+    icon: space-shuttle
+    slides:
+      - img: /assets/img/blog/category/literature-slide-1.jpg
+        href: '#!'
+        title: 'slide-16'
+      - img: /assets/img/blog/category/literature-slide-2.jpg
+        href: '#!'
+        title: 'slide-17'
+      - img: /assets/img/blog/category/literature-slide-3.jpg
+        href: '#!'
+        title: 'slide-18'
+
+# footer
+footer:
+  footer_img:       /assets/img/public/old-version.png
+  footer_img_title: Visit the old version of this site

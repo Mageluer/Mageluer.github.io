@@ -1,0 +1,128 @@
+<!--Sidebar-->
+<div class="col-lg-4">
+    
+    <!--Author card-->
+    <section class="wow fadeIn">
+        
+        <!--Card-->
+        <div class="card author-card">
+
+            <!--Background image-->
+            <div class="card-up">
+                <img src="{{ '/assets/img/public/author-card-bg.jpg' | relative_url }}" class="img-fluid">
+            </div>
+
+            <!--Avatar-->
+            <div class="avatar">
+                <img src="{{ site.avatar | relative_url }}" class="img-fluid img-author">
+            </div>
+
+            <div class="card-block">
+               
+                <!--Name-->
+                <h4 class="card-title font-up">{{ site.author }}</h4>
+                <!--Description-->
+                <p class="font-thin">{{ site.blog-description }}</p>
+
+                <!--Social-->
+                {% for s in site.social limit:3 %}
+                    <a href="{{ s.url }}" class="icons-sm {{ s.site }}-ic"><i class="fa fa-{{ s.site }}"> </i></a>
+                {% endfor %}
+
+            </div>
+
+        </div>
+        <!--/Card-->
+        
+    </section>
+    <!--/Author card-->    
+    
+    <!--Featured posts-->
+    <section class="section">
+
+    <div class="divider-new wow fadeIn" data-wow-delay="0.3s">
+        <h3>Featured posts</h3>
+    </div>
+
+        <!--First row-->
+        <div class="row">
+
+            {% for fp in site.data.configs['blog'].featured_posts %}{% assign featured_post = site.posts | where:"title",fp | first %}
+            <div class="col-md-12">
+                
+                <!--Image-->
+                <div class="view overlay hm-white-slight mb-1">
+                    <img src="{{ featured_post.img | prepend:'/assets/img/posts/' | relative_url }}" class="img-fluid" alt="Post">
+                    <a href="{{ featured_post.url | relative_url }}">
+                        <div class="mask waves-effect waves-light"></div>
+                    </a>
+                </div>
+                
+                <!--Post data-->
+                <div class="mb-3-half font-thin">
+                    <p class="text-muted float-left" ><i class="fa fa-clock-o"></i> {{ featured_post.date | date: "%Y-%m-%d" }}</p>
+                    <span class="text-muted float-right"><i class="fa fa-{{ site.data.configs['category'][featured_post.category].icon }}"></i> {{ featured_post.category }}</span>
+                </div>
+                
+                <!--Post title-->
+                <a href="{{ featured_post.url | relative_url }}" class="text-hover font-thin">{{ featured_post.title }}</a>
+                <div class="post-border pt-1"></div>
+                
+            </div>
+            {% endfor %}
+            
+        </div>
+        <!--/First row-->
+        
+    </section>
+    <!--/Featured posts-->
+       
+    <!--Popular posts-->
+    <section class="section popular-posts">
+
+    <div class="divider-new wow fadeIn" data-wow-delay="0.3s">
+        <h3>Popular posts</h3>
+    </div>
+        
+    </section>
+    <!--/Popular posts-->
+            
+    <!--Instagram-->
+    <section class="sidebar-imgs wow fadeIn" data-wow-delay="0.3s">
+
+    <div class="divider-new wow fadeIn" data-wow-delay="0.3s">
+        <h3 class="h3-responsive">Follow @{{ site.author }}</h3>
+    </div>
+        
+        <!--First row-->
+        <div class="row">
+           
+            <!--First column-->
+            <div class="col-md-12">
+
+                <!--Instagram Photos-->
+                <ul class="instagram-photos mb-0">
+                    {% for f in site.data.friends %}
+                    <li>
+                        <div class="view overlay hm-white-slight">
+                            <img class="img-fluid" src="{{ f.avatar }}" alt="{{ f.name }}'s avatar">
+                            <a href="{{ f.site }}" title="{{ f.name }} | {{ f.title }}">
+                                <div class="mask waves-effect waves-light"></div>
+                            </a>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <!--/Instagram photos -->
+
+           </div>
+           <!--/First column-->
+           
+        </div>
+        <!--/First row-->
+        
+    </section>
+    <!--/Instagram-->
+    
+</div>
+<!--/Sidebar-->

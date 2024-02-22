@@ -1,0 +1,154 @@
+<script type="text/javascript">
+(function($){
+  $.fn.toc = function(options) {
+    var defaults = {
+      scope: 'body', /*The element where the search for headings will be limited to.*/
+      title: '',
+      minimumHeaders: 3,
+      headers: 'h1, h2, h3, h4, h5, h6',
+      listType: 'ol', /*values: [ol|ul]*/
+      classes: {
+        list: '',
+        item: '',
+        a: ''
+      }
+    },
+    settings = $.extend(defaults, options);
+
+    function generateUniqueIdBase(el) {
+      var text = $(el).text();
+      var anchor = text.trim().toLowerCase().replace(/[^A-Za-z0-9]+/g, '-');
+      return anchor || el.tagName.toLowerCase();
+    }
+
+    function generateUniqueId(el) {
+      var anchorBase = generateUniqueIdBase(el);
+      for (var i = 0; ; i++) {
+        var anchor = anchorBase;
+        if (i > 0) {
+          /*add suffix*/
+          anchor += '-' + i;
+        }
+        /*check if ID already exists*/
+        if (!document.getElementById(anchor)) {
+          return anchor;
+        }
+      }
+    }
+
+    function fixedEncodeURIComponent (str) {
+      /*return encodeURIComponent(str).replace(/[!'()*]/g, function(c) {
+        return '%' + c.charCodeAt(0).toString(16);
+      });*/
+      return str; /*kramdown has generate pretty good id for us*/
+    }
+
+    function createLink (header) {
+      var innerText = (header.textContent === undefined) ? header.innerText : header.textContent;
+      return "<a href=\"#" + fixedEncodeURIComponent(header.id) + "\" " + "class=\"" + settings.classes.a + "\">" + innerText + "</a>";
+    }
+
+    var headers = $(settings.scope).find(settings.headers).filter(function() {
+      /*get all headers with an ID*/
+      if (!this.id) {
+        var id = generateUniqueId(this);
+        this.id = id;
+      }
+      return this.id;
+    });
+    var output = $(this);
+    if (!headers.length || headers.length < settings.minimumHeaders || !output.length) {
+      $(this).hide();
+      return;
+    }
+
+    function render() { 
+      output.html(html); 
+    }
+    
+
+    function get_level(ele) {
+      return parseInt(ele.nodeName.replace("H", ""), 10); 
+    }
+
+    var highest_level = headers.map(function(_, ele) { return get_level(ele); }).get().sort()[0];
+
+    var prev_level = get_level(headers[0])/*highest_level*/;
+    /*var curr_level;*/
+    var html = settings.title + " <" + settings.listType + " class=\"" + settings.classes.list +"\">";
+    headers.each(function(index, header) {
+      var curr_level = get_level(header);
+      
+      if (curr_level === prev_level)
+        html += "<li class=\"" + settings.classes.item + "\">" + createLink(header);
+      else if (curr_level <= prev_level){
+        for(var i = curr_level; i < prev_level; i++) {
+          html += "</li></"+settings.listType+">";
+        }
+        html += "<li class=\"" + settings.classes.item + "\">" + createLink(header);
+      }
+      else if (curr_level > prev_level) {
+        for(i = curr_level; i > prev_level; i--) {
+          html += "<" + settings.listType + " class=\"" + settings.classes.list +"\">" +
+                  "<li class=\"" + settings.classes.item + "\">";
+        }
+        html += createLink(header);
+      }
+      prev_level = curr_level; /*update for the next one*/
+    });
+    html += "</"+settings.listType+">";
+
+    render();
+  };
+})(jQuery);
+</script>
+<script type="text/javascript">
+$(function () {
+  /*add toc to side*/
+  var row = $(`
+    <div class="row no-gutters">
+      <div class="col-xl-9"></div>
+      <div class="col-xl-3 d-none d-xl-block"><nav id="toc-side"></nav></div>
+    </div>
+  `);
+  
+  var post_text = $('.post-text').addClass('ml-1 mr-1');
+  post_text.before(row);
+  post_text.next().addClass('post-text-stopper');
+  
+  $(row).find('.col-xl-9').append(post_text);
+  $(row).find('#toc-side').toc({
+        scope: '.post-text',
+        listType: 'ul',
+        classes: {
+          list: 'nav nav-pills flex-column ml-3',
+          item: 'nav-item',
+          a: 'nav-link'
+        }
+      }
+  );
+  $('body').css('position', 'relative');
+  $('body').scrollspy({
+    target: '#toc-side',
+    offset: 50
+  });
+  $("#toc-side").sticky({
+      topSpacing: 60,
+      zIndex: 2,
+      stopper: ".post-text-stopper"
+  });
+
+  /*add toc to post-text*/
+  $('.post-text').prepend('<div class="d-xl-none" id="toc-text">');
+  $('#toc-text').toc({
+        scope: '.post-text',
+        title: '<h2><a class="header-link" href="#toc-text" aria-hidden="true"><i class="fa fa-link" aria-hidden="true"></i></a>Contents<a class="header-link header-link-r" href="#toc-text" aria-hidden="true"><i class="fa fa-paragraph" aria-hidden="true"></i></a></h2>',
+        listType: 'ul',
+        classes: {
+          list: 'list-unstyled ml-0 pl-0',
+          item: 'ml-4'
+        }
+      }
+  );
+});
+</script>

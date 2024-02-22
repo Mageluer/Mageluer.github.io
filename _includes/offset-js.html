@@ -1,0 +1,74 @@
+<script type="text/javascript">
+(function(document, history, location) {
+    var HISTORY_SUPPORT = !!(history && history.pushState);
+
+    var ANCHOR_REGEX = /^#[^ ]+$/;
+    var OFFSET_HEIGHT_PX = 50;
+
+    /**
+     * Establish events, and fix initial scroll position if a hash is provided.
+     */
+    function init() {
+        scrollToCurrent();
+        $(window).on('hashchange', scrollToCurrent);
+        $('body').on('click', 'a', delegateAnchors);
+    }
+
+    /**
+     * Return the offset amount to deduct from the normal scroll position.
+     * Modify as appropriate to allow for dynamic calculations
+     */
+    function getFixedOffset() {
+        return OFFSET_HEIGHT_PX;
+    }
+
+    /**
+     * If the provided href is an anchor which resolves to an element on the
+     * page, scroll to it.
+     * @param  {String} href
+     * @return {Boolean} - Was the href an anchor.
+     */
+    function scrollIfAnchor(href, pushToHistory) {
+        var match, anchorOffset;
+
+        if(!ANCHOR_REGEX.test(href)) {
+            return false;
+        }
+
+        match = document.getElementById(href.slice(1));
+
+        if(match) {
+            anchorOffset = $(match).offset().top - getFixedOffset();
+            $('html, body').animate({scrollTop: anchorOffset}, 800);
+
+            /*Add the state to history as-per normal anchor links*/
+            if(HISTORY_SUPPORT && pushToHistory) {
+                history.pushState({}, document.title, location.pathname + href);
+            }
+        }
+
+        return !!match;
+    }
+    
+    /**
+     * Attempt to scroll to the current location's hash.
+     */
+    function scrollToCurrent(e){ 
+        if(scrollIfAnchor(window.location.hash) && e) {
+            e.preventDefault();
+        }
+    }
+
+    /**
+     * If the click event's target was an anchor, fix the scroll position.
+     */
+    function delegateAnchors(e){
+        var href = $(this).attr('href');
+        if(scrollIfAnchor(href, true)) {
+            e.preventDefault();
+        }
+    }
+
+    $(document).ready(init);
+})(window.document, window.history, window.location);
+</script>

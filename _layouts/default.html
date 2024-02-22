@@ -1,0 +1,13 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include head.html %}
+</head>
+<body  {%if page.layout != 'default' %}class="fixed-sn black-skin"{% endif %}>
+    {{ content }}
+{% include scripts.html %}
+</body>
+</html>

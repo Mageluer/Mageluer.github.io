@@ -1,0 +1,145 @@
+<script>
+$(function() {
+	/*$.getJSON( "http://ip-api.com/json?callback=?")*/
+	$.getJSON('https://jsonip.com/?callback=?')
+	.done(function(data) {
+		/*console.log("1st get ip successed");*/
+		$('#contact-submit').click({ip: data}, addContact);
+	})
+	.fail(function(e){
+		console.log("1st get ip failed");
+		console.error(e);
+		$.getJSON('http://ipapi.co/json/')
+		.done(function(data) {
+			console.log("2nd get ip success");
+	    	$('#contact-submit').click({ip: data}, addContact);
+		})
+		.fail(function(e){
+			console.error(e);
+			$.getJSON('http://freegeoip.net/json/?callback=?')
+			.done(function(data) {
+				console.log("3rd get ip success");
+	    		$('#contact-submit').click({ip: data}, addContact);
+			})
+			.fail(function(e){
+				console.error(e);
+				var data = {ip: 'get ip failed'};
+				$('#contact-submit').click({ip: data}, addContact);
+			})
+			.always(function(){
+				console.log('3rd add contact info complete')
+			});
+		})
+		.always(function(){
+			console.log('2nd add contact info complete')
+		});
+	})
+	.always(function() {
+		/*console.log("1st add contact info complete");*/
+	});
+		
+	function addContact(e) {
+		var contactName = $('input#contact-name').val();
+		var contactEmail = $('input#contact-email').val();
+		var contactSite = $('input#contact-site').val();
+		var contactSubject = $('input#contact-subject').val();
+		var contactMessage = $('textarea#contact-message').val();
+		var contactIP = e.data.ip;
+		var contactBrowser = getBrowserInfo();
+		var contactValidation = ![checkValidation(contactName, 'name'), checkValidation(contactEmail, 'email'), checkValidation(contactSite, 'site url'), checkValidation(contactSubject, 'subject'), checkValidation(contactMessage, 'message')].includes(false);
+		
+		if (contactValidation === true) {
+			var contact = {
+				name: contactName,
+				email: contactEmail,
+				site: contactSite,
+				subject: contactSubject,
+				message: contactMessage,
+				ip: contactIP,
+				browser: contactBrowser
+			};
+			pushContacter(contact);
+			$('#modal-contact').modal('toggle');
+			$('input#contact-name').val('');
+			$('input#contact-email').val('');
+			$('input#contact-site').val('');
+			$('input#contact-subject').val('');
+			$('textarea#contact-message').val('');
+		}
+	}
+	
+	function pushContacter(contact) {
+	    var contacter = new AV.Object("Contacter");
+	    contacter.set('name', contact.name);
+	    contacter.set('email', contact.email);
+	    contacter.set('site', contact.site);
+	    contacter.set('subject', contact.subject);
+	    contacter.set('message', contact.message);
+	    contacter.set('ip', contact.ip);
+	    contacter.set('browser', contact.browser);
+	    contacter.save().then(function (contacter) {
+            if (!(typeof toastr === 'undefined')) {
+			    toastr.success(contact.name + ', thanks for contacting me:)', 'Sent message successfully!');
+			}
+	        console.log('Add contact successfully! '+contacter.id);
+	    }, function(error) {
+	        console.error(error);
+	    });
+	}
+	
+	function checkValidation(value, description) {
+		var flag = true;
+		if (description !== 'site url' && !validateEmpty(value)) {
+			if (!(typeof toastr === 'undefined')) {
+			    toastr.warning('Your ' + description + ' consists entirely of whitespace (or is empty)! Please write some stuff.', 'Invalid input');
+			}
+		   	console.log('empty input: ' + description);
+		   	flag = false;
+		}
+		if (validateEmpty(value) && description === 'email') {
+			if (!validateEmail(value)) {
+				if (!(typeof toastr === 'undefined')) {
+		    	    toastr.error('Your ' + description + ' is illegal. Please check it again.', 'Invalid input');
+				}
+				console.log('illegal input: ' + description);
+				flag = false;
+			}
+		}
+		if (validateEmpty(value) && description === 'site url') {
+			if (!validateURL(value)) {
+				if (!(typeof toastr === 'undefined')) {
+		    	    toastr.error('Your ' + description + ' is illegal. Please check it again.', 'Invalid input');
+				}
+				console.log('illegal input: ' + description);
+				flag = false;
+			}
+		}
+		return flag;	
+	}
+	
+	function validateEmpty(value) {
+		return /\S/.test(value);
+	}
+	
+	function validateEmail(email) {
+	  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	  return re.test(email);
+	}
+	
+	function validateURL(url) {
+		return /^(https?|ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|	2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[	\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF	\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})	|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(url);
+	}
+	
+    function getBrowserInfo() {
+        var browserInfo = {};
+        if (!(typeof bowser === 'undefined')) {   	
+            for (var i in bowser) {
+                if( typeof bowser[i] !== 'function') {
+                browserInfo[i] = bowser[i];
+                }
+            }
+        }
+        return browserInfo;
+    }
+});
+</script>

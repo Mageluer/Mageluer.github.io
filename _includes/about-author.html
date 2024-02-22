@@ -1,0 +1,38 @@
+<!--Section: About author-->
+<section class="mb-4 wow fadeIn" data-wow-delay="0.3s">
+    <!--Author box-->
+    <div class="author-box blog-author-box">
+
+        <div class="row">
+
+            <!--Avatar-->
+            <div class="col-12 col-sm-3">
+                <img src="{% if page.author %}{% assign author = site.data.authors[page.author] %}{% if author.avatar | silce:0 == '/' }{{ author.avatar | relative_url }}{% else %}{{ author.avatar }}{% endif %}{% else %}{{ site.avatar | relative_url }}{% endif %}" class="img-fluid rounded-circle z-depth-2">
+            </div>
+
+            <!--Author Data-->
+            <div class="col-12 col-sm-9">
+
+                <h4><strong>{% if page.author %}{{ author.name }}{% else %}{{ site.author }}{% endif %}</strong></h4>
+
+                <div class="personal-sm">
+                {% if page.author %}
+                    {% for s in author.social limit:6 %}
+                    <a href="{{ s.url }}" class="{{ s.site }}-ic"><i class="fa fa-{{ s.site }}"> </i></a>
+                    {% endfor %}
+                {% else %}
+                    <a href="{{ '/' | relative_url }}" class="home-ic"><i class="fa fa-home"> </i></a>
+                    {% for s in site.social limit:5 %}
+                    <a href="{{ s.url }}" class="{{ s.site }}-ic"><i class="fa fa-{{ s.site }}"> </i></a>
+                    {% endfor %}
+                {% endif %}
+                </div>
+                
+                <p>{% if page.author %}{{ author.description }}{% else %}{{ site.blog-description }}{% endif %}</p>
+            </div>
+
+        </div>
+    </div>
+    <!--/.Author box-->
+</section>
+<!--/.Section: About author-->

@@ -1,0 +1,147 @@
+---
+layout: page
+title:  Blog
+---
+<!--First row-->
+<div class="row mt-1">
+
+    <!--First column-->
+    <div class="col-md-12 mb-2">
+
+        <!--Carousel Wrapper-->
+        <div id="carousel" class="carousel slide z-depth-1-half" data-ride="carousel">
+            <!--Indicators-->
+            <ol class="carousel-indicators">
+                {% for slide in site.data.configs['blog'].slides %}
+                <li data-target="#carousel" data-slide-to="{{ forloop.index0 }}" {% if forloop.first %}class="active"{% endif %}></li>
+                {% endfor %}
+            </ol>
+            <!--/.Indicators-->
+
+            <!--Slides-->
+            <div class="carousel-inner" role="listbox">
+                {% for slide in site.data.configs['blog'].slides %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <!--Mask color-->
+                    <div class="view hm-black-slight">
+                        <img src="{{ slide.img | relative_url }}" class="img-fluid" alt="{{ slide.title }}">
+                        <div class="full-bg-img">
+                        </div>
+                    </div>
+                    <!--Caption-->
+                    <div class="carousel-caption caption-2">
+                        <div class="animated fadeInDown">
+                            <h2 class="h2-responsive">{{ slide.title }}</h2>
+                        </div>
+                    </div>
+                    <!--Caption-->
+                </div>
+                {% endfor %}
+            </div>
+            <!--/Slides-->
+
+            <!--Controls-->
+            <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            <!--/.Controls-->
+
+        </div>
+        <!--/Carousel Wrapper-->
+
+    </div>
+    <!--/First column-->
+
+</div>
+<!--First row-->
+
+<!--Second row-->
+<div class="row">
+   
+    <!--Newsfeed-->
+    <div class="col-lg-8">
+       
+        <div class="divider-new mt-1">
+            <h2>Posts</h2>
+        </div>
+        
+        <!--Section: Post list-->
+        <section class="section text-center text-lg-left">
+
+            {% for post in paginator.posts %}           
+            <!--Post row-->
+            <div class="row mb-3">
+               
+                <!--First column-->
+                <div class="col-lg-5 mb-1-half">
+                   
+                    <!--Image-->
+                    <div class="view hm-white-slight">
+                        <img src="{% if post.img %}{{ post.img | prepend:'/assets/img/posts/' | relative_url }}{% else %}{{ site.data.configs['post'].alt_post_img | relative_url }}{% endif %}" class="img-fluid" alt="Post Image">
+                        <a href="{{ post.url | relative_url }}">
+                            <div class="mask waves-effect waves-light"></div>
+                        </a>
+                    </div>
+                    <!--/Image-->
+                    
+                </div>
+                <!--/First column-->
+
+                <!--Second column-->
+                <div class="col-lg-7">
+                   
+                    <!--Excerpt-->
+                    <h6 class="text-muted mb-1">{{ post.date | date: "%B %-d, %Y" }}</h6>
+                    <h4 class="font-up mb-1"><a href="{{ post.url | relative_url }}" class="text-muted font-thin">{{ post.title }}</a></h4>
+                    <p class="text-muted font-thin">{{ post.content | strip_html | truncate:100 }}</p>
+                    <a href="{{ post.url | relative_url }}" type="button" class="btn btn-outline-grey waves-effect">Read more</a>
+                    <!--/Excerpt-->
+                    
+                </div>
+                <!--/Second column-->
+                
+            </div>
+            <!--/Post row-->
+            {% endfor %}
+        </section>
+        <!--/Section: Post list-->
+        
+        <!--Pagination dark grey-->
+        <nav>
+           <ul class="pagination pg-darkgrey flex-center mt-5 mb-5">
+               <!--Arrow left-->
+               <li class="page-item{% unless paginator.previous_page %} disabled{% endunless %}">
+                   <a {% if paginator.previous_page %}href="{{ paginator.previous_page_path | relative_url }}" {% endif %}class="page-link" aria-label="Previous">
+                       <span aria-hidden="true">&laquo;</span>
+                       <span class="sr-only">Previous</span>
+                   </a>
+               </li>
+
+               <!--Numbers-->
+               {% for i in (1..paginator.total_pages) %}
+                   <li class="page-item {% if paginator.page==i %}active{% endif %}"><a href="{{ '/blog' | relative_url }}{% unless i==1 %}/page{{ i }}{% endunless %}" class="page-link">{{ i }}</a></li>
+               {% endfor %}
+
+               <!--Arrow right-->
+               <li class="page-item{% unless paginator.next_page %} disabled{% endunless %}">
+                   <a  {% if paginator.next_page %}href="{{ paginator.next_page_path | relative_url }}" {% endif %}class="page-link" aria-label="Next">
+                       <span aria-hidden="true">&raquo;</span>
+                       <span class="sr-only">Next</span>
+                   </a>
+               </li>
+           </ul>
+        </nav>
+        <!--/Pagination dark grey--> 
+        
+    </div>
+    <!--/Newsfeed-->
+    
+    {% include sidebar.html %}
+    
+</div>
+<!--/Second row-->

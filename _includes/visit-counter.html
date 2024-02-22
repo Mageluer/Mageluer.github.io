@@ -1,0 +1,114 @@
+<script>
+var APP_ID = 'dfDBjXqAQyVCEmiSq6ODBMeM-gzGzoHsz';
+var APP_KEY = 'D9dXCtRCxNr1vXX3T0E0hMeU';
+AV.init({
+    appId: APP_ID,
+    appKey: APP_KEY
+});
+
+var url   = "{{ page.url | relative_url }}";
+var title = "{{ page.title }}" || "{{ site.title }}";
+var times = 0;
+{% if page.layout == 'post' %}
+var date  = "{{ page.date | date: "%B %-d, %Y" }}";
+var img   = "{% if page.img %}{{ page.img | prepend:'/assets/img/posts/' | relative_url }}{% else %}{{ site.data.configs['post'].alt_post_img | relative_url }}{% endif %}";
+var type  = "post";
+{% endif %}
+
+$(function addCount(){
+    var query = new AV.Query('Counter');
+    query.equalTo("url", url);
+    query.find().then(function (results) {
+        if(results.length > 0) {
+            var counter = results[0];
+            {% if page.layout == 'post' %}
+            if (counter.get("img") !== img) {
+                counter.set('img', img);
+            }
+            {% endif %}
+        } else {
+        	var counter = new AV.Object("Counter");
+            counter.set('url', url);
+            counter.set('title', title);
+            counter.set('times', times);
+            {% if page.layout == 'post' %}
+            counter.set('date', date);
+            counter.set('img', img);
+            counter.set('type', type);
+            {% endif %}
+        }
+        return counter.save();
+    }).then(function (count) {
+        count.increment('times', 1);
+        return count.save();
+    }).then(function (count) {
+        /*console.log('objectId is ' + count.id);*/
+    }, function (error) {
+        console.error(error);
+    });
+});
+{% if page.layout == 'post' %}
+$(function getCount(){
+    var query = new AV.Query('Counter');
+    query.equalTo("url", url);
+    query.first().then(function (count) {
+        times = count.get('times');
+        $('.visit-count').html('<a class="deep-purple-text" data-toggle="tooltip" data-placement="right" title data-original-title="viewed times: ' + times + '"><i class="fa fa-eye"></i>' + times + '</a>');
+        $('[data-toggle="tooltip"]').tooltip();
+    }, function (error) {
+        console.error(error);
+    });
+});
+{% endif %}
+if($('.popular-posts').length === 1) {
+    $(function setPopularList(){
+        var query = new AV.Query('Counter');
+        query.equalTo("type", "post");
+        query.limit(5);
+        query.descending('times');
+        query.find().then(function (results) {
+            for(var i=0; i<results.length; i++) {
+                var count = results[i];
+                var url   = count.get("url");
+                var title = count.get("title");
+                var times = count.get("times");
+                var date  = count.get("date");
+                var img   = count.get("img");
+                $('.popular-posts').append(`
+                    <div class="post-border">
+                        <div class="row">
+                            <!--First column-->
+                            <div class="col-4">
+
+                                <!--Image-->
+                                <div class="view overlay hm-white-slight mb-1-half">
+                                    <img src="${img}" class="img-fluid" alt="Post">
+                                    <a href="${url}">
+                                        <div class="mask waves-effect waves-light"></div>
+                                    </a>
+                                </div>
+                            </div>
+                            <!--/First column-->
+
+                            <!--Second column-->
+                            <div class="col-8 mb-1">
+
+                                <!--Post data-->
+                                <div class="mb-2-half font-thin">
+                                    <p class="text-muted float-left" ><i class="fa fa-clock-o"></i> ${date}</p>
+                                    <span class="text-muted float-right"><i class="fa fa-eye"></i> ${times}</span>
+                                </div>
+
+                                <a href="${url}" class="text-hover font-thin">${title}</a>
+                            </div>
+                            <!--/Second column-->
+                        </div>        
+                    </div>
+                `);
+            }
+        }, function (error) {
+            console.error(error);
+        });
+    });
+}
+</script>

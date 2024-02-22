@@ -1,0 +1,25 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+# Generate CSS for default layout
+---
+/*Font Awesome*/
+@import "font-awesome";
+/*Bootstrap core CSS*/
+@import "bootstrap";
+/*Material Design Bootstrap*/
+@import "mdb";
+/* Other custom style */
+@import "style";
+
+/* Collapsed and expanded state with x and = icon */
+.navbar.navbar-dark {
+	.navbar-toggler {
+	    &[aria-expanded="true"] .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(255, 255, 255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M8 8 L24 24 M24 8 L8 24'/></svg>");
+        }
+	    &.collapsed .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(255, 255, 255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/></svg>");
+        }
+	}
+}

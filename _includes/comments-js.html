@@ -1,0 +1,379 @@
+<script>
+/*initalize comment info*/
+$.ajax({
+    url: 'https://randomuser.me/api/?inc=name,picture',
+    dataType: 'json',
+    success: function(data) {
+        var name = [data.results[0].name.title, data.results[0].name.first, data.results[0].name.last].join(' ');
+        var avatar = data.results[0].picture.large;
+        var url = "{{ page.url | relative_url }}";
+        var title = "{{ page.title }}" || "{{ site.title }}";
+        var voteUp = 0;
+        var voteDown = 0;
+        var verified = false;
+        var browser = getBrowserInfo();
+        var converter = null;
+        var intervalId = setInterval(function () {
+            if (!converter) {
+                try {
+                    /*initialize showdown converter*/
+                    converter = new showdown.Converter({
+                        simplifiedAutoLink: true,
+                        tables: true,
+                        tasklists: true,
+                        emoji: true,
+                        simpleLineBreaks: true
+                    });
+                    converter.setFlavor('github');
+                    clearInterval(intervalId);
+                    /*generate comment list*/
+                    renderComments({id: 'comment-list'});
+                    /*Add a nice avatar*/
+                    $('#comment-list-avatar').attr('src', avatar).prop('title', 'Hello, ' + name + ', please be responsible for yourself.');
+                    /*Add comment*/
+                    $('#add-comment-action-'+'comment-list').click({id: 'comment-list'}, addComment);
+                }
+                catch(err) {
+                    console.log(err);
+                }
+            }
+        }, 100);
+
+        function renderCommentItem(target, comment) {
+            target.name = target.name || "{% if page.author %}{% assign author = site.data.authors[page.author] %}{{ author.name }}{% else %}{{ site.author }}{% endif %}(author)";
+            var dt = new Date(comment.date);
+            comment.date = dt.getFullYear() + "/" + ("0" + (dt.getMonth()+1)).slice(-2) + "/" + ("0" + dt.getDate()).slice(-2) + " " + ("0" + dt.getHours()).slice(-2) + ":" + ("0" + dt.getMinutes()).slice(-2) + ":" + ("0" + dt.getSeconds()).slice(-2);
+            var commentHTML = converter.makeHtml(comment.content);
+            var commentJquery = $('<div>' + commentHTML + '</div>');
+            commentJquery.find('*').removeAttr('style').removeAttr('onclick').removeAttr('ondblclick').removeAttr('onmousedown').removeAttr('onmousemove').removeAttr('onclick').removeAttr('onmouseout').removeAttr('onmouseover').removeAttr('onmouseup').removeAttr('onmousewheel').removeAttr('onwheel').removeAttr('ondrag').removeAttr('ondragend').removeAttr('ondragenter').removeAttr('ondragleave').removeAttr('ondragover').removeAttr('ondragstart').removeAttr('ondrop').removeAttr('onscroll').removeAttr('oncopy').removeAttr('oncut').removeAttr('onpaste').removeAttr('onblur').removeAttr('onchange').removeAttr('oncontextmenu').removeAttr('onfocus').removeAttr('oninput').removeAttr('oninvalid').removeAttr('onreset').removeAttr('onsearch').removeAttr('onselect').removeAttr('onsubmit');
+            commentJquery.find('style').remove();
+            comment.content = commentJquery.prop('innerHTML');
+    
+            var commentItem = $(`
+                <div class="row mt-0 mb-0">
+                    <div class="col-12">
+                        <div class="row mt-0 mb-0">
+                            <!--Image column-->
+                            <div class="col-sm-2 hidden-xs-down">
+                                <img src="${comment.avatar}">
+                            </div>
+                            <!--/.Image column-->
+                            
+                            <!--Content column-->
+                            <div class="col-sm-10 col-12">
+                                <a><h5 class="user-name d-flex justify-items-start font-weight-bold text-capitalize">${comment.name}</h5></a>
+                                <div class="card-data">
+                                    <ul class="list-unstyled">
+                                        <li class="comment-date"><i class="fa fa-clock-o"></i>${comment.date}</li>
+                                    </ul>
+                                </div>
+                                <div class="comment-text">
+                                    <span class="cyan-text text-capitalize">${'@' + target.name}</span>
+                                    <article class="markdown-body">${comment.content}</article>
+                                </div>
+                            
+                                <!--Comment action-->
+                                <ul class="list-inline">
+                                    <li class="list-inline-item mr-4"><a class="light-blue-text" id="vote-up-action-${comment.id}"><i id="vote-up-icon-${comment.id}" class="fa fa-thumbs-o-up mr-1"></i><span id="vote-up-${comment.id}">${comment.voteUp}</span></a></li>
+                                    <li class="list-inline-item mr-4"><a class="light-green-text" id="vote-down-action-${comment.id}"><i id="vote-down-icon-${comment.id}" class="fa fa-thumbs-o-down mr-1"></i><span id="vote-down-${comment.id}">${comment.voteDown}</span></a></li>
+                                    <li class="list-inline-item mr-4" data-toggle="collapse" data-target="#collapse${comment.id}"><a class="deep-purple-text"><i class="fa fa-commenting-o mr-1"></i><span id="reply-num-${comment.id}">0</span></a></li>
+                                </ul>
+                                <!--/.Comment action-->
+    
+                            </div>
+                            <!--/.Content column-->
+                        </div>
+                        
+                                        
+                        <!--Reply form-->
+                        <div class="reply-form collapse" id="collapse${comment.id}">
+                            <div class="row mt-0 mb-0">
+                                <!--Image column-->
+                                <div class="col-sm-2 hidden-xs-down">
+                                    <img src="${avatar}">
+                                </div>
+                                <!--/.Image column-->
+                            
+                                <!--Content column-->
+                                <div class="col-sm-10 col-12">
+                                    <div class="md-form">
+                                        <textarea type="text" id="form-${comment.id}" class="md-textarea" placeholder="Markdown supported:)"></textarea>
+                                        <label for="form-${comment.id}" class="">Your comment</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse${comment.id}">cancel</button>
+                                    <button class="btn btn-primary waves-effect waves-light" id="add-comment-action-${comment.id}">Submit</button>
+                                </div>
+                                <!--/.Content column-->
+                            
+                            </div>
+                        </div>
+                        <!--/.Reply form-->
+    
+                    </div>
+                </div>
+            `);
+    
+            if (comment.type === 'comment') {
+                commentItem.find('.reply-form').after(`
+                    <!--Reply list column-->
+                    <div class="row mt-0 mb-0">
+                        <div class="col-12">
+                            <div class="row  mt-0 mb-0 justify-content-end">
+                                <div class="col-10" id="${comment.id}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/.Reply list column-->
+    
+                    <hr class="wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
+                `);
+                $('#'+target.id).prepend(commentItem);
+            }
+            else {
+                commentItem.attr('id', comment.id);
+                if (comment.type === 'reply' && target.type === 'reply') {
+                    $('#'+target.id).after(commentItem);
+                } 
+                else {
+                    $('#'+target.id).prepend(commentItem);
+                }
+            }
+            $('#vote-up-action-'+comment.id).click({commentId: comment.id, action: 'vote-up'}, setVoteNum);
+            $('#vote-down-action-'+comment.id).click({commentId: comment.id, action: 'vote-down'}, setVoteNum);
+            $('#add-comment-action-'+comment.id).click({id: comment.id, name: comment.name, type: comment.type}, addComment);
+            setReplyNum(target);
+            if (!(typeof MathJax === 'undefined')) {
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub, "comment-list"]);
+            }
+        }
+    
+    
+        function addComment(e) {
+            /*string is not empty and not just whitespace*/
+            target = e.data;
+            var content = $('textarea#form-'+target.id).val();
+            if (!/\S/.test(content)) {
+                if (!(typeof toastr === 'undefined')) {
+                    toastr.warning('Your input consists entirely of whitespace (or is empty)! Please write some stuff.', 'Invalid input');
+                }
+                $('textarea#form-'+target.id).val('');
+                console.log('invalid input');
+                return;
+            }
+    
+            var type = target.type ? 'reply' : 'comment';
+
+            /*$.getJSON( "http://ip-api.com/json?callback=?")*/
+            $.getJSON('https://jsonip.com/?callback=?')
+            .done(function(data) {
+                /*console.log("1st get ip successed");*/
+                var ip = data;
+                addWithIP(ip);
+            })
+            .fail(function(e) {
+                console.error(e);
+                var ip = {};
+                addWithIP(ip);
+            })
+            .always(function() {
+                /*console.log("1st add ip info complete");*/
+            });
+            function addWithIP(ip) {
+                var comment = {
+                    url: url,
+                    title: title,
+                    name: name,
+                    avatar: avatar,
+                    content: content,
+                    voteUp: voteUp,
+                    voteDown: voteDown,
+                    verified: verified,
+                    type: type,
+                    ip: ip,
+                    browser: browser
+                };
+        
+                $('textarea#form-'+target.id).val('');
+                $('#collapse'+target.id).collapse('hide');
+                $('textarea#form-'+target.id).attr("placeholder", 'write someting more');
+                generateCommentItem(target, comment);
+            }
+        }
+    
+    
+        function generateCommentItem(target, comment) {
+            var commenter = new AV.Object("Commenter");
+            commenter.set('target', target.id);
+            commenter.set('url', comment.url);
+            commenter.set('title', comment.title);
+            commenter.set('name', comment.name);
+            commenter.set('avatar', comment.avatar);
+            commenter.set('content', comment.content);
+            commenter.set('voteUp', comment.voteUp);
+            commenter.set('voteDown', comment.voteDown);
+            commenter.set('verified', comment.verified);
+            commenter.set('type', comment.type);
+            commenter.set('ip', comment.ip);
+            commenter.set('browser', comment.browser);
+            commenter.save().then(function (commenter) {
+                comment.id = commenter.id;
+                comment.date = commenter.createdAt;
+                renderCommentItem(target, comment);
+                return commenter;
+            }).then(function (commenter) {
+                console.log('Add comment successfully! '+commenter.id);
+            }, function(error) {
+                console.error(error);
+            });
+        }
+        
+        
+        function renderComments(target) {
+            var query = new AV.Query('Commenter');
+            query.equalTo('url', url);
+            query.equalTo('target', target.id);
+            query.ascending('createdAt');
+            query.find().then(function (comments) {
+                if(comments.length <= 0) {
+                    return;
+                } 
+                else {
+                    for (var comment of comments) {
+                        renderCommentItem(
+                            target, 
+                            {
+                                id: comment.id,
+                                name: comment.get('name'),
+                                avatar: comment.get('avatar'),
+                                date: comment.createdAt,
+                                content: comment.get('content'),
+                                voteUp: comment.get('voteUp'),
+                                voteDown: comment.get('voteDown'),
+                                type: comment.get('type'),
+                        });
+                        renderComments({
+                            id: comment.id,
+                            name: comment.get('name'),
+                            type: comment.get('type'),
+                        });
+                    }
+                }
+            }, function (error) {
+                console.error(error);
+            });
+        }
+
+        function setReplyNum(target) {
+            var query = new AV.Query('Commenter');
+            query.equalTo('target', target.id);
+            query.equalTo('url', url);
+            query.find().then(function (comments) {
+                if (target.type) {
+                    $('#reply-num-'+target.id).text(comments.length);
+                }
+                else {
+                    $('#total-comment-num').text(comments.length);
+                }
+            }, function (error) {
+                console.error(error);
+            });
+        }
+        
+        function setVoteNum(e) {
+            commentId = e.data.commentId;
+            action = e.data.action;
+            var query = new AV.Query('Commenter');
+            query.get(commentId).then(function (comment) {
+                switch (action) {
+                    case 'vote-up':
+                        comment.increment('voteUp', 1);
+                        $('#vote-up-'+comment.id).text(comment.get('voteUp'));              
+                        $('#vote-up-icon-'+comment.id).addClass('fa-thumbs-up').removeClass('fa-thumbs-o-up');
+                        $('#vote-up-action-'+comment.id).addClass('disabled').prop('onclick', null).off('click');
+                        break;
+                    case 'vote-down':
+                        comment.increment('voteDown', 1);
+                        $('#vote-down-'+comment.id).text(comment.get('voteDown'));
+                        $('#vote-down-icon-'+comment.id).addClass('fa-thumbs-down').removeClass('fa-thumbs-o-down');
+                        $('#vote-down-action-'+comment.id).addClass('disabled').prop('onclick', null).off('click');
+                        break;
+                    default:
+                        console.log('change vote num failed');
+                }
+                return comment.save();
+            }).then(function (todo) {
+                console.log('change vote num succseefully!');
+            }, function (error) {
+                console.error(error);
+            });
+        }
+
+        function getBrowserInfo() {
+            var browserInfo = {};
+            if (!(typeof bowser === 'undefined')) {     
+                for (var i in bowser) {
+                    if( typeof bowser[i] !== 'function') {
+                    browserInfo[i] = bowser[i];
+                    }
+                }
+            }
+            return browserInfo;
+        }
+    }  
+});
+
+
+function clearDeadComments() {
+    var existComments = [];
+    function findExistComments(target) {
+        var query = new AV.Query('Commenter');
+        query.equalTo('target', target.id);
+        query.find().then(function (comments) {
+            if(comments.length <= 0) {
+                return;
+            } 
+            else {
+                for (var comment of comments) {
+                    existComments.push(comment.id);
+                    console.log(comment.id + ' is alive.');
+                    findExistComments({
+                        id: comment.id,
+                    });
+                }
+            }
+        }, function (error) {
+            console.error(error);
+        });
+    }
+    findExistComments({id: 'comment-list'});
+    
+    setTimeout(() => {
+        console.log('alive comments: ' + existComments.length);
+        if (existComments.length <= 0) {
+            console.log('failed to remove for no dead comment found!!!!');
+            return;
+        }
+        var destroyNum = 0;
+        var query = new AV.Query('Commenter');
+        query.equalTo('type', 'reply');
+        query.find().then(function (comments) {
+            for (var comment of comments) {
+                if (!existComments.includes(comment.id)) {
+                    console.log(comment.id + ' to be destroyed');
+                    comment.destroy().then(function (success) {
+                        console.log('destroying comment ' + ++destroyNum + ' done');
+                    }, function (error) {
+                        console.error(error);
+                    });
+                }
+            }
+        }, function (error) {
+            console.error(error);
+        });
+    }, 8000);
+}
+</script>

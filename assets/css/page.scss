@@ -1,0 +1,47 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+# Generate CSS for page layout
+---
+/*Font Awesome*/
+@import "font-awesome";
+/*Bootstrap core CSS*/
+@import "bootstrap";
+/*Material Design Bootstrap*/
+@import "mdb";
+/*Syntax highlight*/
+@import "syntax";
+/*Simple javascript toast notifications*/
+@import "toastr";
+/* Hover.css with 2D TRANSITIONS */
+@import "hover";
+/* Other custom style */
+@import "style";
+
+/* smaller tag cloud btn on small screen */
+.tag-list .btn {
+	text-transform: none;
+	@media (max-width: 767px) {
+        padding: 0.5rem 1rem;
+	}
+	@media (max-width: 575px) {
+		padding: 0.4rem 0.8rem;
+	}
+	@media (max-width: 374px) {
+		padding: 0.3rem 0.5rem;
+	}
+}
+
+/* carousel caption style for small screen */
+.carousel {
+	.carousel-caption.caption-2 h2 {
+		text-transform: none;
+
+		@media (max-width: 575px) {
+			background-color: inherit;
+			color: white !important;
+			font-size: 135%;
+			font-weight: 300;
+		}
+	}
+}

@@ -1,0 +1,100 @@
+Linus:
+  name:        Linus
+  avatar:      https://avatars2.githubusercontent.com/u/19218605?v=3&s=400
+  description: 生于内蒙古. 大约19岁
+  social:
+    - site:    home
+      url:     https://mulliken.github.io/
+    - site:    facebook
+      url:     https://www.facebook.com/linusux
+    - site:    github
+      url:     https://github.com/Mulliken
+    - site:    twitter
+      url:     https://twitter.com/chunsewubian
+
+Xie_Guizhen:
+  name:        牧之
+  avatar:      /assets/img/authors/Xie_Guizhen.png
+  description: Mageluer的一位朋友。
+  social:
+    - site:    github
+      url:     https://github.com/Mzchu
+    - site:    email
+      url:     jiangbaishi@icloud.com
+
+
+Ye_Shi:
+  name:        也氏
+  avatar:      /assets/img/authors/default.png
+  description: 一个讲故事的人而已。
+  social:
+    - site:    home
+      url:     https://wenxue.iqiyi.com/book/detail-18l2hvi7gh.html
+
+
+Bangn_Batu:
+  name:        十分之一普朗克时间
+  avatar:      /assets/img/authors/Bangn_Batu.png
+  description: 一位鄂尔多斯帅哥🤵‍♂️。
+  social:
+    - site:    home
+      url:     https://www.mageluer.com
+
+
+San_Li:
+  name:        三里
+  avatar:      /assets/img/authors/San_Li.png
+  description: 张三里在此喃喃<br>本意记事，记梦，记浮光掠影<br>但是小说不可得述，因为不会撒谎不会编造，只会拓印目之所及；<br>散文不可得记，因为不愿牵扯外在的实体，不愿暴露自己呼吸的形态、呼吸时细胞的宏观；<br>梦不可得记，因为，谁知道哪天来个周公，泼水泼得劈头盖脸。<br><br>然而，然而<br>有歌<br>于是这里有一些<b>加密</b>的碎片<br>220515
+  social:
+    - site:    home
+      url:     https://mp.weixin.qq.com/s/4VyBS2FnuVw61tGSGumIiw
+
+######################################################################################
+
+Su_Shi:
+  name:        苏轼
+  avatar:      /assets/img/authors/Su_Shi.jpg
+  description: 苏轼（1036年1月8日－1101年8月24日），北宋文学家、政治家、艺术家、医学家。字子瞻，一字和仲，号东坡居士。嘉佑二年进士，累官至端明殿学士兼翰林院侍读学士，礼部尚书。南宋理学方炽时，加赐谥号文忠，复追赠太师。有《东坡先生大全集》及《东坡乐府》词集传世，宋人王宗稷收其作品，编有《苏文忠公全集》。
+  social:
+    - site:    home
+      url:     https://zh.wikipedia.org/wiki/%E8%8B%8F%E8%BD%BC
+
+Xue_Yusi:
+  name:        薛漁思
+  avatar:      /assets/img/authors/Xue_Yusi.png
+  description: 作者薛渔思，生平不详。本文选自《河东记》，此书是一本分篇讲述唐朝各个时期的著名人物的名著，书中不少故事发生在唐文宗大和年间，故知此书当写成于大和之后。此书内容虽然以谲异怪诞为特点，但与那些单纯宣扬物妖神怪的志怪小说不同，而常常是通过神异故事曲折地反映现实生活，体现了唐代有意为小说的特征。书中既大胆讽刺了皇帝和官僚们的昏聩无知以及政治的腐败，也批判了图财害命、自私残忍等恶劣行径，还塑造了一些美好的妇女形象。
+  social:
+    - site:    home
+      url:     https://ja.wikipedia.org/wiki/%E8%96%9B%E6%BC%81%E6%80%9D
+
+Long_Gang_Wei_Bing:
+  name:        龙刚 韦兵
+  avatar:      /assets/img/authors/Long_Gang_Wei_Bing.png
+  description: 本文选自《中国三百六十行大全》，为四川辞书出版社1995年出版，作者为龙刚和韦兵。家有家法，行有行规，古往今来，中国三百六十行，行行皆有门道。贩夫走卒，货郎轿夫，江湖游民，三教九流，穷儒寒士，巨商富贾，行邦规矩，教化弟子，千年流传，衍生不息。本书以民俗研究角度出发，资料丰富，可读性强，意在让广大读者追根溯源，于行业的演变中见历史，化腐朽为神奇，洞开眼界，心生风云……
+  social:
+    - site:    home
+      url:     https://book.douban.com/subject/3291296/
+
+Faulkner:
+  name:        William Faulkner
+  avatar:      /assets/img/authors/Faulkner.jpg
+  description: 美国文学史上最具影响力的作家之一，意识流文学代表人物。出生于没落地主家庭，第一次世界大战时在加拿大空军服役，战后曾在大学肄业一年，一九二五年后专门从事创作。共写了十九部长篇小说和七十多篇短篇小说。其中绝大多数故事发生在虚构的约克纳帕塔法县，被称为“约克纳帕塔法世系”。代表作有《喧哗与骚动》（1929）、《我的弥留之际》（1930）、《献给爱米丽的一朵玫瑰花》（1930）、《八月之光》（1932）、《押沙龙，押沙龙！》（1932）、《去吧，摩西》等。
+  social:
+    - site:    home
+      url:     https://en.wikipedia.org/wiki/William_Faulkner
+
+Shen_Congwen:
+  name:        沈从文
+  avatar:      /assets/img/authors/Shen_Congwen.png
+  description: 沈从文（1902年12月28日－1988年5月10日），原名沈岳焕，字崇文，后改名沈从文，生于中国湖南省凤凰县。是中国现代著名的文学家、小说家、散文家和考古学专家。
+  social:
+    - site:    home
+      url:     https://en.wikipedia.org/wiki/Shen_Congwen
+
+Borges:
+  name:        博尔赫斯
+  avatar:      /assets/img/authors/Borges.jpg
+  description: 豪尔赫·路易斯·博尔赫斯（西班牙文：Jorge Luis Borges，1899年8月24日－1986年6月14日），又译波赫士，阿根廷作家、诗人、翻译家。其作品涵盖包括短篇小说、短文、随笔小品、诗、文学评论、翻译文学在内的多个文学范畴，以隽永的文字和深刻的哲理见长。
+  social:
+    - site:    home
+      url:     https://en.wikipedia.org/wiki/Jorge_Luis_Borges

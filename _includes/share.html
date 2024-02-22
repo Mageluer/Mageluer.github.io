@@ -1,0 +1,11 @@
+<div class="text-center wow fadeIn" data-wow-delay="0.3s">
+    <h3 class="h3-responsive">Do you want to share?</h3>
+    <!--Facebook-->
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="btn-floating btn-small btn-fb"><i class="fa fa-facebook"> </i></a>
+    <!--Twitter-->
+    <a href="https://twitter.com/home?status={{ page.url | absolute_url }}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="btn-floating btn-small btn-tw"><i class="fa fa-twitter"> </i></a>
+    <!--Google +-->
+    <a href="https://plus.google.com/share?url={{ page.url | absolute_url }}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="btn-floating btn-small btn-gplus"><i class="fa fa-google-plus"> </i></a>
+    <!--Weibo-->
+    <a href="http://service.weibo.com/share/share.php?url={{ page.url | absolute_url }}&title={{ page.title }}&pic={% if page.img %}{{ page.img | prepend:'/assets/img/posts/' | absolute_url }}{% elsif site.data.configs['post'].alt_post_img %}{{ site.data.configs['post'].alt_post_img | relative_url }}{% else %}{{ site.logo | absolute_url }}{% endif %}&appkey=" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="btn-floating btn-small btn-weibo"><i class="fa fa-weibo"> </i></a>
+</div>

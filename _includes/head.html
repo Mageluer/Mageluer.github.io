@@ -1,0 +1,34 @@
+<!-- Required meta tags always come first -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+{% comment %}
+<!-- Title -->
+<title>{% if page.title %}{{ page.title }} &#8211; {% endif %}{{ site.title }}</title>
+<!-- Description & Keywords -->
+<meta name="description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once | truncate:200 }}{% else %}{{ site.description }}{% endif %}">
+{% endcomment %}
+<meta name="keywords" content="{% if page.tags %}{{ page.tags | join: ', ' }}{% else %}{{ site.keywords }}{% endif %}">
+<!-- Open Graph -->
+<meta property="fb:app_id" content="113869198637480">
+<meta property="og:image" content="{% if page.img %}{{ '/assets/img/posts/' | append:page.img | absolute_url }}{% elsif alt_post_img %}{{ alt_post_img }}{% else %}{{ site.logo | absolute_url }}{% endif %}">
+<meta name="twitter:site:id" content="63359297">
+<meta name="twitter:card" content="summary">
+<!-- Handheld -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<!-- Feed -->
+{% feed_meta %}
+<!-- Style sheets -->
+{% if page.layout == 'default' %}<link href="{{ '/assets/css/default.css' | relative_url }}" rel="stylesheet">{% endif %}
+{% if page.layout == 'page' or page.layout == 'category' %}<link href="{{ '/assets/css/page.css' | relative_url }}" rel="stylesheet">{% endif %}
+{% if page.layout == 'post' %}<link href="{{ '/assets/css/post.css' | relative_url }}" rel="stylesheet">{% endif %}
+<!-- Favicons -->
+<link rel="apple-touch-icon" href="{{ '/assets/img/favicons/apple-icon-precomposed.png' | relative_url }}">
+<link rel="apple-touch-icon" sizes="72x72" href="{{ '/assets/img/favicons/apple-icon-72x72.png' | relative_url }}">
+<link rel="apple-touch-icon" sizes="114x114" href="{{ '/assets/img/favicons/apple-icon-114x114.png' | relative_url }}">
+<link rel="apple-touch-icon" sizes="144x144" href="{{ '/assets/img/favicons/apple-icon-144x144.png' | relative_url }}">
+<link rel="shortcut icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
+<link rel="shortcut icon" href="{{ '/favicon.ico' | relative_url }}">
+<!-- Jekyll SEO tag plugin -->
+{% seo %}

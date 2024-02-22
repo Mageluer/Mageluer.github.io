@@ -1,0 +1,78 @@
+<!--Footer-->
+<footer class="page-footer center-on-small-only">
+    
+    <!--Footer Links-->
+    <div class="container">
+       
+        <!--First row-->
+        <div class="row">
+           
+            <!--First column-->
+            <div class="col-xl-4 col-lg-4 mt-1 wow fadeIn" data-wow-delay="0.3s">
+               
+                <!--About-->
+                <h5 class="title">ABOUT {{ site.author }}</h5>
+                <p class="font-thin">{{ site.description }}</p>
+                <p class="font-thin">{{ site.blog-description }}</p>
+                <!--/About -->
+                
+            </div>
+            <!--/First column-->
+
+            <hr class="w-100 hidden-lg-up wow fadeIn" data-wow-delay="0.3s">
+            
+            <!--Second column-->
+            <div class="col-xl-4 col-lg-4 text-center mt-1 wow fadeIn" data-wow-delay="0.3s">
+               
+                <!--Contact-->
+                <h5 class="title">Contact info</h5>
+                
+                <p class="font-thin">
+                    {{ site.address | split:',' | join:'<br>' }}
+                    <br>
+                    {{ site.email }}
+                </p>
+                <!--/Contact -->
+                
+                <!--Social-->
+                {% for s in site.social limit:3 %}
+                    <a href="{{ s.url }}" class="btn-floating btn-small btn-{{ s.site }}"><i class="fa fa-{{ s.site }}"> </i></a>
+                {% endfor %}
+                <!--/Social-->
+            </div>
+            <!--/Second column-->
+            
+            <hr class="w-100 hidden-lg-up wow fadeIn" data-wow-delay="0.3s">
+            
+            <!--Third column-->
+            <div class="col-xl-4 col-lg-4 mt-1 wow fadeIn" data-wow-delay="0.3s">
+                
+                <!--Image-->
+                <div class="view hm-black-strong">
+                    <img src="{{ site.data.configs['footer'].footer_img | relative_url }}" class="img-fluid">
+                    <a href="https://mageluer.github.io/old-blog/" class="mask flex-center waves-effect waves-light">
+                        <p class="white-text text-center">{{ site.data.configs['footer'].footer_img_title }}</p>
+                    </a>
+                </div>
+                
+            </div>
+            <!--/Third column-->
+            
+        </div>
+        <!--/First row-->
+        
+    </div>
+    <!--/Footer Links-->
+    
+    <br>
+
+    <!--Copyright-->
+    <div class="footer-copyright wow fadeIn" data-wow-delay="0.3s">
+        <div class="container-fluid font-thin">
+            © {{ 'now' | date: "%Y" }} Copyright: @{{ site.author }}
+        </div>
+    </div>
+    <!--/Copyright-->
+    
+</footer>
+<!--/Footer-->

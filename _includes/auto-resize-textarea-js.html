@@ -1,0 +1,11 @@
+<script type="text/javascript">
+/*Automatically adjust textarea height based on user input.*/
+$(function () {
+    $(document).on('input', 'textarea', function () {
+        $(this).css('height', 'auto');
+        var contentHeight = $(this).prop('scrollHeight') - parseInt($(this).css('padding-top')) - parseInt($(this).css('padding-bottom'));
+        $(this).css('overflow-y', 'hidden');
+        $(this).height(contentHeight);
+    });
+});
+</script>

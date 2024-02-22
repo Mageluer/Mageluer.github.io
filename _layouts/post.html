@@ -1,0 +1,170 @@
+---
+layout: page
+---
+
+<style type="text/css">
+    /* better style on small screen for post img: see post.scss for rest part */
+    @media (max-width: 767px) {
+        .section-blog-fw .jumbotron.post-meta {
+            background-image: url("/assets/img/widget/overlays/01.png"), url("{% if page.img %}{{ '/assets/img/posts/' | append:page.img | relative_url }}{% else %}{{ site.data.configs['post'].alt_post_img | relative_url }}{% endif %}");
+        }
+    }
+    @media (max-width: 575px) {
+        .section-blog-fw .jumbotron.post-meta {
+            background-image: linear-gradient(0deg,rgba(0,0,0,.3),rgba(0,0,0,0.3)), url("{% if page.img %}{{ '/assets/img/posts/' | append:page.img | relative_url }}{% else %}{{ site.data.configs['post'].alt_post_img | relative_url }}{% endif %}");
+        }
+    }
+</style>
+<!--Blog-->
+<div class="row mt-1">
+    <!--Main listing-->
+    <div class="col-md-12">
+        
+        <!--Section: Post-->
+        <section id="back-to-top-top-section" class="section section-blog-fw"> 
+
+            <!--First row-->
+            <div class="row">
+               
+                <div class="col-md-12">
+                   
+                    <!--Featured image-->
+                    <img src="{% if page.img %}{{ '/assets/img/posts/' | append:page.img | relative_url }}{% else %}{{ site.data.configs['post'].alt_post_img | relative_url }}{% endif %}" class="wow fadeIn post-img">
+
+                    <!--Post data-->
+                    <div class="jumbotron wow fadeIn post-meta" data-wow-delay="0.3s">
+                        <h1 class="h1-responsive">{{ page.title }}</h1>
+
+                        <!--Category & Tags & Views-->
+                        <ul class="list-inline">
+                        <li class="list-inline-item"><a href="{{ page.category | downcase | prepend:'/blog/category/' | relative_url }}" class="light-blue-text" data-toggle="tooltip" data-placement="left" title="category: {{ page.category }}"><i class="fa fa-{{ site.data.configs['category'][page.category].icon }}"></i>{{ page.category }}</a></li>
+                        {% for tag in page.tags %}{% assign tag_id = tag | uri_escape %}<li class="list-inline-item"><a href="{{ tag_id | prepend:'/blog/tags#' | relative_url }}" class="teal-text" data-toggle="tooltip" data-placement="left" title="tag: {{ tag }}"><i class="fa fa-tag"></i>{{ tag }}</a></li>{% endfor %}
+                        <li class="list-inline-item visit-count"></li>
+                        </ul>
+                        <!--/Category & Tags-->
+
+                        <p>Written by <a href="{% if page.author %}{% assign author = site.data.authors[page.author] %}{{ author.social.first.url }}{% else %}{{ '/about' | relative_url }}{% endif %}" class="orange-text">{% if page.author %}{{ author.name }}{% else %}{{ site.author }}{% endif %}</a> on {{ page.date | date: "%B %-d, %Y" }}</p>
+
+                    </div>
+                    <!--/Post data-->
+
+                    <!--Post text-->
+                    <div class="post-text markdown-body wow fadeIn" data-wow-delay="0.3s">
+                        {% if page.indent %}
+                        <style type="text/css">
+                            .post-text p {
+                                text-indent: 2em;
+                            }
+                        </style>
+                        {% endif %}
+                        {{ content }}
+
+                        <!--Copyright notice-->
+                        {% if page.source %}{% assign source = page.source %}
+                        <p class="alert alert-warning" role="alert">
+                            This article is reprinted from <a href="{{ source.url }}" title="{{ source.title }}">{% if source.title %}{{ source.title }}{% else %}{{ source.url }}{% endif %}</a> and has been authorized. Without consent, it shall not be reproduced.
+                        </p>
+                        {% endif %}
+                        <!--/Copyright notice-->
+                    </div>
+                    <!--/Post text-->
+
+                    <hr class="wow fadeIn" data-wow-delay="0.3s">
+
+                    {% include share.html %}
+                    
+                </div>
+                
+            </div>
+            <!--/First row-->
+            
+        </section>
+        <!--/.Section: Post-->
+        
+        <!--Previous and next posts-->
+        <section class="wow fadeIn" data-wow-delay="0.3s">
+            
+            <!--First row-->
+            <div class="row">
+                
+                <!--First column-->
+                <div class="col-md-6">
+                    {% if page.previous %}
+                    <!--Prev post-->
+                    <div class="prev-next-post">
+
+                        <a href="{{ page.previous.url | relative_url }}" class="waves-effect waves-light">
+
+                            <!--Image-->
+                            <img src="{% if page.previous.strip %}{{ page.previous.strip | prepend:'/assets/img/posts/' | relative_url }}{% else %}{{ site.data.configs['post'].alt_strip_pre | relative_url }}{% endif %}">
+
+                            <!--Mask-->
+                            <div class="overlay">
+
+                                <!--Title-->
+                                <div class="title-text hvr-backward">
+                                    <p><i class="float-left fa fa-angle-left"></i>{{ page.previous.title }}</p>
+                                </div>
+
+                            </div> 
+                            <!--/.Mask-->
+
+                        </a> 
+
+                    </div>
+                    <!--/.Prev post-->
+                    {% endif %}
+                    
+                </div>
+                <!--/.First column-->
+                
+                <!--Second column-->
+                <div class="col-md-6">
+                    {% if page.next %}
+                    <!--Next post-->
+                    <div class="prev-next-post">
+
+                        <a href="{{ page.next.url | relative_url }}" class="waves-effect waves-light"> 
+
+                            <!--Image-->
+                            <img src="{% if page.next.strip %}{{ page.next.strip | prepend:'/assets/img/posts/' | relative_url}}{% else %}{{ site.data.configs['post'].alt_strip_nxt | relative_url }}{% endif %}">
+                            
+                            <!--Mask-->
+                            <div class="overlay">
+                               
+                                <!--Title-->
+                                <div class="title-text hvr-forward">
+                                    <p><i class="float-right fa fa-angle-right"></i>{{ page.next.title }}</p>
+                                </div>
+                                
+                            </div>
+                            <!--/.Mask-->
+
+                        </a>
+
+                    </div>
+                    <!--/.Next post-->
+                    {% endif %}
+                    
+                </div>
+                <!--/.Second column-->
+                
+            </div>
+            <!--First row-->
+            
+        </section>
+        <!--/.Previous and next posts-->
+        
+        {% include related-posts.html %}
+
+        {% include comments.html %}
+
+        {% include about-author.html %}
+
+        {% include back-to-top-btn.html %}
+
+    </div>
+    <!--/.Main listing-->
+    
+</div>
+<!--/.Blog-->

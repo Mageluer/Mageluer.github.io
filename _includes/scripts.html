@@ -1,0 +1,182 @@
+<!-- SCRIPTS -->
+<!-- Scripts for default layout -->
+<!-- JQuery -->
+<script type="text/javascript" src="{{ '/assets/js/jquery-3.1.1.min.js' | relative_url }}"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="{{ '/assets/js/bootstrap.bundle.min.js' | relative_url }}"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="{{ '/assets/js/mdb.min.js' | relative_url }}"></script>
+{% if site.baidu_analyze %}
+<!-- Baidu anaalyze -->
+<script type="text/javascript" src="{{ '/assets/js/baidu-analyze.js' | relative_url }}"></script>
+{% endif %}
+{% if site.google_analyze %}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-176749948-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-176749948-1');
+</script>
+{% endif %}
+{% if site.leancloud_counter %}
+<!-- Leancloud visit counter -->
+<script type="text/javascript" src="{{ '/assets/js/av-min.js' | relative_url }}"></script>
+{% include visit-counter.html %}
+{% endif %}
+<script type="text/javascript">
+    /* Animation init */
+    new WOW().init();
+</script>
+<!-- /Scripts for default layout -->
+<!-- ############################################################################################################# -->
+{% if page.layout != 'default' %}
+<!-- Scripts for page layout -->
+<!-- Simple javascript toast notifications: https://github.com/CodeSeven/toastr -->
+<script type="text/javascript" src="{{ '/assets/js/toastr.min.js' | relative_url }}"></script>
+<script type="text/javascript">
+    /* Toast notifications costumizing */
+    $(function () {
+        toastr.options = {
+            closeButton: true,
+            progressBar: true,
+            showEasing: 'swing',
+            hideEasing: 'linear',
+            closeEasing: 'linear',
+            showMethod: 'slideDown',
+            hideMethod: 'slideUp',
+            closeMethod: 'slideUp'
+        }
+    });
+</script>
+<!-- Bowser - a browser detector: https://github.com/ded/bowser -->
+<script type="text/javascript" src="{{ '/assets/js/bowser.min.js' | relative_url }}"></script>
+<!-- Simple-Jekyll-Search: https://github.com/christian-fei/Simple-Jekyll-Search.git -->
+<script type="text/javascript" src="{{ '/assets/js/jekyll-search.js' | relative_url }}"></script>
+<script type="text/javascript">
+    /* SimpleJekyllSearch costumizing */
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('search-result'),
+        json: '{{"/search.json" | relative_url }}',
+        searchResultTemplate: '<li><a href="{url}" title="{title}" style="color: white; line-height: 30px; height: 30px; background-color: #293a48; overflow: hidden;">{title}</a></li>',
+        noResultsText: 'No results found :(',
+        limit: 10,
+        fuzzy: false,
+        exclude: ['Welcome']
+    });
+</script>
+{% if site.leancloud_contact %}
+<!-- Leancloud contacter -->
+{% include contacter-js.html %}
+{% endif %}
+<script type="text/javascript">
+    /* SideNav init */
+    $(".button-collapse").sideNav();
+    var el = document.querySelector('.custom-scrollbar');
+    Ps.initialize(el);
+    /* Tooltips Initialization */
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+        $('#toggle').tooltip('show');
+    });
+    /* Modal contact init */
+    $('#modal-contact').on('shown.bs.modal', function () {
+        $('#myInput').focus();
+    });
+</script>
+<!-- Change default starting position of anchor -->
+{% include offset-js.html %}
+<!-- jQuery plugin to enable swipe gestures on Bootstrap 3 carousels. -->
+{% include bcSwipe-js.html %}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.carousel').bcSwipe({ threshold: 50 });
+    });
+</script>
+<!-- Automatically adjust textarea height -->
+{% include auto-resize-textarea-js.html %}
+<!-- /Scripts for page layout -->
+{% endif %}
+<!-- ############################################################################################################# -->
+{% if page.layout == 'post' %}
+<!-- Scripts for post layout -->
+{% if page.tex %}
+<!-- MathJax -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    TeX: { 
+        equationNumbers: { autoNumber: "AMS" } 
+    },
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']],
+        processEscapes: true,
+        processRefs: true,
+        processEnvironments: true
+    },
+    "HTML-CSS": {
+        linebreaks: {
+            automatic: true,
+            width: "container"
+        },
+        styles: {/* the style configuration here doesn't work at all */
+            ".MJXc-display, .MathJax .MathJax_Display, .MathJax": {
+                "overflow-x": "auto",
+                "overflow-y": "hidden"
+            }
+        }
+    }
+});
+</script>
+<script async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML-full"></script>
+{% endif %}
+{% if site.leancloud_comment %}
+<!-- Showdown Markdown to Html transform -->
+<script async src=" https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.0/showdown.min.js"></script>
+<!-- Leancloud commenter -->
+{% include comments-js.html %}
+{% endif %}
+<script type="text/javascript">
+    /* Back to top button */
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 130) {
+            $('.back-to-top-btn').fadeIn();
+        } else {
+            $('.back-to-top-btn').fadeOut();
+        }
+    });
+</script>
+<script type="text/javascript">
+    /* jQuery snippet to add anchor links to Markdown posts header */
+    $(function () {
+        'use strict';
+        /* selector */
+        var postHeader = '.post-text > h2, .post-text > h3, .post-text > h4, .post-text > h5, .post-text > h6';
+        $(postHeader).filter('[id]').each(function () {
+            var header = $(this),
+                headerID = header.attr('id'),
+                anchorClass = 'header-link',
+                anchorIcon = '<i class="fa fa-link" aria-hidden="true"></i>',
+                rightAnchorClass = 'header-link-r',
+                rightAnchorIcon = '<i class="fa fa-paragraph" aria-hidden="true"></i>';
+            if (headerID) {
+                header.prepend(
+                    $('<a />').addClass(anchorClass).attr({ 'href': '#' + headerID, 'aria-hidden': 'true' }).html(anchorIcon)
+                );
+                header.append(
+                    $('<a />').addClass(anchorClass).addClass(rightAnchorClass).attr({ 'href': '#' + headerID, 'aria-hidden': 'true' }).html(rightAnchorIcon)
+                );
+            }
+            return this;
+        });
+    });
+</script>
+{% if page.toc %}
+<!-- A simple JavaScript table of contents -->
+{% include toc-js.html %}
+{% endif %}
+<!-- /Scripts for post layout -->
+{% endif %}

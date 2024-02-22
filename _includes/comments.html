@@ -1,0 +1,43 @@
+<section class="wow fadeIn" data-wow-delay="0.3s">
+	<div class="section-heading">
+        <h3 class="section-heading h3">Comments <span class="badge blue" id="total-comment-num">0</span></h3>
+    </div>
+
+    <!--Reply form-->
+	<div class="reply-form">
+		<div class="row">
+			<!--Image column-->
+			<div class="col-sm-2 hidden-xs-down">
+				<img id="comment-list-avatar" src="{{ site.data.configs['post'].comment_avatar | relative_url }}" data-toggle="tooltip" data-placement="right" title="Hello, anonymous visitor">
+			</div>
+			<!--/.Image column-->
+		
+			<!--Content column-->
+			<div class="col-sm-10 col-12">
+				<div class="md-form">
+					<textarea placeholder="Markdown supported:)" type="text" id="form-comment-list" class="md-textarea"></textarea>
+					<label for="form-comment-list" class="">Your comment</label>
+				</div>
+			</div>
+			
+			<div class="text-center">
+				<button class="btn btn-primary waves-effect waves-light" id="add-comment-action-comment-list">Submit</button>
+			</div>
+			<!--/.Content column-->
+		
+		</div>
+	</div>
+	<!--/.Reply form-->
+                    
+    <!--Section: Comments list-->
+    <section class="mb-4">
+
+        <!--Main wrapper-->
+        <div id="comment-list" class="comments-list text-left">
+        </div>
+        <!--/.Main wrapper-->
+
+    </section>
+    <!--/Section: Comments list-->
+
+</section>

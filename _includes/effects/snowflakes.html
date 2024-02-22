@@ -1,0 +1,269 @@
+<style type="text/css">
+.falling-item-container {
+  position: fixed;
+  margin: -100vh 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  z-index: 0;
+  -webkit-transform: translate(0,-20vh);
+  transform: translate(0,-20vh);
+  -webkit-transform: translate3d(0,-20vh,0);
+  transform: translate3d(0,-20vh,0);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.falling-item-container .falling-item {
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  cursor:default;
+  display: inline-block;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  -webkit-animation: falling;
+  animation: falling;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  background-size: contain;
+  background-repeat: no-repeat;
+  backface-visibility: hidden;
+  background-image: url("data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAACCAgMAAAD3bfhuAAAACVBMVEUAAADw6dj+/fz6lrscAAAAAXRSTlMAQObYZgAABGJJREFUWMN9mEHO1DAMhdtKXZT9SByASsApeoSC6ijMKiAhAacI7DhAWM9mJOCUxM9O0qSlkSZT+n9xnu04ydDt20vuXnQX7Rd3s78giP94uyRc7MIFMJDl7oLoyXB3QUxEPnbXhOvGK2IkWrtZCHtKzEwEEMOR6B0I1xGI/oQwMVZEyyDEdCQG8qzDT0LMJzrIRooiBSKcEMHgM5NR/tBuUeW8dQHEcE4Ylkv4W38k4KofzCDEhP7F0gbUDtQTVsCILIelTQp19JNoSUQg36SeyNGTyGNKi2mbkBEZ+gxXQASiNiCEtv2fmIWw/ycmIVwiCBOeTLNcEGLEF2LLXvjiDeY+EL3NWmF5AoH4l8WTpsHbGcRUEbZoXWPvmZgLIQkoBTMQiHCvlsaq1qTolki8I1dF06QnjHfxU6dtTP/E+CCEaUK1pCWw9FKaZH2deJcIp8WLVtzB0/hg1t2IbCG27O7Gah6RWKkibKkE3V/oAwZmwpeEgDCeqCJs5W6PhUrIXlBiSdlnd0GQEEN6UCA4uFsImvTbKUAr3NWBrHWm+98/RPeccQt3E/GxCMiEEXeV+AEvmzIRd5M6dHViaUG0goYAXVPRd2wKIYrEN3f7RozIXru+UcL4ttRg+BY/z0jceMhJRW8gJtiK7Uu1wuwbyJ8j1dOqcXnUu/GTDQthEfJayiNrMVxdbeZ1okJsdCSyiRTYr5rY0qDtKfLAPc9SY4aA14H9ZsS0Jpx8GSn/VPhvi04DMC9OpAagSTotQGkCex2TXPUYoKFCYcBE+bZiysGJO2SocZd0qmVxyDJcjI9qCpaLGK/6MEnWbZOY4ptXj7zKKPEHnMP2ggHIKDExqq9J7wP9JzGCOB7WooeoF/T/BWC4IFa4h9Zsdlq1kZgqEy3xHQs+L+ZHpVQ3F8tl+EY8mWwtFYax4EWz+REqb54yTHYSP52JDUTY1n0kll6AusZfKGE87kOy5NfmONXKx2xkecjWeqxVC9IcDxEmVOGKjWs8KRs7J2JUh1yTGpv3m4nlgk1e5MpUohe59yopJieVw8bDb98AlFzuiS5EQ6+bzcEBFXM4lprM52S8D0zAXW3Zth5CK2cIr309iRKOVk5ifQqnJiUh1zkPd/eEQdnijLM42Ri3ebfMFYXTqDqFS5uEwLauAudjRXleYJFwedCeCHcQ+0gNVerfxnLl8bh0lmmWfVR/gHB4tum1251kBjZnPBcjdkesIF5pop0aycSkRHIqu/k4I27UntmaXadEOnUvCADHC7AS6vhnaD0QHQi48rWtV6hbQGDC8KkVglR4EDB3W5t61eunEoHMjPKuCRzQ8pKrZt1lbx86NoxKG1G0IOoGoue6sgwuJ4TVi+hELNidEKve7kYcresJ4ZjA3mTPf65pwDZZ49N2QiCHuO1EeDghjBBOg/H6SGwgkCDqTttvECjey5/JBqm5IjaO1nZF4BJxSaz4tXJF4P8V1gti9txdES9QYGzosg0V8Q9svosuhm/VTwAAAABJRU5ErkJggg==");
+}
+.falling-item-container .falling-item:nth-child(4n+0) {
+  width: 130px;
+  height: 130px;
+  -webkit-transform-origin: -5% -5%;
+  -ms-transform-origin: -5% -5%;
+  transform-origin: -5% -5%;
+}
+.falling-item-container .falling-item:nth-child(4n+1) {
+  width: 97px;
+  height: 97px;
+  -webkit-transform-origin: 25% 0;
+  -ms-transform-origin: 25% 0;
+  transform-origin: 25% 0;
+}
+.falling-item-container .falling-item:nth-child(4n+2) {
+  width: 65px;
+  height: 65px;
+  -webkit-transform-origin: 0 -50%;
+  -ms-transform-origin: 0 -50%;
+  transform-origin: 0 -50%;
+}
+.falling-item-container .falling-item:nth-child(4n+3) {
+  width: 32px;
+  height: 32px;
+  -webkit-transform-origin: -100% -100%;
+  -ms-transform-origin: -100% -100%;
+  transform-origin: -100% -100%;
+}
+.falling-item-container .falling-item:first-child {
+  -webkit-transform-origin: 60% 40%;
+  -ms-transform-origin: 60% 40%;
+  transform-origin: 60% 40%;
+}
+.falling-item-container .falling-item:nth-of-type(5n+0) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+.falling-item-container .falling-item:nth-of-type(5n+1) {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+.falling-item-container .falling-item:nth-of-type(5n+2) {
+  -webkit-animation-delay: 4s;
+  animation-delay: 4s;
+}
+.falling-item-container .falling-item:nth-of-type(5n+3) {
+  -webkit-animation-delay: 6s;
+  animation-delay: 6s;
+}
+.falling-item-container .falling-item:nth-of-type(5n+4) {
+  -webkit-animation-delay: 8s;
+  animation-delay: 8s;
+}
+.falling-item-container .falling-item:nth-of-type(6n+0) {
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+}
+.falling-item-container .falling-item:nth-of-type(6n+1) {
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+}
+.falling-item-container .falling-item:nth-of-type(6n+2) {
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+}
+.falling-item-container .falling-item:nth-of-type(6n+3) {
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+}
+.falling-item-container .falling-item:nth-of-type(6n+4) {
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+.falling-item-container .falling-item:nth-of-type(6n+5) {
+  -webkit-animation-timing-function: cubic-bezier(0.2,0.3,0.8,0.9);
+  animation-timing-function: cubic-bezier(0.2,0.3,0.8,0.9);
+}
+.falling-item-container .falling-item:nth-of-type(7n+0) {
+  opacity: 0.5;
+}
+.falling-item-container .falling-item:nth-of-type(7n+1) {
+  opacity: 0.8;
+}
+.falling-item-container .falling-item:nth-of-type(7n+2) {
+  opacity: 0.3;
+}
+.falling-item-container .falling-item:nth-of-type(7n+4) {
+  opacity: 0.7;
+}
+.falling-item-container .falling-item:nth-of-type(7n+6) {
+  opacity: 0.6;
+}
+.falling-item-container .falling-item:nth-child(8n+0) {
+  -webkit-animation-duration: 12s;
+  animation-duration: 12s;
+}
+.falling-item-container .falling-item:nth-child(8n+1) {
+  -webkit-animation-duration: 15s;
+  animation-duration: 15s;
+}
+.falling-item-container .falling-item:nth-child(8n+2) {
+  -webkit-animation-duration: 18s;
+  animation-duration: 18s;
+}
+.falling-item-container .falling-item:nth-child(8n+3) {
+  -webkit-animation-duration: 21s;
+  animation-duration: 21s;
+}
+.falling-item-container .falling-item:nth-child(8n+4) {
+  -webkit-animation-duration: 24s;
+  animation-duration: 24s;
+}
+.falling-item-container .falling-item:nth-child(8n+5) {
+  -webkit-animation-duration: 27s;
+  animation-duration: 27s;
+}
+.falling-item-container .falling-item:nth-child(8n+6) {
+  -webkit-animation-duration: 30s;
+  animation-duration: 30s;
+}
+.falling-item-container .falling-item:nth-child(8n+7) {
+  -webkit-animation-duration: 33s;
+  animation-duration: 33s;
+}
+@-webkit-keyframes falling {
+  0% {
+    -webkit-transform: translate(0,0) rotate(0deg) scale(1);
+    transform: translate(0,0) rotate(0deg) scale(1);
+  }
+  50% {
+    -webkit-transform: translate(0,100vh) rotate(180deg) scale(0.8);
+    transform: translate(0,100vh) rotate(180deg) scale(0.8);
+  }
+  100% {
+    -webkit-transform: translate(0,200vh) rotate(360deg) scale(1.2);
+    transform: translate(0,200vh) rotate(360deg) scale(1.2);
+  }
+}
+@keyframes falling {
+  0% {
+    -webkit-transform: translate(0,0) rotate(0deg) scale(1);
+    transform: translate(0,0) rotate(0deg) scale(1);
+  }
+  50% {
+    -webkit-transform: translate(0,100vh) rotate(180deg) scale(0.8);
+    transform: translate(0,100vh) rotate(180deg) scale(0.8);
+  }
+  100% {
+    -webkit-transform: translate(0,200vh) rotate(360deg) scale(1.2);
+    transform: translate(0,200vh) rotate(360deg) scale(1.2);
+  }
+}
+</style>
+<div class="falling-item-container">
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+    <div class="falling-item"></div>
+</div>
