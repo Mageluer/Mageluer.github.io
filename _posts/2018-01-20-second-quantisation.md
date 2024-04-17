@@ -18,7 +18,7 @@ toc: true
 \end{equation}
 </mj>
 
-其中<mj>$\mathcal{H}_1^{(i)}$</mj>是第$i$个粒子的希尔伯特空间。设<mj>$\{\widehat{\varphi}^{(i)}\}$</mj>构成空间<mj>$\mathcal{H}_1^{(i)}$</mj>中的一个ECOC（可对易算符的完全集合）；则（共同）本征矢<mj>$\|\varphi\_\alpha^{(i)}\rangle$</mj>构成<mj>$\mathcal{H}_1^{(i)}$</mj>的一组基。假定它们是正交的
+其中<mj>$\mathcal{H}_1^{(i)}$</mj>是第$i$个粒子的希尔伯特空间。设<mj>$\{\widehat{\varphi}^{(i)}\}$</mj>构成空间<mj>$\mathcal{H}_1^{(i)}$</mj>中的一个ECOC（可对易算符的完全集合）；则（共同）本征矢<mj>$|\varphi_\alpha^{(i)}\rangle$</mj>构成<mj>$\mathcal{H}_1^{(i)}$</mj>的一组基。假定它们是正交的
 
 <mj>
 \begin{equation}
@@ -598,10 +598,12 @@ U(t,t_0)=\exp\left(-\frac{i}{\hbar}H(t-t_0)\right),\quad H\neq H(t)
 #### 3.2.1 定义
 置换算符是这样定义：
 
+<mj>
 \begin{equation}
 \label{eq:55}
-\mathcal{P}\|\varphi\_{\alpha\_1}^{(1)}\varphi\_{\alpha\_2}^{(2)}\cdots\varphi\_{\alpha\_N}^{(N)}\rangle=\|\varphi\_{\alpha\_1}^{(i\_1)}\varphi\_{\alpha\_2}^{(i\_2)}\cdots\varphi\_{\alpha\_N}^{(i\_N)}\rangle
+\mathcal{P}|\varphi_{\alpha_1}^{(1)}\varphi_{\alpha_2}^{(2)}\cdots\varphi_{\alpha_N}^{(N)}\rangle=|\varphi_{\alpha_1}^{(i_1)}\varphi_{\alpha_2}^{(i_2)}\cdots\varphi_{\alpha_N}^{(i_N)}\rangle
 \end{equation}
+</mj>
 
 这里的$\mathcal{P}$是作用在粒子指标上的，当然也可以使其作用在态指标$\alpha\_i$上。$(i\_1,i\_2,\cdots,i\_N)$是由$N$元组$(1,2,\cdots,N)$置换得到的。对于$N$个全同粒子的体系，可以此方法定义$N!$个置换算符。
 
@@ -615,40 +617,50 @@ U(t,t_0)=\exp\left(-\frac{i}{\hbar}H(t-t_0)\right),\quad H\neq H(t)
 
 定义如下对称化算符：
 
+<mj>
 \begin{equation}
 \label{eq:56}
-\widehat{S}\_\varepsilon=\sum\_{\mathcal{P}}\varepsilon^p\mathcal{P}
+\widehat{S}_\varepsilon=\sum_{\mathcal{P}}\varepsilon^p\mathcal{P}
 \end{equation}
+</mj>
 
 其中$\varepsilon=\pm$，$p$是构成$\mathcal{P}$的位调算符的数目，上式对$N$元组$(1,2,\ldots,N)$的所有可能的置换$\mathcal{P}$进行求和。上式中的$\mathcal{P}$左乘位调算符$P\_{ij}$，根据重排定理，式中变成另一个置换算符$\mathcal{P}'$，且$p'=p\pm1$。
 
+<mj>
 \begin{equation}
 \label{eq:57}
-P\_{ij}\widehat{S}\_\varepsilon=\sum\_{\mathcal{P}}\varepsilon^p P\_{ij}\mathcal{P}=\sum\_{\mathcal{P}}\varepsilon^p\mathcal{P}'=\varepsilon\sum\_{\mathcal{P}'}\varepsilon^{p'}\mathcal{P}'
+P_{ij}\widehat{S}_\varepsilon=\sum_{\mathcal{P}}\varepsilon^p P_{ij}\mathcal{P}=\sum_{\mathcal{P}}\varepsilon^p\mathcal{P}'=\varepsilon\sum_{\mathcal{P}'}\varepsilon^{p'}\mathcal{P}'
 \end{equation}
+</mj>
 
 这意味着：
 
+<mj>
 \begin{equation}
 \label{eq:58}
-P\_{ij}\widehat{S}\_\varepsilon=\varepsilon\widehat{S}\_\varepsilon
+P_{ij}\widehat{S}_\varepsilon=\varepsilon\widehat{S}_\varepsilon
 \end{equation}
+</mj>
 
 于是就能得到态空间$\mathcal{H}\_N$中完全对称化（反对称化）的子空间$\mathcal{H}^{(\pm)}$
 
+<mj>
 \begin{equation}
 \label{eq:59}
-\|\psi\_N^{(\varepsilon)}\rangle=\widehat{S}\_\varepsilon\|\psi\_{\alpha\_1}^{(1)}\psi\_{\alpha\_2}^{(2)}\cdots\psi\_{\alpha\_N}^{(N)}\rangle
+|\psi_N^{(\varepsilon)}\rangle=\widehat{S}_\varepsilon|\psi_{\alpha_1}^{(1)}\psi_{\alpha_2}^{(2)}\cdots\psi_{\alpha_N}^{(N)}\rangle
 \end{equation}
+</mj>
 
 满足式\eqref{eq:51}和式\eqref{eq:52}。
 
 对于一个一般的置换算符$\mathcal{P}$，有如下关系式：
 
+<mj>
 \begin{equation}
 \label{eq:60}
-\mathcal{P}\widehat{S}\_\varepsilon=\varepsilon^p\widehat{S}\_\varepsilon\Longleftrightarrow\mathcal{P}\|\psi\_N^{(\varepsilon)}\rangle=\varepsilon^p\|\psi\_N^{(\varepsilon)}\rangle
+\mathcal{P}\widehat{S}_\varepsilon=\varepsilon^p\widehat{S}_\varepsilon\Longleftrightarrow\mathcal{P}|\psi_N^{(\varepsilon)}\rangle=\varepsilon^p|\psi_N^{(\varepsilon)}\rangle
 \end{equation}
+</mj>
 
 ## 4 对称化假定
 ### 4.1 假定的陈述
@@ -669,21 +681,25 @@ P\_{ij}\widehat{S}\_\varepsilon=\varepsilon\widehat{S}\_\varepsilon
 
 此处还要指出，具有混合对称性的全同粒子体系不可能存在。设想$\|\varphi\_N^{(\varepsilon)}\rangle$和$\|\psi\_N^{(\varepsilon')}\rangle$是$N$全同粒子系统的两个可能的态，那么有可能存在一个合适的算符，比如$\hat{x}$（或算符集合），使一个态转换到另一个。形式上，这意味着以下标量积
 
+<mj>
 \begin{equation}
 \label{eq:61}
-\langle\varphi\_N^{(\varepsilon)}\|\hat{x}\|\psi\_N^{(\varepsilon')}\rangle\neq0
+\langle\varphi\_N^{(\varepsilon)}|\hat{x}|\psi\_N^{(\varepsilon')}\rangle\neq0
 \end{equation}
+</mj>
 
 进一步可见：
 
+<mj>
 \begin{align}
 \label{eq:62}
 \begin{split}
-\varepsilon\langle\varphi\_N^{(\varepsilon)}\|\hat{x}\|\psi\_N^{(\varepsilon')}\rangle&=\langle P\_{ij}\varphi\_N^{(\varepsilon)}\|\hat{x}\|\psi\_N^{(\varepsilon')}\rangle=\langle\varphi\_N^{(\varepsilon)}\|P\_{ij}^\dagger\hat{x}\|\psi\_N^{(\varepsilon')}\rangle=\\\
-&=\langle\varphi\_N^{(\varepsilon)}\|P\_{ij}\hat{x}\|\psi\_N^{(\varepsilon')}\rangle=\langle\varphi\_N^{(\varepsilon)}\|\hat{x}P\_{ij}\|\psi\_N^{(\varepsilon')}\rangle=\\\
-&=\varepsilon'\langle\varphi\_N^{(\varepsilon)}\|\hat{x}\|\psi\_N^{(\varepsilon')}\rangle
+\varepsilon\langle\varphi_N^{(\varepsilon)}|\hat{x}|\psi_N^{(\varepsilon')}\rangle&=\langle P_{ij}\varphi_N^{(\varepsilon)}|\hat{x}|\psi_N^{(\varepsilon')}\rangle=\langle\varphi_N^{(\varepsilon)}|P_{ij}^\dagger\hat{x}|\psi_N^{(\varepsilon')}\rangle=\\\
+&=\langle\varphi_N^{(\varepsilon)}|P_{ij}\hat{x}|\psi_N^{(\varepsilon')}\rangle=\langle\varphi_N^{(\varepsilon)}|\hat{x}P_{ij}|\psi_N^{(\varepsilon')}\rangle=\\\
+&=\varepsilon'\langle\varphi_N^{(\varepsilon)}|\hat{x}|\psi_N^{(\varepsilon')}\rangle
 \end{split}
 \end{align}
+</mj>
 
 由此得到$\varepsilon=\varepsilon'$。
 
@@ -704,49 +720,59 @@ P\_{ij}\widehat{S}\_\varepsilon=\varepsilon\widehat{S}\_\varepsilon
 
 于是有
 
+<mj>
 \begin{align}
-\|\psi^{(-)}\rangle&=\|\varphi^{(+)}\chi^{(-)}\rangle\label{eq:63}\\\
-\|\psi^{(-)}\rangle&=\|\varphi^{(-)}\chi^{(+)}\rangle\label{eq:64}\\\
+|\psi^{(-)}\rangle&=|\varphi^{(+)}\chi^{(-)}\rangle\label{eq:63}\\
+|\psi^{(-)}\rangle&=|\varphi^{(-)}\chi^{(+)}\rangle\label{eq:64}\\
 \end{align}
+</mj>
 
 其中，$\|\varphi^{(\varepsilon)}\rangle$和$\|\chi^{(\varepsilon)}\rangle$分别按照上述步骤构成：
 
+<mj>
 \begin{align}
-\|\varphi^{(+)}\rangle&=\frac{1}{\sqrt{2}}\left(\|\varphi\_{x\_1}^{(1)}\varphi\_{x\_2}^{(2)}\rangle+\|\varphi\_{x\_1}^{(2)}\varphi\_{x\_2}^{(1)}\rangle\right)\label{eq:65}\\\
-\|\varphi^{(-)}\rangle&=\frac{1}{\sqrt{2}}\left(\|\varphi\_{x\_1}^{(1)}\varphi\_{x\_2}^{(2)}\rangle-\|\varphi\_{x\_1}^{(2)}\varphi\_{x\_2}^{(1)}\rangle\right)\label{eq:66}\\\
+|\varphi^{(+)}\rangle&=\frac{1}{\sqrt{2}}\left(|\varphi\_{x_1}^{(1)}\varphi_{x_2}^{(2)}\rangle+|\varphi_{x_1}^{(2)}\varphi_{x_2}^{(1)}\rangle\right)\label{eq:65}\\
+|\varphi^{(-)}\rangle&=\frac{1}{\sqrt{2}}\left(|\varphi_{x_1}^{(1)}\varphi_{x_2}^{(2)}\rangle-|\varphi_{x_1}^{(2)}\varphi_{x_2}^{(1)}\rangle\right)\label{eq:66}\\
 \end{align}
+</mj>
 
 和
 
+<mj>
 \begin{align}
-\|\chi^{(+)}\rangle&=\begin{cases}
-\|++\rangle\\\
-\frac{1}{\sqrt{2}}(\|+-\rangle+\|-+\rangle)\\\
-\|--\rangle
-\end{cases}\label{eq:67}\\\
-\|\chi^{(-)}\rangle&=\frac{1}{\sqrt{2}}(\|+-\rangle-\|-+\rangle)\label{eq:68}\\\
+|\chi^{(+)}\rangle&=\begin{cases}
+|++\rangle\\
+\frac{1}{\sqrt{2}}(|+-\rangle+|-+\rangle)\\
+|--\rangle
+\end{cases}\label{eq:67}\\
+|\chi^{(-)}\rangle&=\frac{1}{\sqrt{2}}(|+-\rangle-|-+\rangle)\label{eq:68}\\
 \end{align}
+</mj>
 
 “自由”电子1出现在$\mathbf{x}\_1$附近的$\mathrm{d}^3x\_1$内且“自由”电子2出现在$\mathbf{x}\_2$附近的$\mathrm{d}^3x\_2$内的概率为
 
+<mj>
 \begin{align}
 \begin{split}
-&\langle\psi^{(-)}\|\psi^{(-)}\rangle\mathrm{d}^3x\_1\mathrm{d}^3x\_2=\\\
-=&\frac{1}{2}\left(\langle\varphi\_{x\_1}^{(1)}\varphi\_{x\_2}^{(2)}\|-\varepsilon\langle\varphi\_{x\_1}^{(2)}\varphi\_{x\_2}^{(1)}\|\right)\left(\|\varphi\_{x\_1}^{(1)}\varphi\_{x\_2}^{(2)}\rangle-\varepsilon\|\varphi\_{x\_1}^{(2)}\varphi\_{x\_2}^{(1)}\rangle\right)\langle\chi^{(\varepsilon)}\|\chi^{(\varepsilon)}\rangle\mathrm{d}^3x\_1\mathrm{d}^3x\_2=\\\
-=&\frac{1}{2}\left(\langle\varphi\_{x\_1}^{(1)}\varphi\_{x\_2}^{(2)}\|\varphi\_{x\_1}^{(1)}\varphi\_{x\_2}^{(2)}\rangle+\varepsilon^2\langle\varphi\_{x\_1}^{(2)}\varphi\_{x\_2}^{(1)}\|\varphi\_{x\_1}^{(2)}\varphi\_{x\_2}^{(1)}\rangle-\right.\\\
-&\left.-\varepsilon\langle\varphi\_{x\_1}^{(1)}\varphi\_{x\_2}^{(2)}\|\varphi\_{x\_1}^{(2)}\varphi\_{x\_2}^{(1)}\rangle-\varepsilon\langle\varphi\_{x\_1}^{(2)}\varphi\_{x\_2}^{(1)}\|\varphi\_{x\_1}^{(1)}\varphi\_{x\_2}^{(2)}\rangle\right)\mathrm{d}^3x\_1\mathrm{d}^3x\_2=\\\
-=&\frac{1}{2}\left(\langle\varphi\_{x\_1}^{(1)}\varphi\_{x\_2}^{(2)}\|\varphi\_{x\_1}^{(1)}\varphi\_{x\_2}^{(2)}\rangle+\langle\varphi\_{x\_1}^{(2)}\varphi\_{x\_2}^{(1)}\|\varphi\_{x\_1}^{(2)}\varphi\_{x\_2}^{(1)}\rangle-\right.\\\
-&\left.-\varepsilon2\Re\left[\langle\varphi\_{x\_1}^{(1)}\varphi\_{x\_2}^{(2)}\|\varphi\_{x\_1}^{(2)}\varphi\_{x\_2}^{(1)}\rangle\right]\right)\mathrm{d}^3x\_1\mathrm{d}^3x\_2\\\
+&\langle\psi^{(-)}|\psi^{(-)}\rangle\mathrm{d}^3x_1\mathrm{d}^3x_2=\\
+=&\frac{1}{2}\left(\langle\varphi_{x_1}^{(1)}\varphi_{x_2}^{(2)}|-\varepsilon\langle\varphi_{x_1}^{(2)}\varphi_{x_2}^{(1)}|\right)\left(|\varphi_{x_1}^{(1)}\varphi_{x_2}^{(2)}\rangle-\varepsilon|\varphi_{x_1}^{(2)}\varphi_{x_2}^{(1)}\rangle\right)\langle\chi^{(\varepsilon)}|\chi^{(\varepsilon)}\rangle\mathrm{d}^3x_1\mathrm{d}^3x_2=\\
+=&\frac{1}{2}\left(\langle\varphi_{x_1}^{(1)}\varphi_{x_2}^{(2)}|\varphi_{x_1}^{(1)}\varphi_{x_2}^{(2)}\rangle+\varepsilon^2\langle\varphi_{x_1}^{(2)}\varphi_{x_2}^{(1)}|\varphi_{x_1}^{(2)}\varphi_{x_2}^{(1)}\rangle-\right.\\
+&\left.-\varepsilon\langle\varphi_{x_1}^{(1)}\varphi_{x_2}^{(2)}|\varphi_{x_1}^{(2)}\varphi_{x_2}^{(1)}\rangle-\varepsilon\langle\varphi_{x_1}^{(2)}\varphi_{x_2}^{(1)}|\varphi_{x_1}^{(1)}\varphi_{x_2}^{(2)}\rangle\right)\mathrm{d}^3x_1\mathrm{d}^3x_2=\\
+=&\frac{1}{2}\left(\langle\varphi_{x_1}^{(1)}\varphi_{x_2}^{(2)}|\varphi_{x_1}^{(1)}\varphi_{x_2}^{(2)}\rangle+\langle\varphi_{x_1}^{(2)}\varphi_{x_2}^{(1)}|\varphi_{x_1}^{(2)}\varphi_{x_2}^{(1)}\rangle-\right.\\
+&\left.-\varepsilon2\Re\left[\langle\varphi_{x_1}^{(1)}\varphi_{x_2}^{(2)}|\varphi_{x_1}^{(2)}\varphi_{x_2}^{(1)}\rangle\right]\right)\mathrm{d}^3x_1\mathrm{d}^3x_2.
 \end{split}
 \label{eq:69}
 \end{align}
+</mj>
 
 上式中自旋$\|\chi\rangle$已经归一化，故不出现，$\varepsilon=\pm$分别对应自旋三重态和自旋单态；而
 
+<mj>
 \begin{equation}
 \label{eq:70}
-2\Re\left[\langle\varphi\_{x\_1}^{(1)}\varphi\_{x\_2}^{(2)}\|\varphi\_{x\_1}^{(2)}\varphi\_{x\_2}^{(1)}\rangle\right]
+2\Re\left[\langle\varphi_{x_1}^{(1)}\varphi_{x_2}^{(2)}|\varphi_{x_1}^{(2)}\varphi_{x_2}^{(1)}\rangle\right]
 \end{equation}
+</mj>
 
 被称为交换密度。
 
@@ -764,26 +790,32 @@ P\_{ij}\widehat{S}\_\varepsilon=\varepsilon\widehat{S}\_\varepsilon
 
 下面讨论，物理的观察算符对子空间$\mathcal{H}^{(+)}$或$\mathcal{H}^{(-)}$的作用。由于粒子的全同性，与所要考察的物理量相联系的观察算符对诸粒子而言都具有对称性。在$N$个全同粒子组成的体系中，实际可测的一切观察算符对$N$个粒子而言都具有对称性（见式\eqref{eq:12}），从而称这个对应的观察算符$\widehat{G}$为物理的观察算符。从数学上看，对$N$个粒子的一切交换而言，它应该是不变的；因此它应该和$N$粒子体系的所有置换算符$\mathcal{P}$对易（见式\eqref{eq:48}）：
 
+<mj>
 \begin{equation}
 \label{eq:71}
-[\widehat{G},\mathcal{P}]\_-=0\quad\forall \mathcal{P}
+[\widehat{G},\mathcal{P}]_-=0\quad\forall \mathcal{P}
 \end{equation}
+</mj>
 
 例如，对易两个全同粒子的体系，观察算符$\hat{r}\_1-\hat{r}\_2$（两粒子位置矢量之差）在置换算符$P\_{12}$的作用下，并不是不变的（将变号），故这不是一个物理的观察算符；实际上，须能将粒子1和粒子2区分开才能对$\hat{r}\_1-\hat{r}\_2$进行测量。但我们可以测量两粒子之间的距离，即$\sqrt{(\hat{r}\_1-\hat{r}\_2)^2}$，这个量是对称的。
 
 从式\eqref{eq:71}可见，在观察算符$\widehat{G}$的作用下，子空间$\mathcal{H}^{(+)}$和$\mathcal{H}^{(-)}$都是保持不变的。如果$\|\psi\rangle$属于子空间$\mathcal{H}^{(\varepsilon)}$，那么$\widehat{G}\|\psi\rangle$也属于$\mathcal{H}^{(\varepsilon)}$。实际上，右矢$\|\psi\rangle$属于子空间$\mathcal{H}^{(\varepsilon)}$意味着：
 
+<mj>
 \begin{equation}
 \label{eq:72}
-\mathcal{P}\|\psi\rangle=\varepsilon\|\psi\rangle
+\mathcal{P}|\psi\rangle=\varepsilon|\psi\rangle
 \end{equation}
+</mj>
 
-再来计算$\mathcal{P}\widehat{G}\|\psi\rangle$，结合式\eqref{eq:71}，有：
+再来计算<mj>$\mathcal{P}\widehat{G}|\psi\rangle$</mj>，结合式\eqref{eq:71}，有：
 
+<mj>
 \begin{equation}
 \label{eq:73}
-\mathcal{P}\widehat{G}\|\psi\rangle=\widehat{G}\mathcal{P}\|\psi\rangle=\varepsilon\widehat{G}\|\psi\rangle
+\mathcal{P}\widehat{G}|\psi\rangle=\widehat{G}\mathcal{P}|\psi\rangle=\varepsilon\widehat{G}|\psi\rangle
 \end{equation}
+</mj>
 
 上式表明$\widehat{G}$属于子空间$\mathcal{H}^{(\varepsilon)}$。
 
@@ -793,10 +825,10 @@ P\_{ij}\widehat{S}\_\varepsilon=\varepsilon\widehat{S}\_\varepsilon
 > 1. 如果局限于子空间$\mathcal{H}^{(\varepsilon)}$，那么算符$\widehat{G}$的存在于总空间$\mathcal{H}$的全体本征值就不一定都存在了。因此，对称化假定对一个对称的观察算符$\widehat{G}$的本征谱的影响就是（可能）取消某些本征值；另一方面，该假定不会给本征谱添加任何新的本征值，这是因为，在算符$\widehat{G}$的作用下，空间$\mathcal{H}^{(\varepsilon)}$具有整体不变性，因而算符$\widehat{G}$在子空间$\mathcal{H}^{(\varepsilon)}$中的全体本征矢也是其在空间$\mathcal{H}$的本征矢，并属于同样的本征值。  
 > 2. 现在考虑数学上怎么用$\hat{r}\_1$，$\hat{p}\_1$，$\hat{s}\_1$等观察算符来表示前面列出的各类测量对应的观察算符，这个问题实际上并不简单。以三个全同粒子的体系为例，设法通过$\hat{r}\_1$，$\hat{r}\_2$和$\hat{r}\_3$来表示与三个位置同时测量相对应的观察算符。要解决这个问题，首先考虑若干个物理的观察算符，它们是如此选出的，即应能从这些观察算符中毫不含糊地得到各个粒子的位置（当然，不能给每个位置联系上一个已编号的粒子）；例如，可以选择这样的集合：
 >
-> \begin{equation}
+> <mj>\begin{equation}
 \label{eq:74}
-\hat{x}\_1+\hat{x}\_2+\hat{x}\_3,\quad\hat{x}\_1\hat{x}\_2+\hat{x}\_2\hat{x}\_3+\hat{x}\_3\hat{x}\_1,\quad\hat{x}\_1\hat{x}\_2\hat{x}\_3
-\end{equation}
+\hat{x}_1+\hat{x}_2+\hat{x}_3,\quad\hat{x}_1\hat{x}_2+\hat{x}_2\hat{x}_3+\hat{x}_3\hat{x}_1,\quad\hat{x}_1\hat{x}_2\hat{x}_3
+\end{equation}</mj>
 >
 > （以及关于坐标$\hat{y}$和$\hat{z}$的诸对应观察算符）。但这里讨论的都是从纯形式的观点出发的；不要在一切情况下都试图写出观察算符的表达式，还是照前面的方法，只使用测量的物理本征右矢去做。
 
@@ -819,7 +851,7 @@ P\_{ij}\widehat{S}\_\varepsilon=\varepsilon\widehat{S}\_\varepsilon
 
 \begin{equation}
 \label{eq:77}
-\mathcal{P}\|\psi(t)\rangle=\mathcal{P}U(t,t\_0)\|\psi(t\_0)\rangle=U(t,t\_0)\mathcal{P}\|\psi(t\_0)\rangle
+\mathcal{P}|\psi(t)\rangle=\mathcal{P}U(t,t\_0)|\psi(t\_0)\rangle=U(t,t\_0)\mathcal{P}|\psi(t\_0)\rangle
 \end{equation}
 
 如果$\|\psi(t\_0)\rangle$是$\mathcal{P}$的本征矢，那么，$\|\psi(t)\rangle$也是它的本征矢，并属于同一个本征值。所以，右矢的完全对称化和完全反对称化的性质将一直保持不变。对称化假定与物理体系随时间演变的假定是相容的，即薛定谔方程不会使右矢$\|\psi\rangle$越出空间$\mathcal{H}^{(\varepsilon)}$。
@@ -873,14 +905,16 @@ P\_{ij}\widehat{S}\_\varepsilon=\varepsilon\widehat{S}\_\varepsilon
 
 将算符$1+\varepsilon P\_{12}$作用在左矢上得到：
 
+<mj>
 \begin{align}
 \begin{split}
-\langle\varphi\_2^{(\varepsilon)}\|\psi\_2^{(\varepsilon)}\rangle=&\langle\varphi\_{\alpha\_1}^{(1)}\varphi\_{\alpha\_2}^{(2)}\|\psi\_{\beta\_1}^{(1)}\psi\_{\beta\_2}^{(2)}\rangle+\varepsilon\langle\varphi\_{\alpha\_2}^{(1)}\varphi\_{\alpha\_1}^{(2)}\|\psi\_{\beta\_1}^{(1)}\psi\_{\beta\_2}^{(2)}\rangle=\\\
-=&\langle\varphi\_{\alpha\_1}^{(1)}\|\psi\_{\beta\_1}^{(1)}\rangle\langle\varphi\_{\alpha\_2}^{(2)}\|\psi\_{\beta\_2}^{(2)}\rangle+\varepsilon\langle\varphi\_{\alpha\_2}^{(1)}\|\psi\_{\beta\_1}^{(1)}\rangle\langle\varphi\_{\alpha\_1}^{(2)}\|\psi\_{\beta\_2}^{(2)}\rangle=\\\
-=&\langle\varphi\_{\alpha\_1}\|\psi\_{\beta\_1}\rangle\langle\varphi\_{\alpha\_2}\|\psi\_{\beta\_2}\rangle+\varepsilon\langle\varphi\_{\alpha\_2}\|\psi\_{\beta\_1}\rangle\langle\varphi\_{\alpha\_1}\|\psi\_{\beta\_2}\rangle
+\langle\varphi_2^{(\varepsilon)}|\psi_2^{(\varepsilon)}\rangle=&\langle\varphi_{\alpha_1}^{(1)}\varphi_{\alpha_2}^{(2)}|\psi_{\beta_1}^{(1)}\psi_{\beta_2}^{(2)}\rangle+\varepsilon\langle\varphi_{\alpha_2}^{(1)}\varphi_{\alpha_1}^{(2)}|\psi_{\beta_1}^{(1)}\psi_{\beta_2}^{(2)}\rangle=\\
+=&\langle\varphi_{\alpha_1}^{(1)}|\psi_{\beta_1}^{(1)}\rangle\langle\varphi_{\alpha_2}^{(2)}|\psi_{\beta_2}^{(2)}\rangle+\varepsilon\langle\varphi_{\alpha_2}^{(1)}|\psi_{\beta_1}^{(1)}\rangle\langle\varphi_{\alpha_1}^{(2)}|\psi_{\beta_2}^{(2)}\rangle=\\
+=&\langle\varphi_{\alpha_1}|\psi_{\beta_1}\rangle\langle\varphi_{\alpha_2}|\psi_{\beta_2}\rangle+\varepsilon\langle\varphi_{\alpha_2}|\psi_{\beta_1}\rangle\langle\varphi_{\alpha_1}|\psi_{\beta_2}\rangle
 \end{split}
 \label{eq:84}
 \end{align}
+</mj>
 
 这样一来，诸粒子的编号便消失了，概率幅可以通过诸标量积的函数$\langle\varphi\_{\alpha\_1}\|\psi\_{\beta\_1}\rangle\cdots\langle\varphi\_{\alpha\_1}\|\psi\_{\beta\_2}\rangle$来表示。概率幅成为两项之和（对于玻色子）或两项之差（对于费米子）。
 
@@ -903,13 +937,13 @@ P\_{ij}\widehat{S}\_\varepsilon=\varepsilon\widehat{S}\_\varepsilon
 >
 > 再设想一种测量仪器，尽管粒子1和粒子2并非全同，但它不能区别；如果仪器给出的结果是$\alpha\_1$和$\alpha\_2$，也无法得知$\alpha\_1$是与粒子1相关还是与粒子2相关（例如，体系含有一个$\mu^-$子和一个电子$e^-$，而仪器只对粒子的电荷有影响，对于质量却不能提供任何信息）。于是两个本征态$\|\varphi\_{\alpha\_1}^{(1)}\varphi\_{\alpha\_2}^{(2)}\rangle$和$\|\varphi\_{\alpha\_2}^{(1)}\varphi\_{\alpha\_1}^{(2)}\rangle$（在此情况下，两者表示不同的物理状态）对应着同一个测量结果；因为两者是正交的，应将相应的概率相加，便得到：
 >
-> \begin{align}
+> <mj>\begin{align}
 \begin{split}
-\mathcal{p}'(\alpha\_1;\alpha\_2)=&\|\langle\varphi\_{\alpha\_1}^{(1)}\varphi\_{\alpha\_2}^{(2)}\|\psi\_{\beta\_1}^{(1)}\psi\_{\beta\_2}^{(2)}\rangle\|^2+\|\langle\varphi\_{\alpha\_2}^{(1)}\varphi\_{\alpha\_1}^{(2)}\|\psi\_{\beta\_1}^{(1)}\psi\_{\beta\_2}^{(2)}\rangle\|^2=\\\
-=&\|\langle\varphi\_{\alpha\_1}\|\psi\_{\beta\_1}\rangle\|^2\|\langle\varphi\_{\alpha\_2}\|\psi\_{\beta\_2}\rangle\|^2+\|\langle\varphi\_{\alpha\_2}\|\psi\_{\beta\_1}\rangle\|^2\|\langle\varphi\_{\alpha\_1}\|\psi\_{\beta\_2}\rangle\|^2
+\mathcal{p}'(\alpha_1;\alpha_2)=&|\langle\varphi_{\alpha_1}^{(1)}\varphi_{\alpha_2}^{(2)}|\psi_{\beta_1}^{(1)}\psi_{\beta_2}^{(2)}\rangle|^2+|\langle\varphi_{\alpha_2}^{(1)}\varphi_{\alpha_1}^{(2)}|\psi_{\beta_1}^{(1)}\psi_{\beta_2}^{(2)}\rangle|^2=\\
+=&|\langle\varphi_{\alpha_1}|\psi_{\beta_1}\rangle|^2|\langle\varphi_{\alpha_2}|\psi_{\beta_2}\rangle|^2+|\langle\varphi_{\alpha_2}|\psi_{\beta_1}\rangle|^2|\langle\varphi_{\alpha_1}|\psi_{\beta_2}\rangle|^2
 \end{split}
 \label{eq:87}
-\end{align}
+\end{align}</mj>
 >
 > 比较\eqref{eq:85}和\eqref{eq:87}便可以清楚地看到，量子力学的预言，视粒子为全同的或非全同的，而存在重大差别。
 
@@ -922,20 +956,24 @@ P\_{ij}\widehat{S}\_\varepsilon=\varepsilon\widehat{S}\_\varepsilon
 
 从而
 
+<mj>
 \begin{align}
 \label{eq:89}
 \begin{split}
-\langle\varphi\_2^{(+)}\|\psi\_2^{(+)}\rangle&=\frac{1}{\sqrt{2}}\langle\varphi\_{\alpha\_1}^{(1)}\varphi\_{\alpha\_1}^{(2)}\|(1+P\_{12})\|\psi\_{\beta\_1}^{(1)}\psi\_{\beta\_2}^{(2)}\rangle=\\\
-&=\sqrt{2}\langle\varphi\_{\alpha\_1}\|\psi\_{\beta\_1}\rangle\langle\varphi\_{\alpha\_1}\|\psi\_{\beta\_2}\rangle
+\langle\varphi_2^{(+)}|\psi_2^{(+)}\rangle&=\frac{1}{\sqrt{2}}\langle\varphi_{\alpha_1}^{(1)}\varphi_{\alpha_1}^{(2)}|(1+P_{12})|\psi_{\beta_1}^{(1)}\psi_{\beta_2}^{(2)}\rangle=\\\
+&=\sqrt{2}\langle\varphi_{\alpha_1}|\psi_{\beta_1}\rangle\langle\varphi_{\alpha_1}|\psi_{\beta_2}\rangle
 \end{split}
 \end{align}
+</mj>
 
 由此得到：
 
+<mj>
 \begin{equation}
 \label{eq:90}
-\mathcal{p}(\alpha\_1;\alpha\_1)=2\|\langle\varphi\_{\alpha\_1}\|\psi\_{\beta\_1}\rangle\langle\varphi\_{\alpha\_1}\|\psi\_{\beta\_2}\rangle\|^2
+\mathcal{p}(\alpha_1;\alpha_1)=2|\langle\varphi_{\alpha_1}|\psi_{\beta_1}\rangle\langle\varphi_{\alpha_1}|\psi_{\beta_2}\rangle|^2
 \end{equation}
+</mj>
 
 > **附注**：  
 > 前面讨论过两者并非全同粒子的情况，现在将这种情况下可能得到的结果与上面的结果比较一下。此时应以$\|\psi\_{\beta\_1}^{(1)}\psi\_{\beta\_2}^{(2)}\rangle$代替$\|\psi\_2^{(\varepsilon)}\rangle$，用$\|\varphi\_{\alpha\_1}^{(1)}\varphi\_{\alpha\_1}^{(2)}\rangle$代替$\|\varphi\_2^{(\varepsilon)}\rangle$然后得到概率幅
@@ -979,16 +1017,18 @@ P\_{ij}\widehat{S}\_\varepsilon=\varepsilon\widehat{S}\_\varepsilon
 
 于是所求的概率幅可以写作：
 
+<mj>
 \begin{align}
 \begin{split}
-\langle\psi\_D\|\psi(t)\rangle=&\langle\psi\_D\|U(t,t\_0)\psi(t)\rangle=\\\
-=&\frac{1}{2}\langle\psi\_{\mathbf{p}'}^{(1)}\psi\_{-\mathbf{p}'}^{(2)}\|(1+\varepsilon P\_{12}^\dagger)U(t,t\_0)(1+\varepsilon P\_{12})\|\psi\_{\mathbf{p}}^{(1)}\psi\_{-\mathbf{p}}^{(2)}\rangle=\\\
-=&\langle\psi\_{\mathbf{p}'}^{(1)}\psi\_{-\mathbf{p}'}^{(2)}\|(1+\varepsilon P\_{12}^\dagger)U(t,t\_0)\|\psi\_{\mathbf{p}}^{(1)}\psi\_{-\mathbf{p}}^{(2)}\rangle=\\\
-=&\langle\psi\_{\mathbf{p}'}^{(1)}\psi\_{-\mathbf{p}'}^{(2)}\|U(t,t\_0)\|\psi\_{\mathbf{p}}^{(1)}\psi\_{-\mathbf{p}}^{(2)}\rangle+\\\
-&+\varepsilon\langle\psi\_{-\mathbf{p}'}^{(1)}\psi\_{\mathbf{p}'}^{(2)}\|U(t,t\_0)\|\psi\_{\mathbf{p}}^{(1)}\psi\_{-\mathbf{p}}^{(2)}\rangle
+\langle\psi_D|\psi(t)\rangle=&\langle\psi_D|U(t,t_0)\psi(t)\rangle=\\
+=&\frac{1}{2}\langle\psi_{\mathbf{p}'}^{(1)}\psi_{-\mathbf{p}'}^{(2)}|(1+\varepsilon P_{12}^\dagger)U(t,t_0)(1+\varepsilon P_{12})|\psi_{\mathbf{p}}^{(1)}\psi_{-\mathbf{p}}^{(2)}\rangle=\\
+=&\langle\psi_{\mathbf{p}'}^{(1)}\psi_{-\mathbf{p}'}^{(2)}|(1+\varepsilon P_{12}^\dagger)U(t,t_0)|\psi_{\mathbf{p}}^{(1)}\psi_{-\mathbf{p}}^{(2)}\rangle=\\
+=&\langle\psi_{\mathbf{p}'}^{(1)}\psi_{-\mathbf{p}'}^{(2)}|U(t,t_0)|\psi_{\mathbf{p}}^{(1)}\psi_{-\mathbf{p}}^{(2)}\rangle+\\
+&+\varepsilon\langle\psi_{-\mathbf{p}'}^{(1)}\psi_{\mathbf{p}'}^{(2)}|U(t,t_0)|\psi_{\mathbf{p}}^{(1)}\psi_{-\mathbf{p}}^{(2)}\rangle
 \end{split}
 \label{eq:96}
 \end{align}
+</mj>
 
 上式第三行利用了式\eqref{eq:76}和式\eqref{eq:82}。由此可见，直接项相当于[2.3](#23-量子力学中的全同粒子)中的a道路，间接项就对应于b道路。在此例中，仍然应该将相应的概率幅相加（玻色子）或相减（费米子），这样一来，如果取式\eqref{eq:96}的模平方，就会出现一个干涉项。还须注意，如果将$\mathbf{p}$换作$-\mathbf{p}$，这个式子不过多了一个乘数$\varepsilon$，对应的概率并不会改变。
 
@@ -997,23 +1037,27 @@ P\_{ij}\widehat{S}\_\varepsilon=\varepsilon\widehat{S}\_\varepsilon
 
 首先考虑处于空间的两个不同区域中的全同粒子，这两个粒子一个处于单粒子态$\|\varphi\rangle$，另一个处于单粒子态$\|\chi\rangle$，这里不考虑自旋。假设表示右矢$\|\varphi\rangle$和$\|\chi\rangle$的波函数的定义域在空间是分开的：
 
+<mj>
 \begin{equation}
 \label{eq:97}
 \begin{cases}
-\varphi(\mathbf{r})=\langle\mathbf{r}\|\varphi\rangle=0,\quad\text{if}\quad\mathbf{r}\notin D\\\
-\chi(\mathbf{r})=\langle\mathbf{r}\|\chi\rangle=0,\quad\text{if}\quad\mathbf{r}\notin\Delta
+\varphi(\mathbf{r})=\langle\mathbf{r}|\varphi\rangle=0,\quad\text{if}\quad\mathbf{r}\notin D\\
+\chi(\mathbf{r})=\langle\mathbf{r}|\chi\rangle=0,\quad\text{if}\quad\mathbf{r}\notin\Delta
 \end{cases}
 \end{equation}
+</mj>
 
 这里区域$D$和$\Delta$是分开的。此时便相当于经典力学中的情况（[2.2](#22-经典力学中的全同粒子)）：只要区域$D$和$\Delta$并不重叠，就可以“跟踪”每一个粒子；于是可以预见，对称化假定在此并无必要。现在设想使用两套不同的仪器对两个粒子同时进行测量，一套仪器对发生在区域$\Delta$中的现象没有响应，另一套对区域$D$中的没有响应。假设与两套仪器测量结果相关联的单粒子态分别为$\|u\rangle$和$\|v\rangle$。既然粒子是全同的，原则上应引用对称化假定。于是，在与测量结果相关的概率幅中，直接项就是$\langle u\|\varphi\rangle\langle v\|\chi\rangle$，交换项就是$\langle u\|\chi\rangle\langle v\|\varphi\rangle$。但测量仪器在空间的安排意味着：
 
+<mj>
 \begin{equation}
 \label{eq:98}
 \begin{cases}
-u(\mathbf{r})=\langle\mathbf{r}\|u\rangle=0,\quad\text{if}\quad\mathbf{r}\in\Delta\\\
-v(\mathbf{r})=\langle\mathbf{r}\|v\rangle=0,\quad\text{if}\quad\mathbf{r}\in D
+u(\mathbf{r})=\langle\mathbf{r}|u\rangle=0,\quad\text{if}\quad\mathbf{r}\in\Delta\\
+v(\mathbf{r})=\langle\mathbf{r}|v\rangle=0,\quad\text{if}\quad\mathbf{r}\in D
 \end{cases}
 \end{equation}
+</mj>
 
 由\eqref{eq:97}和\eqref{eq:98}可以得到：
 
@@ -1046,10 +1090,12 @@ v(\mathbf{r})=\langle\mathbf{r}\|v\rangle=0,\quad\text{if}\quad\mathbf{r}\in D
 ### 5.1 “连续的”福克表象
 为了使引入产生湮灭算符的过程简单而顺利，不妨做一些预先的设定。首先定义有连续本征谱的单粒子观察算符$\widehat{\varphi}$：
 
+<mj>
 \begin{align}
-\widehat{\varphi}\|\varphi\_\alpha\rangle&=\varphi\_\alpha\|\varphi\_\alpha\rangle\label{eq:101}\\\
-\langle\varphi\_\alpha\|\varphi\_\beta\rangle&=\delta(\varphi\_\alpha-\varphi\_\beta)\equiv\delta(\alpha-\beta)\label{eq:102}
+\widehat{\varphi}|\varphi_\alpha\rangle&=\varphi_\alpha|\varphi_\alpha\rangle\label{eq:101}\\
+\langle\varphi_\alpha|\varphi_\beta\rangle&=\delta(\varphi_\alpha-\varphi_\beta)\equiv\delta(\alpha-\beta)\label{eq:102}
 \end{align}
+</mj>
 
 这些本征态构成$\mathcal{H}\_1$的一组基：
 
@@ -1076,13 +1122,15 @@ v(\mathbf{r})=\langle\mathbf{r}\|v\rangle=0,\quad\text{if}\quad\mathbf{r}\in D
 
 在态空间$\mathcal{H}\_N^{(\varepsilon)}$中，每个置换算符$\mathcal{P}$都是厄密的：
 
+<mj>
 \begin{align}
 \label{eq:106}
 \begin{split}
-\langle\varphi\_N^{(\varepsilon)}\|\mathcal{P}^\dagger\|\varphi\_N^{(\varepsilon)}\rangle&=\left(\langle\varphi\_N^{(\varepsilon)}\|\mathcal{P}\|\varphi\_N^{(\varepsilon)}\rangle\right)^\*=\varepsilon^p\left(\langle\varphi\_N^{(\varepsilon)}\|\varphi\_N^{(\varepsilon)}\rangle\right)^\*=\\\
-&=\varepsilon^p\langle\varphi\_N^{(\varepsilon)}\|\varphi\_N^{(\varepsilon)}\rangle=\langle\varphi\_N^{(\varepsilon)}\|\mathcal{P}\|\varphi\_N^{(\varepsilon)}\rangle
+\langle\varphi_N^{(\varepsilon)}|\mathcal{P}^\dagger|\varphi_N^{(\varepsilon)}\rangle&=\left(\langle\varphi_N^{(\varepsilon)}|\mathcal{P}|\varphi_N^{(\varepsilon)}\rangle\right)^*=\varepsilon^p\left(\langle\varphi_N^{(\varepsilon)}|\varphi_N^{(\varepsilon)}\rangle\right)^*=\\
+&=\varepsilon^p\langle\varphi_N^{(\varepsilon)}|\varphi_N^{(\varepsilon)}\rangle=\langle\varphi_N^{(\varepsilon)}|\mathcal{P}|\varphi_N^{(\varepsilon)}\rangle
 \end{split}
 \end{align}
+</mj>
 
 由此得到：
 
@@ -1093,14 +1141,16 @@ v(\mathbf{r})=\langle\mathbf{r}\|v\rangle=0,\quad\text{if}\quad\mathbf{r}\in D
 
 从式\eqref{eq:105}还可以得到这样一个有用的关系，对任意一个观察算符$\widehat{A}$总有如下关系：
 
+<mj>
 \begin{align}
 \label{eq:108}
 \begin{split}
-\langle\psi\_N^{(\varepsilon)}\|\widehat{A}\|\varphi\_N^{(\varepsilon)}\rangle&=\frac{1}{N!}\sum\_\mathcal{P}\varepsilon^p\langle\psi\_{\alpha\_1}\psi\_{\alpha\_2}\cdots\psi\_{\alpha\_N}\|\mathcal{P}^\dagger\widehat{A}\|\varphi\_N^{(\varepsilon)}\rangle=\\\
-&=\frac{1}{N!}\sum\_\mathcal{P}\varepsilon^p\langle\psi\_{\alpha\_1}\psi\_{\alpha\_2}\cdots\psi\_{\alpha\_N}\|\widehat{A}\mathcal{P}\|\varphi\_N^{(\varepsilon)}\rangle=\\\
-&=\frac{1}{N!}\sum\_\mathcal{P}\varepsilon^{2p}\langle\psi\_{\alpha\_1}\psi\_{\alpha\_2}\cdots\psi\_{\alpha\_N}\|\widehat{A}\|\varphi\_N^{(\varepsilon)}\rangle
+\langle\psi_N^{(\varepsilon)}|\widehat{A}|\varphi_N^{(\varepsilon)}\rangle&=\frac{1}{N!}\sum_\mathcal{P}\varepsilon^p\langle\psi_{\alpha_1}\psi_{\alpha_2}\cdots\psi_{\alpha_N}|\mathcal{P}^\dagger\widehat{A}|\varphi_N^{(\varepsilon)}\rangle=\\\
+&=\frac{1}{N!}\sum_\mathcal{P}\varepsilon^p\langle\psi_{\alpha_1}\psi_{\alpha_2}\cdots\psi_{\alpha_N}|\widehat{A}\mathcal{P}|\varphi_N^{(\varepsilon)}\rangle=\\\
+&=\frac{1}{N!}\sum_\mathcal{P}\varepsilon^{2p}\langle\psi_{\alpha_1}\psi_{\alpha_2}\cdots\psi_{\alpha_N}|\widehat{A}|\varphi_N^{(\varepsilon)}\rangle
 \end{split}
 \end{align}
+</mj>
 
 上式的第二行利用了式\eqref{eq:71}和式\eqref{eq:107}。由于$\varepsilon^{2p}=1$，上式对$N!$个相同的项求和就得到：
 
@@ -1111,47 +1161,55 @@ v(\mathbf{r})=\langle\mathbf{r}\|v\rangle=0,\quad\text{if}\quad\mathbf{r}\in D
 
 上式右端的左矢并没有对称化。特别地，当$\widehat{A}$是单位算符时：
 
+<mj>
 \begin{align}
 \label{eq:110}
 \begin{split}
-&{}^{(\varepsilon)}\langle\varphi\_{\beta\_1}\cdots\varphi\_{\beta\_N}\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}=\\\
-&=\langle\varphi\_{\beta\_1}\cdots\varphi\_{\beta\_N}\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}=\\\
-&=\frac{1}{N!}\sum\_{\mathcal{P}\_\alpha}\varepsilon^{p\_\alpha}\mathcal{P}\_\alpha\langle\varphi\_{\beta\_1}\cdots\varphi\_{\beta\_N}\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle
+&{}^{(\varepsilon)}\langle\varphi_{\beta_1}\cdots\varphi_{\beta_N}|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}=\\
+&=\langle\varphi_{\beta_1}\cdots\varphi_{\beta_N}|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}=\\
+&=\frac{1}{N!}\sum_{\mathcal{P}_\alpha}\varepsilon^{p_\alpha}\mathcal{P}_\alpha\langle\varphi_{\beta_1}\cdots\varphi_{\beta_N}|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle
 \end{split}
 \end{align}
+</mj>
 
 下标$\alpha$表示$\mathcal{P}\_\alpha$只是作用在$\varphi\_\alpha$上。于是便得到两个对称化（反对称化）的$N$粒子态的标量积：
 
+<mj>
 \begin{align}
 \begin{split}
-&{}^{(\varepsilon)}\langle\varphi\_{\beta\_1}\cdots\varphi\_{\beta\_N}\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}=\\\
-&=\frac{1}{N!}\sum\_{\mathcal{P}\_\alpha}\varepsilon^{p\_\alpha}\mathcal{P}\_\alpha\left\\{\langle\varphi\_{\beta\_1}^{(1)}\|\varphi\_{\alpha\_1}^{(1)}\rangle\cdots\langle\varphi\_{\beta\_N}^{(N)}\|\varphi\_{\alpha\_N}^{(N)}\rangle\right\\}=\\\
-&=\frac{1}{N!}\sum\_{\mathcal{P}\_\alpha}\varepsilon^{p\_\alpha}\mathcal{P}\_\alpha\left[\delta(\beta\_1-\alpha\_1)\cdots\delta(\beta\_N-\alpha\_N)\right]
+&{}^{(\varepsilon)}\langle\varphi_{\beta_1}\cdots\varphi_{\beta_N}|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}=\\
+&=\frac{1}{N!}\sum_{\mathcal{P}_\alpha}\varepsilon^{p_\alpha}\mathcal{P}_\alpha\left\{\langle\varphi_{\beta_1}^{(1)}|\varphi_{\alpha_1}^{(1)}\rangle\cdots\langle\varphi_{\beta_N}^{(N)}|\varphi_{\alpha_N}^{(N)}\rangle\right\}=\\
+&=\frac{1}{N!}\sum_{\mathcal{P}_\alpha}\varepsilon^{p_\alpha}\mathcal{P}_\alpha\left[\delta(\beta_1-\alpha_1)\cdots\delta(\beta_N-\alpha_N)\right].
 \end{split}
 \label{eq:111}
 \end{align}
+</mj>
 
 从逻辑上看，上式是对单粒子态正交性\eqref{eq:102}的推广，从上式可以得到：
 
+<mj>
 \begin{align}
 \begin{split}
-&\int\cdots\int\mathrm{d}\beta\_1\cdots\mathrm{d}\beta\_N\|\varphi\_{\beta\_1}\cdots\varphi\_{\beta\_N}\rangle^{(\varepsilon)}{}^{(\varepsilon)}\langle\varphi\_{\beta\_1}\cdots\varphi\_{\beta\_N}\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}=\\\
-&=\frac{1}{N!}\sum\_{\mathcal{P}\_\alpha}\varepsilon^{p\_\alpha}\mathcal{P}\_\alpha\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}=\frac{1}{N!}\sum\_{\mathcal{P}\_\alpha}\varepsilon^{2p\_\alpha}\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}=\\\
-&=\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}
+&\int\cdots\int\mathrm{d}\beta_1\cdots\mathrm{d}\beta_N|\varphi_{\beta_1}\cdots\varphi_{\beta_N}\rangle^{(\varepsilon)}{}^{(\varepsilon)}\langle\varphi_{\beta_1}\cdots\varphi_{\beta_N}|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}=\\
+&=\frac{1}{N!}\sum_{\mathcal{P}_\alpha}\varepsilon^{p_\alpha}\mathcal{P}_\alpha|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}=\frac{1}{N!}\sum_{\mathcal{P}_\alpha}\varepsilon^{2p_\alpha}|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}=\\
+&=|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}
 \end{split}
 \label{eq:112}
 \end{align}
+</mj>
 
 任意一个$N$粒子态$\|\psi\_N\rangle^{(\varepsilon)}$都可以表示成$N$个单粒子态$\|\psi\rangle$的直积之和。既然假定$\|\varphi\_\alpha\rangle$构成$\mathcal{H}\_1$的完备基，$\|\psi\rangle$可由$\|\varphi\_\alpha\rangle$线性表出，那么$\|\psi\_N\rangle^{(\varepsilon)}$自然可以由$\|\varphi\_{\alpha\_1}\cdots\rangle^{(\varepsilon)}$线性表出：
 
+<mj>
 \begin{align}
 \label{eq:113}
 \begin{split}
-\|\psi\_N\rangle^{(\varepsilon)}&=\widehat{S}\_\varepsilon\|\psi^{(1)}\cdots\psi^{(N)}\rangle=\\\
-&=\sum\_{\alpha\_1}C\_{\alpha\_1}\sum\_{\alpha\_2}C\_{\alpha\_2}\cdots\sum\_{\alpha\_N}C\_{\alpha\_N}\widehat{S}\_\varepsilon\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle=\\\
-&=\sum\_{\alpha\_1\cdots\alpha\_N}C(\alpha\_1\cdots\alpha\_N)\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}
+|\psi_N\rangle^{(\varepsilon)}&=\widehat{S}_\varepsilon|\psi^{(1)}\cdots\psi^{(N)}\rangle=\\
+&=\sum_{\alpha_1}C_{\alpha_1}\sum_{\alpha_2}C_{\alpha_2}\cdots\sum_{\alpha_N}C_{\alpha_N}\widehat{S}_\varepsilon|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle=\\
+&=\sum_{\alpha_1\cdots\alpha_N}C(\alpha_1\cdots\alpha_N)|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}
 \end{split}
 \end{align}
+</mj>
 
 从式\eqref{eq:112}可得完全性关系：
 
@@ -1185,14 +1243,16 @@ a\_\alpha^\dagger:\mathcal{H}\_N^{(\varepsilon)}\Longrightarrow\mathcal{H}\_{N+1
 
 这个算符完全由它的效果定义：
 
+<mj>
 \begin{equation}
 \label{eq:118}
 \begin{array}{c}
-a\_{\alpha\_1}^\dagger\|0\rangle=\sqrt{1}\|\varphi\_{\alpha\_1}\rangle^{(\varepsilon)},\\\
-a\_{\alpha\_2}^\dagger\|\varphi\_{\alpha\_1}\rangle^{(\varepsilon)}=\sqrt{2}\|\varphi\_{\alpha\_2}\varphi\_{\alpha\_1}\rangle^{(\varepsilon)}\\\
+a_{\alpha_1}^\dagger|0\rangle=\sqrt{1}|\varphi_{\alpha_1}\rangle^{(\varepsilon)},\\
+a_{\alpha_2}^\dagger|\varphi_{\alpha_1}\rangle^{(\varepsilon)}=\sqrt{2}|\varphi_{\alpha_2}\varphi_{\alpha_1}\rangle^{(\varepsilon)}\\
 \cdots
 \end{array}
 \end{equation}
+</mj>
 
 写成一般形式：
 
@@ -1216,14 +1276,15 @@ a\_{\alpha\_1}^\dagger a\_{\alpha\_2}^\dagger\|\varphi\_{\alpha\_3}\cdots\varphi
 \end{equation}
 
 而
-
+<mj>
 \begin{align}
 \label{eq:122}
 \begin{split}
-a\_{\alpha\_2}^\dagger a\_{\alpha\_1}^\dagger\|\varphi\_{\alpha\_3}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}&=\sqrt{N(N-1)}\|\varphi\_{\alpha\_2}\varphi\_{\alpha\_1}\varphi\_{\alpha\_3}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}=\\\
-&=\varepsilon\sqrt{N(N-1)}\|\varphi\_{\alpha\_1}\varphi\_{\alpha\_2}\varphi\_{\alpha\_3}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}
+a_{\alpha_2}^\dagger a_{\alpha_1}^\dagger|\varphi_{\alpha_3}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}&=\sqrt{N(N-1)}|\varphi_{\alpha_2}\varphi_{\alpha_1}\varphi_{\alpha_3}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}=\\
+&=\varepsilon\sqrt{N(N-1)}|\varphi_{\alpha_1}\varphi_{\alpha_2}\varphi_{\alpha_3}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}
 \end{split}
 \end{align}
+</mj>
 
 基于上面两式可得如下算符恒等式：
 
@@ -1250,59 +1311,69 @@ a\_\alpha:\mathcal{H}\_N^{(\varepsilon)}\Longrightarrow\mathcal{H}\_{N-1}^{(\var
 
 这就是所谓的湮灭算符，既然它是$a\_\alpha^\dagger$的共轭，从\eqref{eq:119}和\eqref{eq:120}可见：
 
+<mj>
 \begin{align}
-{}^{(\varepsilon)}\langle\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\|a\_\beta&=\sqrt{N+1}{}^{(\varepsilon)}\langle\varphi\_\beta\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\|\label{eq:126}\\\
-{}^{(\varepsilon)}\langle\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\|&=\frac{1}{\sqrt{N!}}\langle0\|a\_{\alpha\_N}\cdots a\_{\alpha\_2}a\_{\alpha\_1}\label{eq:127}\\\
+{}^{(\varepsilon)}\langle\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}|a_\beta&=\sqrt{N+1}{}^{(\varepsilon)}\langle\varphi_\beta\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}|\label{eq:126}\\
+{}^{(\varepsilon)}\langle\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}|&=\frac{1}{\sqrt{N!}}\langle0|a_{\alpha_N}\cdots a_{\alpha_2}a_{\alpha_1}\label{eq:127}\\
 \end{align}
+</mj>
 
 $a\_\alpha$的物理意义可以通过计算以下矩阵元进一步明晰：
 
+<mj>
 \begin{align}
 \label{eq:128}
 \begin{split}
-&{}^{(\varepsilon)}\left\langle\underbrace{\varphi\_{\beta\_2}\cdots\varphi\_{\beta\_N}}\_{\in\mathcal{H}\_{N-1}^{(\varepsilon)}}\|a\_\gamma\|\underbrace{\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}}\_{\in\mathcal{H}\_N^{(\varepsilon)}}\right\rangle^{(\varepsilon)}=\\\
-&=\sqrt{N}{}^{(\varepsilon)}\langle\varphi\_\gamma\varphi\_{\beta\_2}\cdots\varphi\_{\beta\_N}\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}=\\\
-&=\frac{\sqrt{N}}{N!}\sum\_{\mathcal{P}\_\alpha}\varepsilon^{p\_\alpha}\mathcal{P}\_\alpha\left(\delta(\gamma-\alpha\_1)\delta(\beta\_2-\alpha\_2)\cdots\delta(\beta\_N-\alpha\_N)\right)
+&{}^{(\varepsilon)}\left\langle\underbrace{\varphi_{\beta_2}\cdots\varphi_{\beta_N}}_{\in\mathcal{H}_{N-1}^{(\varepsilon)}}|a_\gamma|\underbrace{\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}}_{\in\mathcal{H}_N^{(\varepsilon)}}\right\rangle^{(\varepsilon)}=\\
+&=\sqrt{N}{}^{(\varepsilon)}\langle\varphi_\gamma\varphi_{\beta_2}\cdots\varphi_{\beta_N}|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}=\\
+&=\frac{\sqrt{N}}{N!}\sum_{\mathcal{P}_\alpha}\varepsilon^{p_\alpha}\mathcal{P}_\alpha\left(\delta(\gamma-\alpha_1)\delta(\beta_2-\alpha_2)\cdots\delta(\beta_N-\alpha_N)\right)
 \end{split}
 \end{align}
+</mj>
 
 上式的最后一步用了式\eqref{eq:111}。将求和项重排（以$\delta(\gamma-\alpha\_i)$分成$N$个小的求和）：
 
+<mj>
 \begin{align}
 \label{eq:129}
 \begin{split}
-&{}^{(\varepsilon)}\langle\varphi\_{\beta\_2}\cdots\varphi\_{\beta\_N}\|a\_\gamma\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}=\\\
-=&\frac{1}{\sqrt{N}}\frac{1}{(N-1)!}\left\\{\delta(\gamma-\alpha\_1)\sum\_{\mathcal{P}\_\alpha}\varepsilon^{p\_\alpha}\mathcal{P}\_\alpha\left(\delta(\beta\_2-\alpha\_2)\cdots\delta(\beta\_N-\alpha\_N)\right)+\right.\\\
-&+\varepsilon\delta(\gamma-\alpha\_2)\sum\_{\mathcal{P}\_\alpha}\varepsilon^{p\_\alpha}\mathcal{P}\_\alpha\left(\delta(\beta\_2-\alpha\_1)\delta(\beta\_3-\alpha\_3)\cdots\delta(\beta\_N-\alpha\_N)\right)+\\\
+&{}^{(\varepsilon)}\langle\varphi_{\beta_2}\cdots\varphi_{\beta_N}|a_\gamma|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}=\\
+=&\frac{1}{\sqrt{N}}\frac{1}{(N-1)!}\left\{\delta(\gamma-\alpha_1)\sum_{\mathcal{P}_\alpha}\varepsilon^{p_\alpha}\mathcal{P}_\alpha\left(\delta(\beta_2-\alpha_2)\cdots\delta(\beta_N-\alpha_N)\right)+\right.\\
+&+\varepsilon\delta(\gamma-\alpha_2)\sum_{\mathcal{P}_\alpha}\varepsilon^{p_\alpha}\mathcal{P}_\alpha\left(\delta(\beta_2-\alpha_1)\delta(\beta_3-\alpha_3)\cdots\delta(\beta_N-\alpha_N)\right)+\\\
 &+\cdots+\\\
-&\left.+\varepsilon^{N-1}\delta(\gamma-\alpha\_N)\sum\_{\mathcal{P}\_\alpha}\varepsilon^{p\_\alpha}\mathcal{P}\_\alpha\left(\delta(\beta\_2-\alpha\_1)\delta(\beta\_3-\alpha\_2)\cdots\delta(\beta\_N-\alpha\_{N-1})\right)\right\\}
+&\left.+\varepsilon^{N-1}\delta(\gamma-\alpha_N)\sum_{\mathcal{P}_\alpha}\varepsilon^{p_\alpha}\mathcal{P}_\alpha\left(\delta(\beta_2-\alpha_1)\delta(\beta_3-\alpha_2)\cdots\delta(\beta_N-\alpha_{N-1})\right)\right\}
 \end{split}
 \end{align}
+</mj>
 
 上式右边的每个小的求和项也表示标量积，只不过是$\mathcal{H}\_{N-1}^{(\varepsilon)}$内的，将$1/(N-1)!$拿进去，再次利用\eqref{eq:111}：
 
+<mj>
 \begin{align}
 \label{eq:130}
 \begin{split}
-&{}^{(\varepsilon)}\langle\varphi\_{\beta\_2}\cdots\varphi\_{\beta\_N}\|a\_\gamma\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}=\\\
-=&\frac{1}{\sqrt{N}}\left\\{\delta(\gamma-\alpha\_1){}^{(\varepsilon)}\langle\varphi\_{\beta\_2}\cdots\varphi\_{\beta\_N}\|\varphi\_{\alpha\_2}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}+\right.\\\
-&+\varepsilon\delta(\gamma-\alpha\_2){}^{(\varepsilon)}\langle\varphi\_{\beta\_2}\cdots\varphi\_{\beta\_N}\|\varphi\_{\alpha\_1}\varphi\_{\alpha\_3}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}+\\\
+&{}^{(\varepsilon)}\langle\varphi_{\beta_2}\cdots\varphi_{\beta_N}|a_\gamma|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}=\\
+=&\frac{1}{\sqrt{N}}\left\{\delta(\gamma-\alpha_1){}^{(\varepsilon)}\langle\varphi_{\beta_2}\cdots\varphi_{\beta_N}|\varphi_{\alpha_2}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}+\right.\\
+&+\varepsilon\delta(\gamma-\alpha_2){}^{(\varepsilon)}\langle\varphi_{\beta_2}\cdots\varphi_{\beta_N}|\varphi_{\alpha_1}\varphi_{\alpha_3}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}+\\
 &+\cdots+\\\
-&\left.+\varepsilon^{N-1}\delta(\gamma-\alpha\_N){}^{(\varepsilon)}\langle\varphi\_{\beta\_2}\cdots\varphi\_{\beta\_N}\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_{N-1}}\rangle^{(\varepsilon)}\right\\}
+&\left.+\varepsilon^{N-1}\delta(\gamma-\alpha_N){}^{(\varepsilon)}\langle\varphi_{\beta_2}\cdots\varphi_{\beta_N}|\varphi_{\alpha_1}\cdots\varphi_{\alpha_{N-1}}\rangle^{(\varepsilon)}\right\}
 \end{split}
 \end{align}
+</mj>
 
 由于左矢是$\mathcal{H}\_{N-1}^{(\varepsilon)}$内的任意基矢，上式表明：
 
+<mj>
 \begin{align}
 \begin{split}
-a\_\gamma\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}=&\frac{1}{\sqrt{N}}\left\\{\delta(\gamma-\alpha\_1)\|\varphi\_{\alpha\_2}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}+\right.\\\
-&+\varepsilon\delta(\gamma-\alpha\_2)\|\varphi\_{\alpha\_1}\varphi\_{\alpha\_3}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}+\\\
-&+\cdots+\\\
-&\left.+\varepsilon^{N-1}\delta(\gamma-\alpha\_N)\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_{N-1}}\rangle^{(\varepsilon)}\right\\}
+a_\gamma|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}=&\frac{1}{\sqrt{N}}\left\{\delta(\gamma-\alpha_1)|\varphi_{\alpha_2}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}+\right.\\
+&+\varepsilon\delta(\gamma-\alpha_2)|\varphi_{\alpha_1}\varphi_{\alpha_3}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}+\\
+&+\cdots+\\
+&\left.+\varepsilon^{N-1}\delta(\gamma-\alpha_N)|\varphi_{\alpha_1}\cdots\varphi_{\alpha_{N-1}}\rangle^{(\varepsilon)}\right\}
 \end{split}
 \label{eq:131}
 \end{align}
+</mj>
 
 如果构成$N$粒子态$\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}$的从$\|\varphi\_{\alpha\_1}\rangle$到$\|\varphi\_{\alpha\_N}\rangle$这些态中存在单粒子态$\|\varphi\_\gamma\rangle$，上式的结果就是一个$N-1$粒子态，其中不再含有$\|\varphi\_\gamma\rangle$，此即所谓$a\_\gamma$湮灭了一个处于$\|\varphi\_\gamma\rangle$态的粒子。若对称化的$N$粒子初态中不含$\|\varphi\_\gamma\rangle$，则$a\_\gamma$将整个初态湮灭掉。特别要注意这样一个特殊情况：
 
@@ -1334,28 +1405,34 @@ a\_\gamma\|0\rangle=0
 
 实际上，令$\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}$为$\mathcal{H}\_N^{(\varepsilon)}$中的任意基矢，有如下
 
+<mj>
 \begin{align}
 \label{eq:136}
 \begin{split}
-a\_\beta\left(a\_\gamma^\dagger\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}\right)=&\sqrt{N+1}a\_\beta\|\varphi\_\gamma\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}=\\\
-=&\delta(\beta-\gamma)\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}+\\\
-&+\varepsilon\delta(\beta-\alpha\_1)\|\varphi\_\gamma\varphi\_{\alpha\_2}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}+\\\
-&+\cdots+\\\
-&+\varepsilon^N\delta(\beta-\alpha\_N)\|\varphi\_\gamma\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_{N-1}}\rangle^{(\varepsilon)}
+a_\beta\left(a_\gamma^\dagger|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}\right)=&\sqrt{N+1}a_\beta|\varphi_\gamma\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}=\\
+=&\delta(\beta-\gamma)|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}+\\
+&+\varepsilon\delta(\beta-\alpha_1)|\varphi_\gamma\varphi_{\alpha_2}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}+\\
+&+\cdots+\\
+&+\varepsilon^N\delta(\beta-\alpha_N)|\varphi_\gamma\varphi_{\alpha_1}\cdots\varphi_{\alpha_{N-1}}\rangle^{(\varepsilon)}
 \end{split}
 \end{align}
+</mj>
 
 和
 
+<mj>
 \begin{align}
 \label{eq:137}
 \begin{split}
-a\_\gamma^\dagger\left(a\_\beta\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}\right)=&\delta(\beta-\alpha\_1)\|\varphi\_\gamma\varphi\_{\alpha\_2}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}+\\\
-&+\varepsilon\delta(\beta-\alpha\_2)\|\varphi\_\gamma\varphi\_{\alpha\_1}\varphi\_{\alpha\_3}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}+\\\
-&+\cdots+\\\
-&+\varepsilon^{N-1}\delta(\beta-\alpha\_N)\|\varphi\_\gamma\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_{N-1}}\rangle^{(\varepsilon)}
+a_\gamma^\dagger\left(a_\beta|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}\right)=&\delta(\beta-\alpha_1)|\varphi_\gamma\varphi_{\alpha_2}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}+\\
+&+\varepsilon\delta(\beta-\alpha_2)|\varphi_\gamma\varphi_{\alpha_1}\varphi_{\alpha_3}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}+\\
+&+\cdots+\\
+&+\varepsilon^{N-1}\delta(\beta-\alpha_N)|\varphi_\gamma\varphi_{\alpha_1}\cdots\varphi_{\alpha_{N-1}}\rangle^{(\varepsilon)}
 \end{split}
 \end{align}
+</mj>
+
+展开。
 
 结合以上两式，便得到：
 
@@ -1372,43 +1449,51 @@ a\_\gamma^\dagger\left(a\_\beta\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\
 
 在任意观察算符$\widehat{A}$上使用完全性关系\eqref{eq:114}，首先得到：
 
+<mj>
 \begin{align}
 \label{eq:139}
 \begin{split}
 \widehat{A}=&\mathbf{1}\cdot\widehat{A}\cdot\mathbf{1}=\\\
-=&\int\cdots\int\mathrm{d}\alpha\_1\cdots\mathrm{d}\alpha\_N\,\mathrm{d}\beta\_1\cdots\mathrm{d}\beta\_N\|\varphi\_{\alpha\_1}\cdots\rangle^{(\varepsilon)}\cdot\\\
-&\cdot{}^{(\varepsilon)}\langle\varphi\_{\alpha\_1}\cdots\|\widehat{A}\|\varphi\_{\beta\_1}\cdots\rangle^{(\varepsilon)}{}^{(\varepsilon)}\langle\varphi\_{\beta\_1}\cdots\|
+=&\int\cdots\int\mathrm{d}\alpha\_1\cdots\mathrm{d}\alpha_N\,\mathrm{d}\beta_1\cdots\mathrm{d}\beta_N|\varphi_{\alpha_1}\cdots\rangle^{(\varepsilon)}\cdot\\\
+&\cdot{}^{(\varepsilon)}\langle\varphi_{\alpha_1}\cdots|\widehat{A}|\varphi_{\beta_1}\cdots\rangle^{(\varepsilon)}{}^{(\varepsilon)}\langle\varphi_{\beta_1}\cdots|
 \end{split}
 \end{align}
+</mj>
 
 将式\eqref{eq:120}和\eqref{eq:127}代入上式：
 
+<mj>
 \begin{align}
 \begin{split}
-\widehat{A}=&\frac{1}{N!}\int\cdots\int\mathrm{d}\alpha\_1\cdots\mathrm{d}\alpha\_N\,\mathrm{d}\beta\_1\cdots\mathrm{d}\beta\_N\,a\_{\alpha\_1}^\dagger\cdots a\_{\alpha\_N}^\dagger\|0\rangle\cdot\\\
-&\cdot{}^{(\varepsilon)}\langle\varphi\_{\alpha\_1}\cdots\|\widehat{A}\|\varphi\_{\beta\_1}\cdots\rangle^{(\varepsilon)}\langle0\|a\_{\beta\_N}\cdots a\_{\beta\_1}
+\widehat{A}=&\frac{1}{N!}\int\cdots\int\mathrm{d}\alpha_1\cdots\mathrm{d}\alpha_N\,\mathrm{d}\beta_1\cdots\mathrm{d}\beta_N\,a_{\alpha_1}^\dagger\cdots a_{\alpha_N}^\dagger|0\rangle\cdot\\\
+&\cdot{}^{(\varepsilon)}\langle\varphi_{\alpha_1}\cdots|\widehat{A}|\varphi_{\beta_1}\cdots\rangle^{(\varepsilon)}\langle0|a_{\beta_N}\cdots a_{\beta_1}
 \end{split}
 \label{eq:140}
 \end{align}
+</mj>
 
 一般而言，$\widehat{A}$包含单体项和两体项：
 
+<mj>
 \begin{equation}
 \label{eq:141}
-\widehat{A}=\sum\_{i=1}^n\widehat{A}\_1^{(i)}+\frac{1}{2}\sum\_{i,j}^{i\neq j}\widehat{A}\_2^{(i,j)}
+\widehat{A}=\sum_{i=1}^n\widehat{A}_1^{(i)}+\frac{1}{2}\sum_{i,j}^{i\neq j}\widehat{A}_2^{(i,j)}
 \end{equation}
+</mj>
 
 先讨论单体部分，需要得到式\eqref{eq:140}中的相应矩阵元：
 
+<mj>
 \begin{align}
 \begin{split}
-&{}^{(\varepsilon)}\langle\varphi\_{\alpha\_1}\cdots\|\sum\_{i=1}^n\widehat{A}\_1^{(i)}\|\varphi\_{\beta\_1}\cdots\rangle^{(\varepsilon)}=\\\
-=&\frac{1}{N!}\sum\_{\mathcal{P}\_\beta}\varepsilon^{p\_\beta}\mathcal{P}\_\beta\left[\langle\varphi\_{\alpha\_1}^{(1)}\|\widehat{A}\_1^{(1)}\|\varphi\_{\beta\_1}^{(1)}\rangle\langle\varphi\_{\alpha\_2}^{(2)}\|\varphi\_{\beta\_2}^{(2)}\rangle\cdots\langle\varphi\_{\alpha\_N}^{(N)}\|\varphi\_{\beta\_N}^{(N)}\rangle+\right.\\\
+&{}^{(\varepsilon)}\langle\varphi_{\alpha_1}\cdots|\sum_{i=1}^n\widehat{A}_1^{(i)}|\varphi_{\beta_1}\cdots\rangle^{(\varepsilon)}=\\\
+=&\frac{1}{N!}\sum_{\mathcal{P}_\beta}\varepsilon^{p_\beta}\mathcal{P}_\beta\left[\langle\varphi_{\alpha_1}^{(1)}|\widehat{A}_1^{(1)}|\varphi_{\beta_1}^{(1)}\rangle\langle\varphi_{\alpha_2}^{(2)}|\varphi_{\beta_2}^{(2)}\rangle\cdots\langle\varphi_{\alpha_N}^{(N)}|\varphi_{\beta_N}^{(N)}\rangle+\right.\\\
 &+\cdots+\\\
-&\left.+\langle\varphi\_{\alpha\_1}^{(1)}\|\varphi\_{\beta\_1}^{(1)}\rangle\cdots\langle\varphi\_{\alpha\_N}^{(N)}\|\widehat{A}\_1^{(N)}\|\varphi\_{\beta\_N}^{(N)}\rangle\right]
+&\left.+\langle\varphi_{\alpha_1}^{(1)}|\varphi_{\beta_1}^{(1)}\rangle\cdots\langle\varphi_{\alpha_N}^{(N)}|\widehat{A}_1^{(N)}|\varphi_{\beta_N}^{(N)}\rangle\right]
 \end{split}
 \label{eq:142}
 \end{align}
+</mj>
 
 上式中用到了式\eqref{eq:109}。首先注意到，将上式代入\eqref{eq:140}后，每一个求和项（每个方括号内的总和）在置换后对求和作出相同的贡献。因为可以通过以下步骤将置换后的$\|\varphi\_{\beta\_i}^{(i)}\rangle$重新恢复标准排序：
 1. 重新命名积分变量$\beta\_i$并
@@ -1422,16 +1507,18 @@ a\_\gamma^\dagger\left(a\_\beta\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\
 
 第2步中的每种情形产生一个因子$(\varepsilon^2)^{n\_j}$。由此得到一个大大简化的中间结果：
 
+<mj>
 \begin{align}
 \begin{split}
-\sum\_{i=1}^n\widehat{A}\_1^{(i)}=&\frac{N}{N!}\int\cdots\int\mathrm{d}\alpha\_1\cdots\mathrm{d}\beta\_N\,a\_{\alpha\_1}^\dagger\cdots a\_{\alpha\_N}^\dagger\|0\rangle\cdot\\\
-&\cdot\left\\{\langle\varphi\_{\alpha\_1}^{(1)}\|\widehat{A}\_1^{(1)}\|\varphi\_{\beta\_1}^{(1)}\rangle\delta(\alpha\_2-\beta\_2)\cdots\delta(\alpha\_N-\beta\_N)\right\\}\cdot\\\
-&\cdot\langle0\|a\_{\beta\_N}\cdots a\_{\beta\_1}=\\\
-=&\iint\mathrm{d}\alpha\_1\,\mathrm{d}\beta\_1\langle\varphi\_{\alpha\_1}^{(1)}\|\widehat{A}\_1^{(1)}\|\varphi\_{\beta\_1}^{(1)}\rangle a\_{\alpha\_1}^\dagger\cdot\\\
-&\cdot\left\\{\frac{1}{(N-1)!}\int\cdots\int\mathrm{d}\alpha\_2\cdots\mathrm{d}\alpha\_N\,a\_{\alpha\_2}^\dagger\cdots a\_{\alpha\_N}^\dagger\|0\rangle\langle0\|a\_{\alpha\_N}\cdots a\_{\alpha\_2}\right\\}a\_{\beta\_1}
+\sum_{i=1}^n\widehat{A}_1^{(i)}=&\frac{N}{N!}\int\cdots\int\mathrm{d}\alpha_1\cdots\mathrm{d}\beta_N\,a_{\alpha_1}^\dagger\cdots a_{\alpha_N}^\dagger|0\rangle\cdot\\\
+&\cdot\left\{\langle\varphi_{\alpha_1}^{(1)}|\widehat{A}_1^{(1)}|\varphi_{\beta_1}^{(1)}\rangle\delta(\alpha_2-\beta_2)\cdots\delta(\alpha_N-\beta_N)\right\}\cdot\\\
+&\cdot\langle0|a_{\beta_N}\cdots a_{\beta_1}=\\\
+=&\iint\mathrm{d}\alpha_1\,\mathrm{d}\beta_1\langle\varphi_{\alpha_1}^{(1)}|\widehat{A}_1^{(1)}|\varphi_{\beta_1}^{(1)}\rangle a_{\alpha_1}^\dagger\cdot\\\
+&\cdot\left\{\frac{1}{(N-1)!}\int\cdots\int\mathrm{d}\alpha_2\cdots\mathrm{d}\alpha_N\,a_{\alpha_2}^\dagger\cdots a_{\alpha_N}^\dagger|0\rangle\langle0|a_{\alpha_N}\cdots a_{\alpha_2}\right\}a_{\beta_1}
 \end{split}
 \label{eq:143}
 \end{align}
+</mj>
 
 从式\eqref{eq:114}可见，上式最后的花括号中其实是$\mathcal{H}\_{N-1}^{(\varepsilon)}$中的单位元$\mathbf{1}$。故最终结果就是：
 
@@ -1444,27 +1531,31 @@ a\_\gamma^\dagger\left(a\_\beta\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\
 
 同理可得观察算符$\widehat{A}$的两体项：
 
+<mj>
 \begin{align}
 \label{eq:145}
 \begin{split}
-\frac{1}{2}\sum\_{i,j}^{i\neq j}\widehat{A}\_2^{(i,j)}=&\frac{1}{2N!}\int\cdots\int\mathrm{d}\alpha\_1\cdots\mathrm{d}\beta\_N\,a\_{\alpha\_1}^\dagger\cdots a\_{\alpha\_N}^\dagger\|0\rangle\cdot\\\
-&\cdot\left\\{\frac{1}{N!}\sum\_{\mathcal{P}\_\beta}\varepsilon^{p\_\beta}\mathcal{P}\_\beta\left[\langle\varphi\_{\alpha\_1}^{(1)}\|\langle\varphi\_{\alpha\_2}^{(2)}\|\widehat{A}\_2^{(1,2)}\|\varphi\_{\beta\_1}^{(1)}\rangle\|\varphi\_{\beta\_2}^{(2)}\rangle\cdot\right.\right.\\\
-&\cdot\langle\varphi\_{\alpha\_3}^{(3)}\|\varphi\_{\beta\_3}^{(3)}\rangle\cdots\langle\varphi\_{\alpha\_N}^{(N)}\|\varphi\_{\beta\_N}^{(N)}\rangle+\\\
-&+\langle\varphi\_{\alpha\_1}^{(1)}\|\langle\varphi\_{\alpha\_3}^{(3)}\|\widehat{A}\_2^{(1,3)}\|\varphi\_{\beta\_1}^{(1)}\rangle\|\varphi\_{\beta\_3}^{(3)}\rangle\langle\varphi\_{\alpha\_2}^{(2)}\|\varphi\_{\beta\_2}^{(2)}\rangle\cdot\\\
-&\left.\left.\cdot\langle\varphi\_{\alpha\_4}^{(4)}\|\varphi\_{\beta\_4}^{(4)}\rangle\cdots\langle\varphi\_{\alpha\_N}^{(N)}\|\varphi\_{\beta\_N}^{(N)}\rangle+\cdots\right]\right\\}\langle0\|a\_{\beta\_N}\cdots a\_{\beta\_1}
+\frac{1}{2}\sum_{i,j}^{i\neq j}\widehat{A}_2^{(i,j)}=&\frac{1}{2N!}\int\cdots\int\mathrm{d}\alpha_1\cdots\mathrm{d}\beta_N\,a_{\alpha_1}^\dagger\cdots a_{\alpha_N}^\dagger|0\rangle\cdot\\\
+&\cdot\left\{\frac{1}{N!}\sum_{\mathcal{P}_\beta}\varepsilon^{p_\beta}\mathcal{P}_\beta\left[\langle\varphi_{\alpha_1}^{(1)}|\langle\varphi_{\alpha_2}^{(2)}|\widehat{A}_2^{(1,2)}|\varphi_{\beta_1}^{(1)}\rangle|\varphi_{\beta_2}^{(2)}\rangle\cdot\right.\right.\\\
+&\cdot\langle\varphi_{\alpha_3}^{(3)}|\varphi_{\beta_3}^{(3)}\rangle\cdots\langle\varphi_{\alpha_N}^{(N)}|\varphi_{\beta_N}^{(N)}\rangle+\\\
+&+\langle\varphi_{\alpha_1}^{(1)}|\langle\varphi_{\alpha_3}^{(3)}|\widehat{A}_2^{(1,3)}|\varphi_{\beta_1}^{(1)}\rangle|\varphi_{\beta_3}^{(3)}\rangle\langle\varphi_{\alpha_2}^{(2)}|\varphi_{\beta_2}^{(2)}\rangle\cdot\\\
+&\left.\left.\cdot\langle\varphi_{\alpha_4}^{(4)}|\varphi_{\beta_4}^{(4)}\rangle\cdots\langle\varphi_{\alpha_N}^{(N)}|\varphi_{\beta_N}^{(N)}\rangle+\cdots\right]\right\}\langle0|a_{\beta_N}\cdots a_{\beta_1}
 \end{split}
 \end{align}
+</mj>
 
 和前面单体项完全相同的论证可以证明，$N!$个置换算符$\mathcal{P}\_\beta$作用项对多重积分贡献一样，并且每个方括号中$N(N-1)$个求和项相等。于是：
 
+<mj>
 \begin{align}
 \label{eq:146}
 \begin{split}
-\frac{1}{2}\sum\_{i,j}^{i\neq j}\widehat{A}\_2^{(i,j)}=&\frac{1}{2}\int\cdots\int\mathrm{d}\alpha\_1\,\mathrm{d}\alpha\_2\,\mathrm{d}\beta\_1\,\mathrm{d}\beta\_2\langle\varphi\_{\alpha\_1}\varphi\_{\alpha\_2}\|\widehat{A}\_2^{(1,2)}\|\varphi\_{\beta\_1}\varphi\_{\beta\_2}\rangle\cdot\\\
-&\cdot a\_{\alpha\_1}^\dagger a\_{\alpha\_2}^\dagger\left\\{\frac{1}{(N-2)!}\int\cdots\int\mathrm{d}\alpha\_3\cdots\mathrm{d}\alpha\_N\cdot\right.\\\
-&\left.\cdot a\_{\alpha\_3}^\dagger\cdots a\_{\alpha\_N}^\dagger\|0\rangle\langle0\|a\_{\alpha\_N}\cdots a\_{\alpha\_3}\right\\}a\_{\beta\_2}a\_{\beta\_1}
+\frac{1}{2}\sum_{i,j}^{i\neq j}\widehat{A}_2^{(i,j)}=&\frac{1}{2}\int\cdots\int\mathrm{d}\alpha_1\,\mathrm{d}\alpha_2\,\mathrm{d}\beta_1\,\mathrm{d}\beta_2\langle\varphi_{\alpha_1}\varphi_{\alpha_2}|\widehat{A}_2^{(1,2)}|\varphi_{\beta_1}\varphi_{\beta_2}\rangle\cdot\\\
+&\cdot a_{\alpha_1}^\dagger a_{\alpha_2}^\dagger\left\{\frac{1}{(N-2)!}\int\cdots\int\mathrm{d}\alpha_3\cdots\mathrm{d}\alpha_N\cdot\right.\\\
+&\left.\cdot a_{\alpha_3}^\dagger\cdots a_{\alpha_N}^\dagger|0\rangle\langle0|a_{\alpha_N}\cdots a_{\alpha_3}\right\}a_{\beta_2}a_{\beta_1}
 \end{split}
 \end{align}
+</mj>
 
 上式花括号中其实是$\mathcal{H}\_{N-2}^{(\varepsilon)}$中的单位元$\mathbf{1}$，由此可得：
 
@@ -1489,15 +1580,17 @@ a\_\gamma^\dagger\left(a\_\beta\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\
 
 实际上，可由此验证：
 
+<mj>
 \begin{align}
 \label{eq:150}
 \begin{split}
-{}^{(\varepsilon)}\langle\varphi\_\alpha\varphi\_\beta\|\widehat{A}\_2\|\varphi\_\gamma\varphi\_\delta\rangle^{(\varepsilon)}=&\frac{1}{4}\left\\{\langle\varphi\_\alpha^{(1)}\|\langle\varphi\_\beta^{(2)}\|\widehat{A}\_2^{(1,2)}\|\varphi\_\gamma^{(1)}\|\varphi\_\delta^{(2)}\rangle+\right.\\\
-&+\varepsilon\langle\varphi\_\alpha^{(1)}\|\langle\varphi\_\beta^{(2)}\|\widehat{A}\_2^{(1,2)}\|\varphi\_\gamma^{(2)}\|\varphi\_\delta^{(1)}\rangle+\\\
-&+\varepsilon\langle\varphi\_\alpha^{(2)}\|\langle\varphi\_\beta^{(1)}\|\widehat{A}\_2^{(1,2)}\|\varphi\_\gamma^{(1)}\|\varphi\_\delta^{(2)}\rangle+\\\
-&\left.+\varepsilon^2\langle\varphi\_\alpha^{(2)}\|\langle\varphi\_\beta^{(1)}\|\widehat{A}\_2^{(1,2)}\|\varphi\_\gamma^{(2)}\|\varphi\_\delta^{(1)}\rangle\right\\}
+{}^{(\varepsilon)}\langle\varphi_\alpha\varphi_\beta|\widehat{A}_2|\varphi_\gamma\varphi_\delta\rangle^{(\varepsilon)}=&\frac{1}{4}\left\{\langle\varphi_\alpha^{(1)}|\langle\varphi_\beta^{(2)}|\widehat{A}_2^{(1,2)}|\varphi_\gamma^{(1)}|\varphi_\delta^{(2)}\rangle+\right.\\\
+&+\varepsilon\langle\varphi_\alpha^{(1)}|\langle\varphi_\beta^{(2)}|\widehat{A}_2^{(1,2)}|\varphi_\gamma^{(2)}|\varphi_\delta^{(1)}\rangle+\\\
+&+\varepsilon\langle\varphi_\alpha^{(2)}|\langle\varphi_\beta^{(1)}|\widehat{A}_2^{(1,2)}|\varphi_\gamma^{(1)}|\varphi_\delta^{(2)}\rangle+\\\
+&\left.+\varepsilon^2\langle\varphi_\alpha^{(2)}|\langle\varphi_\beta^{(1)}|\widehat{A}_2^{(1,2)}|\varphi_\gamma^{(2)}|\varphi_\delta^{(1)}\rangle\right\}
 \end{split}
 \end{align}
+</mj>
 
 上式中的每一个求和项对\eqref{eq:147}贡献相同，归一化因子保证了在\eqref{eq:147}中使用对称化矩阵元与非对称化的效果相同，可便宜行事。
 
@@ -1514,19 +1607,21 @@ a\_\gamma^\dagger\left(a\_\beta\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\
 
 此算符的作用可根据\eqref{eq:119}和\eqref{eq:131}得到：
 
+<mj>
 \begin{align}
 \label{eq:152}
 \begin{split}
-\hat{n}\_\alpha\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}=&\delta(\alpha-\alpha\_1)\|\varphi\_\alpha\varphi\_{\alpha\_2}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}+\\\
-&+\varepsilon\delta(\alpha-\alpha\_2)\|\varphi\_\alpha\varphi\_{\alpha\_1}\varphi\_{\alpha\_3}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}+\\\
+\hat{n}_\alpha|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}=&\delta(\alpha-\alpha_1)|\varphi_\alpha\varphi_{\alpha_2}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}+\\\
+&+\varepsilon\delta(\alpha-\alpha_2)|\varphi_\alpha\varphi_{\alpha_1}\varphi_{\alpha_3}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}+\\\
 &+\cdots+\\\
-&+\varepsilon^{N-1}\delta(\alpha-\alpha\_N)\|\varphi\_\alpha\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_{N-1}}\rangle^{(\varepsilon)}=\\\
-=&\delta(\alpha-\alpha\_1)\|\varphi\_\alpha\varphi\_{\alpha\_2}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}+\\\
-&+\varepsilon\delta(\alpha-\alpha\_2)\varepsilon\|\varphi\_{\alpha\_1}\varphi\_\alpha\varphi\_{\alpha\_3}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}+\\\
+&+\varepsilon^{N-1}\delta(\alpha-\alpha_N)|\varphi_\alpha\varphi_{\alpha_1}\cdots\varphi_{\alpha_{N-1}}\rangle^{(\varepsilon)}=\\\
+=&\delta(\alpha-\alpha_1)|\varphi_\alpha\varphi_{\alpha_2}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}+\\\
+&+\varepsilon\delta(\alpha-\alpha_2)\varepsilon|\varphi_{\alpha_1}\varphi_\alpha\varphi_{\alpha_3}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}+\\\
 &+\cdots+\\\
-&+\varepsilon^{N-1}\delta(\alpha-\alpha\_N)\varepsilon^{N-1}\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_{N-1}}\varphi\_\alpha\rangle^{(\varepsilon)}
+&+\varepsilon^{N-1}\delta(\alpha-\alpha_N)\varepsilon^{N-1}|\varphi_{\alpha_1}\cdots\varphi_{\alpha_{N-1}}\varphi_\alpha\rangle^{(\varepsilon)}
 \end{split}
 \end{align}
+</mj>
 
 可见$\mathcal{H}\_N^{(\varepsilon)}$的基矢是占有密度算符的本征矢：
 
@@ -1546,25 +1641,29 @@ a\_\gamma^\dagger\left(a\_\beta\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\
 
 从式\eqref{eq:153}可见$\mathcal{H}\_N^{(\varepsilon)}$也是$\widehat{N}$的本征矢，其本征值就是总粒子数$N$：
 
+<mj>
 \begin{align}
 \label{eq:155}
 \begin{split}
-\widehat{N}\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}&=\int\mathrm{d}\alpha\sum\_{i=1}^{N}\delta(\alpha-\alpha\_i)\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}=\\\
-&=N\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}
+\widehat{N}|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}&=\int\mathrm{d}\alpha\sum_{i=1}^{N}\delta(\alpha-\alpha_i)|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}=\\\
+&=N|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}
 \end{split}
 \end{align}
+</mj>
 
 利用产生湮灭算符的基本对易关系可得如下对易子：
 
+<mj>
 \begin{align}
 \label{eq:156}
 \begin{split}
-\left[\hat{n}\_\alpha,a\_\beta^\dagger\right]\_-&=\hat{n}\_\alpha a\_\beta^\dagger-a\_\beta^\dagger\hat{n}\_\alpha=\\\
-&=a\_\alpha^\dagger a\_\alpha a\_\beta^\dagger-a\_\beta^\dagger\hat{n}\_\alpha=\\\
-&=a\_\alpha^\dagger\left(\delta(\alpha-\beta)+\varepsilon a\_\beta^\dagger a\_\alpha\right)-a\_\beta^\dagger\hat{n}\_\alpha=\\\
-&=a\_\alpha^\dagger\delta(\alpha-\beta)+\varepsilon^2a\_\beta^\dagger a\_\alpha^\dagger a\_\alpha-a\_\beta^\dagger\hat{n}\_\alpha
+\left[\hat{n}_\alpha,a_\beta^\dagger\right]_-&=\hat{n}_\alpha a_\beta^\dagger-a_\beta^\dagger\hat{n}_\alpha=\\\
+&=a_\alpha^\dagger a_\alpha a_\beta^\dagger-a_\beta^\dagger\hat{n}_\alpha=\\\
+&=a_\alpha^\dagger\left(\delta(\alpha-\beta)+\varepsilon a_\beta^\dagger a_\alpha\right)-a_\beta^\dagger\hat{n}_\alpha=\\\
+&=a_\alpha^\dagger\delta(\alpha-\beta)+\varepsilon^2a_\beta^\dagger a_\alpha^\dagger a_\alpha-a_\beta^\dagger\hat{n}_\alpha
 \end{split}
 \end{align}
+</mj>
 
 上式最后两项相消，得到：
 
@@ -1582,85 +1681,104 @@ a\_\gamma^\dagger\left(a\_\beta\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\
 
 由\eqref{eq:154}可得到对于粒子数算符的类似关系式：
 
+<mj>
 \begin{align}
-\left[\widehat{N},a\_\alpha^\dagger\right]\_-&=a\_\alpha^\dagger\label{eq:159}\\\
-\left[\widehat{N},a\_\alpha\right]\_-&=-a\_\alpha\label{eq:160}
+\left[\widehat{N},a_\alpha^\dagger\right]_-&=a_\alpha^\dagger\label{eq:159}\\\
+\left[\widehat{N},a_\alpha\right]_-&=-a_\alpha\label{eq:160}
 \end{align}
+</mj>
 
 也可写成如下形式：
 
+<mj>
 \begin{align}
-\widehat{N}a\_\alpha^\dagger&=a\_\alpha^\dagger\left(\widehat{N}+\mathbf{1}\right)\label{eq:161}\\\
-\widehat{N}a\_\alpha&=a\_\alpha\left(\widehat{N}-\mathbf{1}\right)\label{eq:162}
+\widehat{N}a_\alpha^\dagger&=a_\alpha^\dagger\left(\widehat{N}+\mathbf{1}\right)\label{eq:161}\\\
+\widehat{N}a_\alpha&=a_\alpha\left(\widehat{N}-\mathbf{1}\right)\label{eq:162}
 \end{align}
+</mj>
 
 将其作用于基矢：
 
+<mj>
 \begin{align}
-\widehat{N}\left(a\_\alpha^\dagger\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}\right)&=(N+1)\left(a\_\alpha^\dagger\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}\right)\label{eq:163}\\\
-\widehat{N}\left(a\_\alpha\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}\right)&=(N-1)\left(a\_\alpha\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}\right)\label{eq:164}
+\widehat{N}\left(a_\alpha^\dagger|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}\right)&=(N+1)\left(a_\alpha^\dagger|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}\right)\label{eq:163}\\\
+\widehat{N}\left(a_\alpha|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}\right)&=(N-1)\left(a_\alpha|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}\right)\label{eq:164}
 \end{align}
+</mj>
 
 由此可见$a\_\alpha^\dagger$叫做产生算符而$a\_\alpha$叫做湮灭算符真是恰如其分。
 
 之前假设单粒子观察算符$\widehat{\varphi}$的本征谱是离散的，并由其本征矢构成$N$粒子希尔伯特空间$\mathcal{H}\_N^{(\varepsilon)}$的本征矢。此类观察算符的一个重要例子就是位置算符$\hat{r}$，相应的产生湮灭算符记作场算符$\widehat{\psi}^\dagger(\mathbf{r})$和$\widehat{\psi}(\mathbf{r})$。之前导出的诸关系式对这些算符自然也成立，不过记号稍有不同：
 
+<mj>
 \begin{align}
-\widehat{\psi}^\dagger(\mathbf{r})\|\mathbf{r}\_1\cdots\mathbf{r}\_N\rangle^{(\varepsilon)}&=\sqrt{N+1}\|\mathbf{r}\mathbf{r}\_1\cdots\mathbf{r}\_N\rangle^{(\varepsilon)}\label{eq:165}\\\
-\|\mathbf{r}\_1\cdots\mathbf{r}\_N\rangle^{(\varepsilon)}&=\frac{1}{\sqrt{N!}}\widehat{\psi}^\dagger(\mathbf{r}\_1)\cdots\widehat{\psi}^\dagger(\mathbf{r}\_N)\|0\rangle\label{eq:166}
+\widehat{\psi}^\dagger(\mathbf{r})|\mathbf{r}_1\cdots\mathbf{r}_N\rangle^{(\varepsilon)}&=\sqrt{N+1}|\mathbf{r}\mathbf{r}_1\cdots\mathbf{r}_N\rangle^{(\varepsilon)}\label{eq:165}\\\
+|\mathbf{r}_1\cdots\mathbf{r}_N\rangle^{(\varepsilon)}&=\frac{1}{\sqrt{N!}}\widehat{\psi}^\dagger(\mathbf{r}_1)\cdots\widehat{\psi}^\dagger(\mathbf{r}_N)|0\rangle\label{eq:166}
 \end{align}
+</mj>
 
 场算符的基本对易关系可直接从\eqref{eq:123}，\eqref{eq:134}和\eqref{eq:135}得到：
 
+<mj>
 \begin{align}
-\left[\widehat{\psi}^\dagger(\mathbf{r}),\widehat{\psi}^\dagger(\mathbf{r}')\right]\_{-\varepsilon}&=0\label{eq:167}\\\
-\left[\widehat{\psi}(\mathbf{r}),\widehat{\psi}(\mathbf{r}')\right]\_{-\varepsilon}&=0\label{eq:168}\\\
-\left[\widehat{\psi}(\mathbf{r}),\widehat{\psi}^\dagger(\mathbf{r}')\right]\_{-\varepsilon}&=\delta(\mathbf{r}-\mathbf{r}')\label{eq:169}
+\left[\widehat{\psi}^\dagger(\mathbf{r}),\widehat{\psi}^\dagger(\mathbf{r}')\right]_{-\varepsilon}&=0\label{eq:167}\\\
+\left[\widehat{\psi}(\mathbf{r}),\widehat{\psi}(\mathbf{r}')\right]_{-\varepsilon}&=0\label{eq:168}\\\
+\left[\widehat{\psi}(\mathbf{r}),\widehat{\psi}^\dagger(\mathbf{r}')\right]_{-\varepsilon}&=\delta(\mathbf{r}-\mathbf{r}')\label{eq:169}
 \end{align}
+</mj>
 
-它们和广义的产生湮灭算符$a\_\alpha^\dagger$和$a\_\alpha$间的联系也很重要。完全性关系表明：
+它们和广义的产生湮灭算符<mj>$a_\alpha^\dagger$和$a_\alpha$</mj>间的联系也很重要。完全性关系表明：
 
+<mj>
 \begin{equation}
 \label{eq:170}
-\|\varphi\_\alpha\rangle=\int\mathrm{d}^3r\|\mathbf{r}\rangle\langle\mathbf{r}\|\varphi\_\alpha\rangle=\int\mathrm{d}^3r\,\varphi\_\alpha(\mathbf{r})\|\mathbf{r}\rangle
+|\varphi_\alpha\rangle=\int\mathrm{d}^3r|\mathbf{r}\rangle\langle\mathbf{r}|\varphi_\alpha\rangle=\int\mathrm{d}^3r\,\varphi_\alpha(\mathbf{r})|\mathbf{r}\rangle
 \end{equation}
+</mj>
 
-再根据$\|\varphi\_\alpha\rangle=a\_\alpha^\dagger\|0\rangle$和$\|\mathbf{r}\rangle=\widehat{\psi}^\dagger(\mathbf{r})\|0\rangle$得到：
+再根据<mj>$|\varphi_\alpha\rangle=a_\alpha^\dagger|0\rangle$</mj>和<mj>$|\mathbf{r}\rangle=\widehat{\psi}^\dagger(\mathbf{r})|0\rangle$</mj>得到：
 
+<mj>
 \begin{align}
 \label{eq:171}
-a\_\alpha^\dagger&=\int\mathrm{d}^3r\,\varphi\_\alpha(\mathbf{r})\widehat{\psi}^\dagger(\mathbf{r})\\\
+a_\alpha^\dagger&=\int\mathrm{d}^3r\,\varphi_\alpha(\mathbf{r})\widehat{\psi}^\dagger(\mathbf{r})\\\
 \label{eq:172}
-a\_\alpha&=\int\mathrm{d}^3r\,\varphi\_\alpha^\*(\mathbf{r})\widehat{\psi}(\mathbf{r})
+a_\alpha&=\int\mathrm{d}^3r\,\varphi_\alpha^*(\mathbf{r})\widehat{\psi}(\mathbf{r})
 \end{align}
+</mj>
 
-注意$\widehat{\psi}^\dagger(\mathbf{r})$和$\widehat{\psi}(\mathbf{r})$是算符，而$\varphi\_\alpha(\mathbf{r})$是态矢$\|\varphi\_\alpha\rangle$的标量波函数。式\eqref{eq:171}和\eqref{eq:172}的逆可通过
+注意$\widehat{\psi}^\dagger(\mathbf{r})$和$\widehat{\psi}(\mathbf{r})$是算符，而<mj>$\varphi_\alpha(\mathbf{r})$</mj>是态矢<mj>$|\varphi_\alpha\rangle$</mj>的标量波函数。式\eqref{eq:171}和\eqref{eq:172}的逆可通过
 
+<mj>
 \begin{equation}
 \label{eq:173}
-\|\mathbf{r}\rangle=\int\mathrm{d}\alpha\|\varphi\_\alpha\rangle\langle\varphi\_\alpha\|\mathbf{r}\rangle
+|\mathbf{r}\rangle=\int\mathrm{d}\alpha|\varphi_\alpha\rangle\langle\varphi_\alpha|\mathbf{r}\rangle
 \end{equation}
+</mj>
 
 由同样的方式得到：
-
+<mj>
 \begin{align}
 \label{eq:174}
-\widehat{\psi}^\dagger(\mathbf{r})&=\int\mathrm{d}\alpha\,\varphi\_\alpha^\*(\mathbf{r})a\_\alpha^\dagger\\\
+\widehat{\psi}^\dagger(\mathbf{r})&=\int\mathrm{d}\alpha\,\varphi_\alpha^*(\mathbf{r})a_\alpha^\dagger\\\
 \label{eq:175}
-\widehat{\psi}(\mathbf{r})&=\int\mathrm{d}\alpha\,\varphi\_\alpha(\mathbf{r})a\_\alpha
+\widehat{\psi}(\mathbf{r})&=\int\mathrm{d}\alpha\,\varphi_\alpha(\mathbf{r})a_\alpha
 \end{align}
+</mj>
 
 ### 5.2 “离散的”福克表象
 这里也是用单粒子观察算符$\widehat{\varphi}$的本征矢来构造$N$粒子体系的希尔伯特空间$\mathcal{H}\_N^{(\varepsilon)}$的基矢，只是此处的$\widehat{\varphi}$的本征谱是离散的：
 
+<mj>
 \begin{align}
 \label{eq:176}
-\langle\varphi\_\beta\|\varphi\_\alpha\rangle&=\varphi\_\alpha\|\varphi\_\alpha\rangle\\\
+\langle\varphi_\beta|\varphi_\alpha\rangle&=\varphi_\alpha|\varphi_\alpha\rangle\\\
 \label{eq:177}
-\langle\varphi\_\alpha\|\varphi\_\beta\rangle&=\delta\_{\alpha\beta}\\\
+\langle\varphi_\alpha|\varphi_\beta\rangle&=\delta_{\alpha\beta}\\\
 \label{eq:178}
-\sum\_\alpha\|\varphi\_\alpha\rangle\langle\varphi\_\alpha\|&=\mathbf{1}\quad\text{in }\mathcal{H}\_1
+\sum_\alpha|\varphi_\alpha\rangle\langle\varphi_\alpha|&=\mathbf{1}\quad\text{in }\mathcal{H}_1
 \end{align}
+</mj>
 
 理论上，借鉴[5.1](#51-连续的福克表象)中的处理方式能使得此处的推导更加顺利。
 
@@ -1680,17 +1798,18 @@ a\_\alpha&=\int\mathrm{d}^3r\,\varphi\_\alpha^\*(\mathbf{r})\widehat{\psi}(\math
 
 与\eqref{eq:105}的差别只是一个待定的归一化常数$C\_\varepsilon$。对于费米子（$\varepsilon=-$）反对称化的态矢可写成行列式形式：
 
-
+<mj>
 \begin{equation}
 \label{eq:181}
-\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(-)}=C\_-
+|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(-)}=C_-
 \begin{vmatrix}
-\|\varphi\_{\alpha\_1}^{(1)}\rangle & \|\varphi\_{\alpha\_1}^{(2)}\rangle & \cdots & \|\varphi\_{\alpha\_1}^{(N)}\rangle\\\
-\|\varphi\_{\alpha\_2}^{(1)}\rangle & \|\varphi\_{\alpha\_2}^{(2)}\rangle & \cdots & \|\varphi\_{\alpha\_2}^{(N)}\rangle\\\
+|\varphi_{\alpha_1}^{(1)}\rangle & |\varphi_{\alpha_1}^{(2)}\rangle & \cdots & |\varphi_{\alpha_1}^{(N)}\rangle\\\
+|\varphi_{\alpha_2}^{(1)}\rangle & |\varphi_{\alpha_2}^{(2)}\rangle & \cdots & |\varphi_{\alpha_2}^{(N)}\rangle\\\
 \vdots & \vdots & \ddots & \vdots \\\
-\|\varphi\_{\alpha\_N}^{(1)}\rangle & \|\varphi\_{\alpha\_N}^{(2)}\rangle & \cdots & \|\varphi\_{\alpha\_N}^{(N)}\rangle\\\
+|\varphi_{\alpha_N}^{(1)}\rangle & |\varphi_{\alpha_N}^{(2)}\rangle & \cdots & |\varphi_{\alpha\_N}^{(N)}\rangle\\\
 \end{vmatrix}
 \end{equation}
+</mj>
 
 这就是所谓的斯莱特行列式。
 
@@ -1698,25 +1817,29 @@ a\_\alpha&=\int\mathrm{d}^3r\,\varphi\_\alpha^\*(\mathbf{r})\widehat{\psi}(\math
 
 接着来确定归一化常数$C\_\varepsilon$并引入占有数$n\_i$。这些数反映了某个单粒子态$\|\varphi\_{\alpha\_i}\rangle$在$N$粒子态$\|\varphi\_{\alpha\_1}\cdots\rangle^{(\varepsilon)}$中出现的频率，或者，更直观一点，处于态$\|\varphi\_{\alpha\_i}\rangle$的全同粒子的数目：
 
+<mj>
 \begin{align}
 \label{eq:182}
 \begin{split}
-\sum\_i n\_i&=N&\\\
-n\_i&=0,1&\text{Fermions}\\\
-n\_i&=0,1,2,\ldots&\quad\text{Bosons}\\\
+\sum_i n_i&=N&\\
+n_i&=0,1&\text{Fermions}\\
+n_i&=0,1,2,\ldots&\quad\text{Bosons}\\
 \end{split}
 \end{align}
+</mj>
 
 限定$C\_\varepsilon$为实数，归一化意味着：
 
+<mj>
 \begin{align}
 \label{eq:183}
 \begin{split}
-1\equiv\langle\varphi\_N^{(\varepsilon)}\|\varphi\_N^{(\varepsilon)}\rangle&=C\_\varepsilon\sum\_\mathcal{P}\varepsilon^p\langle\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\|\mathcal{P}^\dagger\|\varphi\_N^{(\varepsilon)}\rangle\overset{(\mathcal{P}^\dagger=\mathcal{P})}{=}\\\
-&\hspace{-0.85em}\overset{(\mathcal{P}^\dagger=\mathcal{P})}{=}C\_\varepsilon\sum\_\mathcal{P}\varepsilon^{2p}\langle\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\|\varphi\_N^{(\varepsilon)}\rangle=\\\
-&=N!C\_\varepsilon\langle\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\|\varphi\_N^{(\varepsilon)}\rangle
+1\equiv\langle\varphi_N^{(\varepsilon)}|\varphi_N^{(\varepsilon)}\rangle&=C_\varepsilon\sum_\mathcal{P}\varepsilon^p\langle\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}|\mathcal{P}^\dagger|\varphi_N^{(\varepsilon)}\rangle\overset{(\mathcal{P}^\dagger=\mathcal{P})}{=}\\\
+&\hspace{-0.85em}\overset{(\mathcal{P}^\dagger=\mathcal{P})}{=}C_\varepsilon\sum_\mathcal{P}\varepsilon^{2p}\langle\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}|\varphi_N^{(\varepsilon)}\rangle=\\\
+&=N!C_\varepsilon\langle\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}|\varphi_N^{(\varepsilon)}\rangle
 \end{split}
 \end{align}
+</mj>
 
 于是：
 
@@ -1750,13 +1873,15 @@ C\_+=\left(N!\prod\_i n\_i!\right)^{-1/2}
 
 可见一个$N$粒子态被它的占有数唯一确定。由此导致另一种表象：占有数表象。
 
+<mj>
 \begin{align}
 \label{eq:188}
 \begin{split}
-&\|N;n\_1n\_2\cdots n\_i\cdots n\_j\cdots\rangle^{(\varepsilon)}\equiv\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}=\\\
-&=C\_\varepsilon\sum\_\mathcal{P}\varepsilon^p\mathcal{P}\left\\{\underbrace{\|\varphi\_{\alpha\_1}^{(1)}\rangle\|\varphi\_{\alpha\_1}^{(2)}\rangle\cdots}\_{n\_1}\cdots\underbrace{\|\varphi\_{\alpha\_i}^{(p)}\rangle\|\varphi\_{\alpha\_i}^{(p+1)}\rangle\cdots}\_{n\_i}\cdots\right\\}
+&|N;n_1n_2\cdots n_i\cdots n_j\cdots\rangle^{(\varepsilon)}\equiv|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}=\\\
+&=C_\varepsilon\sum_\mathcal{P}\varepsilon^p\mathcal{P}\left\{\underbrace{|\varphi_{\alpha_1}^{(1)}\rangle|\varphi_{\alpha_1}^{(2)}\rangle\cdots}_{n_1}\cdots\underbrace{|\varphi_{\alpha_i}^{(p)}\rangle|\varphi_{\alpha_i}^{(p+1)}\rangle\cdots}_{n_i}\cdots\right\}
 \end{split}
 \end{align}
+</mj>
 
 全部占有数都在这个态矢符号中出现，如果某个单粒子态未被占据，就用$n\_i=0$标记。当且仅当两个态矢的所有占有数都一致才是相同的态。从单粒子态可直接导出正交关系：
 
@@ -1776,15 +1901,17 @@ C\_+=\left(N!\prod\_i n\_i!\right)^{-1/2}
 
 和[5.1](#51-连续的福克表象)中一样，产生湮灭算符根据归一化因子定义。产生算符$a\_{\alpha\_r}^\dagger\equiv a\_r^\dagger$：
 
+<mj>
 \begin{align}
 \label{eq:191}
 \begin{split}
-&a\_r^\dagger\|N;\cdots n\_r\cdots\rangle^{(\varepsilon)}=\\\
-&=a\_r^\dagger\|\varphi\_{\alpha\_1}\cdots\varphi\_{\alpha\_N}\rangle^{(\varepsilon)}\equiv\\\
-&\equiv\sqrt{n\_r+1}\left\|\varphi\_{\alpha\_r}\underbrace{\varphi\_{\alpha\_1}\varphi\_{\alpha\_1}\cdots}\_{n\_1}\cdots\underbrace{\varphi\_{\alpha\_r}\varphi\_{\alpha\_r}\cdots}\_{n\_r}\cdots\right\rangle^{(\varepsilon)}=\\\
-&=\varepsilon^{N\_r}\sqrt{n\_r+1}\left\|\underbrace{\varphi\_{\alpha\_1}\varphi\_{\alpha\_1}\cdots}\_{n\_1}\cdots\underbrace{\varphi\_{\alpha\_r}\varphi\_{\alpha\_r}\cdots}\_{n\_r+1}\cdots\right\rangle^{(\varepsilon)}
+&a_r^\dagger|N;\cdots n_r\cdots\rangle^{(\varepsilon)}=\\\
+&=a_r^\dagger|\varphi_{\alpha_1}\cdots\varphi_{\alpha_N}\rangle^{(\varepsilon)}\equiv\\\
+&\equiv\sqrt{n_r+1}\left|\varphi_{\alpha_r}\underbrace{\varphi_{\alpha_1}\varphi_{\alpha_1}\cdots}_{n_1}\cdots\underbrace{\varphi_{\alpha_r}\varphi_{\alpha_r}\cdots}_{n_r}\cdots\right\rangle^{(\varepsilon)}=\\\
+&=\varepsilon^{N_r}\sqrt{n_r+1}\left|\underbrace{\varphi_{\alpha_1}\varphi_{\alpha_1}\cdots}_{n_1}\cdots\underbrace{\varphi_{\alpha_r}\varphi_{\alpha_r}\cdots}_{n_r+1}\cdots\right\rangle^{(\varepsilon)}
 \end{split}
 \end{align}
+</mj>
 
 这里，
 
@@ -1795,12 +1922,14 @@ N\_r=\sum\_{i=1}^{r-1}n\_i
 
 是恢复标准排列所需的交换次数。产生算符对玻色子（$\varepsilon=+$）和费米子（$\varepsilon=-$）的作用如下：
 
+<mj>
 \begin{align}
 \label{eq:193}
-a\_r^\dagger\|N;\cdots n\_r\cdots\rangle^{(+)}&=\sqrt{n\_r+1}\|N+1;\cdots n\_r+1\cdots\rangle^{(+)}\\\
+a_r^\dagger|N;\cdots n_r\cdots\rangle^{(+)}&=\sqrt{n_r+1}|N+1;\cdots n_r+1\cdots\rangle^{(+)}\\
 \label{eq:194}
-a\_r^\dagger\|N;\cdots n\_r\cdots\rangle^{(-)}&=(-1)^{N\_r}\delta\_{n\_r,0}\|N+1;\cdots n\_r+1\cdots\rangle^{(-)}\\\
+a_r^\dagger|N;\cdots n_r\cdots\rangle^{(-)}&=(-1)^{N_r}\delta_{n_r,0}|N+1;\cdots n_r+1\cdots\rangle^{(-)}\\
 \end{align}
+</mj>
 
 每个$N$粒子福克态都可以通过反复对真空态作用产生算符得到：
 
@@ -1811,16 +1940,18 @@ a\_r^\dagger\|N;\cdots n\_r\cdots\rangle^{(-)}&=(-1)^{N\_r}\delta\_{n\_r,0}\|N+1
 
 同样，由产生算符的共轭定义湮灭算符$a\_r\equiv(a\_r^\dagger)^\dagger$，从下面的矩阵元可见其作用：
 
+<mj>
 \begin{align}
 \label{eq:196}
 \begin{split}
-&{}^{(\varepsilon)}\langle N;\cdots n\_r\cdots\|a\_r\|\overline{N};\cdots\bar{n}\_r\cdots\rangle^{(\varepsilon)}=\\\
-&=\varepsilon^{N\_r}\sqrt{n\_r+1}{}^{(\varepsilon)}\langle N+1;\cdots n\_r+1\cdots\|\overline{N};\cdots\bar{n}\_r\cdots\rangle^{(\varepsilon)}=\\\
-&=\varepsilon^{N\_r}\sqrt{n\_r+1}\delta\_{N+1,\overline{N}}(\delta\_{n\_1,\bar{n}\_1}\cdots\delta\_{n\_r+1,\bar{n}\_r}\cdots)=\\\
-&=\varepsilon^{\overline{N}\_r}\sqrt{\bar{n}\_r}\delta\_{N,\overline{N}-1}(\delta\_{n\_1,\bar{n}\_1}\cdots\delta\_{n\_r,\bar{n}\_r-1}\cdots)=\\\
-&=\varepsilon^{\overline{N}\_r}\sqrt{\bar{n}\_r}{}^{(\varepsilon)}\langle N;n\_1\cdots n\_r\cdots\|\overline{N}-1;\bar{n}\_1\cdots\bar{n}\_r-1\cdots\rangle^{(\varepsilon)}
+&{}^{(\varepsilon)}\langle N;\cdots n_r\cdots|a_r|\overline{N};\cdots\bar{n}_r\cdots\rangle^{(\varepsilon)}=\\\
+&=\varepsilon^{N_r}\sqrt{n_r+1}{}^{(\varepsilon)}\langle N+1;\cdots n_r+1\cdots|\overline{N};\cdots\bar{n}_r\cdots\rangle^{(\varepsilon)}=\\\
+&=\varepsilon^{N_r}\sqrt{n_r+1}\delta_{N+1,\overline{N}}(\delta_{n_1,\bar{n}_1}\cdots\delta_{n_r+1,\bar{n}_r}\cdots)=\\\
+&=\varepsilon^{\overline{N}_r}\sqrt{\bar{n}_r}\delta_{N,\overline{N}-1}(\delta_{n_1,\bar{n}_1}\cdots\delta_{n_r,\bar{n}_r-1}\cdots)=\\\
+&=\varepsilon^{\overline{N}_r}\sqrt{\bar{n}_r}{}^{(\varepsilon)}\langle N;n_1\cdots n_r\cdots|\overline{N}-1;\bar{n}_1\cdots\bar{n}_r-1\cdots\rangle^{(\varepsilon)}
 \end{split}
 \end{align}
+</mj>
 
 上式第四行用到了$\delta$函数的挑选性。由于基矢是任意的，便得到如下关系：
 
@@ -1831,98 +1962,108 @@ a\_r\|\overline{N};\cdots\bar{n}\_r\cdots\rangle^{(\varepsilon)}=\varepsilon^{\o
 
 湮灭算符对玻色子（$\varepsilon=+$）和费米子（$\varepsilon=-$）的作用如下：
 
+<mj>
 \begin{align}
 \label{eq:198}
-a\_r\|N;\cdots n\_r\cdots\rangle^{(+)}&=\sqrt{n\_r}\|N-1;\cdots n\_r-1\cdots\rangle^{(+)}\\\
+a_r|N;\cdots n_r\cdots\rangle^{(+)}&=\sqrt{n_r}|N-1;\cdots n_r-1\cdots\rangle^{(+)}\\\
 \label{eq:199}
-a\_r\|N;\cdots n\_r\cdots\rangle^{(-)}&=\delta\_{n\_r,1}(-1)^{N\_r}\|N-1;\cdots n\_r-1\cdots\rangle^{(-)}\\\
+a_r|N;\cdots n_r\cdots\rangle^{(-)}&=\delta_{n_r,1}(-1)^{N_r}|N-1;\cdots n_r-1\cdots\rangle^{(-)}\\\
 \end{align}
+</mj>
 
 从定义式\eqref{eq:193}\eqref{eq:194}和\eqref{eq:198}\eqref{eq:199}可以导出基本对易关系：
 
 1\. 玻色子（$r\neq p$）：
 
+<mj>
 \begin{align}
 &\begin{split}
-a\_r^\dagger a\_p^\dagger&\|\cdots n\_r\cdots n\_p\cdots\rangle^{(+)}=\\\
-&=\sqrt{n\_r+1}\sqrt{n\_p+1}\|\cdots n\_r+1\cdots n\_p+1\cdots\rangle^{(+)}=\\\
-&=a\_p^\dagger a\_r^\dagger\|\cdots n\_r\cdots n\_p\cdots\rangle^{(+)}
+a_r^\dagger a_p^\dagger&|\cdots n_r\cdots n_p\cdots\rangle^{(+)}=\\\
+&=\sqrt{n_r+1}\sqrt{n_p+1}|\cdots n_r+1\cdots n_p+1\cdots\rangle^{(+)}=\\\
+&=a_p^\dagger a_r^\dagger|\cdots n_r\cdots n_p\cdots\rangle^{(+)}
 \end{split}\label{eq:200}\\\
 &\begin{split}
-a\_r a\_p&\|\cdots n\_r\cdots n\_p\cdots\rangle^{(+)}=\\\
-&=\sqrt{n\_r}\sqrt{n\_p}\|\cdots n\_r-1\cdots n\_p-1\cdots\rangle^{(+)}=\\\
-&=a\_p a\_r\|\cdots n\_r\cdots n\_p\cdots\rangle^{(+)}
+a_r a_p&|\cdots n_r\cdots n_p\cdots\rangle^{(+)}=\\\
+&=\sqrt{n_r}\sqrt{n_p}|\cdots n_r-1\cdots n_p-1\cdots\rangle^{(+)}=\\\
+&=a_p a_r|\cdots n_r\cdots n_p\cdots\rangle^{(+)}
 \end{split}\label{eq:201}\\\
 &\begin{split}
-a\_r^\dagger a\_p&\|\cdots n\_r\cdots n\_p\cdots\rangle^{(+)}=\\\
-&=\sqrt{n\_r+1}\sqrt{n\_p}\|\cdots n\_r+1\cdots n\_p-1\cdots\rangle^{(+)}=\\\
-&=a\_p a\_r^\dagger\|\cdots n\_r\cdots n\_p\cdots\rangle^{(+)}
+a_r^\dagger a_p&|\cdots n_r\cdots n_p\cdots\rangle^{(+)}=\\\
+&=\sqrt{n_r+1}\sqrt{n_p}|\cdots n_r+1\cdots n_p-1\cdots\rangle^{(+)}=\\\
+&=a_p a_r^\dagger|\cdots n_r\cdots n_p\cdots\rangle^{(+)}
 \end{split}\label{eq:202}\\\
 &\begin{split}
-a\_r^\dagger a\_r&\|\cdots n\_r\cdots\rangle^{(+)}=\\\
-&=\sqrt{n\_r}a\_r^\dagger\|\cdots n\_r-1\cdots\rangle^{(+)}=\\\
-&=n\_r\|\cdots n\_r\cdots\rangle^{(+)}
+a_r^\dagger a_r&|\cdots n_r\cdots\rangle^{(+)}=\\\
+&=\sqrt{n_r}a_r^\dagger|\cdots n_r-1\cdots\rangle^{(+)}=\\\
+&=n_r|\cdots n_r\cdots\rangle^{(+)}
 \end{split}\label{eq:203}\\\
 &\begin{split}
-a\_r a\_r^\dagger&\|\cdots n\_r\cdots\rangle^{(+)}=\\\
-&=\sqrt{n\_r+1}a\_r\|\cdots n\_r+1\cdots\rangle^{(+)}=\\\
-&=(n\_r+1)\|\cdots n\_r\cdots\rangle^{(+)}
+a_r a_r^\dagger&|\cdots n_r\cdots\rangle^{(+)}=\\\
+&=\sqrt{n_r+1}a_r|\cdots n_r+1\cdots\rangle^{(+)}=\\\
+&=(n_r+1)|\cdots n_r\cdots\rangle^{(+)}
 \end{split}\label{eq:204}
 \end{align}
+</mj>
 
 2\. 费米子（$r<p$）：
 
+<mj>
 \begin{align}
 &\begin{split}
-a\_r^\dagger a\_p^\dagger&\|\cdots n\_r\cdots n\_p\cdots\rangle^{(-)}=\\\
-&=(-1)^{N\_r}(-1)^{N\_p}\delta\_{n\_r,0}\delta\_{n\_p,0}\|\cdots n\_r+1\cdots n\_p+1\cdots\rangle^{(-)}
+a_r^\dagger a_p^\dagger&|\cdots n_r\cdots n_p\cdots\rangle^{(-)}=\\\
+&=(-1)^{N_r}(-1)^{N_p}\delta_{n_r,0}\delta_{n_p,0}|\cdots n_r+1\cdots n_p+1\cdots\rangle^{(-)}
 \end{split}\label{eq:205}\\\
 &\begin{split}
-a\_p^\dagger a\_r^\dagger&\|\cdots n\_r\cdots n\_p\cdots\rangle^{(-)}=\\\
-&=(-1)^{N\_p+1}(-1)^{N\_r}\delta\_{n\_p,0}\delta\_{n\_r,0}\|\cdots n\_r+1\cdots n\_p+1\cdots\rangle^{(-)}=\\\
-&=-a\_r^\dagger a\_p^\dagger\|\cdots n\_r\cdots n\_p\cdots\rangle^{(-)}
+a_p^\dagger a_r^\dagger&|\cdots n_r\cdots n_p\cdots\rangle^{(-)}=\\\
+&=(-1)^{N_p+1}(-1)^{N_r}\delta_{n_p,0}\delta_{n_r,0}|\cdots n_r+1\cdots n_p+1\cdots\rangle^{(-)}=\\\
+&=-a_r^\dagger a_p^\dagger|\cdots n_r\cdots n_p\cdots\rangle^{(-)}
 \end{split}\label{eq:206}\\\
 &\begin{split}
-a\_r^\dagger a\_r&\|\cdots n\_r\cdots\rangle^{(-)}=\\\
-&=(-1)^{2N\_r}\delta\_{n\_r,1}\|\cdots n\_r\cdots\rangle^{(-)}=\delta\_{n\_r,1}\|\cdots n\_r\cdots\rangle^{(-)}
+a_r^\dagger a_r&|\cdots n_r\cdots\rangle^{(-)}=\\\
+&=(-1)^{2N_r}\delta_{n_r,1}|\cdots n_r\cdots\rangle^{(-)}=\delta_{n_r,1}|\cdots n_r\cdots\rangle^{(-)}
 \end{split}\label{eq:207}\\\
 &\begin{split}
-a\_r a\_r^\dagger&\|\cdots n\_r\cdots\rangle^{(-)}=\\\
-&=(-1)^{2N\_r}\delta\_{n\_r,0}\|\cdots n\_r\cdots\rangle^{(-)}=\delta\_{n\_r,0}\|\cdots n\_r\cdots\rangle^{(-)}
+a_r a_r^\dagger&|\cdots n_r\cdots\rangle^{(-)}=\\\
+&=(-1)^{2N_r}\delta_{n_r,0}|\cdots n_r\cdots\rangle^{(-)}=\delta_{n_r,0}|\cdots n_r\cdots\rangle^{(-)}
 \end{split}\label{eq:208}\\\
 &\begin{split}
-a\_r^\dagger a\_p&\|\cdots n\_r\cdots n\_p\cdots\rangle^{(-)}=\\\
-&=(-1)^{N\_r}(-1)^{N\_p}\delta\_{n\_r,0}\delta\_{n\_p,1}\|\cdots n\_r+1\cdots n\_p-1\cdots\rangle^{(-)}
+a_r^\dagger a_p&|\cdots n_r\cdots n_p\cdots\rangle^{(-)}=\\\
+&=(-1)^{N_r}(-1)^{N_p}\delta_{n_r,0}\delta_{n_p,1}|\cdots n_r+1\cdots n_p-1\cdots\rangle^{(-)}
 \end{split}\label{eq:209}\\\
 &\begin{split}
-a\_p a\_r^\dagger&\|\cdots n\_r\cdots n\_p\cdots\rangle^{(-)}=\\\
-&=(-1)^{N\_p+1}(-1)^{N\_r}\delta\_{n\_p,1}\delta\_{n\_r,0}\|\cdots n\_r+1\cdots n\_p-1\cdots\rangle^{(-)}=\\\
-&=-a\_r^\dagger a\_p\|\cdots n\_r\cdots n\_p\cdots\rangle^{(-)}
+a_p a_r^\dagger&|\cdots n_r\cdots n_p\cdots\rangle^{(-)}=\\\
+&=(-1)^{N_p+1}(-1)^{N_r}\delta_{n_p,1}\delta_{n_r,0}|\cdots n_r+1\cdots n_p-1\cdots\rangle^{(-)}=\\\
+&=-a_r^\dagger a_p|\cdots n_r\cdots n_p\cdots\rangle^{(-)}
 \end{split}\label{eq:210}
 \end{align}
+</mj>
 
 因为上述关系对任意基矢都适用，所以有如下算符恒等式：
 
+<mj>
 \begin{align}
 \label{eq:211}
-[a\_r,a\_s]\_{-\varepsilon}&=0\\\
+[a_r,a_s]_{-\varepsilon}&=0\\
 \label{eq:212}
-[a\_r^\dagger,a\_s^\dagger]\_{-\varepsilon}&=0\\\
+[a_r^\dagger,a_s^\dagger]_{-\varepsilon}&=0\\
 \label{eq:213}
-[a\_r,a\_s^\dagger]\_{-\varepsilon}&=\delta\_{rs}\\\
+[a_r,a_s^\dagger]_{-\varepsilon}&=\delta_{rs}\\
 \end{align}
+</mj>
 
 这些就是离散福克表象中类似于\eqref{eq:123}，\eqref{eq:134}和\eqref{eq:135}的产生湮灭算符的基本对易关系。
 
 采用与处理离散本征谱完全一样的手段，通过产生湮灭算符将一个任意的包含单体项和两体项的观察算法$\widehat{A}$（见\eqref{eq:141}），用二次量子化形式表达：
 
+<mj>
 \begin{align}
 \label{eq:214}
 \begin{split}
-\widehat{A}\equiv&\sum\_{p,r}\langle\varphi\_{\alpha\_p}\|\widehat{A}\_1\|\varphi\_{\alpha\_r}\rangle a\_p^\dagger a\_r+\\\
-&+\frac{1}{2}\sum\_{\substack{p,r,\\\s,t}}\langle\varphi\_{\alpha\_p}^{(1)}\varphi\_{\alpha\_r}^{(2)}\|\widehat{A}\_2\|\varphi\_{\alpha\_t}^{(1)}\varphi\_{\alpha\_s}^{(2)}\rangle a\_p^\dagger a\_r^\dagger a\_s a\_t
+\widehat{A}\equiv&\sum_{p,r}\langle\varphi_{\alpha_p}|\widehat{A}_1|\varphi_{\alpha_r}\rangle a_p^\dagger a_r+\\
+&+\frac{1}{2}\sum_{\substack{p,r,\\s,t}}\langle\varphi_{\alpha_p}^{(1)}\varphi_{\alpha_r}^{(2)}|\widehat{A}_2|\varphi_{\alpha_t}^{(1)}\varphi_{\alpha_s}^{(2)}\rangle a_p^\dagger a_r^\dagger a_s a_t
 \end{split}
 \end{align}
+</mj>
 
 和连续本征谱的情况唯一的不同就是，此处的两体矩阵元必须由非对称化的两粒子态构成，而在\eqref{eq:147}中可以使用对称化（反对称化）的态矢。其原因全在于所用的归一化因子不同。
 
@@ -1943,12 +2084,12 @@ a\_p a\_r^\dagger&\|\cdots n\_r\cdots n\_p\cdots\rangle^{(-)}=\\\
 > 
 > 若另选表象B，此时$\widehat{A}_{1}$无确定值，做表象变换
 > 
-> \begin{align}
-\widehat{A}\_1&=\sum\_ia\_i\hat{a}\_i^\dagger\hat{a}\_i=\sum\_{ijk}a\_iS\_{ji}S\_{ik}\hat{b}\_j^\dagger\hat{b}\_k=\\\
-&=\sum\_{jk}\hat{b}\_j^\dagger\hat{b}\_k\sum\_ia\_i\langle b\_j\|a\_i\rangle\langle a\_i\|b\_k\rangle=\\\
-&=\sum\_{jk}\hat{b}\_j^\dagger\hat{b}\_k\sum\_i\langle b\_j\|\widehat{A}\_1\|a\_i\rangle\langle a\_i\|b\_k\rangle=\\\
-&=\sum\_{jk}\hat{b}\_j^\dagger\hat{b}\_k\sum\_i\langle b\_j\|\widehat{A}\_1\|b\_k\rangle
-\end{align}
+> <mj>\begin{align}
+\widehat{A}_1&=\sum_ia_i\hat{a}_i^\dagger\hat{a}_i=\sum_{ijk}a_iS_{ji}S_{ik}\hat{b}_j^\dagger\hat{b}_k=\\
+&=\sum_{jk}\hat{b}_j^\dagger\hat{b}_k\sum_ia_i\langle b_j|a_i\rangle\langle a_i|b_k\rangle=\\\
+&=\sum_{jk}\hat{b}_j^\dagger\hat{b}_k\sum_i\langle b_j|\widehat{A}_1|a_i\rangle\langle a_i|b_k\rangle=\\
+&=\sum_{jk}\hat{b}_j^\dagger\hat{b}_k\sum_i\langle b_j|\widehat{A}_1|b_k\rangle
+\end{align}</mj>
 > 
 > 其次考虑两粒子力学量$\widehat{A}_2$：
 > \begin{equation}
@@ -1957,33 +2098,33 @@ a\_p a\_r^\dagger&\|\cdots n\_r\cdots n\_p\cdots\rangle^{(-)}=\\\
 > 
 > 若选取表象A，为$\widehat{A}_2$的自身表象，由于两粒子可处于不同单粒子态或者同一态，其对应体系力学量算符为
 > 
-> \begin{align}
-\widehat{A}\_2&=\frac{1}{2}\sum\_{i\ne j}a\_{ij}\hat{n}\_i\hat{n}\_j+\frac{1}{2}\sum\_ia\_{ii}\hat{n}\_i(\hat{n}\_i-1)=\\\
-&=\frac{1}{2}\sum\_{ij}a\_{ij}(\hat{n}\_i\hat{n}\_j-\hat{n}\_j\delta\_{ij})=\\\
-&=\frac{1}{2}\sum\_{ij}a\_{ij}\hat{a}\_i^\dagger\hat{a}\_j^\dagger\hat{a}\_j\hat{a}\_i
-\end{align}
+> <mj>\begin{align}
+\widehat{A}_2&=\frac{1}{2}\sum_{i\ne j}a_{ij}\hat{n}_i\hat{n}_j+\frac{1}{2}\sum_ia_{ii}\hat{n}_i(\hat{n}_i-1)=\\\
+&=\frac{1}{2}\sum_{ij}a_{ij}(\hat{n}_i\hat{n}_j-\hat{n}_j\delta_{ij})=\\\
+&=\frac{1}{2}\sum_{ij}a_{ij}\hat{a}_i^\dagger\hat{a}_j^\dagger\hat{a}_j\hat{a}_i
+\end{align}</mj>
 > 
 > 这里用到
-> \begin{align}
-\hat{n}\_i\hat{n}\_j-\hat{n}\_j\delta\_{ij}&=\hat{a}\_i^\dagger\hat{a}\_i\hat{a}\_j^\dagger\hat{a}\_j-\hat{a}\_j^\dagger\hat{a}\_j\delta\_{ij}=\\\
-&=\hat{a}\_i^\dagger\left(\delta\_{ij}+\varepsilon\hat{a}\_j^\dagger\hat{a}\_i\right)\hat{a}\_j-\hat{a}\_j^\dagger\hat{a}\_j\delta\_{ij}=\\\
-&=\varepsilon\hat{a}\_i^\dagger\hat{a}\_j^\dagger\hat{a}\_i\hat{a}\_j+\underbrace{\hat{a}\_i^\dagger\hat{a}\_j\delta\_{ij}-\hat{a}\_j^\dagger\hat{a}\_j\delta\_{ij}}\_{=0}=\\\
-&=\varepsilon^2\hat{a}\_i^\dagger\hat{a}\_j^\dagger\hat{a}\_j\hat{a}\_i=\\\
-&=\hat{a}\_i^\dagger\hat{a}\_j^\dagger\hat{a}\_j\hat{a}\_i
-\end{align}
+> <mj>\begin{align}
+\hat{n}_i\hat{n}_j-\hat{n}_j\delta_{ij}&=\hat{a}_i^\dagger\hat{a}_i\hat{a}_j^\dagger\hat{a}_j-\hat{a}_j^\dagger\hat{a}_j\delta_{ij}=\\\
+&=\hat{a}_i^\dagger\left(\delta_{ij}+\varepsilon\hat{a}_j^\dagger\hat{a}_i\right)\hat{a}_j-\hat{a}_j^\dagger\hat{a}_j\delta_{ij}=\\\
+&=\varepsilon\hat{a}_i^\dagger\hat{a}_j^\dagger\hat{a}_i\hat{a}_j+\underbrace{\hat{a}_i^\dagger\hat{a}_j\delta_{ij}-\hat{a}_j^\dagger\hat{a}_j\delta_{ij}}_{=0}=\\\
+&=\varepsilon^2\hat{a}_i^\dagger\hat{a}_j^\dagger\hat{a}_j\hat{a}_i=\\\
+&=\hat{a}_i^\dagger\hat{a}_j^\dagger\hat{a}_j\hat{a}_i
+\end{align}</mj>
 > 
 > 若另选表象B，此时$\widehat{A}_{2}$无确定值，做表象变换
 > 
-> \begin{align}
- \widehat{A}\_2&=\frac{1}{2}\sum\_{ij}a\_{ij}\hat{a}\_i^\dagger\hat{a}\_j^\dagger\hat{a}\_j\hat{a}\_i=\\\
- &=\frac{1}{2}\sum\_{ijklmn}a\_{ij}\hat{b}\_k^\dagger\hat{b}\_l^\dagger\hat{b}\_m\hat{b}\_nS\_{ki}S\_{lj}S\_{jm}^\dagger S\_{in}^\dagger=\\\
- &=\frac{1}{2}\sum\_{ijklmn}a\_{ij}\hat{b}\_k^\dagger\hat{b}\_l^\dagger\hat{b}\_m\hat{b}\_n\langle b\_k\|a\_i\rangle\langle b\_l\|a\_j\rangle\langle a\_j\|b\_m\rangle\langle a\_i\|b\_n\rangle=\\\
- &=\frac{1}{2}\sum\_{klmn}\hat{b}\_k^\dagger\hat{b}\_l^\dagger\hat{b}\_m\hat{b}\_n\sum\_{ij}a\_{ij}\langle b\_k\|a\_i\rangle\langle b\_l\|a\_j\rangle\langle a\_i\|b\_n\rangle\langle a\_j\|b\_m\rangle=\\\
- &=\frac{1}{2}\sum\_{klmn}\hat{b}\_k^\dagger\hat{b}\_l^\dagger\hat{b}\_m\hat{b}\_n\sum\_{ij}a\_{ij}\langle b\_k\|\langle b\_l\|a\_j\rangle\|a\_i\rangle\langle a\_i\|b\_n\rangle\langle a\_j\|b\_m\rangle=\\\
- &=\frac{1}{2}\sum\_{klmn}\hat{b}\_k^\dagger\hat{b}\_l^\dagger\hat{b}\_m\hat{b}\_n\sum\_{ij}\langle b\_k\|\langle b\_l\|\widehat{A}\_2\|a\_j\rangle\|a\_i\rangle\langle a\_i\|b\_n\rangle\langle a\_j\|b\_m\rangle=\\\
- &=\frac{1}{2}\sum\_{klmn}\hat{b}\_k^\dagger\hat{b}\_l^\dagger\hat{b}\_m\hat{b}\_n\sum\_{ij}\langle b\_k\|\langle b\_l\|\widehat{A}\_2\|a\_j\rangle\langle a\_j\|b\_m\rangle\|b\_n\rangle=\\\
- &=\frac{1}{2}\sum\_{klmn}\hat{b}\_k^\dagger\hat{b}\_l^\dagger\hat{b}\_m\hat{b}\_n\sum\_{ij}\langle b\_k\|\langle b\_l\|\widehat{A}\_2\|b\_m\rangle\|b\_n\rangle
- \end{align}
+> <mj>\begin{align}
+ \widehat{A}_2&=\frac{1}{2}\sum_{ij}a_{ij}\hat{a}_i^\dagger\hat{a}_j^\dagger\hat{a}_j\hat{a}_i=\\\
+ &=\frac{1}{2}\sum_{ijklmn}a_{ij}\hat{b}_k^\dagger\hat{b}_l^\dagger\hat{b}_m\hat{b}_nS_{ki}S_{lj}S_{jm}^\dagger S_{in}^\dagger=\\\
+ &=\frac{1}{2}\sum_{ijklmn}a_{ij}\hat{b}_k^\dagger\hat{b}_l^\dagger\hat{b}_m\hat{b}_n\langle b_k|a_i\rangle\langle b_l|a_j\rangle\langle a_j|b_m\rangle\langle a_i|b_n\rangle=\\\
+ &=\frac{1}{2}\sum_{klmn}\hat{b}_k^\dagger\hat{b}_l^\dagger\hat{b}_m\hat{b}_n\sum_{ij}a_{ij}\langle b_k|a_i\rangle\langle b_l|a_j\rangle\langle a_i|b_n\rangle\langle a_j|b_m\rangle=\\\
+ &=\frac{1}{2}\sum_{klmn}\hat{b}_k^\dagger\hat{b}_l^\dagger\hat{b}_m\hat{b}_n\sum_{ij}a_{ij}\langle b_k|\langle b_l|a_j\rangle|a_i\rangle\langle a_i|b_n\rangle\langle a_j|b_m\rangle=\\\
+ &=\frac{1}{2}\sum_{klmn}\hat{b}_k^\dagger\hat{b}_l^\dagger\hat{b}_m\hat{b}_n\sum_{ij}\langle b_k|\langle b_l|\widehat{A}_2|a_j\rangle|a_i\rangle\langle a_i|b_n\rangle\langle a_j|b_m\rangle=\\\
+ &=\frac{1}{2}\sum_{klmn}\hat{b}_k^\dagger\hat{b}_l^\dagger\hat{b}_m\hat{b}_n\sum_{ij}\langle b_k|\langle b_l|\widehat{A}_2|a_j\rangle\langle a_j|b_m\rangle|b_n\rangle=\\\
+ &=\frac{1}{2}\sum_{klmn}\hat{b}_k^\dagger\hat{b}_l^\dagger\hat{b}_m\hat{b}_n\sum_{ij}\langle b_k|\langle b_l|\widehat{A}_2|b_m\rangle|b_n\rangle
+ \end{align}</mj>
 
 
 类似于\eqref{eq:151}中的占有密度算符，在离散情况下，引入占有数算符：
@@ -2011,26 +2152,30 @@ $\hat{n}\_r$回答了有多少粒子占据第$r$个单粒子态。
 
 它的本征矢是以总粒子数为本征值的福克态：
 
+<mj>
 \begin{align}
 \label{eq:218}
 \begin{split}
-\widehat{N}\|N;\cdots n\_r\cdots\rangle^{(\varepsilon)}&=\left(\sum\_r n\_r\right)\|N;\cdots n\_r\cdots\rangle^{(\varepsilon)}=\\\
-&=N\|N;\cdots n\_r\cdots\rangle^{(\varepsilon)}
+\widehat{N}|N;\cdots n_r\cdots\rangle^{(\varepsilon)}&=\left(\sum_r n_r\right)|N;\cdots n_r\cdots\rangle^{(\varepsilon)}=\\\
+&=N|N;\cdots n_r\cdots\rangle^{(\varepsilon)}
 \end{split}
 \end{align}
+</mj>
 
 下面几个对费米子和玻色子同样适用的对易式可以根据\eqref{eq:211}，\eqref{eq:212}和\eqref{eq:213}推导出来，这里不再赘述：
 
+<mj>
 \begin{align}
 \label{eq:219}
-\left[\hat{n}\_r,a\_p^\dagger\right]\_-&=\delta\_{rp}a\_p^\dagger\\\
+\left[\hat{n}_r,a_p^\dagger\right]_-&=\delta_{rp}a_p^\dagger\\\
 \label{eq:220}
-\left[\hat{n}\_r,a\_p\right]\_-&=-\delta\_{rp}a\_p\\\
+\left[\hat{n}_r,a_p\right]_-&=-\delta_{rp}a_p\\\
 \label{eq:221}
-\left[\widehat{N},a\_p^\dagger\right]\_-&=a\_p^\dagger\\\
+\left[\widehat{N},a_p^\dagger\right]_-&=a_p^\dagger\\\
 \label{eq:222}
-\left[\widehat{N},a\_p\right]\_-&=-a\_p
+\left[\widehat{N},a_p\right]_-&=-a_p
 \end{align}
+</mj>
 
 ## 参考
 1. Wolfgang Nolting *多体物理学基础：原理和方法*
