@@ -103,7 +103,7 @@ H\_0=H\_\text{e,kin}+H\_\text{ei}^{(0)}
 \begin{equation}
 \label{eq:9}
 \begin{split}
-\boldsymbol{R}\_\alpha^{(0)}\Rightarrow\boldsymbol{R}\_s^\boldsymbol{n}=\boldsymbol{R}^\boldsymbol{n}+\boldsymbol{R}\_s\\
+\boldsymbol{R}\_\alpha^{(0)}\Rightarrow\boldsymbol{R}\_s^\boldsymbol{n}=\boldsymbol{R}^\boldsymbol{n}+\boldsymbol{R}\_s\\\\\
 \boldsymbol{n}=(n\_1,n\_2,n\_3);\quad n\_i\in\mathbb{Z}
 \end{split}
 \end{equation}
@@ -181,8 +181,8 @@ Bloch函数$\psi\_\boldsymbol{k}(\boldsymbol{r})$是正交完备的：
 \begin{align}
 \label{eq:20}
 \begin{split}
-|\boldsymbol{k}\sigma\rangle &\Longleftrightarrow \text{Bloch state}\\
-\langle\boldsymbol{r}|\boldsymbol{k}\sigma\rangle&=\psi\_{\boldsymbol{k}\sigma}(\boldsymbol{r})=\psi\_\boldsymbol{k}(\boldsymbol{r})\chi\_\sigma\\
+|\boldsymbol{k}\sigma\rangle &\Longleftrightarrow \text{Bloch state}\\\\\
+\langle\boldsymbol{r}|\boldsymbol{k}\sigma\rangle&=\psi\_{\boldsymbol{k}\sigma}(\boldsymbol{r})=\psi\_\boldsymbol{k}(\boldsymbol{r})\chi\_\sigma\\\\\
 \chi\_\uparrow&=(1,0)^\mathsf{T};\quad\chi\_\downarrow=(0,1)^\mathsf{T}
 \end{split}
 \end{align}
@@ -261,8 +261,8 @@ $$
 \begin{equation}
 \label{eq:28}
 \begin{aligned}
-H\_0&=\sum\_{\sigma,\sigma'}\iint\mathrm{d}^3r\,\mathrm{d}^3r'\langle\boldsymbol{r}\sigma|h\_0|\boldsymbol{r}'\sigma'\rangle\widehat{\psi}\_\sigma^\dagger(\boldsymbol{r})\widehat{\psi}\_{\sigma'}(\boldsymbol{r}')\\\\
-&=\sum\_{\sigma,\sigma'}\iint\mathrm{d}^3r\,\mathrm{d}^3r'\delta\_{\sigma\sigma'}\left(-\frac{\hbar^2}{2m}\Delta\_{\boldsymbol{r}'}+\widehat{V}(\boldsymbol{r}')\right)\delta(\boldsymbol{r}-\boldsymbol{r}')\widehat{\psi}\_\sigma^\dagger(\boldsymbol{r})\widehat{\psi}\_{\sigma'}(\boldsymbol{r}')\\\\
+H\_0&=\sum\_{\sigma,\sigma'}\iint\mathrm{d}^3r\,\mathrm{d}^3r'\langle\boldsymbol{r}\sigma|h\_0|\boldsymbol{r}'\sigma'\rangle\widehat{\psi}\_\sigma^\dagger(\boldsymbol{r})\widehat{\psi}\_{\sigma'}(\boldsymbol{r}')\\\\\
+&=\sum\_{\sigma,\sigma'}\iint\mathrm{d}^3r\,\mathrm{d}^3r'\delta\_{\sigma\sigma'}\left(-\frac{\hbar^2}{2m}\Delta\_{\boldsymbol{r}'}+\widehat{V}(\boldsymbol{r}')\right)\delta(\boldsymbol{r}-\boldsymbol{r}')\widehat{\psi}\_\sigma^\dagger(\boldsymbol{r})\widehat{\psi}\_{\sigma'}(\boldsymbol{r}')\\\\\
 &=\sum\_{\sigma}\int\mathrm{d}^3r\widehat{\psi}\_\sigma^\dagger(\boldsymbol{r})\left(-\frac{\hbar^2}{2m}\Delta\_{\boldsymbol{r}}+\widehat{V}(\boldsymbol{r})\right)\widehat{\psi}\_\sigma(\boldsymbol{r})
 \end{aligned}
 \end{equation}
@@ -299,8 +299,8 @@ H\_0&=\sum\_{\sigma,\sigma'}\iint\mathrm{d}^3r\,\mathrm{d}^3r'\langle\boldsymbol
 \begin{align}
 \label{eq:32}
 \begin{split}
-|i\sigma\rangle&\Longleftrightarrow\text{Wannier state}\\
-\langle\boldsymbol{r}|i\sigma\rangle&=\omega\_\sigma(\boldsymbol{r}-\boldsymbol{R\_i})\\
+|i\sigma\rangle&\Longleftrightarrow\text{Wannier state}\\\\\
+\langle\boldsymbol{r}|i\sigma\rangle&=\omega\_\sigma(\boldsymbol{r}-\boldsymbol{R\_i})\\\\\
 a\_{i\sigma}^\dagger(a\_{i\sigma}):&\text{格矢}\boldsymbol{R}\_i\text{处电子Wannier态的产生（湮灭）算符}
 \end{split}
 \end{align}
@@ -319,15 +319,15 @@ H\_0=\sum\_{ij\sigma}T\_{ij}a\_{i\sigma}^\dagger a\_{j\sigma}
 下面开始具体计算：
 
 \begin{equation}
-\label{eq:34}
 \begin{aligned}
-\langle i\sigma|h\_0|j\sigma'\rangle&=\delta\_{\sigma\sigma'}\langle i\sigma|h\_0|j\sigma\rangle\\
-&=\delta\_{\sigma\sigma'}\sum\_{\substack{\boldsymbol{k},\boldsymbol{k}'\\
-\sigma\_1,\sigma\_2}}\langle i\sigma|\boldsymbol{k}\sigma\_1\rangle\langle\boldsymbol{k}\sigma\_1|h\_0|\boldsymbol{k}'\sigma\_2\rangle\langle\boldsymbol{k}'\sigma\_2|j\sigma\rangle\\
-&=\delta\_{\sigma\sigma'}\sum\_{\substack{\boldsymbol{k},\boldsymbol{k}'\\
-\sigma\_1,\sigma\_2}}\varepsilon(\boldsymbol{k}')\langle i\sigma|\boldsymbol{k}\sigma\_1\rangle\langle\boldsymbol{k}\sigma\_1|\boldsymbol{k}'\sigma\_2\rangle\langle\boldsymbol{k}'\sigma\_2|j\sigma\rangle\\
+\langle i\sigma|h\_0|j\sigma'\rangle&=\delta\_{\sigma\sigma'}\langle i\sigma|h\_0|j\sigma\rangle\\\\\
+&=\delta\_{\sigma\sigma'}\sum\_{\substack{\boldsymbol{k},\boldsymbol{k}'\\\\\
+\sigma\_1,\sigma\_2}}\langle i\sigma|\boldsymbol{k}\sigma\_1\rangle\langle\boldsymbol{k}\sigma\_1|h\_0|\boldsymbol{k}'\sigma\_2\rangle\langle\boldsymbol{k}'\sigma\_2|j\sigma\rangle\\\\\
+&=\delta\_{\sigma\sigma'}\sum\_{\substack{\boldsymbol{k},\boldsymbol{k}'\\\\\
+\sigma\_1,\sigma\_2}}\varepsilon(\boldsymbol{k}')\langle i\sigma|\boldsymbol{k}\sigma\_1\rangle\langle\boldsymbol{k}\sigma\_1|\boldsymbol{k}'\sigma\_2\rangle\langle\boldsymbol{k}'\sigma\_2|j\sigma\rangle\\\\\
 &=\delta\_{\sigma\sigma'}\sum\_{\boldsymbol{k},\sigma\_1}\varepsilon(\boldsymbol{k})\langle i\sigma|\boldsymbol{k}\sigma\_1\rangle\langle\boldsymbol{k}\sigma\_1|j\sigma\rangle
 \end{aligned}
+\label{eq:34}
 \end{equation}
 
 剩余矩阵元作如下计算：
@@ -335,9 +335,9 @@ H\_0=\sum\_{ij\sigma}T\_{ij}a\_{i\sigma}^\dagger a\_{j\sigma}
 \begin{equation}
 \label{eq:35}
 \begin{aligned}
-\langle i\sigma|\boldsymbol{k}\sigma\_1\rangle&=\int\mathrm{d}^3r\,\langle i\sigma|\boldsymbol{r}\rangle\langle\boldsymbol{r}|\boldsymbol{k}\sigma\_1\rangle\\
-&=\int\mathrm{d}^3r\,\omega\_\sigma^\*(\boldsymbol{r}-\boldsymbol{R}\_i)\psi\_{\boldsymbol{k}\sigma\_1}(\boldsymbol{r})\\
-&=\frac{1}{\sqrt{N\_\text{i}}}\sum\_{\boldsymbol{k}'}e^{i\boldsymbol{k}\cdot\boldsymbol{R}\_i}\int\mathrm{d}^3r\psi\_{\boldsymbol{k}'\sigma}^\*(\boldsymbol{r})\psi\_{\boldsymbol{k}\sigma\_1}(\boldsymbol{r})\\
+\langle i\sigma|\boldsymbol{k}\sigma\_1\rangle&=\int\mathrm{d}^3r\,\langle i\sigma|\boldsymbol{r}\rangle\langle\boldsymbol{r}|\boldsymbol{k}\sigma\_1\rangle\\\\\
+&=\int\mathrm{d}^3r\,\omega\_\sigma^\*(\boldsymbol{r}-\boldsymbol{R}\_i)\psi\_{\boldsymbol{k}\sigma\_1}(\boldsymbol{r})\\\\\
+&=\frac{1}{\sqrt{N\_\text{i}}}\sum\_{\boldsymbol{k}'}e^{i\boldsymbol{k}\cdot\boldsymbol{R}\_i}\int\mathrm{d}^3r\psi\_{\boldsymbol{k}'\sigma}^\*(\boldsymbol{r})\psi\_{\boldsymbol{k}\sigma\_1}(\boldsymbol{r})\\\\\
 &=\frac{1}{\sqrt{N\_\text{i}}}\sum\_{\boldsymbol{k}'}e^{i\boldsymbol{k}\cdot\boldsymbol{R}\_i}\delta\_{\boldsymbol{kk}'}\delta\_{\sigma\sigma\_1}=\delta\_{\sigma\sigma\_1}\frac{e^{i\boldsymbol{k}\cdot\boldsymbol{R}\_i}}{\sqrt{N\_\text{i}}}
 \end{aligned}
 \end{equation}
@@ -368,9 +368,9 @@ T\_{ij}=\sum\_{\boldsymbol{k},\sigma\_1}\varepsilon(\boldsymbol{k})\delta\_{\sig
 \begin{equation}
 \begin{aligned}
 \frac{1}{N\_\text{i}}\sum\_\boldsymbol{k}\varepsilon(\boldsymbol{k})e^{i\boldsymbol{k}\cdot(\boldsymbol{R}\_i-\boldsymbol{R}\_j)}
-&=\frac{1}{N\_\text{i}}\sum\_\boldsymbol{k}\left(\frac{1}{N\_\text{i}}\sum\_{i',j'}T\_{i'j'}e^{-i\boldsymbol{k}\cdot(\boldsymbol{R}\_{i'}-\boldsymbol{R}\_{j'})}\right)e^{i\boldsymbol{k}\cdot(\boldsymbol{R}\_i-\boldsymbol{R}\_j)}\\
-&=\sum\_{i',j'}T\_{i'j'}\sum\_\boldsymbol{k}\left(\frac{1}{N\_\text{i}}e^{i\boldsymbol{k}\cdot(\boldsymbol{R}\_{i}-\boldsymbol{R}\_{i'})}\right)\left(\frac{1}{N\_\text{i}}e^{i\boldsymbol{k}\cdot(\boldsymbol{R}\_{j'}-\boldsymbol{R}\_{j})}\right)\\
-&=\sum\_{i',j'}T\_{i'j'}\delta\_{ii'}\delta\_{jj'}\\
+&=\frac{1}{N\_\text{i}}\sum\_\boldsymbol{k}\left(\frac{1}{N\_\text{i}}\sum\_{i',j'}T\_{i'j'}e^{-i\boldsymbol{k}\cdot(\boldsymbol{R}\_{i'}-\boldsymbol{R}\_{j'})}\right)e^{i\boldsymbol{k}\cdot(\boldsymbol{R}\_i-\boldsymbol{R}\_j)}\\\\\
+&=\sum\_{i',j'}T\_{i'j'}\sum\_\boldsymbol{k}\left(\frac{1}{N\_\text{i}}e^{i\boldsymbol{k}\cdot(\boldsymbol{R}\_{i}-\boldsymbol{R}\_{i'})}\right)\left(\frac{1}{N\_\text{i}}e^{i\boldsymbol{k}\cdot(\boldsymbol{R}\_{j'}-\boldsymbol{R}\_{j})}\right)\\\\\
+&=\sum\_{i',j'}T\_{i'j'}\delta\_{ii'}\delta\_{jj'}\\\\\
 &=T\_{ij}
 \end{aligned}
 \end{equation}
@@ -379,8 +379,8 @@ Bloch算符和Wannier算符之间的关系可仿照[式(171)-二次量子化](ht
 
 \begin{align}
 \label{eq:39}
-a\_{i\sigma}=\frac{1}{\sqrt{N\_\text{i}}}\sum\_{\boldsymbol{k}}^{\text{1.BZ}}e^{i\boldsymbol{k}\cdot\boldsymbol{R}\_i}a\_{\boldsymbol{k}\sigma}\\
-a\_{\boldsymbol{k}\sigma}=\frac{1}{\sqrt{N\_\text{i}}}\sum\_{i=1}^{N\_\text{i}}e^{-i\boldsymbol{k}\cdot\boldsymbol{R}\_i}a\_{i\sigma}\\
+a\_{i\sigma}=\frac{1}{\sqrt{N\_\text{i}}}\sum\_{\boldsymbol{k}}^{\text{1.BZ}}e^{i\boldsymbol{k}\cdot\boldsymbol{R}\_i}a\_{\boldsymbol{k}\sigma}\\\\\
+a\_{\boldsymbol{k}\sigma}=\frac{1}{\sqrt{N\_\text{i}}}\sum\_{i=1}^{N\_\text{i}}e^{-i\boldsymbol{k}\cdot\boldsymbol{R}\_i}a\_{i\sigma}\\\\\
 \end{align}
 
 由Bloch算符的对易关系\eqref{eq:23}，\eqref{eq:24}可得到Wannier算符的对易关系：
@@ -445,10 +445,10 @@ H\_+=\frac{e^2}{8\pi\varepsilon\_0}\iint\mathrm{d}^3r\,\mathrm{d}^3r'\frac{n(\bo
 
 \begin{equation}
 \begin{aligned}
-&\iint\mathrm{d}^3r\,\mathrm{d}^3r'\frac{e^{-\alpha|\boldsymbol{r}-\boldsymbol{r'}|}}{|\boldsymbol{r}-\boldsymbol{r'}|} \\
-&=\iint\mathrm{d}^3r\,\mathrm{d}^3r'\frac{e^{-\alpha r}}{r}=\qquad(\boldsymbol{r}-\boldsymbol{r'}\to\boldsymbol{r},\boldsymbol{r'}\to\boldsymbol{r'}) \\
-&=V\int_V\mathrm{d}^3r\frac{e^{-\alpha r}}{r} \\
-&=V\int_0^\infty\mathrm{d}r\,4\pi re^{-\alpha r} \\
+&\iint\mathrm{d}^3r\,\mathrm{d}^3r'\frac{e^{-\alpha|\boldsymbol{r}-\boldsymbol{r'}|}}{|\boldsymbol{r}-\boldsymbol{r'}|} \\\\\
+&=\iint\mathrm{d}^3r\,\mathrm{d}^3r'\frac{e^{-\alpha r}}{r}=\qquad(\boldsymbol{r}-\boldsymbol{r'}\to\boldsymbol{r},\boldsymbol{r'}\to\boldsymbol{r'}) \\\\\
+&=V\int_V\mathrm{d}^3r\frac{e^{-\alpha r}}{r} \\\\\
+&=V\int_0^\infty\mathrm{d}r\,4\pi re^{-\alpha r} \\\\\
 &=\frac{4\pi V}{\alpha^2}
 \end{aligned}
 \end{equation}
@@ -457,11 +457,11 @@ H\_+=\frac{e^2}{8\pi\varepsilon\_0}\iint\mathrm{d}^3r\,\mathrm{d}^3r'\frac{n(\bo
 
 \begin{equation}
 \begin{aligned}
-&\int_0^\infty\mathrm{d}x\,\, x^ne^{-\alpha x} \\
-&=\int_0^\infty\mathrm{d}x\,\,(-1)^n\frac{\mathrm{d}^n}{\mathrm{d}\alpha^n}e^{-\alpha x} \\
-&=(-1)^n\frac{\mathrm{d}^n}{\mathrm{d}\alpha^n}\int_0^\infty\mathrm{d}x\,\, e^{-\alpha x} \\
-&=(-1)^n\frac{\mathrm{d}^n}{\mathrm{d}\alpha^n}\frac{1}{\alpha} \\
-&=(-1)^n\frac{(-1)^n}{\alpha^{n+1}} \\
+&\int_0^\infty\mathrm{d}x\,\, x^ne^{-\alpha x} \\\\\
+&=\int_0^\infty\mathrm{d}x\,\,(-1)^n\frac{\mathrm{d}^n}{\mathrm{d}\alpha^n}e^{-\alpha x} \\\\\
+&=(-1)^n\frac{\mathrm{d}^n}{\mathrm{d}\alpha^n}\int_0^\infty\mathrm{d}x\,\, e^{-\alpha x} \\\\\
+&=(-1)^n\frac{\mathrm{d}^n}{\mathrm{d}\alpha^n}\frac{1}{\alpha} \\\\\
+&=(-1)^n\frac{(-1)^n}{\alpha^{n+1}} \\\\\
 &=\frac{1}{\alpha^{n+1}}
 \end{aligned}
 \end{equation}
@@ -482,12 +482,13 @@ H\_\text{e+}=-\frac{e^2}{4\pi\varepsilon\_0}\sum\_{i=1}^{N}\int\mathrm{d}^3r\fra
 
 和计算$H\_+$一样，得到：
 
-$$
+\begin{equation}
 \begin{split}
-H\_\text{e+}=&-\frac{e^2}{4\pi\varepsilon\_0}\frac{N}{V}\sum\_{i=1}^{N}\int\mathrm{d}^3r\frac{e^{-\alpha|\boldsymbol{r}-\boldsymbol{r}\_i|}}{|\boldsymbol{r}-\boldsymbol{r}\_i|}=\\
-=&-\frac{e^2}{4\pi\varepsilon\_0}\frac{N}{V}\sum\_{i=1}^{N}\frac{4\pi}{\alpha^2}
+H\_\text{e+}=&-\frac{e^2}{4\pi\varepsilon\_0}\frac{N}{V}\sum\_{i=1}^{N}\int\mathrm{d}^3r\frac{e^{-\alpha|\boldsymbol{r}-\boldsymbol{r}\_i|}}{|\boldsymbol{r}-\boldsymbol{r}\_i|}=\\\\\
+=&-\frac{e^2}{4\pi\varepsilon\_0}\frac{N}{V}\sum\_{i=1}^{N}\frac{4\pi}{\alpha^2}.
 \end{split}
-$$
+\end{equation}
+
 把粒子数$N$替换为粒子数算符$\widehat{N}$得到：
 
 \begin{equation}
@@ -511,36 +512,38 @@ H\_\text{ee}=\frac{1}{2}\sum\_{\substack{\boldsymbol{k}\_1\cdots\boldsymbol{k}\_
 
 矩阵元
 
-$$
+\begin{equation}
 \begin{split}
-&v(\boldsymbol{k}\_1\sigma\_1,\ldots,\boldsymbol{k}\_4\sigma\_4)=\\
+&v(\boldsymbol{k}\_1\sigma\_1,\ldots,\boldsymbol{k}\_4\sigma\_4)=\\\\\
 =&\frac{e^2}{4\pi\varepsilon\_0}\left\langle(\boldsymbol{k}\_1\sigma\_1)^{(1)}(\boldsymbol{k}\_2\sigma\_2)^{(2)}\left|\frac{1}{|\hat{\boldsymbol{r}}^{(1)}-\hat{\boldsymbol{r}}^{(2)}|}\right|(\boldsymbol{k}\_3\sigma\_3)^{(1)}(\boldsymbol{k}\_4\sigma\_4)^{(2)}\right\rangle
 \end{split}
-$$
+\end{equation}
+
 只有在$\sigma\_1=\sigma\_3$和$\sigma\_2=\sigma\_4$才不为零，由于算符本身与自旋无关：
 
-$$
+\begin{equation}
 \begin{split}
-v(\boldsymbol{k}\_1\sigma\_1,\ldots,\boldsymbol{k}\_4\sigma\_4)&=\frac{e^2}{4\pi\varepsilon\_0}\iint\mathrm{d}^3r\_1\,\mathrm{d}^3r\_2\Big\langle\boldsymbol{k}\_1^{(1)}\boldsymbol{k}\_2^{(2)}\Big|\frac{1}{|\hat{\boldsymbol{r}}^{(1)}-\hat{\boldsymbol{r}}^{(2)}|}\cdot\\
-&\cdot\Big|\boldsymbol{r}\_1^{(1)}\boldsymbol{r}\_2^{(2)}\Big\rangle\Big\langle\boldsymbol{r}\_1^{(1)}\boldsymbol{r}\_2^{(2)}\Big|\boldsymbol{k}\_3^{(1)}\boldsymbol{k}\_4^{(2)}\Big\rangle\delta\_{\sigma\_1\sigma\_2}\delta\_{\sigma\_3\sigma\_4}=\\
-&=\frac{e^2}{4\pi\varepsilon\_0}\iint\mathrm{d}^3r\_1\,\mathrm{d}^3r\_2\frac{1}{|\boldsymbol{r}\_1-\boldsymbol{r}\_2|}\Big\langle\boldsymbol{k}\_1^{(1)}\boldsymbol{k}\_2^{(2)}\Big|\boldsymbol{r}\_1^{(1)}\boldsymbol{r}\_2^{(2)}\Big\rangle\cdot\\
-&\cdot\Big\langle\boldsymbol{r}\_1^{(1)}\boldsymbol{r}\_2^{(2)}\Big|\boldsymbol{k}\_3^{(1)}\boldsymbol{k}\_4^{(2)}\Big\rangle\delta\_{\sigma\_1\sigma\_2}\delta\_{\sigma\_3\sigma\_4}=\\
-&=\frac{e^2}{4\pi\varepsilon\_0}\iint\mathrm{d}^3r\_1\,\mathrm{d}^3r\_2\frac{1}{|\boldsymbol{r}\_1-\boldsymbol{r}\_2|}\psi\_{\boldsymbol{k}\_1}^\*(\boldsymbol{r}\_1)\psi\_{\boldsymbol{k}\_2}^\*(\boldsymbol{r}\_2)\cdot\\
+v(\boldsymbol{k}\_1\sigma\_1,\ldots,\boldsymbol{k}\_4\sigma\_4)&=\frac{e^2}{4\pi\varepsilon\_0}\iint\mathrm{d}^3r\_1\,\mathrm{d}^3r\_2\Big\langle\boldsymbol{k}\_1^{(1)}\boldsymbol{k}\_2^{(2)}\Big|\frac{1}{|\hat{\boldsymbol{r}}^{(1)}-\hat{\boldsymbol{r}}^{(2)}|}\cdot\\\\\
+&\cdot\Big|\boldsymbol{r}\_1^{(1)}\boldsymbol{r}\_2^{(2)}\Big\rangle\Big\langle\boldsymbol{r}\_1^{(1)}\boldsymbol{r}\_2^{(2)}\Big|\boldsymbol{k}\_3^{(1)}\boldsymbol{k}\_4^{(2)}\Big\rangle\delta\_{\sigma\_1\sigma\_2}\delta\_{\sigma\_3\sigma\_4}=\\\\\
+&=\frac{e^2}{4\pi\varepsilon\_0}\iint\mathrm{d}^3r\_1\,\mathrm{d}^3r\_2\frac{1}{|\boldsymbol{r}\_1-\boldsymbol{r}\_2|}\Big\langle\boldsymbol{k}\_1^{(1)}\boldsymbol{k}\_2^{(2)}\Big|\boldsymbol{r}\_1^{(1)}\boldsymbol{r}\_2^{(2)}\Big\rangle\cdot\\\\\
+&\cdot\Big\langle\boldsymbol{r}\_1^{(1)}\boldsymbol{r}\_2^{(2)}\Big|\boldsymbol{k}\_3^{(1)}\boldsymbol{k}\_4^{(2)}\Big\rangle\delta\_{\sigma\_1\sigma\_2}\delta\_{\sigma\_3\sigma\_4}=\\\\\
+&=\frac{e^2}{4\pi\varepsilon\_0}\iint\mathrm{d}^3r\_1\,\mathrm{d}^3r\_2\frac{1}{|\boldsymbol{r}\_1-\boldsymbol{r}\_2|}\psi\_{\boldsymbol{k}\_1}^\*(\boldsymbol{r}\_1)\psi\_{\boldsymbol{k}\_2}^\*(\boldsymbol{r}\_2)\cdot\\\\\
 &\cdot\psi\_{\boldsymbol{k}\_3}(\boldsymbol{r}\_1)\psi\_{\boldsymbol{k}\_4}(\boldsymbol{r}\_2)\delta\_{\sigma\_1\sigma\_2}\delta\_{\sigma\_3\sigma\_4}
 \end{split}
-$$
+\end{equation}
+
 利用Bloch定理\eqref{eq:15}，可进一步发现：
 
-$$
+\begin{equation}
 \boldsymbol{k}\_1+\boldsymbol{k}\_2=\boldsymbol{k}\_3+\boldsymbol{k}\_4
-$$
+\end{equation}
 这只需通过简单的变量替换便能看到。于是得到：
 
 \begin{align}
 \label{eq:55}
 \begin{split}
-v(\boldsymbol{k}\_1\sigma\_1,\ldots,\boldsymbol{k}\_4\sigma\_4)=&\delta\_{\sigma\_1\sigma\_2}\delta\_{\sigma\_3\sigma\_4}\delta\_{\boldsymbol{k}\_1+\boldsymbol{k}\_2,\boldsymbol{k}\_3+\boldsymbol{k}\_4}v(\boldsymbol{k}\_1,\ldots,\boldsymbol{k}\_4),\\
-v(\boldsymbol{k}\_1,\ldots,\boldsymbol{k}\_4)=&\frac{e^2}{4\pi\varepsilon\_0}\iint\mathrm{d}^3r\_1\,\mathrm{d}^3r\_2\psi\_{\boldsymbol{k}\_1}^\*(\boldsymbol{r}\_1)\psi\_{\boldsymbol{k}\_2}^\*(\boldsymbol{r}\_2)\cdot\\
+v(\boldsymbol{k}\_1\sigma\_1,\ldots,\boldsymbol{k}\_4\sigma\_4)=&\delta\_{\sigma\_1\sigma\_2}\delta\_{\sigma\_3\sigma\_4}\delta\_{\boldsymbol{k}\_1+\boldsymbol{k}\_2,\boldsymbol{k}\_3+\boldsymbol{k}\_4}v(\boldsymbol{k}\_1,\ldots,\boldsymbol{k}\_4),\\\\\
+v(\boldsymbol{k}\_1,\ldots,\boldsymbol{k}\_4)=&\frac{e^2}{4\pi\varepsilon\_0}\iint\mathrm{d}^3r\_1\,\mathrm{d}^3r\_2\psi\_{\boldsymbol{k}\_1}^\*(\boldsymbol{r}\_1)\psi\_{\boldsymbol{k}\_2}^\*(\boldsymbol{r}\_2)\cdot\\\\\
 &\cdot\frac{1}{|\boldsymbol{r}\_1-\boldsymbol{r}\_2|}\psi\_{\boldsymbol{k}\_3}(\boldsymbol{r}\_1)\psi\_{\boldsymbol{k}\_4}(\boldsymbol{r}\_2)
 \end{split}
 \end{align}
@@ -557,7 +560,7 @@ H\_\text{ee}=\frac{1}{2}\sum\_{\substack{\boldsymbol{k}\_1,\ldots,\boldsymbol{k}
 \begin{align}
 \label{eq:57}
 \begin{split}
-&v\_\alpha(\boldsymbol{k}\_1,\ldots,\boldsymbol{k}\_4)=\\
+&v\_\alpha(\boldsymbol{k}\_1,\ldots,\boldsymbol{k}\_4)=\\\\\
 =&\frac{e^2}{4\pi\varepsilon\_0}\frac{1}{V^2}\iint\mathrm{d}^3r\_1\,\mathrm{d}^3r\_2\frac{e^{-i(\boldsymbol{k}\_1-\boldsymbol{k}\_3)\cdot\boldsymbol{r}\_1}e^{-i(\boldsymbol{k}\_2-\boldsymbol{k}\_4)\cdot\boldsymbol{r}\_2}}{|\boldsymbol{r}\_1-\boldsymbol{r}\_2|}e^{-\alpha|\boldsymbol{r}\_1-\boldsymbol{r}\_2|}
 \end{split}
 \end{align}
@@ -567,30 +570,31 @@ H\_\text{ee}=\frac{1}{2}\sum\_{\substack{\boldsymbol{k}\_1,\ldots,\boldsymbol{k}
 \begin{align}
 \label{eq:58}
 \begin{split}
-&\boldsymbol{r}=\boldsymbol{r}\_1-\boldsymbol{r}\_2;\qquad&\boldsymbol{R}=\frac{1}{2}(\boldsymbol{r}\_1+\boldsymbol{r}\_2)\\
+&\boldsymbol{r}=\boldsymbol{r}\_1-\boldsymbol{r}\_2;\qquad&\boldsymbol{R}=\frac{1}{2}(\boldsymbol{r}\_1+\boldsymbol{r}\_2)\\\\\
 \Longleftrightarrow&\boldsymbol{r}\_1=\frac{1}{2}\boldsymbol{r}+\boldsymbol{R};\qquad&\boldsymbol{r}\_2=-\frac{1}{2}\boldsymbol{r}+\boldsymbol{R}
 \end{split}
 \end{align}
 
 雅可比行列式为$1$，接着计算：
 
-$$
+\begin{align}
 \begin{split}
-v\_\alpha(\boldsymbol{k}\_1,\ldots,\boldsymbol{k}\_4)=&\frac{e^2}{4\pi\varepsilon\_0}\frac{1}{V}\int\mathrm{d}^3R\,e^{-i(\boldsymbol{k}\_1-\boldsymbol{k}\_3+\boldsymbol{k}\_2-\boldsymbol{k}\_4)\cdot\boldsymbol{R}}\cdot\\
-&\cdot\frac{1}{V}\int\mathrm{d}^3r\,\frac{1}{r}e^{-\alpha r}e^{-(i/2)(\boldsymbol{k}\_1-\boldsymbol{k}\_3-\boldsymbol{k}\_2+\boldsymbol{k}\_4)\cdot\boldsymbol{r}}=\\
+v\_\alpha(\boldsymbol{k}\_1,\ldots,\boldsymbol{k}\_4)=&\frac{e^2}{4\pi\varepsilon\_0}\frac{1}{V}\int\mathrm{d}^3R\,e^{-i(\boldsymbol{k}\_1-\boldsymbol{k}\_3+\boldsymbol{k}\_2-\boldsymbol{k}\_4)\cdot\boldsymbol{R}}\cdot\\\\\
+&\cdot\frac{1}{V}\int\mathrm{d}^3r\,\frac{1}{r}e^{-\alpha r}e^{-(i/2)(\boldsymbol{k}\_1-\boldsymbol{k}\_3-\boldsymbol{k}\_2+\boldsymbol{k}\_4)\cdot\boldsymbol{r}}=\\\\\
 =&\frac{e^2}{4\pi\varepsilon\_0}\delta\_{\boldsymbol{k}\_1+\boldsymbol{k}\_2,\boldsymbol{k}\_3+\boldsymbol{k}\_4}\frac{1}{V}\int\mathrm{d}^3r\,\frac{e^{-i(\boldsymbol{k}\_1-\boldsymbol{k}\_3)\cdot\boldsymbol{r}}e^{-\alpha r}}{r}
 \end{split}
-$$
+\end{align}
+
 利用
 
 \begin{align}
 \label{eq:59}
 \begin{split}
-\int\mathrm{d}^3r\,\frac{e^{-i\boldsymbol{q}\cdot\boldsymbol{r}}}{r}e^{-\alpha r}&=\int\_0^{2\pi}\mathrm{d}\phi\int\_0^\infty\mathrm{d}r\int\_0^\pi\mathrm{d}\theta\,r^2\sin\theta\frac{e^{iqr\cos\theta}}{r}e^{-\alpha r}=\\
-&=2\pi\int\_0^\infty\mathrm{d}r\int\_0^\pi\mathrm{d}(\cos\theta)\left(-re^{iqr\cos\theta}e^{-\alpha r}\right)=\\
-&=2\pi\int\_0^\infty\mathrm{d}r\left[\frac{e^{iqr\cos\theta}}{-iq}\right]\_0^\pi e^{-\alpha r}=\\
-&=2\pi\int\_0^\infty\mathrm{d}r\frac{-1}{iq}\left(e^{-(\alpha+iq)r}-e^{-(\alpha-iq)r}\right)=\\
-&=2\pi\frac{-1}{iq}\left(\frac{1}{\alpha+iq}-\frac{1}{\alpha-iq}\right)=\\
+\int\mathrm{d}^3r\,\frac{e^{-i\boldsymbol{q}\cdot\boldsymbol{r}}}{r}e^{-\alpha r}&=\int\_0^{2\pi}\mathrm{d}\phi\int\_0^\infty\mathrm{d}r\int\_0^\pi\mathrm{d}\theta\,r^2\sin\theta\frac{e^{iqr\cos\theta}}{r}e^{-\alpha r}=\\\\\
+&=2\pi\int\_0^\infty\mathrm{d}r\int\_0^\pi\mathrm{d}(\cos\theta)\left(-re^{iqr\cos\theta}e^{-\alpha r}\right)=\\\\\
+&=2\pi\int\_0^\infty\mathrm{d}r\left[\frac{e^{iqr\cos\theta}}{-iq}\right]\_0^\pi e^{-\alpha r}=\\\\\
+&=2\pi\int\_0^\infty\mathrm{d}r\frac{-1}{iq}\left(e^{-(\alpha+iq)r}-e^{-(\alpha-iq)r}\right)=\\\\\
+&=2\pi\frac{-1}{iq}\left(\frac{1}{\alpha+iq}-\frac{1}{\alpha-iq}\right)=\\\\\
 &=\frac{4\pi}{q^2+\alpha^2}
 \end{split}
 \end{align}
@@ -618,10 +622,10 @@ v\_\alpha(\boldsymbol{q})=\frac{e^2}{\varepsilon\_0V(q^2+\alpha^2)}
 
 \begin{align}
 \begin{split}
-&\frac{1}{2}\frac{e^2}{\varepsilon\_0V\alpha^2}\sum\_{\substack{\boldsymbol{k},\boldsymbol{p}\\\ \sigma,\sigma'}}a\_{\boldsymbol{k}\sigma}^\dagger a\_{\boldsymbol{p}\sigma'}^\dagger a\_{\boldsymbol{p}\sigma'}a\_{\boldsymbol{k}\sigma}=\\
-&=\frac{1}{2}\frac{e^2}{\varepsilon\_0V\alpha^2}\sum\_{\substack{\boldsymbol{k},\boldsymbol{p}\\\ \sigma,\sigma'}}a\_{\boldsymbol{p}\sigma'}^\dagger\left(-a\_{\boldsymbol{k}\sigma}^\dagger a\_{\boldsymbol{p}\sigma'}\right)a\_{\boldsymbol{k}\sigma}=\\
-&=\frac{1}{2}\frac{e^2}{\varepsilon\_0V\alpha^2}\sum\_{\substack{\boldsymbol{k},\boldsymbol{p}\\\ \sigma,\sigma'}}a\_{\boldsymbol{p}\sigma'}^\dagger\left(-\delta\_{\sigma\sigma'}\delta\_{\boldsymbol{k}\boldsymbol{p}}+a\_{\boldsymbol{p}\sigma'}a\_{\boldsymbol{k}\sigma}^\dagger\right)a\_{\boldsymbol{k}\sigma}=\\
-&=\frac{1}{2}\frac{e^2}{\varepsilon\_0V\alpha^2}\sum\_{\substack{\boldsymbol{k},\boldsymbol{p}\\\ \sigma,\sigma'}}\left(-\delta\_{\sigma\sigma'}\delta\_{\boldsymbol{k}\boldsymbol{p}}n\_{\boldsymbol{k}\sigma}+n\_{\boldsymbol{p}\sigma'}n\_{\boldsymbol{k}\sigma}\right)=\\
+&\frac{1}{2}\frac{e^2}{\varepsilon\_0V\alpha^2}\sum\_{\substack{\boldsymbol{k},\boldsymbol{p}\\\ \sigma,\sigma'}}a\_{\boldsymbol{k}\sigma}^\dagger a\_{\boldsymbol{p}\sigma'}^\dagger a\_{\boldsymbol{p}\sigma'}a\_{\boldsymbol{k}\sigma}=\\\\\
+&=\frac{1}{2}\frac{e^2}{\varepsilon\_0V\alpha^2}\sum\_{\substack{\boldsymbol{k},\boldsymbol{p}\\\ \sigma,\sigma'}}a\_{\boldsymbol{p}\sigma'}^\dagger\left(-a\_{\boldsymbol{k}\sigma}^\dagger a\_{\boldsymbol{p}\sigma'}\right)a\_{\boldsymbol{k}\sigma}=\\\\\
+&=\frac{1}{2}\frac{e^2}{\varepsilon\_0V\alpha^2}\sum\_{\substack{\boldsymbol{k},\boldsymbol{p}\\\ \sigma,\sigma'}}a\_{\boldsymbol{p}\sigma'}^\dagger\left(-\delta\_{\sigma\sigma'}\delta\_{\boldsymbol{k}\boldsymbol{p}}+a\_{\boldsymbol{p}\sigma'}a\_{\boldsymbol{k}\sigma}^\dagger\right)a\_{\boldsymbol{k}\sigma}=\\\\\
+&=\frac{1}{2}\frac{e^2}{\varepsilon\_0V\alpha^2}\sum\_{\substack{\boldsymbol{k},\boldsymbol{p}\\\ \sigma,\sigma'}}\left(-\delta\_{\sigma\sigma'}\delta\_{\boldsymbol{k}\boldsymbol{p}}n\_{\boldsymbol{k}\sigma}+n\_{\boldsymbol{p}\sigma'}n\_{\boldsymbol{k}\sigma}\right)=\\\\\
 &=\frac{e^2}{2\varepsilon\_0V\alpha^2}\left[-\widehat{N}+(\widehat{N})^2\right]
 \end{split}
 \label{eq:63}
@@ -629,9 +633,9 @@ v\_\alpha(\boldsymbol{q})=\frac{e^2}{\varepsilon\_0V(q^2+\alpha^2)}
 
 上式利用了Bloch算符的基本对易关系。可见\eqref{eq:63}的第2项与\eqref{eq:53}相抵消，即$H\_+$的贡献被$H\_\text{e+}$消除了。当将能量平均到每个粒子时\eqref{eq:63}的第1项在热力学极限下也消失了：
 
-$$
+\begin{equation}
 -\frac{e^2}{2\varepsilon\_0V\alpha^2}\xrightarrow[N\to\infty;V\to\infty]{}0
-$$
+\end{equation}
 所以一开始就可以丢掉。最后取极限$\alpha\to0$，得到
 
 > **凝胶模型哈密顿量**：
@@ -675,14 +679,14 @@ v\_0(\boldsymbol{q})=\frac{1}{V}\frac{e^2}{\varepsilon\_0q^2}
 
 矩阵元作如下计算：
 
-$$
+\begin{align}
 \begin{split}
-\langle\boldsymbol{k}\sigma|\delta(\boldsymbol{r}-\hat{\boldsymbol{r}})|\boldsymbol{k'}\sigma'\rangle&=\sum\_{\sigma^{\prime\prime}}\int\mathrm{d}^3r^{\prime\prime}\langle\boldsymbol{k}\sigma|\delta(\boldsymbol{r}-\hat{\boldsymbol{r}})|\boldsymbol{r^{\prime\prime}}\sigma^{\prime\prime}\rangle\langle\boldsymbol{r^{\prime\prime}}\sigma^{\prime\prime}|\boldsymbol{k'}\sigma'\rangle=\\
-&=\sum\_{\sigma^{\prime\prime}}\int\mathrm{d}^3r^{\prime\prime}\delta(\boldsymbol{r}-\boldsymbol{r^{\prime\prime}})\langle\boldsymbol{k}\sigma|\boldsymbol{r^{\prime\prime}}\sigma^{\prime\prime}\rangle\langle\boldsymbol{r^{\prime\prime}}\sigma^{\prime\prime}|\boldsymbol{k'}\sigma'\rangle=\\
-&=\sum\_{\sigma^{\prime\prime}}\delta\_{\sigma\sigma^{\prime\prime}}\delta\_{\sigma^{\prime\prime}\sigma'}\langle\boldsymbol{k}\sigma|\boldsymbol{r}\sigma\rangle\langle\boldsymbol{r}\sigma|\boldsymbol{k'}\sigma\rangle=\\
+\langle\boldsymbol{k}\sigma|\delta(\boldsymbol{r}-\hat{\boldsymbol{r}})|\boldsymbol{k'}\sigma'\rangle&=\sum\_{\sigma^{\prime\prime}}\int\mathrm{d}^3r^{\prime\prime}\langle\boldsymbol{k}\sigma|\delta(\boldsymbol{r}-\hat{\boldsymbol{r}})|\boldsymbol{r^{\prime\prime}}\sigma^{\prime\prime}\rangle\langle\boldsymbol{r^{\prime\prime}}\sigma^{\prime\prime}|\boldsymbol{k'}\sigma'\rangle=\\\\\
+&=\sum\_{\sigma^{\prime\prime}}\int\mathrm{d}^3r^{\prime\prime}\delta(\boldsymbol{r}-\boldsymbol{r^{\prime\prime}})\langle\boldsymbol{k}\sigma|\boldsymbol{r^{\prime\prime}}\sigma^{\prime\prime}\rangle\langle\boldsymbol{r^{\prime\prime}}\sigma^{\prime\prime}|\boldsymbol{k'}\sigma'\rangle=\\\\\
+&=\sum\_{\sigma^{\prime\prime}}\delta\_{\sigma\sigma^{\prime\prime}}\delta\_{\sigma^{\prime\prime}\sigma'}\langle\boldsymbol{k}\sigma|\boldsymbol{r}\sigma\rangle\langle\boldsymbol{r}\sigma|\boldsymbol{k'}\sigma\rangle=\\\\\
 &=\delta\_{\sigma\sigma'}\psi\_\boldsymbol{k}^\*(\boldsymbol{r})\psi\_\boldsymbol{k'}(\boldsymbol{r})
 \end{split}
-$$
+\end{align}
 如果像凝胶模型中一样，将Bloch函数限定为平面波，便得到
 
 \begin{equation}
@@ -713,32 +717,32 @@ $$
 
 稍加计算也能发现：
 
-$$
+\begin{align}
 \begin{split}
-\hat{\rho}\_\boldsymbol{q}\hat{\rho}\_\boldsymbol{-q}&=\sum\_{\boldsymbol{k}\sigma}a\_{\boldsymbol{k}\sigma}^\dagger a\_{\boldsymbol{k+q}\sigma}\sum\_{\boldsymbol{p}\sigma'}a\_{\boldsymbol{p}\sigma'}^\dagger a\_{\boldsymbol{p-q}\sigma'}=\\
-&=\sum\_{\substack{\boldsymbol{k},\boldsymbol{p}\\\ \sigma,\sigma'}}a\_{\boldsymbol{k}\sigma}^\dagger a\_{\boldsymbol{k+q}\sigma}a\_{\boldsymbol{p}\sigma'}^\dagger a\_{\boldsymbol{p-q}\sigma'}=\\
-&=\sum\_{\substack{\boldsymbol{k},\boldsymbol{p}\\\ \sigma,\sigma'}}a\_{\boldsymbol{k}\sigma}^\dagger\left(\delta\_{\boldsymbol{k+q},\boldsymbol{p}}\delta\_{\sigma\sigma'}-a\_{\boldsymbol{p}\sigma'}^\dagger a\_{\boldsymbol{k+q}\sigma}\right)a\_{\boldsymbol{p-q}\sigma'}=\\
-&=\sum\_{\boldsymbol{k}\sigma}a\_{\boldsymbol{k}\sigma}^\dagger a\_{\boldsymbol{k}\sigma}-\sum\_{\substack{\boldsymbol{k},\boldsymbol{p}\\\ \sigma,\sigma'}}a\_{\boldsymbol{p}\sigma'}^\dagger a\_{\boldsymbol{k}\sigma}^\dagger a\_{\boldsymbol{p-q}\sigma'}a\_{\boldsymbol{k+q}\sigma}=\\
-&=\widehat{N}-\sum\_{\substack{\boldsymbol{k},\boldsymbol{p}\\\ \sigma,\sigma'}}a\_{\boldsymbol{p}\sigma'}^\dagger\left(\delta\_{\boldsymbol{k},\boldsymbol{p-q}}\delta\_{\sigma\sigma'}-a\_{\boldsymbol{p-q}\sigma'}a\_{\boldsymbol{k}\sigma}^\dagger\right)a\_{\boldsymbol{k+q}\sigma}=\\
-&=\widehat{N}-\sum\_{\boldsymbol{p}\sigma}a\_{\boldsymbol{p}\sigma}^\dagger a\_{\boldsymbol{p}\sigma}+\sum\_{\boldsymbol{p}\sigma'}a\_{\boldsymbol{p}\sigma'}^\dagger a\_{\boldsymbol{p-q}\sigma'}\sum\_{\boldsymbol{k}\sigma}a\_{\boldsymbol{k}\sigma}^\dagger a\_{\boldsymbol{k+q}\sigma}=\\
+\hat{\rho}\_\boldsymbol{q}\hat{\rho}\_\boldsymbol{-q}&=\sum\_{\boldsymbol{k}\sigma}a\_{\boldsymbol{k}\sigma}^\dagger a\_{\boldsymbol{k+q}\sigma}\sum\_{\boldsymbol{p}\sigma'}a\_{\boldsymbol{p}\sigma'}^\dagger a\_{\boldsymbol{p-q}\sigma'}=\\\\\
+&=\sum\_{\substack{\boldsymbol{k},\boldsymbol{p}\\\ \sigma,\sigma'}}a\_{\boldsymbol{k}\sigma}^\dagger a\_{\boldsymbol{k+q}\sigma}a\_{\boldsymbol{p}\sigma'}^\dagger a\_{\boldsymbol{p-q}\sigma'}=\\\\\
+&=\sum\_{\substack{\boldsymbol{k},\boldsymbol{p}\\\ \sigma,\sigma'}}a\_{\boldsymbol{k}\sigma}^\dagger\left(\delta\_{\boldsymbol{k+q},\boldsymbol{p}}\delta\_{\sigma\sigma'}-a\_{\boldsymbol{p}\sigma'}^\dagger a\_{\boldsymbol{k+q}\sigma}\right)a\_{\boldsymbol{p-q}\sigma'}=\\\\\
+&=\sum\_{\boldsymbol{k}\sigma}a\_{\boldsymbol{k}\sigma}^\dagger a\_{\boldsymbol{k}\sigma}-\sum\_{\substack{\boldsymbol{k},\boldsymbol{p}\\\ \sigma,\sigma'}}a\_{\boldsymbol{p}\sigma'}^\dagger a\_{\boldsymbol{k}\sigma}^\dagger a\_{\boldsymbol{p-q}\sigma'}a\_{\boldsymbol{k+q}\sigma}=\\\\\
+&=\widehat{N}-\sum\_{\substack{\boldsymbol{k},\boldsymbol{p}\\\ \sigma,\sigma'}}a\_{\boldsymbol{p}\sigma'}^\dagger\left(\delta\_{\boldsymbol{k},\boldsymbol{p-q}}\delta\_{\sigma\sigma'}-a\_{\boldsymbol{p-q}\sigma'}a\_{\boldsymbol{k}\sigma}^\dagger\right)a\_{\boldsymbol{k+q}\sigma}=\\\\\
+&=\widehat{N}-\sum\_{\boldsymbol{p}\sigma}a\_{\boldsymbol{p}\sigma}^\dagger a\_{\boldsymbol{p}\sigma}+\sum\_{\boldsymbol{p}\sigma'}a\_{\boldsymbol{p}\sigma'}^\dagger a\_{\boldsymbol{p-q}\sigma'}\sum\_{\boldsymbol{k}\sigma}a\_{\boldsymbol{k}\sigma}^\dagger a\_{\boldsymbol{k+q}\sigma}=\\\\\
 &=\hat{\rho}\_\boldsymbol{-q}\hat{\rho}\_\boldsymbol{q}
 \end{split}
-$$
+\end{align}
 即
 
-$$
+\begin{equation}
 [\hat{\rho}\_\boldsymbol{q},\hat{\rho}\_\boldsymbol{-q}]=0
-$$
+\end{equation}
 据此可将凝胶模型的哈密顿量用密度算符表示，动能项不变：
 
-$$
+\begin{align}
 \begin{split}
-H\_\text{ee}=&\frac{1}{2}\sum\_{\substack{\boldsymbol{k},\boldsymbol{p},\boldsymbol{q}\\\ \sigma,\sigma'}}^{q\neq0}v\_0(\boldsymbol{q})a\_{\boldsymbol{k}+\boldsymbol{q}\sigma}^\dagger a\_{\boldsymbol{p}-\boldsymbol{q}\sigma'}^\dagger a\_{\boldsymbol{p}\sigma'}a\_{\boldsymbol{k}\sigma}=\\
-=&\frac{1}{2}\sum\_{\substack{\boldsymbol{k},\boldsymbol{p},\boldsymbol{q}\\\ \sigma,\sigma'}}^{q\neq0}v\_0(\boldsymbol{q})a\_{\boldsymbol{k}+\boldsymbol{q}\sigma}^\dagger\left(-\delta\_{\sigma\sigma'}\delta\_{\boldsymbol{k},\boldsymbol{p-q}}+a\_{\boldsymbol{k}\sigma}a\_{\boldsymbol{p-q}\sigma'}^\dagger\right)a\_{\boldsymbol{p}\sigma'}=\\
-=&-\frac{1}{2}\sum\_{\boldsymbol{q},\boldsymbol{p},\sigma}^{q\neq0}v\_0(\boldsymbol{q})a\_{\boldsymbol{p}\sigma}^\dagger a\_{\boldsymbol{p}\sigma}+\frac{1}{2}\sum\_{\boldsymbol{q}}^{q\neq0}v\_0(\boldsymbol{q})\sum\_{\boldsymbol{k},\sigma}a\_{\boldsymbol{k}+\boldsymbol{q}\sigma}^\dagger a\_{\boldsymbol{k}\sigma}\cdot\\
+H\_\text{ee}=&\frac{1}{2}\sum\_{\substack{\boldsymbol{k},\boldsymbol{p},\boldsymbol{q}\\\ \sigma,\sigma'}}^{q\neq0}v\_0(\boldsymbol{q})a\_{\boldsymbol{k}+\boldsymbol{q}\sigma}^\dagger a\_{\boldsymbol{p}-\boldsymbol{q}\sigma'}^\dagger a\_{\boldsymbol{p}\sigma'}a\_{\boldsymbol{k}\sigma}=\\\\\
+=&\frac{1}{2}\sum\_{\substack{\boldsymbol{k},\boldsymbol{p},\boldsymbol{q}\\\ \sigma,\sigma'}}^{q\neq0}v\_0(\boldsymbol{q})a\_{\boldsymbol{k}+\boldsymbol{q}\sigma}^\dagger\left(-\delta\_{\sigma\sigma'}\delta\_{\boldsymbol{k},\boldsymbol{p-q}}+a\_{\boldsymbol{k}\sigma}a\_{\boldsymbol{p-q}\sigma'}^\dagger\right)a\_{\boldsymbol{p}\sigma'}=\\\\\
+=&-\frac{1}{2}\sum\_{\boldsymbol{q},\boldsymbol{p},\sigma}^{q\neq0}v\_0(\boldsymbol{q})a\_{\boldsymbol{p}\sigma}^\dagger a\_{\boldsymbol{p}\sigma}+\frac{1}{2}\sum\_{\boldsymbol{q}}^{q\neq0}v\_0(\boldsymbol{q})\sum\_{\boldsymbol{k},\sigma}a\_{\boldsymbol{k}+\boldsymbol{q}\sigma}^\dagger a\_{\boldsymbol{k}\sigma}\cdot\\\\\
 &\cdot\sum\_{\boldsymbol{p},\sigma'}a\_{\boldsymbol{p-q}\sigma'}^\dagger a\_{\boldsymbol{p}\sigma'}
 \end{split}
-$$
+\end{align}
 于是凝胶模型哈密顿量变成：
 
 \begin{equation}
@@ -780,9 +784,9 @@ $k\_F$叫做**费米波矢**(Fermi wavevector)，可由如下计算得到：由�
 
 若是考虑自旋简并，便会得到电子数与费米波矢$k\_F$之间的关系：
 
-$$
+\begin{equation}
 N=2\frac{1}{\Delta k}\left(\frac{4\pi}{3}k\_F^3\right)=\frac{V}{3\pi^2}k\_F^3
-$$
+\end{equation}
 
 即
 
@@ -805,9 +809,9 @@ k\_F=\left(3\pi^2\frac{N}{V}\right)^{1/3}
 
 在热力学极限下上式用到了
 
-$$
+\begin{equation}
 \sum\_{\boldsymbol{k}}\to\frac{1}{\Delta \boldsymbol{k}}\int\mathrm{d}^3k
-$$
+\end{equation}
 并考虑了自旋简并。于是得到基态能：
 
 \begin{equation}
@@ -819,8 +823,8 @@ E\_0=N\bar{\varepsilon}=\frac{3}{5}N\varepsilon\_F
 
 \begin{align}
 \label{eq:83}
-n\_\text{e}&=\frac{N}{V}:\quad&\text{平均电子密度}\\
-v\_\text{e}&=\frac{1}{n\_\text{e}}:\quad&\text{平均电子体积}\\
+n\_\text{e}&=\frac{N}{V}:\quad&\text{平均电子密度}\\\\\
+v\_\text{e}&=\frac{1}{n\_\text{e}}:\quad&\text{平均电子体积}\\\\\
 \end{align}
 
 $v\_\text{e}$由无量纲的**密度参数**(density parameter)$r\_s$决定：
@@ -888,7 +892,7 @@ E\_0=N\frac{2.21}{r\_s^2}[\mathrm{ryd}]
 \begin{align}
 \label{eq:92}
 \begin{split}
-\varepsilon^{(1)}&=\frac{1}{2N}\sum\_{\boldsymbol{k},\boldsymbol{q},\sigma}^{q\neq0}v\_0(\boldsymbol{q})\Big\langle E\_0\Big|a\_{\boldsymbol{k}+\boldsymbol{q}\sigma}^\dagger a\_{\boldsymbol{p}-\boldsymbol{q}\sigma'}^\dagger a\_{\boldsymbol{p}\sigma'}a\_{\boldsymbol{k}\sigma}\Big|E\_0\Big\rangle=\\
+\varepsilon^{(1)}&=\frac{1}{2N}\sum\_{\boldsymbol{k},\boldsymbol{q},\sigma}^{q\neq0}v\_0(\boldsymbol{q})\Big\langle E\_0\Big|a\_{\boldsymbol{k}+\boldsymbol{q}\sigma}^\dagger a\_{\boldsymbol{p}-\boldsymbol{q}\sigma'}^\dagger a\_{\boldsymbol{p}\sigma'}a\_{\boldsymbol{k}\sigma}\Big|E\_0\Big\rangle=\\\\\
 &=-\frac{1}{2N}\sum\_{\boldsymbol{k},\boldsymbol{q},\sigma}^{q\neq0}v\_0(\boldsymbol{q})\Big\langle E\_0\Big|\hat{n}\_{\boldsymbol{k}+\boldsymbol{q}\sigma} \hat{n}\_{\boldsymbol{k}\sigma}\Big|E\_0\Big\rangle
 \end{split}
 \end{align}
@@ -902,14 +906,14 @@ E\_0=N\frac{2.21}{r\_s^2}[\mathrm{ryd}]
 
 在对自旋求和之后，将求和变积分：
 
-$$
+\begin{equation}
 \varepsilon^{(1)}=-\frac{V}{N}\frac{e^2}{\varepsilon\_0(2\pi)^6}\int\mathrm{d}^3k\int\mathrm{d}^3q\,\frac{1}{q^2}\varTheta(k\_F-|\boldsymbol{k}+\boldsymbol{q}|)\varTheta(k\_F-k)
-$$
+\end{equation}
 做替换
 
-$$
+\begin{equation}
 \boldsymbol{k}\Rightarrow\boldsymbol{x}=\boldsymbol{k}+\frac{1}{2}\boldsymbol{q}
-$$
+\end{equation}
 便得到
 
 \begin{equation}
@@ -931,14 +935,14 @@ S(q)=\varTheta\left(k\_F-\frac{1}{2}q\right)\left\\{k\_F^3-\frac{3}{4}qk\_F^2+\f
 
 此处用到球缺的体积公式：
 
-$$
+\begin{equation}
 S= \pi \times h^2\times(R-\frac{h}{3})= \pi \times h \times\frac{3r^2+h^2}{6} 
-$$
+\end{equation}
 这里$R$是球体的半径，$h$是球缺的高，$r$是底面半径。再代入\eqref{eq:94}中即可得到：
 
-$$
+\begin{equation}
 \varepsilon^{(1)}=-\frac{0.916}{r\_s}[\mathrm{ryd}]
-$$
+\end{equation}
 <figure id="fig-3">
   <img src="{{ '2018-03-27-many-body-model-systems-spherical-segment.png' | prepend:'/upload/posts/' | relative_url }}" alt="spherical segment">
   <figcaption><b>图 3</b>球缺积分区域示意图。</figcaption>
@@ -960,12 +964,12 @@ $$
 
 这样一个简单的凝胶模型已经给出了有用的结果，比如，$\varepsilon-\varepsilon\_\text{corr}$在
 
-$$
+\begin{equation}
 \begin{split}
-r\_0=(r\_s)\_\text{min}&=4.83,\\
+r\_0=(r\_s)\_\text{min}&=4.83,\\\\\
 (\varepsilon-\varepsilon\_\text{corr})\_\text{min}&=-0.095[\mathrm{ryd}]=-1.29[\mathrm{eV}]
 \end{split}
-$$
+\end{equation}
 这意味着电子密度的最优值，对应着最佳离子间距，并至少是定性地解释了**金属键**(metallic bonding)。
 
 ### 1.3 Hubbard模型
@@ -1022,44 +1026,44 @@ h\_0\psi\_{n\boldsymbol{k}}(\boldsymbol{r})=\varepsilon\_n(\boldsymbol{k})\psi\_
 
 此函数保留了原子能级的特征。这种方法得到的能带没什么结构，$\varepsilon\_n(\boldsymbol{k})$仅仅是简单的原子能级$\varepsilon\_n$，与$\boldsymbol{k}$的取值无关。为了弥补这种不足，更实际的假设应当是：在$V\_1(\boldsymbol{r})$变得相当可观之前，$\varphi\_n(\boldsymbol{r})$变小，但没完全消失。这启示我们寻找一个满足整个晶体的薛定谔方程的解，其形式仍然符合\eqref{eq:104}：
 
-$$
+\begin{equation}
 \psi(\boldsymbol{r})=\frac{1}{\sqrt{N\_\text{i}}}\sum\_{j=1}^{N\_\text{i}}e^{i\boldsymbol{k}\cdot\boldsymbol{R}\_j}\phi(\boldsymbol{r}-\boldsymbol{R}\_j)
-$$
+\end{equation}
 这里$\phi(\boldsymbol{r})$不一定正好是一个定态原子波函数，它需要由后续计算确定。如果乘积$V\_1(\boldsymbol{r})\varphi\_n(\boldsymbol{r})$虽然不为零，但也足够小，有理由期望$\phi(\boldsymbol{r})$与原子波函数$\varphi\_n(\boldsymbol{r})$或者与$\varphi\_n(\boldsymbol{r})$简并的波函数非常接近。基于此，$\phi(\boldsymbol{r})$可由少数几个局域原子波函数的线性展出：
 
-$$
+\begin{equation}
 \phi(\boldsymbol{r})=\sum\_n b\_n\varphi\_n(\boldsymbol{r})
-$$
+\end{equation}
 > **附注**：  
 > 1. 我们的第一次严格近似是只包含局域的（即束缚的）原子波函数。一组完整的原子能级应当包含电离了的原子。这也是该方法不能用于近自由电子能级的原因。
 > 2. 因为这种对$\phi(\boldsymbol{r})$近似方式，紧束缚近似有时也被称作*原子轨道线性组合法*(linear combination of atomic orbits)（或LCAO）。
 
 对比\eqref{eq:29}可见，我们把精确的Wannier函数替换成了束缚的原子波函数的组合。用$\varphi\_m^\*(\boldsymbol{r})$乘\eqref{eq:103}并对$\boldsymbol{r}$积分可得：
 
-$$
+\begin{equation}
 \int\mathrm{d}\boldsymbol{r}\,\varphi\_m^\*(\boldsymbol{r})h\_0\psi(\boldsymbol{r})=\int\mathrm{d}\boldsymbol{r}\,\varphi\_m^\*(\boldsymbol{r})\left(h\_\text{at}+V\_1(\boldsymbol{r})\right)\psi(\boldsymbol{r})=\varepsilon(\boldsymbol{k})\int\mathrm{d}\boldsymbol{r}\,\varphi\_m^\*(\boldsymbol{r})\psi(\boldsymbol{r})
-$$
+\end{equation}
 再有：
 
-$$
+\begin{equation}
 \int\mathrm{d}\boldsymbol{r}\,\varphi\_m^\*(\boldsymbol{r})h\_\text{at}\psi(\boldsymbol{r})=\int\mathrm{d}\boldsymbol{r}\,\left(h\_\text{at}\varphi\_m(\boldsymbol{r})\right)^\*\psi(\boldsymbol{r})=\varepsilon\_m\int\mathrm{d}\boldsymbol{r}\,\varphi\_m^\*(\boldsymbol{r})\psi(\boldsymbol{r})
-$$
+\end{equation}
 于是得到：
 
-$$
+\begin{equation}
 (\varepsilon(\boldsymbol{k})-\varepsilon\_m)\int\mathrm{d}\boldsymbol{r}\,\varphi\_m^\*(\boldsymbol{r})\psi(\boldsymbol{r})=\int\mathrm{d}\boldsymbol{r}\,\varphi\_m^\*(\boldsymbol{r})V\_1(\boldsymbol{r})\psi(\boldsymbol{r})
-$$
+\end{equation}
 将$\psi(\boldsymbol{r})$展开式代入上式，并利用原子波函数的正交性：
 
-$$
+\begin{equation}
 \int\mathrm{d}\boldsymbol{r}\,\varphi\_m^\*(\boldsymbol{r})\varphi\_n(\boldsymbol{r})=\delta\_{mn}
-$$
+\end{equation}
 最终得到如下本征方程，解此方程可得到系数$b\_n(\boldsymbol{k})$和Bloch能$\varepsilon(\boldsymbol{k})$：
 
 \begin{equation}
 \begin{split}
-(\varepsilon(\boldsymbol{k})-\varepsilon\_m)b\_m=&-(\varepsilon(\boldsymbol{k})-\varepsilon\_m)\sum\_n\left(\sum\_{\boldsymbol{R}\neq0}\int\mathrm{d}\boldsymbol{r}\,\varphi\_m^\*(\boldsymbol{r})\varphi\_n(\boldsymbol{r-R})e^{i\boldsymbol{k}\cdot\boldsymbol{R}}\right)b\_n+\\
-&+\sum\_n\left(\int\mathrm{d}\boldsymbol{r}\,\varphi\_m^\*(\boldsymbol{r})V\_1(\boldsymbol{r})\varphi\_n(\boldsymbol{r})\right)b\_n+\\
+(\varepsilon(\boldsymbol{k})-\varepsilon\_m)b\_m=&-(\varepsilon(\boldsymbol{k})-\varepsilon\_m)\sum\_n\left(\sum\_{\boldsymbol{R}\neq0}\int\mathrm{d}\boldsymbol{r}\,\varphi\_m^\*(\boldsymbol{r})\varphi\_n(\boldsymbol{r-R})e^{i\boldsymbol{k}\cdot\boldsymbol{R}}\right)b\_n+\\\\\
+&+\sum\_n\left(\int\mathrm{d}\boldsymbol{r}\,\varphi\_m^\*(\boldsymbol{r})V\_1(\boldsymbol{r})\varphi\_n(\boldsymbol{r})\right)b\_n+\\\\\
 &+\sum\_n\left(\sum\_{\boldsymbol{R}\neq0}\int\mathrm{d}\boldsymbol{r}\,\varphi\_m^\*(\boldsymbol{r})V\_1(\boldsymbol{r})\varphi\_n(\boldsymbol{r-R})e^{i\boldsymbol{k}\cdot\boldsymbol{R}})\right)b\_n
 \end{split}
 \label{eq:105}
@@ -1067,9 +1071,9 @@ $$
 
 上式右边第一项包含此种形式的积分：
 
-$$
+\begin{equation}
 \int\mathrm{d}\boldsymbol{r}\,\varphi\_m^\*(\boldsymbol{r})\varphi\_n(\boldsymbol{r-R})
-$$
+\end{equation}
 我们对于原子能级非常定域化的假设意味着该项非常小。
 
 > **附注**：  
@@ -1082,9 +1086,9 @@ $$
 
 最终发现\eqref{eq:105}右边（也即$(\varepsilon(\boldsymbol{k})-\varepsilon\_m)$）总是很小。这意味着每当$b\_m$不小的时候，$\varepsilon(\boldsymbol{k})-\varepsilon\_m$一定很小（反之亦然）。故$\varepsilon(\boldsymbol{k})$必须接近某个原子能级，比如$\varepsilon\_0$，所有的$b\_m$除了那些相应的能级能量与其简并（或非常接近）的都必须很小：
 
-$$
+\begin{equation}
 \varepsilon(\boldsymbol{k})\approx\varepsilon\_0,\quad b\_m\approx0\text{ unless  }\varepsilon\_m\approx\varepsilon\_0
-$$
+\end{equation}
 如果上式为严格的等式，我们又会回到极端情况，晶体能级与原子能级相同。利用上式，我们可以将\eqref{eq:105}右侧求和指标$n$限定于那些能级能量与$\varepsilon\_0$简并或者非常接近的几个，\eqref{eq:105}便成了一个分块对角矩阵方程。如果原子能级$0$是非简并的，即$s$能级（这里没有考虑SOC，只关注能级的轨道部分，自旋可通过在轨道波函数乘以相应自旋波函数引入，这样轨道能级简并度翻倍），在此近似下\eqref{eq:105}简化为由$s$能级（一般叫做“$s$带”）产生的能带能量的明确表达式。如果考虑$p$能级，它是三重简并的，\eqref{eq:105}便成为一组三个方程。同理，考虑$d$能级，就要解$5\times5$的矩阵方程。
 
 如果解得的$\varepsilon(\boldsymbol{k})$在某些$\boldsymbol{k}$处离所考虑的原子能级足够远，那么就要重复以上步骤，将此时$\varepsilon(\boldsymbol{k})$所接近的能级也包括进$\phi$的展开式。实际上，在算过渡金属能带时常常要解包含了$s$-和$d$-能级的$6\times6$的方程，其原子态含有外层$s$-壳层及部分填充的$d$-壳层。此过程即所谓“$s$-$d$混合”或“杂化”。
@@ -1131,7 +1135,7 @@ T\_0^{(n)}=\varepsilon\_n+v\_n
 
 \begin{equation}
 \begin{gathered}
-\boldsymbol{R}\_\Delta=a(\pm1,0,0),\quad a(0,\pm1,0)\quad a(0,0,\pm1)\\
+\boldsymbol{R}\_\Delta=a(\pm1,0,0),\quad a(0,\pm1,0)\quad a(0,0,\pm1)\\\\\
 \varepsilon\_n^\text{s.c.}(\boldsymbol{k})=T\_0^{(n)}+2\gamma\_n^{(1)}\left(\cos(k\_xa)+\cos(k\_ya)+\cos(k\_za\right)
 \end{gathered}
 \label{eq:112}
@@ -1139,9 +1143,9 @@ T\_0^{(n)}=\varepsilon\_n+v\_n
 
 这里$a$是晶格常数，$T\_0^{(n)}$和$\gamma\_n^{(1)}$是可由实验测定的参数。由对称性可知$\gamma\_n^{(1)}$为常数，其表达式为
 
-$$
+\begin{equation}
 \gamma\_n^{(1)}=\int\mathrm{d}\boldsymbol{r}\,\varphi\_n^\*(x,y,z)V\_1(x,y,z)\varphi\_n(x-a,y,z)
-$$
+\end{equation}
 可由带宽$W$确定：
 
 \begin{equation}
@@ -1159,14 +1163,14 @@ W\_n^\text{s.c.}=12|\gamma\_n^{(1)}|
 除此之外\eqref{eq:112}所反映的简单立方晶格的能带特征也是紧束缚近似的一般特征。比如：
 
 1.  当$ka$很小时，利用$\lim\_{x\to0}\cos x\sim1-\frac{1}{2}x^2$，\eqref{eq:112}成为  
-$$
+\begin{equation}
 \varepsilon\_n^\text{s.c.}(\boldsymbol{k})=T\_0^{(n)}+6\gamma\_n^{(1)}-\gamma\_n^{(1)}k^2a^2
-$$
+\end{equation}
 与$\boldsymbol{k}$方向无关，即$\boldsymbol{k}=0$附近的等能面是个球面（这一特征可以推广到所有立方晶格的非简并能带）。带底在小$k$值附近是抛物线色散，这一点在凝胶模型中也适用。
 2. 沿着任何一条垂直于第一布里渊区正方形表面所绘的$\varepsilon$色散曲线，在穿过该面时斜率为零。例如，沿着$k\_x$方向（此时$k\_y$和$k\_z$为常数），有  
-$$
+\begin{equation}
 \left.\frac{\partial}{\partial k\_x}\varepsilon\_n^\text{s.c.}(\boldsymbol{k})\right|\_{k\_x=\frac{\pi}{a}}=\left.-2a\gamma\_n^{(1)}\sin(k\_xa)\right|\_{k\_x=\frac{\pi}{a}}=0
-$$
+\end{equation}
 严格来讲\eqref{eq:111}仅适用于$s$-带，对于$p$-，$d$-，$f$-……能带需要考虑更多的简并度，但这里我们点到为止，就不展开讲了。接下来的处理限制在$s$-带，顺便把$n$指标也去掉。
 
 在二次量子化形式下，$H\_0$形如\eqref{eq:33}：
