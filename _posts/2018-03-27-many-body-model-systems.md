@@ -246,7 +246,7 @@ H\_0=\sum\_{\boldsymbol{k}\sigma}\varepsilon(\boldsymbol{k})a\_{\boldsymbol{k}\s
 > **场算符**(field operators):
 > 
 > $$
-\widehat{\psi}\_\sigma^\dagger(\boldsymbol{r}),\widehat{\psi}\_\sigma(\boldsymbol{r})
+\widehat{\psi}_\sigma^\dagger(\boldsymbol{r}),\widehat{\psi}_\sigma(\boldsymbol{r})
 $$
 
 可由[式(165)—式(175)-二次量子化](//mageluer.coding.me/blog/second-quantisation#mjx-eqn-eq165)进行理解，只不过加入了电子自旋，其对易关系也可按[二次量子化](//mageluer.coding.me/blog/second-quantisation)中进行推广，例如：
@@ -261,8 +261,8 @@ $$
 \begin{equation}
 \label{eq:28}
 \begin{aligned}
-H\_0&=\sum\_{\sigma,\sigma'}\iint\mathrm{d}^3r\,\mathrm{d}^3r'\langle\boldsymbol{r}\sigma|h\_0|\boldsymbol{r}'\sigma'\rangle\widehat{\psi}\_\sigma^\dagger(\boldsymbol{r})\widehat{\psi}\_{\sigma'}(\boldsymbol{r}')\\
-&=\sum\_{\sigma,\sigma'}\iint\mathrm{d}^3r\,\mathrm{d}^3r'\delta\_{\sigma\sigma'}\left(-\frac{\hbar^2}{2m}\Delta\_{\boldsymbol{r}'}+\widehat{V}(\boldsymbol{r}')\right)\delta(\boldsymbol{r}-\boldsymbol{r}')\widehat{\psi}\_\sigma^\dagger(\boldsymbol{r})\widehat{\psi}\_{\sigma'}(\boldsymbol{r}')\\
+H\_0&=\sum\_{\sigma,\sigma'}\iint\mathrm{d}^3r\,\mathrm{d}^3r'\langle\boldsymbol{r}\sigma|h\_0|\boldsymbol{r}'\sigma'\rangle\widehat{\psi}\_\sigma^\dagger(\boldsymbol{r})\widehat{\psi}\_{\sigma'}(\boldsymbol{r}')\\\\
+&=\sum\_{\sigma,\sigma'}\iint\mathrm{d}^3r\,\mathrm{d}^3r'\delta\_{\sigma\sigma'}\left(-\frac{\hbar^2}{2m}\Delta\_{\boldsymbol{r}'}+\widehat{V}(\boldsymbol{r}')\right)\delta(\boldsymbol{r}-\boldsymbol{r}')\widehat{\psi}\_\sigma^\dagger(\boldsymbol{r})\widehat{\psi}\_{\sigma'}(\boldsymbol{r}')\\\\
 &=\sum\_{\sigma}\int\mathrm{d}^3r\widehat{\psi}\_\sigma^\dagger(\boldsymbol{r})\left(-\frac{\hbar^2}{2m}\Delta\_{\boldsymbol{r}}+\widehat{V}(\boldsymbol{r})\right)\widehat{\psi}\_\sigma(\boldsymbol{r})
 \end{aligned}
 \end{equation}
